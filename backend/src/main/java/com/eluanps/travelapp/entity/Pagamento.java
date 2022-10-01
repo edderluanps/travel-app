@@ -1,6 +1,7 @@
-package com.eluanps.travelapp.entity;
+    package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.PagamentoStatus;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;

@@ -1,6 +1,7 @@
 package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -44,17 +45,16 @@ public class Cliente implements Serializable {
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
-    
+
     private Integer tipoCliente;
-    
-    @JsonManagedReference
+
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
-    
+
     @ElementCollection
     @CollectionTable(name = "telefone")
     private Set<String> telefone = new HashSet<>();
-    
+
     @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
@@ -69,7 +69,7 @@ public class Cliente implements Serializable {
         this.senha = senha;
         this.dataNascimento = dataNascimento;
         this.dataCadastro = dataCadastro;
-        this.tipoCliente = (tipoCliente == null)? null : tipoCliente.getCod();
+        this.tipoCliente = (tipoCliente == null) ? null : tipoCliente.getCod();
         this.ativo = ativo;
     }
 
@@ -135,6 +135,14 @@ public class Cliente implements Serializable {
 
     public void setTipoCliente(TipoCliente tipoCliente) {
         this.tipoCliente = tipoCliente.getCod();
+    }
+
+    public Set<String> getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(Set<String> telefone) {
+        this.telefone = telefone;
     }
 
     public List<Pedido> getPedidos() {

@@ -42,12 +42,10 @@ public class Voos implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataDesembarque;
 
-    @JsonManagedReference
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "empresa_id", referencedColumnName = "id")
     private Empresa empresa;
 
-    @JsonManagedReference
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cidade_id", referencedColumnName = "id")
     private Cidade cidade;
