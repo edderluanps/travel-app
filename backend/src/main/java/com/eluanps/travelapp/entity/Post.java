@@ -1,5 +1,6 @@
 package com.eluanps.travelapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -36,5 +39,9 @@ public class Post implements Serializable{
     
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataPostagem;
+    
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
 
 }
