@@ -2,11 +2,10 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Post;
 import com.eluanps.travelapp.repository.PostRepository;
+import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class PostService {
@@ -19,7 +18,7 @@ public class PostService {
     }
 
     public Post findById(Long id) {
-        return postRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Objeto não encontrado!"));
+        return postRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Post não encontrado"));
     }
 
     public Post salvar(Post post) {
@@ -30,14 +29,14 @@ public class PostService {
         postRepository.findById(id).map(obj -> {
             post.setId(obj.getId());
             return postRepository.save(post);
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Objeto não encontrado!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Post não encontrado"));
     }
 
     public void delete(Long id) {
         postRepository.findById(id).map(obj -> {
             postRepository.delete(obj);
             return Void.TYPE;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Objeto não encontrado!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Post não encontrado"));
     }
 
 }

@@ -2,6 +2,7 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Hospedagem;
 import com.eluanps.travelapp.repository.HospedagemRepository;
+import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class HospedagemService {
     }
 
     public Hospedagem findById(Long id) {
-        return hospedagemRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Hospedagem não encontrada!"));
+        return hospedagemRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Hospedagem não encontrada"));
     }
 
     public Hospedagem salvar(Hospedagem hotel) {
@@ -30,7 +31,7 @@ public class HospedagemService {
         hospedagemRepository.findById(id).map(obj -> {
             hotel.setId(obj.getId());
             return hospedagemRepository.save(hotel);
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Hospedagem não encontrada!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Hospedagem não encontrada"));
     }
 
     public void delete(Long id) {

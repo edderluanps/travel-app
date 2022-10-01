@@ -2,11 +2,10 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Admin;
 import com.eluanps.travelapp.repository.AdminRepository;
+import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class AdminService {
@@ -19,7 +18,7 @@ public class AdminService {
     }
 
     public Admin findById(Long id) {
-        return adminRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário Admin não encontrado!"));
+        return adminRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Usuário Admin não encontrado"));
     }
 
     public Admin salvar(Admin admin) {
@@ -30,14 +29,14 @@ public class AdminService {
         adminRepository.findById(id).map(obj -> {
             admin.setId(obj.getId());
             return adminRepository.save(admin);
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário Admin não encontrado!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Usuário Admin não encontrado"));
     }
 
     public void delete(Long id) {
         adminRepository.findById(id).map(obj -> {
             adminRepository.delete(obj);
             return Void.TYPE;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário Admin não encontrado!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Usuário Admin não encontrado"));
     }
 
 }

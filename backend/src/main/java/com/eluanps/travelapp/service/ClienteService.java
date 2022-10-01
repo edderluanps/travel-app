@@ -2,11 +2,10 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Cliente;
 import com.eluanps.travelapp.repository.ClienteRepository;
+import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class ClienteService {
@@ -19,7 +18,7 @@ public class ClienteService {
     }
 
     public Cliente findById(Long id) {
-        return clienteRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado!"));
+        return clienteRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
     }
 
     public Cliente salvar(Cliente cliente) {
@@ -30,14 +29,14 @@ public class ClienteService {
         clienteRepository.findById(id).map(obj -> {
             cliente.setId(obj.getId());
             return clienteRepository.save(cliente);
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
     }
 
     public void delete(Long id) {
         clienteRepository.findById(id).map(obj -> {
             clienteRepository.delete(obj);
             return Void.TYPE;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "usuário não encontrado!"));
+        }).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
     }
 
 }
