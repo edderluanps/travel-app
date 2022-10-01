@@ -1,6 +1,5 @@
 package com.eluanps.travelapp.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
