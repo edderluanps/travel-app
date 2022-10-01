@@ -2,6 +2,7 @@ package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -53,6 +54,10 @@ public class Cliente implements Serializable {
     @ElementCollection
     @CollectionTable(name = "telefone")
     private Set<String> telefone = new HashSet<>();
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos = new ArrayList<>();
 
     private boolean ativo;
 
@@ -132,6 +137,14 @@ public class Cliente implements Serializable {
         this.tipoCliente = tipoCliente.getCod();
     }
 
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
     public boolean isAtivo() {
         return ativo;
     }
@@ -139,7 +152,5 @@ public class Cliente implements Serializable {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
-    
-    
 
 }

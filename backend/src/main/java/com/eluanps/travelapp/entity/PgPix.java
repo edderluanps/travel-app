@@ -1,13 +1,8 @@
 package com.eluanps.travelapp.entity;
 
-import java.io.Serializable;
+import com.eluanps.travelapp.entity.enums.PagamentoStatus;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,17 +12,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class PgPix implements Serializable {
-
-    public static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    private Long id;
+public class PgPix extends Pagamento{
     
     private String chave;
+
+    public PgPix(String chave, Long id, PagamentoStatus status, Pedido pedido) {
+        super(id, status, pedido);
+        this.chave = chave;
+    }
     
 }

@@ -1,33 +1,70 @@
 package com.eluanps.travelapp.entity;
 
+import com.eluanps.travelapp.entity.enums.PagamentoStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "tb_pagamento")
-@Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Pagamento implements Serializable {
+public abstract class Pagamento implements Serializable {
 
     public static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
     
-    private String status;
+    private Integer status;
+    
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "pedido_id")
+    @MapsId
+    private Pedido pedido;
+
+    public Pagamento(Long id, PagamentoStatus status, Pedido pedido) {
+        this.id = id;
+        this.status = status.getCod();
+        this.pedido = pedido;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public PagamentoStatus getStatus() {
+        return PagamentoStatus.toEnum(status);
+    }
+
+    public void setStatus(PagamentoStatus status) {
+        this.status = status.getCod();
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+    
+    
 
 }
