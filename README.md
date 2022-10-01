@@ -39,7 +39,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Criação da API com Spring Boot e MySQL
 * Criação da Aplicação web com Angular
 * Criação da Aplicação Mobile com Ionic
-* Deploy do Backend no Heroko
+* Deploy do Backend no Heroku
 * Deploy do Frontend no  Netlify
 * Deploy e publicação da Aplicação mobile
 
