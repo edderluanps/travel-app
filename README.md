@@ -11,7 +11,7 @@ O Travel App é um projeto pessoal de agencia de viagens. O projeto foi criado c
 
 O projeto contará com área de clientes e de admins, onde o cliente poderá selecionar passagens, voos, pacotes completos e avaliar os serviços obtidos, e os admins poderão ter acesso completo aos dados referente a voos, pacotes e afins, além de fazer publicações no Blog do site, com dicas e indicações aos leitores.
 
-<img src="https://raw.githubusercontent.com/edderluanps/travel-app/main/documentos/Diagrama.jpg?token=GHSAT0AAAAAABW2B6I77LQUYKYVOTLCSHPGYZYSJGQ">
+<img src="/documentos/Diagrama;jpg">
 
 
 ## Ferramentas
