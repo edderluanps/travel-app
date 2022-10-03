@@ -2,9 +2,11 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Admin;
 import com.eluanps.travelapp.repository.AdminRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,10 +35,12 @@ public class AdminService {
     }
 
     public void delete(Long id) {
-        adminRepository.findById(id).map(obj -> {
-            adminRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ObjectNotFoundException("Usuário Admin não encontrado"));
+        findById(id);
+        try{
+            adminRepository.deleteById(id);
+        }catch(DataIntegrityViolationException ex){
+            throw new DataIntegrityException("Não foi possivel deletar o Admin: Usuário Ativo.");
+        }
     }
 
 }

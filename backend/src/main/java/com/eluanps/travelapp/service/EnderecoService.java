@@ -2,9 +2,11 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Endereco;
 import com.eluanps.travelapp.repository.EnderecoRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,10 +35,12 @@ public class EnderecoService {
     }
 
     public void delete(Long id) {
-        enderecoRepository.findById(id).map(obj -> {
-            enderecoRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ObjectNotFoundException("Endereço não encontrado"));
+        findById(id);
+        try {
+            enderecoRepository.deleteById(id);
+        } catch (DataIntegrityViolationException ex) {
+            throw new DataIntegrityException("Não foi possivel deletar o Endereço: Item Ativo.");
+        }
     }
 
 }

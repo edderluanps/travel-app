@@ -1,10 +1,8 @@
 package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.TipoCliente;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -135,6 +133,14 @@ public class Cliente implements Serializable {
 
     public void setTipoCliente(TipoCliente tipoCliente) {
         this.tipoCliente = tipoCliente.getCod();
+    }
+    
+    public List<Endereco> getEndereco() {
+        return enderecos;
+    }
+
+    public void setEndereco(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 
     public Set<String> getTelefone() {

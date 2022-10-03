@@ -2,9 +2,11 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Empresa;
 import com.eluanps.travelapp.repository.EmpresaRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,10 +35,12 @@ public class EmpresaService {
     }
 
     public void delete(Long id) {
-        empresaRepository.findById(id).map(obj -> {
-            empresaRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ObjectNotFoundException("Empresa não encontrada"));
+        findById(id);
+        try {
+            empresaRepository.deleteById(id);
+        } catch (DataIntegrityViolationException ex) {
+            throw new DataIntegrityException("Não foi possivel deletar a Empresa: Item Ativo.");
+        }
     }
 
 }

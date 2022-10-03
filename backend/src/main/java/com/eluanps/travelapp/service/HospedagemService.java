@@ -2,9 +2,11 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Hospedagem;
 import com.eluanps.travelapp.repository.HospedagemRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -35,10 +37,12 @@ public class HospedagemService {
     }
 
     public void delete(Long id) {
-        hospedagemRepository.findById(id).map(obj -> {
-            hospedagemRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Hospedagem não encontrada!"));
+        findById(id);
+        try {
+            hospedagemRepository.deleteById(id);
+        } catch (DataIntegrityViolationException ex) {
+            throw new DataIntegrityException("Não foi possivel deletar a Hospedagem: Item Ativo.");
+        }
     }
-    
+
 }

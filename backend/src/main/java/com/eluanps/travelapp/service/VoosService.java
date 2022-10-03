@@ -2,9 +2,11 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Voos;
 import com.eluanps.travelapp.repository.VoosRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,10 +35,12 @@ public class VoosService {
     }
 
     public void delete(Long id) {
-        voosRepository.findById(id).map(obj -> {
-            voosRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ObjectNotFoundException("Voo não encontrado"));
+        findById(id);
+        try {
+            voosRepository.deleteById(id);
+        } catch (DataIntegrityViolationException ex) {
+            throw new DataIntegrityException("Não foi possivel deletar o Voo: Item Ativo.");
+        }
     }
-
+    
 }

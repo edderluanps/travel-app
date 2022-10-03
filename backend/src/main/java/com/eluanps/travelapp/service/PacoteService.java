@@ -2,9 +2,11 @@ package com.eluanps.travelapp.service;
 
 import com.eluanps.travelapp.entity.Pacote;
 import com.eluanps.travelapp.repository.PacoteRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,10 +35,12 @@ public class PacoteService {
     }
 
     public void delete(Long id) {
-        pacoteRepository.findById(id).map(obj -> {
-            pacoteRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ObjectNotFoundException("Pacote não encontrado"));
+        findById(id);
+        try {
+            pacoteRepository.deleteById(id);
+        } catch (DataIntegrityViolationException ex) {
+            throw new DataIntegrityException("Não foi possivel deletar o Pacote: Item Ativo.");
+        }
     }
 
 }
