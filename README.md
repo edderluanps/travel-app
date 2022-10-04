@@ -18,7 +18,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 * Java 17
 * Maven
-* Spring Boot
+* Spring Boot 2.7.4
 * Spring Web
 * Spring Data
 * Spring Security
@@ -30,7 +30,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Angular 14
 * Angular Material
 * Bootstrap 4
-* Ionic 6.2
+* Ionic 6
+* Amazon S3
 
 
 
