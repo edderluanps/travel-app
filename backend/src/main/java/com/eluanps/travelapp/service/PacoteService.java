@@ -7,6 +7,9 @@ import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +24,11 @@ public class PacoteService {
 
     public Pacote findById(Long id) {
         return pacoteRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Pacote não encontrado"));
+    }
+
+    public Page<Pacote> getPage(Integer page, Integer pageRows, String orderBy, String direction) {
+        PageRequest pageRequest = PageRequest.of(page, pageRows, Direction.valueOf(direction), orderBy);
+        return pacoteRepository.findAll(pageRequest);
     }
 
     public Pacote salvar(Pacote pacote) {
