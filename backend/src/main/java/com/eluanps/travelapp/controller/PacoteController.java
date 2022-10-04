@@ -1,8 +1,10 @@
 package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Pacote;
+import com.eluanps.travelapp.entity.dto.PacoteDTO;
 import com.eluanps.travelapp.service.PacoteService;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
@@ -24,8 +26,10 @@ public class PacoteController {
     PacoteService pacoteService;
 
     @GetMapping
-    public List<Pacote> getAll() {
-        return pacoteService.getAll();
+    public List<PacoteDTO> getAll() {
+        List<Pacote> lista = pacoteService.getAll();
+        List<PacoteDTO> listaDto = lista.stream().map(obj -> new PacoteDTO(obj)).collect(Collectors.toList());
+        return listaDto;
     }
 
     @GetMapping("/{id}")
