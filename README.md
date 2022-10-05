@@ -27,6 +27,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Mockito
 * H2 Database
 * MySQL
+* Swagger
 * Angular 14
 * Angular Material
 * Bootstrap 4
