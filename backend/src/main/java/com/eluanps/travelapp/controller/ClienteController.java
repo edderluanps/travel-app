@@ -2,12 +2,15 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Cliente;
 import com.eluanps.travelapp.entity.dto.ClienteDTO;
+import com.eluanps.travelapp.entity.dto.ClienteNewDTO;
 import com.eluanps.travelapp.service.ClienteService;
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("/api/cliente")
@@ -39,14 +44,19 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente salvar(@RequestBody @Validated Cliente cliente) {
-        return clienteService.salvar(cliente);
+    public Cliente salvar(@Valid @RequestBody ClienteNewDTO clienteDto) {
+        Cliente cliente = clienteService.fromDTO(clienteDto);
+        cliente = clienteService.salvar(cliente);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cliente.getId()).toUri();
+        return cliente;
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizar(@PathVariable Long id, @RequestBody Cliente cliente) {
-        clienteService.atualizar(id, cliente);
+    public void atualizar(@Valid @RequestBody ClienteDTO clienteDto, @PathVariable Long id) {
+      Cliente cliente = clienteService.fromDTO(clienteDto);
+      cliente.setId(id);
+      cliente = clienteService.atualizar(cliente);
     }
 
     @DeleteMapping("/{id}")
@@ -54,5 +64,16 @@ public class ClienteController {
     public void delete(@PathVariable Long id) {
         clienteService.delete(id);
     }
+    
+    @GetMapping("/page")
+    public Page<ClienteDTO> getPage(
+            @RequestParam(value = "page", defaultValue = "0") Integer page, 
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage, 
+            @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy, 
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction){
+        Page<Cliente> lista = clienteService.findPage(page, linesPerPage, orderBy, direction);
+        Page<ClienteDTO> listaDTO = lista.map(obj -> new ClienteDTO(obj));
+        return listaDTO;
+    }   
 
 }

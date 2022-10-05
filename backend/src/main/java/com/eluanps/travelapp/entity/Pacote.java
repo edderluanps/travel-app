@@ -59,7 +59,7 @@ public class Pacote implements Serializable {
         }
 
         return lista;
-    }
+    }   
 
     public Long getId() {
         return id;

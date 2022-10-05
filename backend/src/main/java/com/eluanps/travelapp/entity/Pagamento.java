@@ -1,7 +1,6 @@
     package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.PagamentoStatus;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -38,7 +37,7 @@ public abstract class Pagamento implements Serializable {
 
     public Pagamento(Long id, PagamentoStatus status, Pedido pedido) {
         this.id = id;
-        this.status = status.getCod();
+        this.status = (this.status == null) ? null : status.getCod();
         this.pedido = pedido;
     }
 

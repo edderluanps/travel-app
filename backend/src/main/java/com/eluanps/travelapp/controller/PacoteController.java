@@ -1,12 +1,9 @@
 package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Pacote;
-import com.eluanps.travelapp.entity.dto.PacoteDTO;
 import com.eluanps.travelapp.service.PacoteService;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,26 +24,13 @@ public class PacoteController {
     PacoteService pacoteService;
 
     @GetMapping
-    public List<PacoteDTO> getAll() {
-        List<Pacote> lista = pacoteService.getAll();
-        List<PacoteDTO> listaDto = lista.stream().map(obj -> new PacoteDTO(obj)).collect(Collectors.toList());
-        return listaDto;
+    public List<Pacote> getAll() {
+       return pacoteService.getAll();
     }
 
     @GetMapping("/{id}")
     public Pacote findById(@PathVariable Long id) {
         return pacoteService.findById(id);
-    }
-
-    @GetMapping("/page")
-    public Page<PacoteDTO> getPage(
-            @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "pageRows", defaultValue = "24") Integer pageRows,
-            @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
-            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
-        Page<Pacote> lista = pacoteService.getPage(page, pageRows, orderBy, direction);
-        Page<PacoteDTO> listaDto = lista.map(obj -> new PacoteDTO(obj));
-        return listaDto;
     }
 
     @PostMapping
