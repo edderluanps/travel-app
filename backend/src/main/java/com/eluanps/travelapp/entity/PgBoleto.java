@@ -2,7 +2,8 @@ package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.PagamentoStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -14,15 +15,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@JsonTypeName("pgBoleto")
 public class PgBoleto extends Pagamento{
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate pagamento;
+    private Date pagamento;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate vencimento;
+    private Date vencimento;
 
-    public PgBoleto(Long id, LocalDate pagamento, LocalDate vencimento, PagamentoStatus status, Pedido pedido) {
+    public PgBoleto(Long id, Date pagamento, Date vencimento, PagamentoStatus status, Pedido pedido) {
         super(id, status, pedido);
         this.pagamento = pagamento;
         this.vencimento = vencimento;

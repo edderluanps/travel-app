@@ -9,6 +9,7 @@ import com.eluanps.travelapp.entity.enums.TipoCliente;
 import com.eluanps.travelapp.repository.ClienteRepository;
 import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -64,7 +65,7 @@ public class ClienteService {
 
     public Cliente fromDTO(ClienteNewDTO clienteDto) {
         Cliente cliente = new Cliente(null, clienteDto.getNome(), clienteDto.getCpfOuCnpj(), clienteDto.getEmail(), clienteDto.getSenha(),
-                null, null, TipoCliente.toEnum(clienteDto.getTipo()), true);
+                null, new Date(), TipoCliente.toEnum(clienteDto.getTipo()), true);
 
         Cidade cidade = new Cidade(clienteDto.getCidadeId().longValue(), null, null);
 

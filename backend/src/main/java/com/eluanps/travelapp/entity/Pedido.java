@@ -2,7 +2,7 @@ package com.eluanps.travelapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -36,7 +36,7 @@ public class Pedido implements Serializable {
     private Long id;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataPedido;
+    private Date dataPedido;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
     private Pagamento pagamento;
@@ -48,10 +48,18 @@ public class Pedido implements Serializable {
     @OneToMany(mappedBy = "id.pedido")
     private Set<ItemPedido> itens = new HashSet<>();
 
-    public Pedido(Long id, LocalDate dataPedido, Cliente cliente) {
+    public Pedido(Long id, Date dataPedido, Cliente cliente) {
         this.id = id;
         this.dataPedido = dataPedido;
         this.cliente = cliente;
+    }
+    
+    public double getValorTotal(){
+        double soma = 0.0;
+        for(ItemPedido ip : itens){
+            soma = soma + ip.getSubtotal();
+        }
+        return soma;
     }
 
 }

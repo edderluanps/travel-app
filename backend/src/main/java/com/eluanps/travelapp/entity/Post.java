@@ -2,7 +2,7 @@ package com.eluanps.travelapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,7 +37,7 @@ public class Post implements Serializable{
     private String descricao;
     
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataPostagem;
+    private Date dataPostagem;
     
     @ManyToOne
     @JoinColumn(name = "admin_id")

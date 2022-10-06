@@ -3,7 +3,7 @@ package com.eluanps.travelapp.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -40,10 +40,10 @@ public class Admin implements Serializable {
     private String senha;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataNascimento;
+    private Date dataNascimento;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataCadastro;
+    private Date dataCadastro;
     
     @JsonIgnore
     @OneToMany(mappedBy = "admin")

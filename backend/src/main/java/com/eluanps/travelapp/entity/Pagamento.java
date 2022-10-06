@@ -2,6 +2,7 @@ package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.PagamentoStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,10 +16,11 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "tb_pagamento")
+@Inheritance(strategy = InheritanceType.JOINED)
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
 public abstract class Pagamento implements Serializable {
 
     public static final long serialVersionUID = 1L;

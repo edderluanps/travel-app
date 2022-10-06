@@ -4,8 +4,8 @@ import com.eluanps.travelapp.entity.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -42,10 +42,10 @@ public class Cliente implements Serializable {
     private String senha;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataNascimento;
+    private Date dataNascimento;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataCadastro;
+    private Date dataCadastro;
 
     private Integer tipoCliente;
 
@@ -62,7 +62,7 @@ public class Cliente implements Serializable {
 
     private boolean ativo;
 
-    public Cliente(Long id, String nome, String cpfOuCnpj, String email, String senha, LocalDate dataNascimento, LocalDate dataCadastro, TipoCliente tipoCliente, boolean ativo) {
+    public Cliente(Long id, String nome, String cpfOuCnpj, String email, String senha, Date dataNascimento, Date dataCadastro, TipoCliente tipoCliente, boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.cpfOuCnpj = cpfOuCnpj;
@@ -114,19 +114,19 @@ public class Cliente implements Serializable {
         this.senha = senha;
     }
 
-    public LocalDate getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
-    public LocalDate getDataCadastro() {
+    public Date getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(LocalDate dataCadastro) {
+    public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

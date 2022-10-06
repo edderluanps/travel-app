@@ -1,9 +1,15 @@
 package com.eluanps.travelapp.service;
 
+import com.eluanps.travelapp.entity.ItemPedido;
 import com.eluanps.travelapp.entity.Pedido;
+import com.eluanps.travelapp.entity.PgBoleto;
+import com.eluanps.travelapp.entity.enums.PagamentoStatus;
+import com.eluanps.travelapp.repository.ItemPedidoRepository;
+import com.eluanps.travelapp.repository.PagamentoRepository;
 import com.eluanps.travelapp.repository.PedidoRepository;
 import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -14,6 +20,18 @@ public class PedidoService {
 
     @Autowired
     private PedidoRepository pedidoRepository;
+    
+    @Autowired
+    private BoletoService boletoService;
+    
+    @Autowired
+    private PacoteService pacoteService;
+    
+    @Autowired
+    private PagamentoRepository pagamentoRepository;
+    
+    @Autowired
+    private ItemPedidoRepository itemPedidoRepository;
 
     public List<Pedido> getAll() {
         return pedidoRepository.findAll();
@@ -24,7 +42,25 @@ public class PedidoService {
     }
 
     public Pedido salvar(Pedido pedido) {
-        return pedidoRepository.save(pedido);
+        pedido.setDataPedido(new Date());
+        pedido.getPagamento().setStatus(PagamentoStatus.PENDENTE);
+        pedido.getPagamento().setPedido(pedido);
+        
+        if (pedido.getPagamento() instanceof PgBoleto) {
+            PgBoleto pgBoleto = (PgBoleto) pedido.getPagamento();
+            boletoService.preencherPGBoleto(pgBoleto, pedido.getDataPedido());
+        }
+        pedidoRepository.save(pedido);
+        pagamentoRepository.save(pedido.getPagamento());
+        
+        for(ItemPedido ipedido : pedido.getItens()) {
+            ipedido.setDesconto(0);
+            ipedido.setPreco(pacoteService.findById(ipedido.getPacote().getId()).getPreco());
+            ipedido.setPedido(pedido);
+        }
+            
+        itemPedidoRepository.saveAll(pedido.getItens());
+        return pedido;
     }
 
     public void atualizar(Long id, Pedido pedido) {
