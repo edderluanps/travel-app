@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
     @Autowired
-    PostService postService;
+    private PostService postService;
 
     @GetMapping
     public List<Post> getAll() {

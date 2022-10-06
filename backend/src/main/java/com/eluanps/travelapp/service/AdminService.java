@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class AdminService {
 
     @Autowired
-    AdminRepository adminRepository;
+    private AdminRepository adminRepository;
 
     public List<Admin> getAll() {
         return adminRepository.findAll();

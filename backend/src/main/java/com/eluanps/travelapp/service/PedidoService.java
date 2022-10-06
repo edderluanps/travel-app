@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class PedidoService {
 
     @Autowired
-    PedidoRepository pedidoRepository;
+    private PedidoRepository pedidoRepository;
 
     public List<Pedido> getAll() {
         return pedidoRepository.findAll();

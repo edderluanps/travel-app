@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class EnderecoService {
 
     @Autowired
-    EnderecoRepository enderecoRepository;
+    private EnderecoRepository enderecoRepository;
 
     public List<Endereco> getAll() {
         return enderecoRepository.findAll();

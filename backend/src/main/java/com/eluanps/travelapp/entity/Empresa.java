@@ -1,6 +1,5 @@
 package com.eluanps.travelapp.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -38,6 +37,6 @@ public class Empresa implements Serializable {
     @OneToOne(mappedBy = "empresa")
     private Voos voos;
     
-    private String ativo;
+    private boolean ativo;
 
 }

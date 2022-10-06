@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,6 +36,8 @@ public class Cliente implements Serializable {
     private Long id;
     private String nome;
     private String cpfOuCnpj;
+    
+    @Column(unique=true)
     private String email;
     private String senha;
 
@@ -54,7 +57,7 @@ public class Cliente implements Serializable {
     private Set<String> telefone = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<>();
 
     private boolean ativo;

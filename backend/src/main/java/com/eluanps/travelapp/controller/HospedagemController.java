@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HospedagemController {
 
     @Autowired
-    HospedagemService hospedagemService;
+    private HospedagemService hospedagemService;
 
     @GetMapping
     public List<Hospedagem> getAll() {

@@ -7,19 +7,22 @@ import com.eluanps.travelapp.entity.dto.ClienteDTO;
 import com.eluanps.travelapp.entity.dto.ClienteNewDTO;
 import com.eluanps.travelapp.entity.enums.TipoCliente;
 import com.eluanps.travelapp.repository.ClienteRepository;
+import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ClienteService {
 
     @Autowired
-    ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository;
 
     public List<Cliente> getAll() {
         return clienteRepository.findAll();
@@ -29,6 +32,7 @@ public class ClienteService {
         return clienteRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
     }
 
+    @Transactional
     public Cliente salvar(Cliente cliente) {
         return clienteRepository.save(cliente);
     }
@@ -40,10 +44,12 @@ public class ClienteService {
     }
 
     public void delete(Long id) {
-        clienteRepository.findById(id).map(obj -> {
-            clienteRepository.delete(obj);
-            return Void.TYPE;
-        }).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
+        findById(id);
+        try {
+            clienteRepository.deleteById(id);
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityException("Não foi possivel deletar o Cliente: Usuário Ativo.");
+        }
     }
 
     public Page<Cliente> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class EmpresaService {
 
     @Autowired
-    EmpresaRepository empresaRepository;
+    private EmpresaRepository empresaRepository;
 
     public List<Empresa> getAll() {
         return empresaRepository.findAll();

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class CidadeService {
 
     @Autowired
-    CidadeRepository cidadeRepository;
+    private CidadeRepository cidadeRepository;
 
     public List<Cidade> getAll() {
         return cidadeRepository.findAll();

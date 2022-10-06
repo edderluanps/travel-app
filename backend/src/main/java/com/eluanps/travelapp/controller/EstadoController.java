@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EstadoController {
 
     @Autowired
-    EstadoService estadoService;
+    private EstadoService estadoService;
 
     @GetMapping
     public List<Estado> getAll() {

@@ -1,6 +1,8 @@
 package com.eluanps.travelapp.entity.dto;
 
+import com.eluanps.travelapp.service.validation.ClienteInsert;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -13,6 +15,7 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,6 +26,7 @@ public class ClienteNewDTO implements Serializable {
 
     @NotEmpty(message = "Preenchimento obrigatório")
     @Email(message = "Email inválido")
+    @Column(unique=true)
     private String email;
 
     @NotEmpty(message = "Preenchimento obrigatório")
@@ -37,6 +41,7 @@ public class ClienteNewDTO implements Serializable {
     private String dataCadastro;
 
     @NotEmpty(message = "Preenchimento obrigatório")
+    @Length(min = 5, max = 20, message = "Campo deve conter de 5 à 20 caracteres")
     private String senha;
 
     @NotEmpty(message = "Preenchimento obrigatório")

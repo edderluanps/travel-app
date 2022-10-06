@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmpresaController {
 
     @Autowired
-    EmpresaService empresaService;
+    private EmpresaService empresaService;
 
     @GetMapping
     public List<Empresa> getAll() {

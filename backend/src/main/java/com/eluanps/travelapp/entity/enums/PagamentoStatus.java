@@ -3,7 +3,7 @@ package com.eluanps.travelapp.entity.enums;
 public enum PagamentoStatus {
 
     PENDENTE(1, "Pendente"),
-    PAGO(2, "pago"),
+    PAGO(2, "Pago"),
     CANCELADO(3, "Cancelado");
 
     private int cod;

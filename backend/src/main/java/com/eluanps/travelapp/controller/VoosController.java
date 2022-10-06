@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class VoosController {
 
     @Autowired
-    VoosService voosService;
+    private VoosService voosService;
 
     @GetMapping
     public List<Voos> getAll() {

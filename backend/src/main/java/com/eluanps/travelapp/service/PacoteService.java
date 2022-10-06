@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class PacoteService {
 
     @Autowired
-    PacoteRepository pacoteRepository;
+    private PacoteRepository pacoteRepository;
 
     public List<Pacote> getAll() {
         return pacoteRepository.findAll();

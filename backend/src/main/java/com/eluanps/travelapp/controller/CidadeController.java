@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CidadeController {
 
     @Autowired
-    CidadeService cidadeService;
+    private CidadeService cidadeService;
 
     @GetMapping
     public List<Cidade> getAll() {

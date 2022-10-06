@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PacoteController {
 
     @Autowired
-    PacoteService pacoteService;
+    private PacoteService pacoteService;
 
     @GetMapping
     public List<Pacote> getAll() {

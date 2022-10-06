@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PedidoController {
 
     @Autowired
-    PedidoService pedidoService;
+    private PedidoService pedidoService;
 
     @GetMapping
     public List<Pedido> getAll() {

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class VoosService {
 
     @Autowired
-    VoosRepository voosRepository;
+    private VoosRepository voosRepository;
 
     public List<Voos> getAll() {
         return voosRepository.findAll();

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EnderecoController {
 
     @Autowired
-    EnderecoService enderecoService;
+    private EnderecoService enderecoService;
 
     @GetMapping
     public List<Endereco> getAll() {

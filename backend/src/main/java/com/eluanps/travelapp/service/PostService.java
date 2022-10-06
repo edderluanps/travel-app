@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class PostService {
 
     @Autowired
-    PostRepository postRepository;
+    private PostRepository postRepository;
 
     public List<Post> getAll() {
         return postRepository.findAll();

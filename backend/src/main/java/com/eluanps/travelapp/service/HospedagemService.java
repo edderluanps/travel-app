@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class HospedagemService {
 
     @Autowired
-    HospedagemRepository hospedagemRepository;
+    private HospedagemRepository hospedagemRepository;
 
     public List<Hospedagem> getAll() {
         return hospedagemRepository.findAll();
