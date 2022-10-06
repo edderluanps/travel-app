@@ -1,9 +1,12 @@
 package com.eluanps.travelapp.controller;
 
+import com.eluanps.travelapp.controller.util.URL;
 import com.eluanps.travelapp.entity.Pacote;
+import com.eluanps.travelapp.entity.dto.PacoteDTO;
 import com.eluanps.travelapp.service.PacoteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,11 +27,10 @@ public class PacoteController {
     @Autowired
     private PacoteService pacoteService;
 
-    @GetMapping
-    public List<Pacote> getAll() {
-       return pacoteService.getAll();
-    }
-
+    //@GetMapping
+    //public List<Pacote> getAll() {
+    //    return pacoteService.getAll();
+    //}
     @GetMapping("/{id}")
     public Pacote findById(@PathVariable Long id) {
         return pacoteService.findById(id);
@@ -49,6 +52,18 @@ public class PacoteController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         pacoteService.delete(id);
+    }
+
+    @GetMapping
+    public Page<Pacote> findPage(
+            @RequestParam(value = "nome", defaultValue = "") String nome,
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "pageRows", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
+        String nomeDecoded = URL.decodeParam(nome);
+        return pacoteService.search(nomeDecoded, page, linesPerPage, orderBy, direction);
+
     }
 
 }
