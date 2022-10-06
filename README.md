@@ -14,7 +14,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 <img src="https://github.com/edderluanps/travel-app/blob/74f893e7240d5ffd1d9f9d5b560c144a839cf73f/documentos/Diagrama.jpg">
 
 
-## Ferramentas
+
+## Tecnologias
 
 * Java 17
 * Maven
