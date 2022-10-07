@@ -20,19 +20,25 @@ public class PedidoService {
 
     @Autowired
     private PedidoRepository pedidoRepository;
-    
+
     @Autowired
     private BoletoService boletoService;
-    
+
     @Autowired
     private PacoteService pacoteService;
-    
+
     @Autowired
     private PagamentoRepository pagamentoRepository;
-    
+
     @Autowired
     private ItemPedidoRepository itemPedidoRepository;
 
+    @Autowired
+    private ClienteService clienteService;
+
+    @Autowired
+    private EmailService emailService;
+    
     public List<Pedido> getAll() {
         return pedidoRepository.findAll();
     }
@@ -43,23 +49,26 @@ public class PedidoService {
 
     public Pedido salvar(Pedido pedido) {
         pedido.setDataPedido(new Date());
+        pedido.setCliente(clienteService.findById(pedido.getCliente().getId()));
         pedido.getPagamento().setStatus(PagamentoStatus.PENDENTE);
         pedido.getPagamento().setPedido(pedido);
-        
+
         if (pedido.getPagamento() instanceof PgBoleto) {
             PgBoleto pgBoleto = (PgBoleto) pedido.getPagamento();
             boletoService.preencherPGBoleto(pgBoleto, pedido.getDataPedido());
         }
         pedidoRepository.save(pedido);
         pagamentoRepository.save(pedido.getPagamento());
-        
-        for(ItemPedido ipedido : pedido.getItens()) {
+
+        for (ItemPedido ipedido : pedido.getItens()) {
             ipedido.setDesconto(0);
-            ipedido.setPreco(pacoteService.findById(ipedido.getPacote().getId()).getPreco());
+            ipedido.setPacote(pacoteService.findById(ipedido.getPacote().getId()));
+            ipedido.setPreco(ipedido.getPacote().getPreco());
             ipedido.setPedido(pedido);
         }
-            
+
         itemPedidoRepository.saveAll(pedido.getItens());
+        emailService.sendOrderConfirmationEmail(pedido);    
         return pedido;
     }
 

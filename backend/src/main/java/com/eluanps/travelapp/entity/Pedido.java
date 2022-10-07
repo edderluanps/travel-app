@@ -2,8 +2,11 @@ package com.eluanps.travelapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -44,7 +47,7 @@ public class Pedido implements Serializable {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-    
+
     @OneToMany(mappedBy = "id.pedido")
     private Set<ItemPedido> itens = new HashSet<>();
 
@@ -53,13 +56,35 @@ public class Pedido implements Serializable {
         this.dataPedido = dataPedido;
         this.cliente = cliente;
     }
-    
-    public double getValorTotal(){
+
+    public double getValorTotal() {
         double soma = 0.0;
-        for(ItemPedido ip : itens){
+        for (ItemPedido ip : itens) {
             soma = soma + ip.getSubtotal();
         }
         return soma;
+    }
+
+    @Override
+    public String toString() {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy, hh:mm:ss");
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pedido nº: ");
+        sb.append(getId());
+        sb.append(", Data da compra: ");
+        sb.append(sdf.format(getDataPedido()));
+        sb.append(", Cliente: ");
+        sb.append(getCliente().getNome());
+        sb.append(", Status: ");
+        sb.append(getPagamento().getStatus().getDescricao());
+        sb.append(",\n Detalhes: \n");
+        for (ItemPedido ip : itens) {
+            sb.append(ip.toString());
+        }
+        sb.append("Valor total: ");
+        sb.append(nf.format(getValorTotal()));
+        return sb.toString();
     }
 
 }

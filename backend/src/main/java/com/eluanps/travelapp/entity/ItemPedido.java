@@ -1,6 +1,8 @@
 package com.eluanps.travelapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -72,4 +74,19 @@ public class ItemPedido {
         this.preco = preco;
     }
 
+    @Override
+    public String toString() {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        StringBuilder sb = new StringBuilder();
+        sb.append(getPacote().getNome());
+        sb.append(", Qtd.: ");
+        sb.append(getQuantidade());
+        sb.append(", Preço Unitário: ");
+        sb.append(nf.format(getPreco()));
+        sb.append(", Subtotal: ");
+        sb.append(nf.format(getSubtotal()));
+        sb.append("\n");
+        return sb.toString();
+    }
+    
 }
