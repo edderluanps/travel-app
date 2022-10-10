@@ -42,11 +42,11 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ## Funções adicionais
 
-* Emissão de relatórios
-* Emissão de tickets
-* Emissão de comprovantes
-* Emissão de boletos
-* Emails de alerta e comprovação
+* Emissão de relatórios para Admins
+* Emissão de tickets para Clientes
+* Emissão de comprovantes para Clientes
+* Emissão de boletos para Clientes
+* Emails de alerta e comprovação para Clientes
 
 
 
