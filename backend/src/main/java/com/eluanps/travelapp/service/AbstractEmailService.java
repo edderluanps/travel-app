@@ -5,14 +5,13 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 
-
 public abstract class AbstractEmailService implements EmailService {
-    
+
     @Value("${default.sender}")
     private String sender;
 
     @Override
-    public void sendOrderConfirmationEmail(Pedido pedido){
+    public void sendOrderConfirmationEmail(Pedido pedido) {
         SimpleMailMessage smm = simpleMailMessageFromPedido(pedido);
         sendEmail(smm);
     }

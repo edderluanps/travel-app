@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Order Confirmation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="../../static/css/emailstyle.css"/>
+    </head>
+    <body>
+        <div class="content">
+
+            <div class="header">
+                <h2>travel.io</h2>
+            </div>
+
+            <div class="email-content">
+                <div class="email-data">
+
+                    <div class="email-body">
+                        <img src="https://img.icons8.com/doodle/96/checkmark.png" alt="alt"/>
+                        <h4>Pedido confirmado!</h4><br>
+                        <h4>Olá <span th:text="${pedido.cliente.nome}"></span>, agradecemos seu pedido, faremos o possível para que você tenha</h4>
+                        <h2> a melhor experiência da sua vida.</h2>
+                    </div>
+                    <h1>
+                        Pedido número: <span th:text="${pedido.id}"> </span>
+                    </h1>
+                    <p>
+                        Data <span
+                            th:text="${#dates.format(pedido.instante, 'dd/MM/yyyy hh:mm')}"></span>
+                    </p>
+                    <p>
+                        Cliente: <span th:text="${pedido.cliente.nome}"></span>
+                    </p>
+                    <p>
+                        Situação do pagamento: <span
+                            th:text="${pedido.pagamento.status.descricao}"></span>
+                    </p>
+                    <h3>Detalhes do pedido:</h3>
+                    <table border="0">
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço unitário</th>
+                            <th>Subtotal</th>
+                        </tr>
+                        <tr th:each="item : ${pedido.itens}">
+                            <td th:text="${item.pacote.nome}">nome</td>
+                            <td th:text="${item.quantidade}">quantidade</td>
+                            <td th:text="${#numbers.formatDecimal(item.preco, 0, 'POINT', 2, 
+                                'COMMA')}">preco</td>
+                            <td th:text="${#numbers.formatDecimal(item.subTotal, 0, 'POINT', 2, 
+                                'COMMA')}">subTotal</td>
+                        </tr>
+                    </table>
+                    <p class="valor-total">
+                        Total: <span th:text="${#numbers.formatDecimal(pedido.valorTotal, 0, 
+                                     'POINT', 2, 'COMMA')}"></span>
+                    </p>
+                </div>
+            </div>    
+
+            <div class="footer">
+                <h2>Assine nossa newsletter e ganhe descontos</h2>
+                <button class="btn-quero" href="">Quero</button>
+            </div>
+            <div class="footer-2">
+                <img src="../../static/imgs/logo.png" alt="alt"/>
+                <h5>2022 - all rights reserved</h5>
+            </div>
+        </div>
+    </body>
+</html>

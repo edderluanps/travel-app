@@ -67,8 +67,7 @@ public class PedidoService {
             ipedido.setPedido(pedido);
         }
 
-        itemPedidoRepository.saveAll(pedido.getItens());
-        //emailService.sendOrderConfirmationEmail(pedido);    
+        itemPedidoRepository.saveAll(pedido.getItens()); 
         return pedido;
     }
 
