@@ -33,19 +33,10 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Angular Material
 * Bootstrap 4
 * Ionic 6
+* Amazon Web Services
 * Amazon S3
-
-
-
-## Etapas
-
-* Implatação do modelo entidade relacional
-* Criação da API com Spring Boot e MySQL
-* Criação da Aplicação web com Angular
-* Criação da Aplicação Mobile com Ionic
-* Deploy do Backend no Heroku
-* Deploy do Frontend no  Netlify
-* Deploy e publicação da Aplicação mobile
+* Netlify
+* Play Store
 
 
 
@@ -65,5 +56,7 @@ Copyright © 2022 <a href="https://github.com/edderluanps" >Edder Luan</a>
 
 Este projeto está sob lincença MIT.
 
-Free Template<a href="https://startbootstrap.com/theme/sb-admin-2"> SB Admin 2 </a>
+Free Admin Template<a href="https://startbootstrap.com/theme/sb-admin-2"> SB Admin 2 </a>
+
+Free Logo by <a href="https://www.freelogodesign.org">Free Logo Design</a>
 
