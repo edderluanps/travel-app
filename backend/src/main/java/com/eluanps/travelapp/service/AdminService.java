@@ -4,13 +4,18 @@ import com.eluanps.travelapp.entity.Admin;
 import com.eluanps.travelapp.repository.AdminRepository;
 import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AdminService {
+
+    @Autowired
+    private BCryptPasswordEncoder bpe;
 
     @Autowired
     private AdminRepository adminRepository;
@@ -24,7 +29,15 @@ public class AdminService {
     }
 
     public Admin salvar(Admin admin) {
-        return adminRepository.save(admin);
+        Admin newAdmin = new Admin();
+        newAdmin.setNome(admin.getNome());
+        newAdmin.setEmail(admin.getEmail());
+        newAdmin.setCpf(admin.getCpf());
+        newAdmin.setSenha(bpe.encode(admin.getSenha()));
+        newAdmin.setDataNascimento(admin.getDataNascimento());
+        newAdmin.setDataCadastro(admin.getDataCadastro());
+        newAdmin.setAtivo(true);
+        return adminRepository.save(newAdmin);
     }
 
     public void atualizar(Long id, Admin admin) {
@@ -36,9 +49,9 @@ public class AdminService {
 
     public void delete(Long id) {
         findById(id);
-        try{
+        try {
             adminRepository.deleteById(id);
-        }catch(DataIntegrityViolationException ex){
+        } catch (DataIntegrityViolationException ex) {
             throw new DataIntegrityException("Não foi possivel deletar o Admin: Usuário Ativo.");
         }
     }

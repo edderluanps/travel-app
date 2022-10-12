@@ -1,7 +1,9 @@
 package com.eluanps.travelapp.entity.dto;
 
 import com.eluanps.travelapp.service.validation.ClienteInsert;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -28,21 +30,20 @@ public class ClienteNewDTO implements Serializable {
     @Email(message = "Email inválido")
     @Column(unique = true)
     private String email;
-    
+
     @Column(unique = true)
     @NotEmpty(message = "Preenchimento obrigatório")
     private String cpfOuCnpj;
 
     private Integer tipo;
 
-    @NotEmpty(message = "Preenchimento obrigatório")
-    private String dataNascimento;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date dataNascimento;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date dataCadastro;
 
     @NotEmpty(message = "Preenchimento obrigatório")
-    private String dataCadastro;
-
-    @NotEmpty(message = "Preenchimento obrigatório")
-    @Length(min = 5, max = 20, message = "Campo deve conter de 5 à 20 caracteres")
     private String senha;
 
     @NotEmpty(message = "Preenchimento obrigatório")

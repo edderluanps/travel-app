@@ -1,6 +1,7 @@
 package com.eluanps.travelapp.entity;
 
 import com.eluanps.travelapp.entity.enums.TipoCliente;
+import com.eluanps.travelapp.entity.enums.TipoPerfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
@@ -9,22 +10,22 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_cliente")
-@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cliente implements Serializable {
 
@@ -36,9 +37,11 @@ public class Cliente implements Serializable {
     private Long id;
     private String nome;
     private String cpfOuCnpj;
-    
-    @Column(unique=true)
+
+    @Column(unique = true)
     private String email;
+
+    @JsonIgnore
     private String senha;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
@@ -56,11 +59,19 @@ public class Cliente implements Serializable {
     @CollectionTable(name = "telefone")
     private Set<String> telefone = new HashSet<>();
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "perfis")
+    private Set<Integer> perfis = new HashSet<>();
+
     @JsonIgnore
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<>();
 
     private boolean ativo;
+
+    public Cliente() {
+        addPerfis(TipoPerfil.CLIENTE);
+    }
 
     public Cliente(Long id, String nome, String cpfOuCnpj, String email, String senha, Date dataNascimento, Date dataCadastro, TipoCliente tipoCliente, boolean ativo) {
         this.id = id;
@@ -71,6 +82,7 @@ public class Cliente implements Serializable {
         this.dataNascimento = dataNascimento;
         this.dataCadastro = dataCadastro;
         this.tipoCliente = (tipoCliente == null) ? null : tipoCliente.getCod();
+        addPerfis(TipoPerfil.CLIENTE);
         this.ativo = ativo;
     }
 
@@ -114,6 +126,14 @@ public class Cliente implements Serializable {
         this.senha = senha;
     }
 
+    public Set<TipoPerfil> getPerfis() {
+        return perfis.stream().map(obj -> TipoPerfil.toEnum(obj)).collect(Collectors.toSet());
+    }
+
+    public void addPerfis(TipoPerfil perfil) {
+        perfis.add(perfil.getCod());
+    }
+
     public Date getDataNascimento() {
         return dataNascimento;
     }
@@ -137,7 +157,7 @@ public class Cliente implements Serializable {
     public void setTipoCliente(TipoCliente tipoCliente) {
         this.tipoCliente = tipoCliente.getCod();
     }
-    
+
     public List<Endereco> getEndereco() {
         return enderecos;
     }
