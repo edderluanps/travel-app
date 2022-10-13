@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +31,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<ClienteDTO> getAll() {
         List<Cliente> lista = clienteService.getAll();
@@ -59,12 +61,14 @@ public class ClienteController {
       cliente = clienteService.atualizar(cliente);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         clienteService.delete(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/page")
     public Page<ClienteDTO> getPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page, 

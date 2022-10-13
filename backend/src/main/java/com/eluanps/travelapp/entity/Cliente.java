@@ -67,6 +67,10 @@ public class Cliente implements Serializable {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Pedido> pedidos = new ArrayList<>();
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "cliente")
+    private List<Post> posts = new ArrayList<>();
+
     private boolean ativo;
 
     public Cliente() {
@@ -180,6 +184,14 @@ public class Cliente implements Serializable {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public boolean isAtivo() {

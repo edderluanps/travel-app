@@ -40,7 +40,7 @@ public class Post implements Serializable{
     private Date dataPostagem;
     
     @ManyToOne
-    @JoinColumn(name = "admin_id")
-    private Admin admin;
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
 }
