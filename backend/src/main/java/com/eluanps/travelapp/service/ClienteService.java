@@ -6,7 +6,10 @@ import com.eluanps.travelapp.entity.Endereco;
 import com.eluanps.travelapp.entity.dto.ClienteDTO;
 import com.eluanps.travelapp.entity.dto.ClienteNewDTO;
 import com.eluanps.travelapp.entity.enums.TipoCliente;
+import com.eluanps.travelapp.entity.enums.TipoPerfil;
 import com.eluanps.travelapp.repository.ClienteRepository;
+import com.eluanps.travelapp.security.UserSS;
+import com.eluanps.travelapp.service.exceptions.AuthorizationException;
 import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.Date;
@@ -34,6 +37,11 @@ public class ClienteService {
     }
 
     public Cliente findById(Long id) {
+        
+        UserSS user = UserService.authenticated();
+        if (user == null || !user.hasRole(TipoPerfil.ADMIN) && !id.equals(user.getId())) {
+            throw new AuthorizationException("Acesso negado");
+        }
         return clienteRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
     }
 

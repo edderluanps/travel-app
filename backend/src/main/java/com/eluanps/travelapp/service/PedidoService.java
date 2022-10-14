@@ -1,5 +1,6 @@
 package com.eluanps.travelapp.service;
 
+import com.eluanps.travelapp.entity.Cliente;
 import com.eluanps.travelapp.entity.ItemPedido;
 import com.eluanps.travelapp.entity.Pedido;
 import com.eluanps.travelapp.entity.PgBoleto;
@@ -7,12 +8,17 @@ import com.eluanps.travelapp.entity.enums.PagamentoStatus;
 import com.eluanps.travelapp.repository.ItemPedidoRepository;
 import com.eluanps.travelapp.repository.PagamentoRepository;
 import com.eluanps.travelapp.repository.PedidoRepository;
+import com.eluanps.travelapp.security.UserSS;
+import com.eluanps.travelapp.service.exceptions.AuthorizationException;
 import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -38,7 +44,7 @@ public class PedidoService {
 
     @Autowired
     private EmailService emailService;
-    
+
     public List<Pedido> getAll() {
         return pedidoRepository.findAll();
     }
@@ -67,7 +73,7 @@ public class PedidoService {
             ipedido.setPedido(pedido);
         }
 
-        itemPedidoRepository.saveAll(pedido.getItens()); 
+        itemPedidoRepository.saveAll(pedido.getItens());
         return pedido;
     }
 
@@ -85,6 +91,16 @@ public class PedidoService {
         } catch (DataIntegrityViolationException ex) {
             throw new DataIntegrityException("Não foi possivel deletar o Pedido: Item Ativo.");
         }
+    }
+
+    public Page<Pedido> findPage(Integer page, Integer pageRows, String orderBy, String direction) {
+        UserSS user = UserService.authenticated();
+        if (user == null) {
+            throw new AuthorizationException("Acesso negado");
+        }
+        PageRequest pageRequest = PageRequest.of(page, pageRows, Direction.valueOf(direction), orderBy);
+        Cliente cliente = clienteService.findById(user.getId());
+        return pedidoRepository.findByCliente(cliente, pageRequest);
     }
 
 }
