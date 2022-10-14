@@ -46,7 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] PUBLIC_MATCHERS_POST = {
         "/h2-console/**",
-        "/api/cliente/**"
+        "/api/cliente/**",
+        "/auth/forgot/**"
     };
 
     @Override

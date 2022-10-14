@@ -1,5 +1,6 @@
 package com.eluanps.travelapp.service;
 
+import com.eluanps.travelapp.entity.Cliente;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,11 @@ public class SMTPEmailService extends AbstractEmailService {
         mailSender.send(smm);
         LOG.info("email enviado");
 
+    }
+
+    @Override
+    public void sendNewPasswordEmail(Cliente cliente, String newPassword) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
