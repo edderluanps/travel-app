@@ -74,6 +74,7 @@ public class PedidoService {
         }
 
         itemPedidoRepository.saveAll(pedido.getItens());
+        //emailService.sendOrderConfirmationEmail(pedido);
         return pedido;
     }
 
@@ -93,14 +94,14 @@ public class PedidoService {
         }
     }
 
-    public Page<Pedido> findPage(Integer page, Integer pageRows, String orderBy, String direction) {
+    public Page<Pedido> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
         UserSS user = UserService.authenticated();
         if (user == null) {
             throw new AuthorizationException("Acesso negado");
         }
-        PageRequest pageRequest = PageRequest.of(page, pageRows, Direction.valueOf(direction), orderBy);
+        PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
         Cliente cliente = clienteService.findById(user.getId());
-        return pedidoRepository.findByCliente(cliente, pageRequest);
+        return pedidoRepository.findAll(pageRequest);
     }
 
 }

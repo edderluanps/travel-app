@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,12 +26,12 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
 
-    /**
-     * @PreAuthorize("hasRole('ADMIN')")
-     * @GetMapping
-     * public List<Pedido> getAll() { return pedidoService.getAll();
-     * }
-     */
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping
+    public List<Pedido> getAll() {
+        return pedidoService.getAll();
+    }
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public Pedido findById(@PathVariable Long id) {
@@ -59,13 +57,13 @@ public class PedidoController {
         pedidoService.delete(id);
     }
 
-    @GetMapping
+    @GetMapping("/page")
     public Page<Pedido> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "pageRows", defaultValue = "24") Integer pageRows,
-            @RequestParam(value = "orderBy", defaultValue = "dataPedido") String orderBy,
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy,
             @RequestParam(value = "direction", defaultValue = "DESC") String direction) {
-        Page<Pedido> list = pedidoService.findPage(page, pageRows, orderBy, direction);
+        Page<Pedido> list = pedidoService.findPage(page, linesPerPage, orderBy, direction);
         return list;
     }
 

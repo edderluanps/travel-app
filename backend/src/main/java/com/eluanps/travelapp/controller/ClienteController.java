@@ -56,9 +56,9 @@ public class ClienteController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizar(@Valid @RequestBody ClienteDTO clienteDto, @PathVariable Long id) {
-      Cliente cliente = clienteService.fromDTO(clienteDto);
-      cliente.setId(id);
-      cliente = clienteService.atualizar(cliente);
+        Cliente cliente = clienteService.fromDTO(clienteDto);
+        cliente.setId(id);
+        cliente = clienteService.atualizar(cliente);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -67,17 +67,24 @@ public class ClienteController {
     public void delete(@PathVariable Long id) {
         clienteService.delete(id);
     }
-    
+
+    @PutMapping("/email")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Cliente find(@RequestParam(value = "value") String email) {
+        Cliente cliente = clienteService.findByEmail(email);
+        return cliente;
+    }
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/page")
     public Page<ClienteDTO> getPage(
-            @RequestParam(value = "page", defaultValue = "0") Integer page, 
-            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage, 
-            @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy, 
-            @RequestParam(value = "direction", defaultValue = "ASC") String direction){
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
         Page<Cliente> lista = clienteService.findPage(page, linesPerPage, orderBy, direction);
         Page<ClienteDTO> listaDTO = lista.map(obj -> new ClienteDTO(obj));
         return listaDTO;
-    }   
+    }
 
 }

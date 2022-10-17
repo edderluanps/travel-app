@@ -16,6 +16,10 @@ public class CidadeService {
         return cidadeRepository.findAll();
     }
 
+    public List<Cidade> findByEstado(Long estadoId) {
+        return cidadeRepository.findCidades(estadoId);
+    }
+
     public Cidade salvar(Cidade cidade) {
         return cidadeRepository.save(cidade);
     }

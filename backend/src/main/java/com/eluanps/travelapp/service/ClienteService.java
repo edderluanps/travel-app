@@ -37,7 +37,7 @@ public class ClienteService {
     }
 
     public Cliente findById(Long id) {
-        
+
         UserSS user = UserService.authenticated();
         if (user == null || !user.hasRole(TipoPerfil.ADMIN) && !id.equals(user.getId())) {
             throw new AuthorizationException("Acesso negado");
@@ -70,6 +70,19 @@ public class ClienteService {
         return clienteRepository.findAll(pageRequest);
     }
 
+    public Cliente findByEmail(String email) {
+        UserSS user = UserService.authenticated();
+        if (user == null || !user.hasRole(TipoPerfil.ADMIN) && !email.equals(user.getUsername())) {
+            throw new AuthorizationException("Acesso negado");
+        }
+
+        Cliente cliente = clienteRepository.findByEmail(email);
+        if (cliente == null) {
+            throw new ObjectNotFoundException("Usuário não encontrado!");
+        }
+        return cliente;
+    }
+
     public Cliente fromDTO(ClienteDTO clienteDto) {
         return new Cliente(clienteDto.getId(), clienteDto.getNome(), null, clienteDto.getEmail(),
                 null, null, null, null, false);
@@ -79,7 +92,7 @@ public class ClienteService {
         Cliente cliente = new Cliente(null, clienteDto.getNome(), clienteDto.getCpfOuCnpj(), clienteDto.getEmail(), bpe.encode(clienteDto.getSenha()),
                 clienteDto.getDataNascimento(), clienteDto.getDataCadastro(), TipoCliente.toEnum(clienteDto.getTipo()), true);
 
-        Cidade cidade = new Cidade(clienteDto.getCidadeId().longValue(), null, null);
+        Cidade cidade = new Cidade(clienteDto.getCidadeId().longValue(), null, null, null);
 
         Endereco endereco = new Endereco(null, clienteDto.getLogradouro(), clienteDto.getNumero(), clienteDto.getComplemento(),
                 clienteDto.getBairro(), clienteDto.getCep(), cliente, cidade, true);

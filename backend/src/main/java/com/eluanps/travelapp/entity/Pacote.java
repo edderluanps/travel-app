@@ -35,6 +35,7 @@ public class Pacote implements Serializable {
 
     private String nome;
     private double preco;
+    private String img;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "voos_id", referencedColumnName = "id")
@@ -83,6 +84,14 @@ public class Pacote implements Serializable {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Voos getVoos() {

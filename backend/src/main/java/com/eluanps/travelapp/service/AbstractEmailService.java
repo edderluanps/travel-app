@@ -13,18 +13,24 @@ public abstract class AbstractEmailService implements EmailService {
 
     @Override
     public void sendOrderConfirmationEmail(Pedido pedido) {
-        SimpleMailMessage smm = simpleMailMessageFromPedido(pedido);
-        sendEmail(smm);
+        SimpleMailMessage sm = prepareSimpleMailMessageFromPedido(pedido);
+        sendEmail(sm);
     }
 
-    protected SimpleMailMessage simpleMailMessageFromPedido(Pedido pedido) {
-        SimpleMailMessage smm = new SimpleMailMessage();
-        smm.setTo(pedido.getCliente().getEmail());
-        smm.setFrom(sender);
-        smm.setSubject("Pedido Confirmado: Cód: " + pedido.getId());
-        smm.setSentDate(new Date(System.currentTimeMillis()));
-        smm.setText(pedido.toString());
-        return smm;
+    protected SimpleMailMessage prepareSimpleMailMessageFromPedido(Pedido pedido) {
+        SimpleMailMessage sm = new SimpleMailMessage();
+        sm.setTo(pedido.getCliente().getEmail());
+        sm.setFrom(sender);
+        sm.setSubject("Pedido confirmado! Código: " + pedido.getId());
+        sm.setSentDate(new Date(System.currentTimeMillis()));
+        sm.setText(pedido.toString());
+        return sm;
+    }
+
+    @Override
+    public void sendNewPasswordEmail(Cliente cliente, String newPassword) {
+        SimpleMailMessage sm = prepareNewPasswordEmail(cliente, newPassword);
+        sendEmail(sm);
     }
 
     protected SimpleMailMessage prepareNewPasswordEmail(Cliente cliente, String newPassword) {

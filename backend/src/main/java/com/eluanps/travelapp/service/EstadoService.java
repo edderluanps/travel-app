@@ -16,6 +16,10 @@ public class EstadoService {
         return estadoRepository.findAll();
     }
 
+    public List<Estado> findAll() {
+        return estadoRepository.findAllByOrderByNome();
+    }
+
     public Estado salvar(Estado estado) {
         return estadoRepository.save(estado);
     }

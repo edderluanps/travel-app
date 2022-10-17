@@ -5,11 +5,173 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="../../static/css/emailstyle.css"/>
     </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Englebert&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        html, body{
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .content{
+            width: 50%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            height: 150px;
+            background: #005580;
+            color: #fff;
+        }
+
+        .header h2{
+            padding: 50px 0 0 50px;
+            position: absolute;
+            left: 0;
+            font-size: 35px;
+            font-family: 'Englebert', sans-serif;
+        }
+
+        .header span{
+            color: #ff3300;
+        }
+
+        .email-content{
+            background: url("https://cdn.pixabay.com/photo/2016/11/14/04/00/beach-1822544_960_720.jpg");
+            background-size: cover;
+            height: 700px;
+        }
+
+        .email-content .email-body{
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .email-content .email-body h2{
+            padding-bottom: 20px;
+        }
+
+        .email-content .email-body .btn-ver{
+            height: 30px;
+            width: 100px;
+            background: #005580;
+            position: relative;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0;
+            justify-content: center;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .email-content .email-body .btn-ver:hover{
+            background: #ff3300;
+            border: 1px solid #005580;
+            font-size: 15px;
+        }
+
+        .email-content .email-data{
+            background: rgba(255,255,255, 0.7);
+            height: 100%;
+            width: 100%;
+            padding: 50px 20px;
+        }
+
+        .email-content .email-data h3{
+            padding: 50px 0;
+        }
+
+        .email-content .email-data table{
+            text-align: center;
+            width: 100%;
+        }
+
+        .email-content .email-data table tr, td{
+            border:none;
+        }
+
+        .valor-total{
+            padding: 50px 0 0 20px;
+            font-size: 35px;
+        }
+
+        .footer{
+            background: #ff3300;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .footer h2{
+            padding: 25px 0;
+            font-family: 'Shadows Into Light', cursive;
+        }
+
+        .footer .btn-quero{
+            height: 30px;
+            width: 100px;
+            background: #005580;
+            position: relative;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0;
+            justify-content: center;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .footer .btn-quero:hover{
+            background: #ff3300;
+            border: 1px solid #005580;
+            font-size: 15px;
+        }
+
+        .footer-2{
+            text-align: center;
+            justify-content: center;
+            height: 25px;
+        }
+
+        .footer-2 img{
+            height: 40px;
+            width: 75px;
+            padding-top: 10px;
+        }
+
+        .footer-2 h5{
+            padding: 20px 0;
+        }
+    </style>
     <body>
         <div class="content">
 
             <div class="header">
-                <h2>travel.io</h2>
+                <h2>travel.<span>io</span></h2>
             </div>
 
             <div class="email-content">
@@ -20,6 +182,7 @@
                         <h4>Pedido confirmado!</h4><br>
                         <h4>Olá <span th:text="${pedido.cliente.nome}"></span>, agradecemos seu pedido, faremos o possível para que você tenha</h4>
                         <h2> a melhor experiência da sua vida.</h2>
+                        <button class="btn-ver" href="">Ver no site</button>
                     </div>
                     <h1>
                         Pedido número: <span th:text="${pedido.id}"> </span>
@@ -35,6 +198,7 @@
                         Situação do pagamento: <span
                             th:text="${pedido.pagamento.status.descricao}"></span>
                     </p>
+
                     <h3>Detalhes do pedido:</h3>
                     <table border="0">
                         <tr>
