@@ -1,0 +1,108 @@
+.sobre-area {
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-area .area-info {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sobre-area .area-info .col-1 {
+    height: 100%;
+    width: 60%;
+}
+
+.sobre-area .area-info .col-1 h2 {
+    padding: 100px 0 50px 100px;
+}
+
+.sobre-area .area-info .col-1 p {
+    width: 70%;
+    padding: 10px 0 10px 100px;
+}
+
+.sobre-area .area-info .col-2 {
+    height: 100%;
+    width: 40%;
+}
+
+.sobre-area .area-info .col-2 p {
+    width: 70%;
+    padding: 10px 0 10px 0;
+}
+
+.sobre-area .area-info .col-2 h2 {
+    padding: 100px 0 50px 0;
+}
+
+.sobre-area .area-info .col-2 .email-field {
+    padding: 20px 0;
+}
+
+.sobre-area .area-info .col-2 .email-field input {
+    height: 40px;
+    width: 250px;
+    padding: 0 10px;
+}
+
+.sobre-area .area-info .col-2 .email-field .btn-email-send {
+    height: 40px;
+    width: 150px;
+    color: #fff;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(157,16,16,1) 90%, rgba(252,176,69,1) 100%);
+    font-size: 15px;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sobre-area .area-info .col-2 .email-field .btn-email-send:hover {
+    font-size: 18px;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.sobre-area .area-newslatter {
+    color: #fff;
+    height: 50%;
+    width: 100%;
+    background: url("../../../assets/imgs/img2.jpg");
+    background-size: cover;
+}
+
+.sobre-area .area-newslatter h2 {
+    text-align: end;
+    padding: 120px 250px 0;
+    font-size: 40px;
+}
+
+.sobre-area .area-newslatter p {
+    text-align: right;
+    padding: 40px 250px 40px;
+    font-size: 20px;
+}
+
+.sobre-area .area-newslatter .btn-newsletter {
+    position: absolute;
+    right: 250px;
+    height: 50px;
+    width: 150px;
+    background: #fff;
+    font-size: 15px;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sobre-area .area-newslatter .btn-newsletter:hover {
+    font-size: 18px;
+    background: #1a1a1a;
+    color: #fff;
+}
