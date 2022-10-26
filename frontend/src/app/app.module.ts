@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AreaPacotesComponent } from './home/area-pacotes/area-pacotes.component';
 import { AreaBlogComponent } from './home/area-blog/area-blog.component';
 import { AreaLocaisComponent } from './home/area-locais/area-locais.component';
-import { AreaSobreComponent } from './home/area-sobre/area-sobre.component'
+import { AreaSobreComponent } from './home/area-sobre/area-sobre.component';
+import { BlogPageComponent } from './blog-page/blog-page.component'
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { AreaSobreComponent } from './home/area-sobre/area-sobre.component'
     AreaPacotesComponent,
     AreaBlogComponent,
     AreaLocaisComponent,
-    AreaSobreComponent
+    AreaSobreComponent,
+    BlogPageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,164 @@
+.header {
+    background: url("../../assets/imgs/img1.jpg");
+    background-size: cover;
+    height: 700px;
+}
+
+.header .navbar {
+    height: 75px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.header .navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1a1a1a;
+    top:0;
+    left:0;
+    right:0;
+    z-index:99;
+}
+
+.header .navbar .logo-area a {
+    padding-left: 75px;
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Englebert', sans-serif;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.header .navbar .menu-bar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 150px;
+    top: 30px;
+}
+
+.header .navbar .menu-bar a {
+    transition: all 0.5s ease;
+}
+
+.header .navbar .menu-bar a:hover {
+    transform: scale(1.1);
+    color: #dd99ff;
+}
+
+.header .navbar .user-area {
+    height: 75px;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    justify-content: center;
+}
+
+.header .navbar .user-area a{
+    padding: 20px 10px;
+    height: 100%;
+}
+
+.header .navbar .user-area mat-icon {
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.header .navbar .user-area img:hover {
+    transform: scale(1.1);
+}
+
+.header .navbar .menu-bar a {
+    font-size: 18px;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.header .header-text{
+    width: 100%;
+    text-align: center;
+    padding: 250px 0;
+}
+
+.header .header-text h2, h4{
+    color: #fff;
+}
+
+.header .header-text h2{
+    font-size: 50px;
+}
+
+.header .header-text h4{
+    font-size: 20px;
+}
+
+.blog-area {
+    background: #fff;
+    height: 100%;
+}
+
+.blog-area h2 {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.blog-area h5 {
+    font-size: 18px;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 1;
+}
+
+.blog-area .cards {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+}
+
+.blog-area .cards .card {
+    display: grid;
+    grid-template-rows: max-content 1px;
+    text-align: center;
+    height: 400px;
+    width: 420px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.blog-area .cards .card img {
+    height: 250px;
+    width: 420px;
+    padding: 20px 20px 0;
+}
+
+.blog-area .cards .card h2 {
+    font-size: 18px;
+}
+
+.blog-area .cards .card h5 {
+    padding-left: 20px;
+    font-size: 12px;
+    text-align: start;
+}
+
+.blog-area .cards .card p {
+    padding: 10px 50px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.blog-area .cards .card a {
+    font-size: 14px;
+}
+
