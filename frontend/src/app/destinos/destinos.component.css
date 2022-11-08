@@ -186,7 +186,7 @@ html, body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: url('../../../assets/imgs/6.jpg') no-repeat;
+    background: url('../../assets/imgs/7.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -212,8 +212,8 @@ html, body{
 }
 
 
-/*Home*/
-.blog-area{
+/*Pacotes*/
+.destinos-area{
     height: auto;
     max-height: auto;
     display: flex;
@@ -221,13 +221,12 @@ html, body{
     align-items: center;
 }
 
-.blog-area .content{
+.destinos-area .content{
     width: 100%;
     background: #e6f0ff;
 }
 
-.blog-area .content .label{
-    font-size: 30px;
+.destinos-area .content .label{
     height: 70px;
     width: 100%;
     background: #e6f0ff;
@@ -239,11 +238,11 @@ html, body{
     align-items: center;
 }
 
-.blog-area .content .label h2{
+.destinos-area .content .label h2{
     font-size: 30px;
 }
 
-.blog-area .content .cards {
+.destinos-area .content .cards {
     width: 95%;
     padding: 100px 50px;
     display: grid;
@@ -251,9 +250,9 @@ html, body{
     grid-gap: 30px;
 }
 
-.blog-area  .content .cards .card{
-    height: 400px;
-    width: 395px;
+.destinos-area .content .cards .card{
+    height: 340px;
+    width: 390px;
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 0 25px;
@@ -262,59 +261,57 @@ html, body{
     flex-direction: column;
 }
 
-.blog-area  .content .cards .card .img-post{
-    background: yellowgreen;
-    height: 50%;
+.destinos-area .content .cards .card .img-area{
+    height: 70%;
     width: 100%;
 }
 
-
-.blog-area  .content .cards .card .img-post img{
+.destinos-area .content .cards .card .img-area img{
     height: 100%;
     width: 100%;
+    border-radius: 5px 5px 0 0;
 }
 
-.blog-area  .content .cards .card .data-post{
-    height: 50%;
+.destinos-area .content .cards .card .info-area{
+    height: 30%;
     width: 100%;
+    position: relative;
+    bottom: 20px;
+    border-radius: 5px 5px 0 0;
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-.blog-area  .content .cards .card .data-post h1{
-    font-size: 16px;
-    text-align: center;
-}
-
-.blog-area  .content .cards .card .data-post h5{
-    font-size: 12px;
-    padding: 0 20px;
-}
-
-.blog-area  .content .cards .card .data-post p{
-    font-size: 14px;
-    padding: 0 10px;
-}
-
-.blog-area  .content .cards .card .data-post .autor-box{
-    height: 30px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 0 20px;
 }
 
-.blog-area  .content .cards .card .data-post .autor-box h2{
+.destinos-area .content .cards .card .info-area h1{
+    font-size: 16px;
+}
+
+.destinos-area .content .cards .card .info-area h5{
     font-size: 14px;
-    padding: 15px 10px 0;
 }
 
-.blog-area  .content .cards .card .data-post .autor-box img{
-    height: 30px;
-    width: 30px;
+.destinos-area .content .cards .card .info-area .btn-mostrar-local{
+    display: flex;
+    height: 50px;
+    width: 150px;
+    background: #0066ff;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.destinos-area .content .cards .card .info-area .btn-mostrar-local:hover{
+    background: #0047b3;
+    font-size: 17px;
 }
 
 

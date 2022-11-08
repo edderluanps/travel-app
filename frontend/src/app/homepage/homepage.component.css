@@ -186,7 +186,7 @@ html, body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: url('../../../assets/imgs/8.jpg') no-repeat;
+    background: url('../../assets/imgs/8.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -260,7 +260,7 @@ html, body{
     border-radius: 5px;
     background-color: #fff;
     padding: 3px 5px;
-    background: rgba(255,255,255,0.5) url('../../../assets/icons/calendar.png')  97% 50% no-repeat;
+    background: rgba(255,255,255,0.5) url('../../assets/icons/calendar.png')  97% 50% no-repeat;
     background-size: 10%;
 }
 
@@ -615,7 +615,7 @@ html, body{
 .home-content .blog-area .content .row-1{
     height: 70%;
     width: 100%;
-    background: url('../../../assets/imgs/3.jpg') no-repeat;
+    background: url('../../assets/imgs/3.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -763,7 +763,7 @@ html, body{
 .home-content .newsletter-area .box .col-2{
     height: 100%;
     width: 50%;
-    background: url('../../../assets/imgs/4.jpg') no-repeat;
+    background: url('../../assets/imgs/4.jpg') no-repeat;
     background-size: cover;
     border-radius: 0 5px 5px 0;
 }

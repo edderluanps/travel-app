@@ -7,14 +7,24 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomepageComponent } from './home/homepage/homepage.component';
-import { BlogComponent } from './home/blog/blog.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BlogComponent } from './blog/blog.component';
+import { PacotesComponent } from './pacotes/pacotes.component';
+import { DestinosComponent } from './destinos/destinos.component';
+import { LoginComponent } from './login/login.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    BlogComponent
+    BlogComponent,
+    PacotesComponent,
+    DestinosComponent,
+    LoginComponent,
+    CarrinhoComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
