@@ -51,10 +51,10 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 ## Funções adicionais
 
 * Emissão de relatórios para Admins
-* Emissão de tickets para Clientes
 * Emissão de comprovantes para Clientes
 * Emissão de boletos para Clientes
-* Emails de alerta e comprovação para Clientes
+* Emails de alerta para Clientes
+* Emails de comprovação para Clientes
 
 
 
@@ -66,5 +66,5 @@ Este projeto está sob lincença MIT.
 
 Free Admin Template<a href="https://startbootstrap.com/theme/sb-admin-2"> SB Admin 2 </a>
 
-Free Logo by <a href="https://www.freelogodesign.org">Free Logo Design</a>
+Logo gerado gratuitamete em <a href="https://www.freelogodesign.org">Free Logo Design</a>
 
