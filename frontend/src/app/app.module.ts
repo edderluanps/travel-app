@@ -14,6 +14,9 @@ import { DestinosComponent } from './destinos/destinos.component';
 import { LoginComponent } from './login/login.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { InfoComponent } from './info/info.component';
+import { PacotePageComponent } from './pacotes/pacote-page/pacote-page.component';
+import { BlogPostPageComponent } from './blog/blog-post-page/blog-post-page.component';
+import { DestinoPageComponent } from './destinos/destino-page/destino-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { InfoComponent } from './info/info.component';
     DestinosComponent,
     LoginComponent,
     CarrinhoComponent,
-    InfoComponent
+    InfoComponent,
+    PacotePageComponent,
+    BlogPostPageComponent,
+    DestinoPageComponent
   ],
   imports: [
     BrowserModule,
