@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cidade } from './Cidade';
+import { DestinosService } from './destinos.service';
 
 @Component({
   selector: 'app-destinos',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DestinosComponent implements OnInit {
 
-  constructor() { }
+  cidade: Cidade[];
+
+  constructor(private destinosService: DestinosService) { }
 
   ngOnInit(): void {
+    this.getAllCidades();
+
   }
+
+  getAllCidades(){
+    this.destinosService.getAllCidades().subscribe(response => this.cidade = (response));
+  }
+
+  getCidadeById(){
+
+  }
+
 
 }

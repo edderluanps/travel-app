@@ -3,6 +3,7 @@ package com.eluanps.travelapp.controller;
 import com.eluanps.travelapp.controller.util.URL;
 import com.eluanps.travelapp.entity.Pacote;
 import com.eluanps.travelapp.service.PacoteService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -25,12 +26,12 @@ public class PacoteController {
 
     @Autowired
     private PacoteService pacoteService;
-/*
+
     @GetMapping
     public List<Pacote> getAll() {
         return pacoteService.getAll();
     }
-*/
+
     
     @GetMapping("/{id}")
     public Pacote findById(@PathVariable Long id) {
@@ -57,8 +58,8 @@ public class PacoteController {
     public void delete(@PathVariable Long id) {
         pacoteService.delete(id);
     }
-
-    @GetMapping
+/**
+    @GetMapping("/page")
     public Page<Pacote> findPage(
             @RequestParam(value = "nome", defaultValue = "") String nome,
             @RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -69,5 +70,5 @@ public class PacoteController {
         return pacoteService.search(nomeDecoded, page, linesPerPage, orderBy, direction);
 
     }
-
+*/
 }

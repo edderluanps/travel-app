@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pacotes } from './Pacotes';
+import { PacotesService } from './pacotes.service';
 
 @Component({
   selector: 'app-pacotes',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacotesComponent implements OnInit {
 
-  constructor() { }
+  pacotes: Pacotes[];
+
+  constructor(private pacotesService: PacotesService) { }
 
   ngOnInit(): void {
+    this.getAllPacotes();
+  }
+
+  getAllPacotes(){
+    this.pacotesService.getAllPacotes().subscribe(response => this.pacotes = (response));
+  }
+
+  getPacoteById(){
+
   }
 
 }

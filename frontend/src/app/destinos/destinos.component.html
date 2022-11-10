@@ -56,53 +56,17 @@
 
             <div class="cards">
 
-                <div class="card">
+                <article class="card" *ngFor="let item of cidade">
                     <div class="img-area">
-                        <img src="assets/imgs/2.jpg" alt="">
+                        <img [src]="item.img" alt="">
                     </div>
                     <div class="info-area">
-                        <h1>Local nome</h1>
+                        <h1>{{ item.nome }}</h1>
                         <a routerLink="/destino-page" class="btn-mostrar-local">
                             Ver mais
                         </a>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="img-area">
-                        <img src="assets/imgs/2.jpg" alt="">
-                    </div>
-                    <div class="info-area">
-                        <h1>Local nome</h1>
-                        <a routerLink="/destino-page" class="btn-mostrar-local">
-                            Ver mais
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="img-area">
-                        <img src="assets/imgs/2.jpg" alt="">
-                    </div>
-                    <div class="info-area">
-                        <h1>Local nome</h1>
-                        <a routerLink="/destino-page" class="btn-mostrar-local">
-                            Ver mais
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="img-area">
-                        <img src="assets/imgs/2.jpg" alt="">
-                    </div>
-                    <div class="info-area">
-                        <h1>Local nome</h1>
-                        <a routerLink="/destino-page" class="btn-mostrar-local">
-                            Ver mais
-                        </a>
-                    </div>
-                </div>
+                </article>
 
             </div>
         </div>
