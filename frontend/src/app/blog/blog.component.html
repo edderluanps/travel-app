@@ -5,28 +5,28 @@
     <nav class="navbar">
 
         <div class="col-1">
-            <a href="index.html"><img src="assets/icons/logo-w.png" alt=""></a>
+            <a routerLink="/"><img src="assets/icons/logo-w.png" alt=""></a>
             <h2>Travel.io</h2>
         </div>
 
         <div class="col-2">
             <div class="menu-area">
-                <a href="index.html">Home</a>
-                <a href="pacotes.html">Pacotes</a>
-                <a href="destinos.html">Destinos</a>
-                <a href="blog.html">Blog</a>
-                <a href="info.html">Sobre</a>
+                <a routerLink="/">Home</a>
+                <a routerLink="/pacotes">Pacotes</a>
+                <a routerLink="/destinos">Destinos</a>
+                <a routerLink="/blog">Blog</a>
+                <a routerLink="/info">Sobre</a>
                 <a href="#footer">Mais</a>
             </div>
 
             <div class="user-area">
                 <div class="user-perfil">
                     <img src="assets/icons/user.png" alt="">
-                    <a href="login.html">nome</a>
+                    <a routerLink="/login">nome</a>
                 </div>
 
                 <div class="carrinho">
-                    <a href="carrinho.html"><img src="assets/icons/cart.png" alt=""></a>
+                    <a routerLink="/carrinho"><img src="assets/icons/cart.png" alt=""></a>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                         <img [src]="item.img" alt="">
                     </div>
                     <div class="data-post">
-                        <h1><a href="blog-post-page.html">{{ item.titulo }}</a></h1>
+                        <h1><a routerLink="/blog-post-page">{{ item.titulo }}</a></h1>
                         <h5>{{ item.dataPostagem }}</h5>
                         <p>{{ item.descricao }}</p>
                         <div class="autor-box">
@@ -70,7 +70,7 @@
                     </div>
                 </article>
 
-                
+
 
             </div>
         </div>
@@ -121,7 +121,6 @@
         <h4>2022 - all rights reserved</h4>
     </section>
 
-    <script src="js/scripts.js"></script>
 </body>
 
 </html>

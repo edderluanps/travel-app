@@ -2,28 +2,28 @@
   <body>
     <nav class="navbar">
       <div class="col-1">
-        <a href="index.html"><img src="assets/icons/logo-w.png" alt="" /></a>
+        <a routerLink="/"><img src="assets/icons/logo-w.png" alt="" /></a>
         <h2>Travel.io</h2>
       </div>
 
       <div class="col-2">
         <div class="menu-area">
-          <a href="index.html">Home</a>
-          <a href="pacotes.html">Pacotes</a>
-          <a href="destinos.html">Destinos</a>
-          <a href="blog.html">Blog</a>
-          <a href="info.html">Sobre</a>
+          <a routerLink="/">Home</a>
+          <a routerLink="/pacotes">Pacotes</a>
+          <a routerLink="/destinos">Destinos</a>
+          <a routerLink="/blog">Blog</a>
+          <a routerLink="/info">Sobre</a>
           <a href="#footer">Mais</a>
         </div>
 
         <div class="user-area">
           <div class="user-perfil">
             <img src="assets/icons/user.png" alt="" />
-            <a href="login.html">nome</a>
+            <a routerLink="/login">nome</a>
           </div>
 
           <div class="carrinho">
-            <a href="carrinho.html"
+            <a routerLink="/carrinho"
               ><img src="assets/icons/cart.png" alt=""
             /></a>
           </div>
@@ -34,7 +34,7 @@
     <section class="pacote-area">
       <div class="content">
         <div class="col-1">
-          <h5><a href="pacotes.html">pacotes</a> > pacote name</h5>
+          <h5><a routerLink="/pacotes">pacotes</a> > pacote name</h5>
           <img src="assets/imgs/2.jpg" alt="" />
         </div>
 
@@ -65,7 +65,7 @@
             <option value="">4</option>
             <option value="">5</option>
           </select>
-          <a href="carrinho.html" class="btn-adicionar-carrinho">
+          <a routerLink="/carrinho" class="btn-adicionar-carrinho">
             Adicionar item
           </a>
         </div>

@@ -17,6 +17,8 @@ import { InfoComponent } from './info/info.component';
 import { PacotePageComponent } from './pacotes/pacote-page/pacote-page.component';
 import { BlogPostPageComponent } from './blog/blog-post-page/blog-post-page.component';
 import { DestinoPageComponent } from './destinos/destino-page/destino-page.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +32,16 @@ import { DestinoPageComponent } from './destinos/destino-page/destino-page.compo
     InfoComponent,
     PacotePageComponent,
     BlogPostPageComponent,
-    DestinoPageComponent
+    DestinoPageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
