@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/*Padrões fixos*/
+section{
+  height: 700px;
+  width: 100%;
+}
+
+.navbar{
+  height: 50px;
+  width: 100%;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px 0 150px;
+}
+
+
+.navbar .logo-area{
+  height: 100%;
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 300px;
+}
+
+.navbar .logo-area img{
+  height: 95%;
+  width: 150px;
+}
+
+.navbar .btn-user-area{
+  height: 100%;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar .btn-user-area .btn-cadastrar{
+  background: #f2f2f2;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  border-radius: 5px;
+  height: 30px;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.navbar .btn-user-area .btn-cadastrar:hover{
+  font-size: 15px;
+  background: #1a1a1a;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.navbar .btn-user-area .btn-logar{
+  background: #DC143C;
+  color: #fff;
+  border-radius: 5px;
+  height: 30px;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.navbar .btn-user-area .btn-logar:hover{
+  font-size: 15px;
+  background: none;
+  border: 1px solid #DC143C;
+  color: #DC143C;
+}
+
+/*pesquisa*/
+.search-box{
+  height: 50px;
+  width: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box .pesquisa{
+  height: 40px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-box .pesquisa input{
+  height: 40px;
+  width: 90%;
+  outline: 0;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  padding: 0 20px;
+}
+
+.search-box .pesquisa .btn-pesquisa{
+  height: 40px;
+  width: 10%;
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.5 ease;
+}
+
+.search-box .pesquisa .btn-pesquisa:hover{
+  background: #ccc;
+}
+
+/*Conteudo*/
+.conteudo{
+  background: #fff;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.conteudo .col-1{
+  height: auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 50px 50px 200px;
+}
+
+.conteudo .col-1 .card{
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 220px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.conteudo .col-1 .card img{
+  height: 100%;
+  width: 35%;
+  border-radius: 5px 0 0 5px;
+}
+
+.conteudo .col-1 .card .data{
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 10px 50px 10px;
+}
+
+.conteudo .col-1 .card .data h4{
+  font-size: 16px;
+}
+
+.conteudo .col-1 .card .data p{
+  font-size: 14px;
+}
+
+.conteudo .col-1 .card .data span{
+  font-size: 14px;
+}
+
+/**/
+.conteudo .col-2{
+  min-height: 750px;
+  max-height: auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.conteudo .col-2 .article-1{
+  height: 470px;
+  width: 100%;
+}
+
+.conteudo .col-2 .article-1 header{
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo .col-2 .article-1 .cards{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+
+.conteudo .col-2 .article-1 .cards .mini-cards{
+  height: 120px;
+  width: 100%;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.conteudo .col-2 .article-1 .cards .mini-cards img{
+  height: 100%;
+  width: 250px;
+  border-radius: 5px 0 0 5px;
+}
+
+.conteudo .col-2 .article-1 .cards .mini-cards .data{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.conteudo .col-2 .article-1 .cards .mini-cards .data h4{
+  font-size: 15px;
+}
+
+.conteudo .col-2 .article-1 .cards .mini-cards .data p{
+  font-size: 12px;
+}
+
+/**/
+.conteudo .col-2 .article-2{
+  height: 300px;
+  width: 100%;
+}
+
+.conteudo .col-2 .article-2 header{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo .col-2 .article-2 .options{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+}
+
+.conteudo .col-2 .article-2 .options a{
+  padding: 5px 0 0 10px;
+  transition: all 0.5s;
+  color: #1a1a1a;
+}
+
+.conteudo .col-2 .article-2 .options a:hover{
+  padding: 5px 0 0 15px;
+}
+
+/*footer*/
+.footer{
+  height: 300px;
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 100px;
+}
+
+.footer .col-1{
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.footer .col-1 .row-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 100px;
+}
+
+.footer .col-1 .row-1 img{
+  height: 65px;
+  width: 150px;
+}
+
+.footer .col-1 .row-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 0 0 20px;
+  text-align: start;
+}
+
+.footer .col-1 .row-2 p{
+  font-size: 12px;
+}
+
+.footer .col-1 .row-3{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 100px;
+}
+
+.footer .col-1 .row-3 i{
+  font-size: 20px;
+  color: #DC143C;
+  padding: 10px 0;
+}
+
+.footer .col-2{
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 70px 100px;
+}
+
+.footer .col-2 h2{
+  font-size: 15px;
+}
+
+.footer .col-2 ul li{
+  list-style: none;
+  padding: 3px 0;
+  font-size: 14px;
+}
+
+
+
+
+/*----------------------------*/
+
+/*Responsividade*/
+
+/*Desktop/Notebook HD*/
+
+/*Netbook/Tablets 600px*/
+
+/*Phablets/Tablets 480xp*/
+
+/*Smartphones 350px*/

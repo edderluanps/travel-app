@@ -19,6 +19,14 @@ public class PostService {
         return postRepository.findAll();
     }
 
+    public List<Post> getByDate() {
+        return postRepository.findPost();
+    }
+
+    public List<Post> getByKeyword(String titulo) {
+        return postRepository.findPostByKeyword(titulo);
+    }
+
     public Post findById(Long id) {
         return postRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Post não encontrado"));
     }
