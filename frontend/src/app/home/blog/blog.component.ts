@@ -10,6 +10,7 @@ import { Post } from './post';
 export class BlogComponent implements OnInit {
 
   post: any;
+  titulo: string;
 
   constructor(private blogService: BlogService) { }
 
@@ -23,6 +24,10 @@ export class BlogComponent implements OnInit {
 
   getPostById(id: number){
     this.blogService.getPostById(id).subscribe(response => this.post = (response));
+  }
+
+  getResultadoPesquisa(){
+    this.blogService.pesquisaPost(this.titulo).subscribe(response => this.post = (response));
   }
 
 }

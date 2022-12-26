@@ -51,9 +51,8 @@ public class PacoteService {
         }
     }
     
-    public Page<Pacote> search(String nome, Integer page, Integer pageRows, String orderBy, String direction) {
-        PageRequest pageRequest = PageRequest.of(page, pageRows, Direction.valueOf(direction), orderBy);
-        return pacoteRepository.findByNome(nome, pageRequest);
+    public List<Pacote> findByNome(String nome) {
+        return pacoteRepository.findByNome(nome);
     }
     
 }

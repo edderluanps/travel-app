@@ -49,6 +49,7 @@ section{
 }
 
 .navbar .menu-area a{
+  font-size: 16px;
   padding: 0 20px;
   color: #1a1a1a;
   transition: all 0.5s ease;
@@ -160,7 +161,7 @@ section{
 
 .banner .pesquisa{
     height: 120px;
-    width: 750px;
+    width: 550px;
     background: #f2f2f2;
     border-radius: 10px;
     position: relative;
@@ -175,31 +176,17 @@ section{
     width: 70%;
     display: flex;
     flex-direction: row;
-}
-
-.banner .pesquisa .col-1 .col-col-1, .col-col-2, .col-col-3{
-    height: 100%;
-    width: 33%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 0 20px;
 }
 
-.banner .pesquisa .col-1 select {
-    height: 30px;
-    width: 120px;
-    border-radius: 5px;
-    outline: none;
-    background: #f2f2f2;
-    color: #DC143C;
-}
-
-.banner .pesquisa .col-1 label{
-    margin: 0 0 10px;
-    padding: 0 50px 0 0;
-    font-size: 14px;
+.banner .pesquisa .col-1 input{
+  height: 35px;
+  width: 350px;
+  padding: 0 10px;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  outline: none;
 }
 
 .banner .pesquisa .col-2{
@@ -208,7 +195,6 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
 }
 
 .banner .pesquisa .col-2 .pesquisa-parametros{
@@ -222,6 +208,7 @@ section{
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    cursor: pointer;
     transition: all 0.5s ease;
 }
 

@@ -14,6 +14,7 @@ import { DestinosComponent } from './home/destinos/destinos.component';
 import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
 import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CarrinhoComponent } from './home/carrinho/carrinho.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,43 +32,35 @@ public class PacoteController {
         return pacoteService.getAll();
     }
 
-    
     @GetMapping("/{id}")
     public Pacote findById(@PathVariable Long id) {
         return pacoteService.findById(id);
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Pacote salvar(@RequestBody @Validated Pacote pacote) {
         return pacoteService.salvar(pacote);
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizar(@PathVariable Long id, @RequestBody Pacote pacote) {
         pacoteService.atualizar(id, pacote);
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         pacoteService.delete(id);
     }
-/**
-    @GetMapping("/page")
-    public Page<Pacote> findPage(
-            @RequestParam(value = "nome", defaultValue = "") String nome,
-            @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "pageRows", defaultValue = "24") Integer linesPerPage,
-            @RequestParam(value = "orderBy", defaultValue = "nome") String orderBy,
-            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
-        String nomeDecoded = URL.decodeParam(nome);
-        return pacoteService.search(nomeDecoded, page, linesPerPage, orderBy, direction);
 
+    @GetMapping("/resultados-pesquisa")
+    public List<Pacote> getByKeyword(@RequestParam(value = "nome", defaultValue = "") String nome) {
+        return pacoteService.findByNome(nome);
     }
-*/
+
 }

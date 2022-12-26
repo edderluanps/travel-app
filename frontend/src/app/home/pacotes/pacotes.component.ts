@@ -10,6 +10,7 @@ import { Pacotes } from './pacotes';
 export class PacotesComponent implements OnInit {
 
   pacotes: any;
+  nome: string;
 
   constructor(private pacotesService: PacotesService) { }
 
@@ -25,5 +26,8 @@ export class PacotesComponent implements OnInit {
     this.pacotesService.getPacoteById(id).subscribe(response => this.pacotes = (response));
   }
 
+  getResultadoPesquisa(){
+    this.pacotesService.pesquisaPacotes(this.nome).subscribe(response => this.pacotes = (response));
+  }
 
 }

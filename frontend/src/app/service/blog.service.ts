@@ -19,4 +19,8 @@ export class BlogService {
     return this.httpClient.get<any>(`${API_URL}posts/${id}`);
   }
 
+  pesquisaPost(titulo: string) : Observable<Post>{
+    return this.httpClient.get<any>(`${API_URL}posts/resultados-pesquisa?titulo=${titulo}`);
+  }
+
 }

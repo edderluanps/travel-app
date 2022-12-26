@@ -27,32 +27,10 @@
       </div>
       <div class="pesquisa">
           <div class="col-1">
-              <div class="col-col-1">
-                  <label for=""><i class="fa-solid fa-location-dot"></i> Origem</label>
-                  <select name="" id="">
-                      <option value="">selecione</option>
-                      <option value="">option</option>
-                  </select>
-              </div>
-              <div class="col-col-2">
-                  <label for=""><i class="fa-solid fa-plane"></i> Destino</label>
-                  <select name="" id="">
-                      <option value="">selecione</option>
-                      <option value="">option</option>
-                  </select>
-              </div>
-              <div class="col-col-3">
-                  <label for=""><i class="fa-solid fa-check"></i> Tipo</label>
-                  <select name="" id="">
-                      <option value="">selecione</option>s
-                      <option value="">Todos</option>
-                      <option value="">Apenas voo</option>
-                      <option value="">Voo e hospedagem</option>
-                  </select>
-              </div>
+              <input type="text" name="" id="" placeholder="busque por palavra chave, ex: Maldivas" [(ngModel)]="nome">
           </div>
           <div class="col-2">
-              <a href="" class="pesquisa-parametros">
+              <a (click)="getResultadoPesquisa()" class="pesquisa-parametros">
                   pesquisar
               </a>
           </div>

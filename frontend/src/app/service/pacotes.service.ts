@@ -19,4 +19,8 @@ export class PacotesService {
     return this.httpClient.get<any>(`${API_URL}pacote/${id}`);
   }
 
+  pesquisaPacotes(nome: string) : Observable<Pacotes>{
+    return this.httpClient.get<any>(`${API_URL}pacote/resultados-pesquisa?nome=${nome}`);
+  }
+
 }

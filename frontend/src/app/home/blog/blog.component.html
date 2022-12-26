@@ -15,12 +15,8 @@
   <section class="search-box">
     <div class="pesquisa">
       <input
-        type="text"
-        name=""
-        id=""
-        placeholder="ex: curiosidades sobre o Japão"
-      />
-      <button class="btn-pesquisa">
+        type="text" id="" placeholder="ex: curiosidades sobre o Japão" [(ngModel)]="titulo"/>
+      <button class="btn-pesquisa" (click)="getResultadoPesquisa()">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </div>
