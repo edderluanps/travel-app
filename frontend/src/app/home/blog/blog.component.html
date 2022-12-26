@@ -29,21 +29,16 @@
   <!--conteudo-->
   <section class="conteudo">
     <div class="col-1">
-      <div class="card">
+      <div class="card" *ngFor="let item of post">
         <img src="../../../assets/img/02.jpg" alt="" />
         <div class="data">
           <h4>
-            <a routerLink="/blog-post">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              est.</a
+            <a routerLink="/blog-post">{{ item.titulo }}</a
             >
           </h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-            expedita modi voluptatibus, atque nesciunt illum!
-          </p>
-          <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
-          <span><i class="fa-solid fa-user"></i> por: autor</span>
+          <p> {{ item.descricao }} </p>
+          <h5><i class="fa-regular fa-calendar"></i> {{ item.dataPostagem }} </h5>
+          <span><i class="fa-solid fa-user"></i> por: {{ item.cliente }}</span>
         </div>
       </div>
     </div>

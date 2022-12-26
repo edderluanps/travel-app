@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { BlogComponent } from './home/blog/blog.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './AppRoutingModule';
 import { PacotesComponent } from './home/pacotes/pacotes.component';
@@ -25,7 +27,8 @@ import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
