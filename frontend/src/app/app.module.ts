@@ -13,6 +13,7 @@ import { PacotesComponent } from './home/pacotes/pacotes.component';
 import { DestinosComponent } from './home/destinos/destinos.component';
 import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
 import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.component';
+import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.comp
     PacotesComponent,
     DestinosComponent,
     BlogPostComponent,
-    PacotePageComponent
+    PacotePageComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,

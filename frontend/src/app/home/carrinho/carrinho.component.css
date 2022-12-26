@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/*Padrões fixos*/
+section{
+    height: 700px;
+    width: 100%;
+}
+
+.navbar{
+  height: 50px;
+  width: 100%;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px 0 150px;
+}
+
+.navbar .logo-area{
+  height: 100%;
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 300px;
+}
+
+.navbar .logo-area a{
+  font-size: 16px;
+  height: 100%;
+  width: 120px;
+  display: flex;
+}
+
+.navbar .logo-area img{
+  height: 95%;
+  width: 150px;
+}
+
+.navbar .menu-area{
+  height: 100%;
+  width: 550px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .menu-area a{
+  font-size: 16px;
+  padding: 0 20px;
+  color: #1a1a1a;
+  transition: all 0.5s ease;
+}
+
+.navbar .menu-area a:hover{
+  padding: 5px 20px 5px;
+  border-bottom: 4px solid #1a1a1a;
+  border-radius: 5px;
+}
+
+.navbar .btn-user-area{
+  height: 100%;
+  width: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar .btn-user-area .btn-logar{
+  background: #DC143C;
+  color: #fff;
+  border-radius: 5px;
+  height: 30px;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.navbar .btn-user-area .btn-logar:hover{
+  font-size: 15px;
+  background: none;
+  border: 1px solid #DC143C;
+  color: #DC143C;
+}
+
+.navbar .btn-user-area .btn-cart{
+  background: #0059b3;
+  color: #fff;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.navbar .btn-user-area .btn-cart:hover{
+  font-size: 15px;
+  background: none;
+  border: 1px solid #0059b3;
+  color: #0059b3;
+}
+
+/*conteudo*/
+.conteudo{
+  background: #fff;
+  height: 95%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo h2{
+  padding: 0 0 50px;
+}
+
+.conteudo .box{
+  height: 80%;
+  width: 80%;
+  border-radius: 10px;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 40px;
+}
+
+.conteudo .box .label{
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 110px 0 100px;
+}
+
+.conteudo .box .label .descricao{
+  padding: 0 170px 0 50px;
+}
+
+.conteudo .box .row-1{
+  background: #f0f0f0;
+  border-top: 3px solid #ccc;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.conteudo .box .row-1 .card{
+  min-height: 180px;
+  max-height: 180px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.conteudo .box .row-1 .card .col-1{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.conteudo .box .row-1 .card .col-1 img{
+  height: 150px;
+  width: 100%;
+}
+
+.conteudo .box .row-1 .card .col-2{
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.conteudo .box .row-1 .card .col-3{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.conteudo .box .row-1 .card .col-3 .seletor{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.conteudo .box .row-1 .card .col-3 .seletor .btn-add{
+  height: 100%;
+  width: 33%;
+  background: #0059b3;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.conteudo .box .row-1 .card .col-3 .seletor .btn-add:hover{
+  border: 1px solid #0059b3;
+  background: none;
+  color: #0059b3;
+}
+
+.conteudo .box .row-1 .card .col-3 .seletor .btn-remover{
+  height: 100%;
+  width: 33%;
+  background: #0059b3;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.conteudo .box .row-1 .card .col-3 .seletor .btn-remover:hover{
+  border: 1px solid #0059b3;
+  background: none;
+  color: #0059b3;
+}
+
+.conteudo .box .row-1 .card .col-3 .seletor select{
+  height: 100%;
+  width: 34%;
+  text-align: center;
+}
+
+.conteudo .box .row-1 .card .col-4{
+  height: 100%;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.conteudo .box .row-1 .card .col-4 .btn-excluir{
+  height: 50px;
+  width: 90%;
+  background: #DC143C;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.conteudo .box .row-1 .card .col-4 .btn-excluir:hover{
+  border: 1px solid #DC143C;
+  background: none;
+  color: #DC143C;
+}
+
+.conteudo .box .row-1 .card .col-5{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.conteudo .box .row-2{
+  border-top: 1px solid #ccc;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.conteudo .box .row-2 .mini-card{
+  height: 100%;
+  width: 240px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.conteudo .box .row-2 .mini-card h4{
+  font-size: 14px;
+}
+
+.conteudo .box .row-2 .mini-card h1{
+  font-size: 18px;
+}
+
+.conteudo .box .row-3{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.conteudo .box .row-3 .desconto-box{
+  height: 50px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+}
+
+.conteudo .box .row-3 .desconto-box input{
+  height: 100%;
+  width: 80%;
+  border: 0;
+  outline: 0;
+  border-radius: 5px 0 0 5px;
+  padding: 0 10px;
+}
+
+.conteudo .box .row-3 .desconto-box .btn-desconto{
+  background: #0059b3;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+  height: 100%;
+  width: 20%;
+  border: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.conteudo .box .row-3 .desconto-box .btn-desconto:hover{
+  background: none;
+  color: #0059b3;
+  border: 1px solid #0059b3;
+}
+
+.conteudo .box .row-3 .btn-voltar{
+  height: 50px;
+  width: 200px;
+  background: #0059b3;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.conteudo .box .row-3 .btn-voltar:hover{
+  background: none;
+  color: #0059b3;
+  border: 1px solid #0059b3;
+}
+
+.conteudo .box .row-3 .btn-comprar{
+  height: 50px;
+  width: 200px;
+  background: #0059b3;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.conteudo .box .row-3 .btn-comprar:hover{
+  background: none;
+  color: #0059b3;
+  border: 1px solid #0059b3;
+}
