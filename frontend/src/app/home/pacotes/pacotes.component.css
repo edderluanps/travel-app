@@ -28,6 +28,7 @@ section{
 }
 
 .navbar .logo-area a{
+  font-size: 16px;
   height: 100%;
   width: 120px;
   display: flex;
@@ -292,56 +293,22 @@ section{
 
 .pacotes .row-2 .card .data .col-1{
     height: 100%;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px 20px 50px;
+    padding: 20px 40px;
 }
 
-.pacotes .row-2 .card .data .col-2{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+.pacotes .row-2 .card .data .col-1 h4, a{
+  color: #1a1a1a;
+  font-size: 20px;
+  transition: all 0.5s ease;
 }
 
-.pacotes .row-2 .card .data .col-2 .tipo{
-    height: 30px;
-    width: 70px;
-    background: #DC143C;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.pacotes .row-2 .card .data .col-1 h4, a:hover{
+  color: #DC143C;
 }
-
-.pacotes .row-2 .card .data .col-2 .btn-ver-pacote{
-    background: #0059b3;
-    color: #fff;
-    border-radius: 5px;
-    height: 35px;
-    width: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    transition: all 0.5s ease;
-}
-
-.pacotes .row-2 .card .data .col-2 .btn-ver-pacote:hover{
-    font-size: 15px;
-    background: none;
-    border: 1px solid #0059b3;
-    color: #0059b3;
-}
-
-
 
 
 /*footer*/

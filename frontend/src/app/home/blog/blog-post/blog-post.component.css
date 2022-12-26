@@ -28,6 +28,7 @@ section{
 }
 
 .navbar .logo-area a{
+  font-size: 16px;
   height: 100%;
   width: 120px;
   display: flex;

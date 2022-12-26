@@ -66,114 +66,15 @@
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, vitae?</p>
       </div>
       <div class="row-2">
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
-                  </div>
-              </div>
-          </div>
 
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
+          <div class="card" *ngFor="let item of pacotes">
+              <img [src]="item.img" alt="">
               <div class="data">
                   <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
-                  </div>
-              </div>
-          </div>
-
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
-                  </div>
-              </div>
-          </div>
-
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
-                  </div>
-              </div>
-          </div>
-
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
-                  </div>
-              </div>
-          </div>
-
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
-                  </div>
-              </div>
-          </div>
-
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-location-dot"></i> local</span>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-                  <div class="col-2">
-                      <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
+                      <h4><a routerLink="/pacote-page">{{ item.nome }}</a></h4>
+                      <h2> RS {{ item.preco }}</h2>
+                      <span><i class="fa-solid fa-plane"></i> {{ item.voos }}</span>
+                      <span><i class="fa-solid fa-bell-concierge"></i> {{ item.hospedagem }}</span>
                   </div>
               </div>
           </div>

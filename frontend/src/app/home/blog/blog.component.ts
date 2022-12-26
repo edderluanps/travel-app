@@ -9,22 +9,20 @@ import { Post } from './post';
 })
 export class BlogComponent implements OnInit {
 
-  post: Post[];
+  post: any;
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
     this.getPosts();
-    console.log(this.getPosts());
   }
 
   getPosts(){
     this.blogService.getPosts().subscribe(response => this.post = (response));
-    console.log();
   }
 
-  getPostById(){
-
+  getPostById(id: number){
+    this.blogService.getPostById(id).subscribe(response => this.post = (response));
   }
 
 }
