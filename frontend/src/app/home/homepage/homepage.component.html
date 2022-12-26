@@ -2,7 +2,7 @@
   <!--navbar-->
   <nav class="navbar">
       <div class="logo-area">
-        <img src="../../../assets/img/logo-nobg01.png" alt="" />
+        <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
       </div>
       <div class="menu-area">
           <a href="#banner">Inicio</a>
@@ -12,8 +12,8 @@
           <a href="#sobre">Sobre</a>
       </div>
       <div class="btn-user-area">
-          <a class="btn-cadastrar" href="">sign in</a>
           <a class="btn-logar" href="">login</a>
+          <a class="btn-cart" href=""><i class="fa-solid fa-suitcase-rolling"></i></a>
       </div>
   </nav>
 
@@ -21,9 +21,9 @@
   <header class="banner" id="banner">
       <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, impedit!</h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum impedit provident vero?</p>
-      <div class="btn-banner">
+      <a class="btn-banner" routerLink="/pacotes">
           mostre-me
-      </div>
+      </a>
       <div class="pesquisa">
           <div class="col-1">
               <div class="col-col-1">
@@ -94,7 +94,7 @@
                   </div>
                   <div class="col-2">
                       <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" href="">Ver pacote</a>
+                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
                   </div>
               </div>
           </div>
@@ -110,7 +110,7 @@
                   </div>
                   <div class="col-2">
                       <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" href="">Ver pacote</a>
+                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
                   </div>
               </div>
           </div>
@@ -126,7 +126,7 @@
                   </div>
                   <div class="col-2">
                       <span class="tipo">tipo</span>
-                      <a class="btn-ver-pacote" href="">Ver pacote</a>
+                      <a class="btn-ver-pacote" routerLink="/pacote-page">Ver pacote</a>
                   </div>
               </div>
           </div>
@@ -148,7 +148,7 @@
                   <h2>Nome do local</h2>
                   <p>Caracteristicas do local</p>
                   <h4>Observação</h4>
-                  <a href="" class="btn-ver-pacotes">
+                  <a routerLink="/blog" class="btn-ver-pacotes">
                       Ver pacotes para o local
                   </a>
               </div>
@@ -159,7 +159,7 @@
                   <h2>Nome do local</h2>
                   <p>Caracteristicas do local</p>
                   <h4>Observação</h4>
-                  <a href="" class="btn-ver-pacotes">
+                  <a routerLink="/blog" class="btn-ver-pacotes">
                       Ver pacotes para o local
                   </a>
               </div>
@@ -171,7 +171,7 @@
                   <h2>Nome do local</h2>
                   <p>Caracteristicas do local</p>
                   <h4>Observação</h4>
-                  <a href="" class="btn-ver-pacotes">
+                  <a routerLink="/blog" class="btn-ver-pacotes">
                       Ver pacotes para o local
                   </a>
               </div>
@@ -192,29 +192,32 @@
               <div class="card">
                   <img src="../../../assets/img/02.jpg" alt="">
                   <div class="data">
-                      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</h4>
+                      <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
+                      <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                       <span><i class="fa-solid fa-user"></i> por: autor</span>
                   </div>
               </div>
 
               <div class="card">
-                  <img src="../../../assets/img/02.jpg" alt="">
-                  <div class="data">
-                      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                      <span><i class="fa-solid fa-user"></i> por: autor</span>
-                  </div>
-              </div>
+                <img src="../../../assets/img/02.jpg" alt="">
+                <div class="data">
+                    <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
+                    <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
+                    <span><i class="fa-solid fa-user"></i> por: autor</span>
+                </div>
+            </div>
 
-              <div class="card">
-                  <img src="../../../assets/img/02.jpg" alt="">
-                  <div class="data">
-                      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                      <span><i class="fa-solid fa-user"></i> por: autor</span>
-                  </div>
+            <div class="card">
+              <img src="../../../assets/img/02.jpg" alt="">
+              <div class="data">
+                  <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
+                  <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
+                  <span><i class="fa-solid fa-user"></i> por: autor</span>
               </div>
+            </div>
           </div>
 
           <div class="col-2">

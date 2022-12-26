@@ -28,6 +28,12 @@ section{
   margin-right: 300px;
 }
 
+.navbar .logo-area a{
+  height: 100%;
+  width: 120px;
+  display: flex;
+}
+
 .navbar .logo-area img{
   height: 95%;
   width: 150px;
@@ -56,33 +62,11 @@ section{
 
 .navbar .btn-user-area{
   height: 100%;
-  width: 150px;
+  width: 130px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-}
-
-.navbar .btn-user-area .btn-cadastrar{
-  background: #f2f2f2;
-  border: 1px solid #1a1a1a;
-  color: #1a1a1a;
-  border-radius: 5px;
-  height: 30px;
-  width: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  transition: all 0.5s ease;
-}
-
-.navbar .btn-user-area .btn-cadastrar:hover{
-  font-size: 15px;
-  background: #1a1a1a;
-  border: 1px solid #fff;
-  color: #fff;
 }
 
 .navbar .btn-user-area .btn-logar{
@@ -104,6 +88,27 @@ section{
   background: none;
   border: 1px solid #DC143C;
   color: #DC143C;
+}
+
+.navbar .btn-user-area .btn-cart{
+  background: #0059b3;
+  color: #fff;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+.navbar .btn-user-area .btn-cart:hover{
+  font-size: 15px;
+  background: none;
+  border: 1px solid #0059b3;
+  color: #0059b3;
 }
 
 /*banner*/

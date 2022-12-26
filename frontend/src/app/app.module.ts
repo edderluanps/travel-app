@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './AppRoutingModule';
 import { PacotesComponent } from './home/pacotes/pacotes.component';
 import { DestinosComponent } from './home/destinos/destinos.component';
+import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
+import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { DestinosComponent } from './home/destinos/destinos.component';
     HomepageComponent,
     BlogComponent,
     PacotesComponent,
-    DestinosComponent
+    DestinosComponent,
+    BlogPostComponent,
+    PacotePageComponent
   ],
   imports: [
     BrowserModule,
