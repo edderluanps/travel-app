@@ -12,15 +12,15 @@ export class BlogService {
   constructor(private httpClient: HttpClient) { }
 
   getPosts() : Observable<Post[]>{
-    return this.httpClient.get<Post[]>(`${API_URL}posts/`);
+    return this.httpClient.get<Post[]>(`${API_URL}api/posts/`);
   }
 
   getPostById(id: number) : Observable<Post>{
-    return this.httpClient.get<any>(`${API_URL}posts/${id}`);
+    return this.httpClient.get<any>(`${API_URL}api/posts/${id}`);
   }
 
   pesquisaPost(titulo: string) : Observable<Post>{
-    return this.httpClient.get<any>(`${API_URL}posts/resultados-pesquisa?titulo=${titulo}`);
+    return this.httpClient.get<any>(`${API_URL}api/posts/resultados-pesquisa?titulo=${titulo}`);
   }
 
 }

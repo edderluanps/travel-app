@@ -12,15 +12,15 @@ export class PacotesService {
   constructor(private httpClient: HttpClient) { }
 
   getPacotes() : Observable<Pacotes[]>{
-    return this.httpClient.get<Pacotes[]>(`${API_URL}pacote/`);
+    return this.httpClient.get<Pacotes[]>(`${API_URL}api/pacote/`);
   }
 
   getPacoteById(id: number) : Observable<Pacotes>{
-    return this.httpClient.get<any>(`${API_URL}pacote/${id}`);
+    return this.httpClient.get<any>(`${API_URL}api/pacote/${id}`);
   }
 
   pesquisaPacotes(nome: string) : Observable<Pacotes>{
-    return this.httpClient.get<any>(`${API_URL}pacote/resultados-pesquisa?nome=${nome}`);
+    return this.httpClient.get<any>(`${API_URL}api/pacote/resultados-pesquisa?nome=${nome}`);
   }
 
 }

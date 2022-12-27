@@ -15,6 +15,9 @@ import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
 import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './home/login/login.component';
+import { AuthService } from './service/auth.service';
+import { StorageService } from './service/storage.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     DestinosComponent,
     BlogPostComponent,
     PacotePageComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
