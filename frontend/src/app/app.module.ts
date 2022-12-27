@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './home/login/login.component';
 import { AuthService } from './service/auth.service';
 import { StorageService } from './service/storage.service';
+import { PerfilComponent } from './home/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { StorageService } from './service/storage.service';
     BlogPostComponent,
     PacotePageComponent,
     CarrinhoComponent,
-    LoginComponent
+    LoginComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

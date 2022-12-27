@@ -1,0 +1,48 @@
+<body>
+
+  <!--navbar-->
+  <nav class="navbar">
+    <div class="logo-area">
+      <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
+    </div>
+    <div class="menu-area">
+        <a href="#banner">Inicio</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#locais">Locais</a>
+        <a href="#blog">Blog</a>
+        <a href="#sobre">Sobre</a>
+    </div>
+    <div class="btn-user-area">
+        <a class="btn-logar" routerLink="/login">login</a>
+        <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
+    </div>
+</nav>
+
+  <!--conteudo-->
+  <div class="conteudo">
+      <span><a  routerLink="/">homepage</a> /home</span>
+      <div class="box">
+          <div class="col-1">
+              <h2>Meu Perfil</h2>
+              <h4>User name</h4>
+              <p>{{ email }}</p>
+
+              <div class="menu">
+                  <ul>
+                      <li><a href=""><i class="fa-solid fa-user"></i> Dados pessoais</a></li>
+                      <li><a href=""><i class="fa-solid fa-location-dot"></i> Endereços</a></li>
+                      <li><a href=""><i class="fa-solid fa-suitcase-rolling"></i> Compras</a></li>
+                      <li><a href=""><i class="fa-solid fa-gear"></i> Configurações</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-2">
+              <div class="row-1">
+                  <h2>Dados pessoais</h2>
+                  <h4>Informações pessoais do usuario</h4>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</body>

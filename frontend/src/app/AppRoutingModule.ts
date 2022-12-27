@@ -8,10 +8,12 @@ import { HomepageComponent } from "./home/homepage/homepage.component";
 import { LoginComponent } from "./home/login/login.component";
 import { PacotePageComponent } from "./home/pacotes/pacote-page/pacote-page.component";
 import { PacotesComponent } from "./home/pacotes/pacotes.component";
+import { PerfilComponent } from "./home/perfil/perfil.component";
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'perfil', component: PerfilComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog-post', component: BlogPostComponent },
   { path: 'pacotes', component: PacotesComponent },
