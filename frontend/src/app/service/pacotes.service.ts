@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_URL } from 'src/environments/environment';
-import { Pacotes } from '../home/pacotes/pacotes';
+import { Pacotes } from '../model/pacotes';
 
 @Injectable({
   providedIn: 'root'

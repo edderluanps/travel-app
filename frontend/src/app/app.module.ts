@@ -15,10 +15,11 @@ import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
 import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './home/login/login.component';
-import { AuthService } from './service/auth.service';
-import { StorageService } from './service/storage.service';
 import { PerfilComponent } from './home/perfil/perfil.component';
+import { LoginComponent } from './home/login/login.component';
+import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
+import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +31,8 @@ import { PerfilComponent } from './home/perfil/perfil.component';
     BlogPostComponent,
     PacotePageComponent,
     CarrinhoComponent,
+    PerfilComponent,
     LoginComponent,
-    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,7 @@ import { PerfilComponent } from './home/perfil/perfil.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AuthService, StorageService],
+  providers: [AuthInterceptorProvider, ErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

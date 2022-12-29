@@ -1,7 +1,7 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CredenciaisDTO } from 'src/app/model/credenciais.dto';
 import { AuthService } from 'src/app/service/auth.service';
-import { CredenciaisDTO } from './credenciais.dto';
 
 @Component({
   selector: 'app-login',
@@ -10,21 +10,22 @@ import { CredenciaisDTO } from './credenciais.dto';
 })
 export class LoginComponent implements OnInit {
 
-  credenciais : CredenciaisDTO = {
-    email: "",
-    senha: ""
-  };
+  credenciais: CredenciaisDTO = {
+    email: '',
+    senha: ''
+  }
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   login(){
     this.authService.authenticate(this.credenciais).subscribe(response => {
-     this.authService.successfulLogin(response.headers.get('Authorization') || '{}');
-     this.router.navigate(['']);
-    }, error => { });
+      this.authService.successfulLogin(response.headers.get('Authorization') || '');
+      this.router.navigate(['/']);
+    })
 
   }
 

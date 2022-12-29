@@ -200,6 +200,10 @@ section{
   padding: 30px 10px 50px 10px;
 }
 
+.conteudo .col-1 .card .data h4 a{
+  font-size: 20px;
+}
+
 .conteudo .col-1 .card .data h4, a{
   font-size: 16px;
   color: #1a1a1a;

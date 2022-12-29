@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteDTO } from 'src/app/model/cliente.dto';
+import { ClienteService } from 'src/app/service/cliente.service';
 import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
@@ -8,15 +10,16 @@ import { StorageService } from 'src/app/service/storage.service';
 })
 export class PerfilComponent implements OnInit {
 
-  email: string;
+  cliente: ClienteDTO;
 
-  constructor(public storage: StorageService) { }
+  constructor(public storage: StorageService, public clienteService: ClienteService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
-      this.email = localUser.email
+     this.clienteService.findByEmail(localUser.email).subscribe(response => {
+      this.cliente = response
+     });
     }
   }
-
 }

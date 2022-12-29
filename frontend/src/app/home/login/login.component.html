@@ -1,19 +1,7 @@
-<body>
+<p>email</p>
+<input type="text" name="email" id="" [(ngModel)]="credenciais.email" >
 
-  <div class="conteudo">
+<p>senha</p>
+<input type="password" name="" id="" [(ngModel)]="credenciais.senha">
 
-    <div class="login-box">
-        <h2>Login</h2>
-        <input type="text" name="email" id="" [(ngModel)]="credenciais.email">
-        <input type="password" name="senha" id="" [(ngModel)]="credenciais.senha">
-        <button class="btn-logar" (click)="login()">login</button>
-        <button class="btn-voltar" routerLink="/homepage">voltar</button>
-        <div class="recuperar">
-
-        </div>
-    </div>
-
-  </div>
-
-
-</body>
+<button class="btn-submit" (click)=" login()">Submit</button>

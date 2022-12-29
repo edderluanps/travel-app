@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PacotesService } from 'src/app/service/pacotes.service';
-import { Pacotes } from './pacotes';
+import { Pacotes } from '../../model/pacotes';
 
 @Component({
   selector: 'app-pacotes',

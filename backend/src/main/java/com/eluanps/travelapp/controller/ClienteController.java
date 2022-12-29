@@ -68,8 +68,7 @@ public class ClienteController {
         clienteService.delete(id);
     }
 
-    @PutMapping("/email")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @GetMapping("/email")
     public Cliente find(@RequestParam(value = "value") String email) {
         Cliente cliente = clienteService.findByEmail(email);
         return cliente;

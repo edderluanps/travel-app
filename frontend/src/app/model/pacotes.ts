@@ -1,3 +1,5 @@
+import { Hospedagem } from "./hospedagem";
+
 export class Pacotes {
 
   id: number;
@@ -5,7 +7,7 @@ export class Pacotes {
   nome: string;
   preco: string;
   voos: string;
-  hospedagem: string;
+  hospedagem: Hospedagem[];
   ativo: boolean;
 
 }

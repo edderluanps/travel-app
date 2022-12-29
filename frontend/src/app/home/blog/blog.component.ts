@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/service/blog.service';
-import { Post } from './post';
+import { Post } from '../../model/post';
 
 @Component({
   selector: 'app-blog',
@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
   }
 
   getPosts(){
-    this.blogService.getPosts().subscribe(response => this.post = (response));
+    this.blogService.getPosts().subscribe(response => {this.post = (response)});
   }
 
   getPostById(id: number){
