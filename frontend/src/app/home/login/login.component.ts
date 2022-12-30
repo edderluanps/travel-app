@@ -25,8 +25,18 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(this.credenciais).subscribe(response => {
       this.authService.successfulLogin(response.headers.get('Authorization') || '');
       this.router.navigate(['/']);
-    })
+    });
+  }
 
+  refreshToken(){
+    this.authService.refreshToken().subscribe(response => {
+      this.authService.successfulLogin(response.headers.get('Authorization') || '');
+      this.router.navigate(['/']);
+    });
+  }
+
+  signup(){
+    this.router.navigate(['/signup']);
   }
 
 }

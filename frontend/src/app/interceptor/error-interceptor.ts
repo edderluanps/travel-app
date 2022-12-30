@@ -4,13 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { StorageService } from '../service/storage.service';
 import { LocalUser } from '../model/local_user';
+import { FieldMessage } from '../model/fieldmessage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor(private storageService: StorageService) {}
+  constructor(private storageService: StorageService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
@@ -35,6 +36,10 @@ export class ErrorInterceptor implements HttpInterceptor {
             this.handle403();
             break;
 
+          case 404:
+            this.handle404(errorMsg);
+            break;
+
           default:
             this.handleDefaultError(errorMsg);
         }
@@ -48,16 +53,29 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 
   handle403() {
-    let user : LocalUser = {
+    let user: LocalUser = {
       token: '',
       email: ''
     }
     this.storageService.setLocalUser(user);
   }
 
-  handleDefaultError(errorMsg: any){
-    alert('404: ' + errorMsg.status);
+  handle404(errorMsg: any){
+    let alertMsg = this.listErrors(errorMsg.errors);
+    alert(alertMsg);
   }
+
+  handleDefaultError(errorMsg: any) {
+    alert('Erro: ' + errorMsg.status + errorMsg.log);
+  }
+
+  private listErrors(messages : FieldMessage[]) : string {
+    let s : string = '';
+    for (var i=0; i<messages.length; i++) {
+        s = s + '<p><strong>' + messages[i].fieldName + "</strong>: " + messages[i].message + '</p>';
+    }
+    return s;
+}
 
 }
 

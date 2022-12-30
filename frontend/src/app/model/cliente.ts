@@ -11,7 +11,7 @@ export class Cliente {
   dataNascimento: string;
   dataCadastro: string;
   tipoCliente: number;
-  telefone: string
+  telefone: string;
   enderecos: endereco[];
   perfis: string;
   pedidos: string;

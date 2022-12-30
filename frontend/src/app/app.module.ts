@@ -14,11 +14,12 @@ import { DestinosComponent } from './home/destinos/destinos.component';
 import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
 import { PacotePageComponent } from './home/pacotes/pacote-page/pacote-page.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './home/perfil/perfil.component';
 import { LoginComponent } from './home/login/login.component';
 import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
+import { SignupComponent } from './home/signup/signup.component';
 
 
 @NgModule({
@@ -33,13 +34,15 @@ import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
     CarrinhoComponent,
     PerfilComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthInterceptorProvider, ErrorInterceptorProvider],
   bootstrap: [AppComponent]

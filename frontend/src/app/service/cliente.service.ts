@@ -10,9 +10,16 @@ import { StorageService } from './storage.service';
 })
 export class ClienteService {
 
-  constructor(private httpCliente: HttpClient, public storageService: StorageService) { }
+  constructor(private httpClient: HttpClient, public storageService: StorageService) { }
 
   findByEmail(email: string) : Observable<ClienteDTO>{
-    return this.httpCliente.get<ClienteDTO>(`${API_URL}api/cliente/email?value=${email}`);
+    return this.httpClient.get<ClienteDTO>(`${API_URL}api/cliente/email?value=${email}`);
+  }
+
+  saveUser(cliente: ClienteDTO){
+    return this.httpClient.post(`${API_URL}api/cliente`, cliente, {
+      observe: 'response',
+      responseType: 'text'
+    });
   }
 }

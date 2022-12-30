@@ -16,20 +16,20 @@ export class PerfilComponent implements OnInit {
   constructor(
     public storage: StorageService,
     public clienteService: ClienteService,
-    public router : Router) { }
+    public router: Router) { }
 
   ngOnInit() {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
-     this.clienteService.findByEmail(localUser.email).subscribe(response => {
-      this.cliente = response
-     }, error => {
-      if (error.status == 403) {
-        this.router.navigate(['/']);
-      }
-     });
-    }else{
-      this.router.navigate(['/']);
+      this.clienteService.findByEmail(localUser.email).subscribe(response => {
+        this.cliente = response
+      }, error => {
+        if (error.status == 403) {
+          this.router.navigate(['/login']);
+        }
+      });
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 }

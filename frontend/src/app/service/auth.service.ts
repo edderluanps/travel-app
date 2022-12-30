@@ -40,4 +40,11 @@ export class AuthService {
     }
     this.storageService.setLocalUser(user);
   }
+
+  refreshToken(){
+    return this.httpClient.post(`${API_URL}auth/refresh_token`,{},{
+      observe: 'response', responseType: 'text'
+    });
+  }
+
 }
