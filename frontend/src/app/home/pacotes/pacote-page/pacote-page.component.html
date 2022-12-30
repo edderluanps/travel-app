@@ -33,14 +33,12 @@
                   <img src="../../../assets/img/02.jpg" alt="">
               </div>
               <div class="img-col-2">
-                  <img src="../../../assets/img/02.jpg" alt="">
+                  <img [src]="pacotes.img" alt="">
               </div>
           </div>
 
           <div class="col-2">
-
-              <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, officia?</h2>
-
+              <h2>{{ pacotes.nome }}</h2>
               <div class="stars">
                   <span>
                       <i class="fa-solid fa-star"></i>
@@ -51,22 +49,14 @@
                   </span>
                   <h4>avaliações</h4>
               </div>
-
-              <h1>RS 1.000,00</h1>
-
-              <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla earum mollitia debitis rerum quasi aspernatur.</h5>
-
+              <h1>{{ pacotes.preco | currency }}</h1>
               <div class="data">
                   <ul>
-                      <li><i class="fa-solid fa-angle-right"></i> item 1</li>
-                      <li><i class="fa-solid fa-angle-right"></i> item 2</li>
-                      <li><i class="fa-solid fa-angle-right"></i> item 3</li>
+                      <li><i class="fa-solid fa-angle-right"></i> Voo por: {{ pacotes.voos.preco  | currency  }}</li>
+                      <li><i class="fa-solid fa-angle-right"></i> Hospedagem por: {{ pacotes.hospedagem.preco  | currency  }}</li>
+                      <li><i class="fa-solid fa-angle-right"></i> Partida: {{ pacotes.voos.dataEmbarque }}</li>
                   </ul>
-
               </div>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dolorum magnam ab. Repudiandae alias esse illo repellendus non voluptas debitis.</p>
-
               <div class="btn-group">
                   <select name="" id="">
                       <option value="">1</option>
@@ -80,7 +70,6 @@
                       adicionar ao carrinho
                   </a>
               </div>
-
           </div>
       </div>
   </section>

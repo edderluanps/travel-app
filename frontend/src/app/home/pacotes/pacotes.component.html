@@ -49,9 +49,9 @@
               <img [src]="item.img" alt="">
               <div class="data">
                   <div class="col-1">
-                      <h4><a routerLink="/pacote-page">{{ item.nome }}</a></h4>
-                      <h2> RS {{ item.preco }}</h2>
-                      <span><i class="fa-solid fa-plane"></i> {{ item.voos.ativo }}</span>
+                      <h4><a [routerLink]="['/pacote-page', item.id]">{{ item.nome }}</a></h4>
+                      <h2> {{ item.preco  | currency  }}</h2>
+                      <span><i class="fa-solid fa-plane"></i> Embarque {{ item.voos.dataEmbarque }}</span>
                       <span><i class="fa-solid fa-bell-concierge"></i> {{ item.hospedagem.nome }}</span>
                   </div>
               </div>

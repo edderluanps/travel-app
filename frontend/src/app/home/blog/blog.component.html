@@ -26,10 +26,10 @@
   <section class="conteudo">
     <div class="col-1">
       <div class="card" *ngFor="let item of post">
-        <img src="../../../assets/img/02.jpg" alt="" />
+        <img [src]="item.img" alt="" />
         <div class="data">
           <h4>
-            <a routerLink="/blog-post">{{ item.titulo }}</a
+            <a [routerLink]="['/blog-post', item.id]">{{ item.titulo }}</a
             >
           </h4>
           <p> {{ item.descricao }} </p>

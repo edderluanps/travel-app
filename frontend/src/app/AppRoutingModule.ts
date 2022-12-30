@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'blog', component: BlogComponent },
-  { path: 'blog-post', component: BlogPostComponent },
+  { path: 'blog-post/:id', component: BlogPostComponent },
   { path: 'pacotes', component: PacotesComponent },
-  { path: 'pacote-page', component: PacotePageComponent },
+  { path: 'pacote-page/:id', component: PacotePageComponent },
   { path: 'destinos', component: DestinosComponent },
   { path: 'carrinho', component: CarrinhoComponent }
 
