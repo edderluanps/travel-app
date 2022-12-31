@@ -63,7 +63,7 @@ section{
 
 .navbar .btn-user-area{
   height: 100%;
-  width: 130px;
+  width: 110px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,7 +75,7 @@ section{
   color: #fff;
   border-radius: 5px;
   height: 30px;
-  width: 70px;
+  width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -116,23 +116,25 @@ section{
 .banner{
   height: 650px;
   width: 100%;
-  background: url('../../../assets/img/01.jpg') no-repeat;
+  background: url('../../../assets/img/00.jpg') no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px 350px 0;
+  padding: 170px 300px 0;
 }
 
 .banner h1{
   font-size: 45px;
   color: #fff;
+  text-shadow: 1px 1px #1a1a1a;
   text-align: center;
 }
 
 .banner p{
-  font-size: 15px;
+  font-size: 20px;
   color: #fff;
+  text-shadow: 1px 1px #1a1a1a;
   text-align: center;
   padding: 20px 0;
 }
@@ -155,8 +157,8 @@ section{
 .banner .btn-banner:hover{
   font-size: 15px;
   background: none;
-  border: 2px solid #DC143C;
-  color: #DC143C;
+  border: 2px solid #0059b3;
+  color: #0059b3;
 }
 
 .banner .pesquisa{

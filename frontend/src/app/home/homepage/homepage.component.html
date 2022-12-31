@@ -5,7 +5,7 @@
         <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
       </div>
       <div class="menu-area">
-          <a href="" (click)="logOut()">logout</a>
+          <a href="" (click)="logOut()" style="display: none;">logout</a>
           <a href="#banner">Inicio</a>
           <a href="#pacotes">Pacotes</a>
           <a href="#locais">Locais</a>
@@ -13,50 +13,18 @@
           <a href="#sobre">Sobre</a>
       </div>
       <div class="btn-user-area">
-          <a class="btn-logar" routerLink="/login">login</a>
+          <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
           <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
       </div>
   </nav>
 
   <!--banner-->
   <header class="banner" id="banner">
-      <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, impedit!</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum impedit provident vero?</p>
+      <h1>Que tal explorar o mundo?</h1>
+      <p>A melhor experiência da sua vida começa agora!</p>
       <a class="btn-banner" routerLink="/pacotes">
           mostre-me
       </a>
-      <div class="pesquisa">
-          <div class="col-1">
-              <div class="col-col-1">
-                  <label for=""><i class="fa-solid fa-location-dot"></i> Origem</label>
-                  <select name="" id="">
-                      <option value="">selecione</option>
-                      <option value="">option</option>
-                  </select>
-              </div>
-              <div class="col-col-2">
-                  <label for=""><i class="fa-solid fa-plane"></i> Destino</label>
-                  <select name="" id="">
-                      <option value="">selecione</option>
-                      <option value="">option</option>
-                  </select>
-              </div>
-              <div class="col-col-3">
-                  <label for=""><i class="fa-solid fa-check"></i> Tipo</label>
-                  <select name="" id="">
-                      <option value="">selecione</option>s
-                      <option value="">Todos</option>
-                      <option value="">Apenas voo</option>
-                      <option value="">Voo e hospedagem</option>
-                  </select>
-              </div>
-          </div>
-          <div class="col-2">
-              <a href="" class="pesquisa-parametros">
-                  pesquisar
-              </a>
-          </div>
-      </div>
   </header>
 
    <!--sessão 1-->
@@ -65,13 +33,13 @@
           <img src="../../../assets/img/art-1.jpg" alt="">
       </div>
       <div class="col-2">
-          <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, sapiente.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem assumenda, eveniet consequatur deleniti inventore non!</p>
+          <h2>Sejam bem vindos a <span>travel.io</span></h2>
+          <p>Só aqui você encontra os melhores e mais completos pacotes turísticos para todo o mundo com o melhor preço:</p>
           <ul>
-              <li><i class="fa-solid fa-square-check" id="i-1"></i> Lorem, ipsum dolor.</li>
-              <li><i class="fa-solid fa-square-check" id="i-2"></i> Lorem, ipsum dolor.</li>
-              <li><i class="fa-solid fa-square-check" id="i-3"></i> Lorem, ipsum dolor.</li>
-              <li><i class="fa-solid fa-square-check" id="i-4"></i> Lorem, ipsum dolor.</li>
+              <li><i class="fa-solid fa-location-dot" id="i-1"></i> Destinos nacionais.</li>
+              <li><i class="fa-solid fa-earth-americas" id="i-2"></i> Destinos internacionais.</li>
+              <li><i class="fa-solid fa-map-location-dot"  id="i-3"></i> Pacotes completos.</li>
+              <li><i class="fa-sharp fa-solid fa-puzzle-piece" id="i-4"> </i> Pacotes personalizáveis.</li>
           </ul>
       </div>
    </section>
@@ -184,9 +152,9 @@
               <div class="card">
                   <img src="../../../assets/img/02.jpg" alt="">
                   <div class="data">
+                      <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                       <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                      <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                       <span><i class="fa-solid fa-user"></i> por: autor</span>
                   </div>
               </div>
@@ -194,9 +162,9 @@
               <div class="card">
                 <img src="../../../assets/img/02.jpg" alt="">
                 <div class="data">
+                    <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                     <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                    <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                     <span><i class="fa-solid fa-user"></i> por: autor</span>
                 </div>
             </div>
@@ -204,9 +172,9 @@
             <div class="card">
               <img src="../../../assets/img/02.jpg" alt="">
               <div class="data">
+                  <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                   <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                  <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
                   <span><i class="fa-solid fa-user"></i> por: autor</span>
               </div>
             </div>

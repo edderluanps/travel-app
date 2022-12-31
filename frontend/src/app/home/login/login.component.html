@@ -1,8 +1,25 @@
-<p>email</p>
-<input type="text" name="email" id="" [(ngModel)]="credenciais.email" >
 
-<p>senha</p>
-<input type="password" name="" id="" [(ngModel)]="credenciais.senha">
+<div class="content">
+  <div class="box">
+    <h2>login</h2>
+    <div class="input-group">
+      <p>email</p>
+      <input type="text" name="email" id="" [(ngModel)]="credenciais.email" />
+      <p>senha</p>
+      <input type="password" name="" id="" [(ngModel)]="credenciais.senha" />
+    </div>
 
-<button class="btn-submit" (click)=" login()">Login</button>
-<button class="btn-submit" (click)=" signup()">Cadastrar</button>
+
+    <div class="btn-group">
+      <div class="row-1">
+        <button class="btn-submit" (click)="login()">Login</button>
+      </div>
+      <div class="row-2">
+        <button class="btn-cadastrar" (click)="signup()">Cadastrar</button>
+        <button class="btn-voltar" routerLink="/">Voltar</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

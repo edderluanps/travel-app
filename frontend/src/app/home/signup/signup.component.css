@@ -1,8 +1,9 @@
-*{
+.content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #f2f2f2;
 }
 
 .item{
@@ -15,12 +16,73 @@
   padding-top: 15px;
 }
 
-.item input, select{
+.item input{
   height: 30px;
-  width: 500px;
+  width: 100%;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.item select{
+  height: 30px;
+  width: 100%;
   padding: 0 20px;
 }
 
 p{
-  color: red;
+  margin-top: 5px;
+  height: 25px;
+  width: 97%;
+  border-left: 4px solid #DC143C;
+  color: #000;
+  background: #fbd0d9;
+  font-size: 15px;
+  padding: 0 0 0 5px;
+}
+
+.btn-group{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-group .btn-voltar{
+  height: 40px;
+  width: 250px;
+  border: 0;
+  background: #DC143C;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-group .btn-voltar:hover{
+  background: none;
+  color: #DC143C;
+  border: 1px solid #DC143C;
+}
+
+.btn-group .btn-submit{
+  height: 40px;
+  width: 240px;
+  border: 0;
+  background: #0059b3;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-group .btn-submit:hover{
+  background: none;
+  color: #0059b3;
+  border: 1px solid #0059b3;
 }

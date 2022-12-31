@@ -63,7 +63,7 @@ section{
 
 .navbar .btn-user-area{
   height: 100%;
-  width: 130px;
+  width: 110px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,7 +75,7 @@ section{
   color: #fff;
   border-radius: 5px;
   height: 30px;
-  width: 70px;
+  width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -216,6 +216,14 @@ section{
 
 .conteudo .col-1 .card .data p{
   font-size: 14px;
+  min-height: 100px;
+  max-height: 100px;
+  text-align: justify;
+  width: 450px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: unset;
+  direction: ltr;
 }
 
 .conteudo .col-1 .card .data span{

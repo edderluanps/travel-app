@@ -62,7 +62,7 @@ section{
 
 .navbar .btn-user-area{
   height: 100%;
-  width: 130px;
+  width: 110px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,7 +74,7 @@ section{
   color: #fff;
   border-radius: 5px;
   height: 30px;
-  width: 70px;
+  width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -142,141 +142,78 @@ section{
     display: flex;
     flex-direction: row;
     background: #f0f0f0;
+    padding: 10px;
 }
 
 .conteudo .box .col-1{
-    height: 100%;
-    width: 55%;
-    display: flex;
-    flex-direction: row;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.conteudo .box .col-1 .img-col-1{
-    height: 100%;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.conteudo .box .col-1 .img-col-1 img{
-    height: 100px;
-    width: 80%;
-    border-radius: 5px;
-}
-
-.conteudo .box .col-1 .img-col-2{
-    height: 100%;
-    width: 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.conteudo .box .col-1 .img-col-2 img{
-    height: 450px;
-    width: 450px;
-    border-radius: 5px;
+.conteudo .box .col-1 img{
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
 }
 
 .conteudo .box .col-2{
-    height: 100%;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 20px 0;
-}
-
-.conteudo .box .col-2 .stars{
-    height: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 320px 0 0;
+  height: 100%;
+  width: 30%;
+  padding: 20px 5px 0;
 }
 
 .conteudo .box .col-2 h1{
-    font-size: 60px;
-    text-align: center;
+  font-size: 50px;
 }
 
 .conteudo .box .col-2 h2{
-    font-size: 20px;
-}
-
-.conteudo .box .col-2 h5{
-    font-size: 15px;
-    padding: 0 20px;
-}
-
-.conteudo .box .col-2 .data{
-    height: 80px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 0 0 50px;
-}
-
-.conteudo .box .col-2 .data ul li{
-    list-style: none;
+  font-size: 20px;
 }
 
 .conteudo .box .col-2 p{
-    text-align: justify;
-    padding: 0 20px;
+  font-size: 18px;
 }
 
-.conteudo .box .col-2 .btn-group{
-    height: 100px;
-    width: 100%;
-    background: #f0f0f0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 50px;
+.conteudo .box .col-2 span{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.conteudo .box .col-2 .btn-group select{
-    height: 50px;
-    width: 100px;
-    outline: none;
-    border: 0;
-    text-align: center;
-    font-size: 16px;
+.conteudo .box .col-2 ul{
+  list-style: none;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 50px;
 }
 
-.conteudo .box .col-2 .btn-group select:focus{
-    outline: none;
-    border: 0;
+.conteudo .box .col-2 .btn-add-carrinho{
+  height: 45px;
+  width: 300px;
+  background: #DC143C;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.conteudo .box .col-2 .btn-group .btn-add-carrinho{
-    background: #DC143C;
-    color: #fff;
-    border-radius: 5px;
-    height: 50px;
-    width: 250px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-.conteudo .box .col-2 .btn-group .btn-add-carrinho:hover{
-    background: none;
-    border: 2px solid #DC143C;
-    color: #DC143C;
-    font-size: 19px;
+.conteudo .box .col-2 .btn-add-carrinho:hover{
+  color: #DC143C;
+  border: 1px solid #DC143C;
+  background: none;
 }
 
 

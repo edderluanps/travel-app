@@ -20,6 +20,8 @@ import { LoginComponent } from './home/login/login.component';
 import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
 import { SignupComponent } from './home/signup/signup.component';
+import { MatButtonModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { SignupComponent } from './home/signup/signup.component';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [AuthInterceptorProvider, ErrorInterceptorProvider],
   bootstrap: [AppComponent]

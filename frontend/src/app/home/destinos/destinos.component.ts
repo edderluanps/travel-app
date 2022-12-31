@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DestinosService } from 'src/app/service/destinos.service';
 
 @Component({
   selector: 'app-destinos',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DestinosComponent implements OnInit {
 
-  constructor() { }
+  cidade: any;
+  nome: string;
+
+  constructor(private destinoService : DestinosService) { }
 
   ngOnInit(): void {
+    this.getPacotes();
+  }
+
+  getPacotes() {
+    this.destinoService.getCidade().subscribe(response => this.cidade = (response));
   }
 
 }

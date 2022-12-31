@@ -13,7 +13,7 @@
           <a href="#sobre">Sobre</a>
       </div>
       <div class="btn-user-area">
-        <a class="btn-logar" href="">login</a>
+        <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
         <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
     </div>
   </nav>
@@ -24,53 +24,40 @@
       <span class="breadcrumb"><a routerLink="/pacotes">pacotes</a>/pacote</span>
 
       <div class="box">
-          <div class="col-1">
-              <div class="img-col-1">
-                  <img src="../../../assets/img/02.jpg" alt="">
-                  <img src="../../../assets/img/02.jpg" alt="">
-                  <img src="../../../assets/img/02.jpg" alt="">
-                  <img src="../../../assets/img/02.jpg" alt="">
-                  <img src="../../../assets/img/02.jpg" alt="">
-              </div>
-              <div class="img-col-2">
-                  <img [src]="pacotes.img" alt="">
-              </div>
-          </div>
 
-          <div class="col-2">
-              <h2>{{ pacotes.nome }}</h2>
-              <div class="stars">
-                  <span>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                  </span>
-                  <h4>avaliações</h4>
-              </div>
-              <h1>{{ pacotes.preco | currency }}</h1>
-              <div class="data">
-                  <ul>
-                      <li><i class="fa-solid fa-angle-right"></i> Voo por: {{ pacotes.voos.preco  | currency  }}</li>
-                      <li><i class="fa-solid fa-angle-right"></i> Hospedagem por: {{ pacotes.hospedagem.preco  | currency  }}</li>
-                      <li><i class="fa-solid fa-angle-right"></i> Partida: {{ pacotes.voos.dataEmbarque }}</li>
-                  </ul>
-              </div>
-              <div class="btn-group">
-                  <select name="" id="">
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
-                  </select>
-                  <a class="btn-add-carrinho" routerLink="/carrinho">
-                      <i class="fa-solid fa-suitcase-rolling"></i>
-                      adicionar ao carrinho
-                  </a>
-              </div>
-          </div>
+        <div class="col-1">
+          <img [src]="pacotes.img" alt="">
+        </div>
+
+        <div class="col-2">
+
+          <h2>{{ pacotes.nome }}</h2>
+
+          <span class="">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+
+          <h1>
+            {{ pacotes.preco | currency }}
+          </h1>
+
+          <ul>
+            <li><i class="fa-solid fa-angle-right"></i> Valor voo: {{ pacotes.voos.preco | currency }}</li>
+            <li><i class="fa-solid fa-angle-right"></i> Data de partida: {{ pacotes.voos.dataEmbarque }}</li>
+            <li><i class="fa-solid fa-angle-right"></i> Hospedagem: {{ pacotes.hospedagem.nome }}</li>
+            <li><i class="fa-solid fa-angle-right"></i> Valor hospedagem: {{ pacotes.hospedagem.preco | currency }}</li>
+          </ul>
+
+          <button class="btn-add-carrinho">
+            <i class="fa-solid fa-cart-shopping"></i> Adicionar
+          </button>
+
+        </div>
+
       </div>
   </section>
 

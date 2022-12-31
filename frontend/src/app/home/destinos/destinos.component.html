@@ -12,122 +12,31 @@
       <a href="#sobre">Sobre</a>
     </div>
     <div class="btn-user-area">
-      <a class="btn-logar" href="">login</a>
+      <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
       <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
   </div>
   </nav>
-
-  <!--banner-->
-  <header class="banner" id="banner">
-    <h1>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, impedit!
-    </h1>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum impedit
-      provident vero?
-    </p>
-    <div class="btn-banner">mostre-me</div>
-    <div class="pesquisa">
-      <div class="col-1">
-        <div class="col-col-1">
-          <label for=""><i class="fa-solid fa-location-dot"></i> Origem</label>
-          <select name="" id="">
-            <option value="">selecione</option>
-            <option value="">option</option>
-          </select>
-        </div>
-        <div class="col-col-2">
-          <label for=""><i class="fa-solid fa-plane"></i> Destino</label>
-          <select name="" id="">
-            <option value="">selecione</option>
-            <option value="">option</option>
-          </select>
-        </div>
-        <div class="col-col-3">
-          <label for=""><i class="fa-solid fa-check"></i> Tipo</label>
-          <select name="" id="">
-            <option value="">selecione</option>
-            s
-            <option value="">Todos</option>
-            <option value="">Apenas voo</option>
-            <option value="">Voo e hospedagem</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-2">
-        <a href="" class="pesquisa-parametros"> pesquisar </a>
-      </div>
-    </div>
-  </header>
 
   <!--sessão 3-->
   <section class="locais" id="locais">
     <div class="row-1">
       <h2>Principais locais para visitar</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis,
-        vitae?
+        Veja todos os lugares onde nos podemos te levar.
       </p>
     </div>
     <div class="row-2">
-      <div class="card">
-        <img src="../../../assets/img/02.jpg" alt="" />
+
+      <!--Card-->
+      <div class="card" *ngFor="let item of cidade">
+        <img [src]="item.img" alt="" />
         <div class="data">
-          <h2>Nome do local</h2>
-          <p>Caracteristicas do local</p>
-          <h4>Observação</h4>
-          <a href="" class="btn-ver-pacotes"> Ver pacotes para o local </a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../../assets/img/02.jpg" alt="" />
-        <div class="data">
-          <h2>Nome do local</h2>
-          <p>Caracteristicas do local</p>
-          <h4>Observação</h4>
+          <h2>{{ item.nome }}</h2>
+          <p>{{ item.estado.nome }}</p>
           <a href="" class="btn-ver-pacotes"> Ver pacotes para o local </a>
         </div>
       </div>
 
-      <div class="card">
-        <img src="../../../assets/img/02.jpg" alt="" />
-        <div class="data">
-          <h2>Nome do local</h2>
-          <p>Caracteristicas do local</p>
-          <h4>Observação</h4>
-          <a href="" class="btn-ver-pacotes"> Ver pacotes para o local </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../../../assets/img/02.jpg" alt="" />
-        <div class="data">
-          <h2>Nome do local</h2>
-          <p>Caracteristicas do local</p>
-          <h4>Observação</h4>
-          <a href="" class="btn-ver-pacotes"> Ver pacotes para o local </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../../../assets/img/02.jpg" alt="" />
-        <div class="data">
-          <h2>Nome do local</h2>
-          <p>Caracteristicas do local</p>
-          <h4>Observação</h4>
-          <a href="" class="btn-ver-pacotes"> Ver pacotes para o local </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../../../assets/img/02.jpg" alt="" />
-        <div class="data">
-          <h2>Nome do local</h2>
-          <p>Caracteristicas do local</p>
-          <h4>Observação</h4>
-          <a href="" class="btn-ver-pacotes"> Ver pacotes para o local </a>
-        </div>
-      </div>
     </div>
   </section>
 

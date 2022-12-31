@@ -63,7 +63,7 @@ section{
 
 .navbar .btn-user-area{
   height: 100%;
-  width: 130px;
+  width: 110px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,7 +75,7 @@ section{
   color: #fff;
   border-radius: 5px;
   height: 30px;
-  width: 70px;
+  width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -112,118 +112,55 @@ section{
   color: #0059b3;
 }
 
-/*banner*/
-.banner{
-    height: 650px;
-    width: 100%;
-    background: url('../../../assets/img/01.jpg') no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 150px 350px 0;
+
+/*pesquisa*/
+.search-box{
+  height: 50px;
+  width: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.banner h1{
-    font-size: 45px;
-    color: #fff;
-    text-align: center;
+.search-box .pesquisa{
+  height: 40px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
 }
 
-.banner p{
-    font-size: 15px;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+.search-box .pesquisa input{
+  height: 40px;
+  width: 90%;
+  outline: 0;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  padding: 0 20px;
+  font-size: 15px;
 }
 
-.banner .btn-banner{
-    height: 40px;
-    width: 150px;
-    display: flex;
-    flex-direction: row;
-    background: #f2f2f2;
-    font-size: 14px;
-    border-radius: 5px;
-    color: #1a1a1a;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    cursor: pointer;
+.search-box .pesquisa .btn-pesquisa{
+  height: 40px;
+  width: 10%;
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.banner .btn-banner:hover{
-    font-size: 15px;
-    background: none;
-    border: 2px solid #DC143C;
-    color: #DC143C;
-}
-
-.banner .pesquisa{
-    height: 120px;
-    width: 550px;
-    background: #f2f2f2;
-    border-radius: 10px;
-    position: relative;
-    top: 120px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    flex-direction: row;
-}
-
-.banner .pesquisa .col-1{
-    height: 100%;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner .pesquisa .col-1 input{
-  height: 35px;
-  width: 350px;
-  padding: 0 10px;
-  border: 1px solid #1a1a1a;
-  border-radius: 5px;
-  outline: none;
-}
-
-.banner .pesquisa .col-2{
-    height: 100%;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner .pesquisa .col-2 .pesquisa-parametros{
-    background: #0059b3;
-    color: #fff;
-    border-radius: 5px;
-    height: 35px;
-    width: 120px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-.banner .pesquisa .col-2 .pesquisa-parametros:hover{
-    background: none;
-    border: 1px solid #0059b3;
-    color: #0059b3;
-
+.search-box .pesquisa .btn-pesquisa:hover{
+  background: #ccc;
 }
 
 /*sessão 2*/
 .pacotes{
     height: auto;
     width: 100%;
-    background: #f0f0f0;
+    background: #fff;
     display: flex;
     flex-direction: column;
 }
@@ -257,7 +194,7 @@ section{
     margin: 20px;
     height: 450px;
     width: 350px;
-    background: #f0f0f0;
+    background: #fff;
     display: flex;
     flex-direction: column;
     transition: all 0.5s ease;
