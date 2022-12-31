@@ -21,7 +21,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 * Java 17
 * Maven
-* Spring Boot 2.7.4
+* Spring Boot
 * Spring Web
 * Spring Data
 * Spring Security
@@ -31,14 +31,10 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * H2 Database
 * MySQL
 * Swagger
-* Angular 14
+* Angular
 * Angular Material
-* Bootstrap 4
-* Ionic 6
-* Amazon Web Services
-* Amazon S3
-* Netlify
-* Play Store
+* Bootstrap
+* Ionic
 
 
 
@@ -56,9 +52,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 Copyright © 2022 <a href="https://github.com/edderluanps" >Edder Luan</a>
 
-Este projeto está sob lincença MIT.
-
-Free Admin Template<a href="https://startbootstrap.com/theme/sb-admin-2"> SB Admin 2 </a>
+Este projeto está sob licença MIT.
 
 Logo gerado gratuitamete em <a href="https://www.freelogodesign.org">Free Logo Design</a>
 
