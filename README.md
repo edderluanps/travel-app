@@ -37,6 +37,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### Frontend
 
+* TypeScript
 * Angular
 * Material Design
 * Font Awesome
