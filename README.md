@@ -19,7 +19,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ## Tecnologias
 
-# Backend
+### Backend
 
 * Astah (Modelagem)
 * Java 17
@@ -33,12 +33,12 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Mockito
 * Swagger
 
-# Banco de dados
+### Banco de dados
 
 * H2 Database
 * MySQL
 
-# Frontend
+### Frontend
 
 * Angular
 * Material Design
