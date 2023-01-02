@@ -19,6 +19,9 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ## Tecnologias
 
+# Backend
+
+* Astah (Modelagem)
 * Java 17
 * Maven
 * Spring Boot
@@ -28,13 +31,19 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Lombok
 * JUnit
 * Mockito
+* Swagger
+
+# Banco de dados
+
 * H2 Database
 * MySQL
-* Swagger
+
+# Frontend
+
 * Angular
-* Angular Material
-* Bootstrap
-* Ionic
+* Material Design
+* Font Awesome
+* Ionic (Implementação Futura)
 
 
 
