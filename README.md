@@ -44,9 +44,9 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### Deploy
 
-* Railway Backend (Implementação Futura)
-* Railway MySQL DB (Implementação Futura)
-* Netlify (Implementação Futura)
+* Backend: Railway (Implementação Futura)
+* DB: Railway (Implementação Futura)
+* Frotend: Netlify (Implementação Futura)
 
 
 ## Funções principais
