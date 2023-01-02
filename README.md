@@ -44,13 +44,15 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 
 
-## Funções adicionais
+## Funções principais
 
-* Emissão de relatórios para Admins
-* Emissão de comprovantes para Clientes
-* Emissão de boletos para Clientes
-* Emails de alerta para Clientes
-* Emails de comprovação para Clientes
+### Clientes
+* Compra de pacotes turísticos com voos e hospedagem.
+* Acesso ao blog do site com dicas, curiosidades e reviews.
+
+### Admins
+* Adicionar, editar e remover pacotes turísticos.
+* Adicionar, editar e remover postagens no blog.
 
 
 
