@@ -42,6 +42,11 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Font Awesome
 * Ionic (Implementação Futura)
 
+### Deploy
+
+* Railway Backend (Implementação Futura)
+* Railway MySQL DB (Implementação Futura)
+* Netlify (Implementação Futura)
 
 
 ## Funções principais
