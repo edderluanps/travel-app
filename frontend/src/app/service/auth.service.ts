@@ -5,6 +5,7 @@ import { API_URL } from 'src/environments/environment';
 import { LocalUser } from '../model/local_user';
 import { StorageService } from './storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { CarrinhoService } from './carrinho.service';
 
 
 @Injectable({
@@ -16,7 +17,8 @@ export class AuthService {
 
   constructor(
     private httpClient: HttpClient,
-    public storageService: StorageService) { }
+    public storageService: StorageService,
+    public carrinhoService : CarrinhoService) { }
 
   authenticate(credenciais: CredenciaisDTO){
     return this.httpClient.post(`${API_URL}login`, credenciais, {
@@ -31,6 +33,7 @@ export class AuthService {
       email: this.jwtHelper.decodeToken(tok).sub
     }
     this.storageService.setLocalUser(user);
+    this.carrinhoService.createOrClearCart();
   }
 
   logOut(){

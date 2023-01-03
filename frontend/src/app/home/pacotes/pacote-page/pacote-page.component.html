@@ -52,7 +52,7 @@
             <li><i class="fa-solid fa-angle-right"></i> Valor hospedagem: {{ pacotes.hospedagem.preco | currency }}</li>
           </ul>
 
-          <button class="btn-add-carrinho">
+          <button class="btn-add-carrinho" (click)="addItemCarrinho(pacotes)">
             <i class="fa-solid fa-cart-shopping"></i> Adicionar
           </button>
 

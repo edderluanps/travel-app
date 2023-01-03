@@ -6,17 +6,17 @@
       <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
     </div>
     <div class="menu-area">
-        <a href="#banner">Inicio</a>
-        <a href="#pacotes">Pacotes</a>
-        <a href="#locais">Locais</a>
-        <a href="#blog">Blog</a>
-        <a href="#sobre">Sobre</a>
+      <a href="#banner">Inicio</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#locais">Locais</a>
+      <a href="#blog">Blog</a>
+      <a href="#sobre">Sobre</a>
     </div>
     <div class="btn-user-area">
-        <a class="btn-logar" href="">login</a>
-        <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
-    </div>
-</nav>
+      <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
+      <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
+  </div>
+  </nav>
 
   <section class="conteudo">
       <h2>Sua bagagem</h2>
@@ -31,118 +31,63 @@
 
          <div class="row-1">
 
-          <div class="card">
+          <p class="alerta" *ngIf="total()<=0">Sua bagagem está vazia</p>
+
+          <!--card-->
+          <div class="card" *ngFor="let item of items">
+
               <div class="col-1">
-                  <img src="assets/02.jpg" alt="">
+                  <img [src]="item.pacote.img" alt="">
               </div>
 
               <div class="col-2">
-                  <h4>lorem ipsum</h4>
-                  <p>Lorem, ipsum.</p>
+                  <h4>{{ item.pacote.nome }}</h4>
+                  <p>Descrição </p>
               </div>
 
               <div class="col-3">
                   <div class="seletor">
-                      <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
-                      <select name="" id="">
-                          <option value="">1</option>
+                      <button class="btn-add" (click)="increaseQuantity(item.pacote)"><i class="fa-solid fa-plus"></i></button>
+                      <select name="" id="" [disabled]="true">
+                          <option value="">{{ item.quantidade }}</option>
                       </select>
-                      <button class="btn-remover"><i class="fa-solid fa-minus"></i></button>
+                      <button class="btn-remover" (click)="decreaseQuantity(item.pacote)"><i class="fa-solid fa-minus"></i></button>
                   </div>
               </div>
 
               <div class="col-4">
-                  <button class="btn-excluir"><i class="fa-solid fa-x"></i></button>
+                  <button class="btn-excluir" (click)="removeItem(item.pacote)"><i class="fa-solid fa-x"></i></button>
               </div>
 
               <div class="col-5">
-                  <h1>RS 1.000,00</h1>
-                  <p>parcelas</p>
+                  <h1>{{ item.pacote.preco | currency }}</h1>
+                  <p>valor do item</p>
               </div>
           </div>
-
-          <div class="card">
-              <div class="col-1">
-                  <img src="assets/02.jpg" alt="">
-              </div>
-
-              <div class="col-2">
-                  <h4>lorem ipsum</h4>
-                  <p>Lorem, ipsum.</p>
-              </div>
-
-              <div class="col-3">
-                  <div class="seletor">
-                      <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
-                      <select name="" id="">
-                          <option value="">1</option>
-                      </select>
-                      <button class="btn-remover"><i class="fa-solid fa-minus"></i></button>
-                  </div>
-              </div>
-
-              <div class="col-4">
-                  <button class="btn-excluir"><i class="fa-solid fa-x"></i></button>
-              </div>
-
-              <div class="col-5">
-                  <h1>RS 1.000,00</h1>
-                  <p>parcelas</p>
-              </div>
-          </div>
-
-          <div class="card">
-              <div class="col-1">
-                  <img src="assets/02.jpg" alt="">
-              </div>
-
-              <div class="col-2">
-                  <h4>lorem ipsum</h4>
-                  <p>Lorem, ipsum.</p>
-              </div>
-
-              <div class="col-3">
-                  <div class="seletor">
-                      <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
-                      <select name="" id="">
-                          <option value="">1</option>
-                      </select>
-                      <button class="btn-remover"><i class="fa-solid fa-minus"></i></button>
-                  </div>
-              </div>
-
-              <div class="col-4">
-                  <button class="btn-excluir"><i class="fa-solid fa-x"></i></button>
-              </div>
-
-              <div class="col-5">
-                  <h1>RS 1.000,00</h1>
-                  <p>parcelas</p>
-              </div>
-          </div>
+          <!--card-->
 
 
          </div>
 
          <div class="row-2">
           <div class="mini-card">
-              <h4>lorem ipsum</h4>
+              <h4>Descontos</h4>
               <h1>RS 10,00</h1>
           </div>
 
           <div class="mini-card">
-              <h4>lorem ipsum</h4>
+              <h4>Vale presente</h4>
               <h1>RS 10,00</h1>
           </div>
 
           <div class="mini-card">
-              <h4>lorem ipsum</h4>
+              <h4>Acrescimos</h4>
               <h1>RS 10,00</h1>
           </div>
 
           <div class="mini-card">
-              <h4>lorem ipsum</h4>
-              <h1>RS 10,00</h1>
+              <h4>Total</h4>
+              <h1>{{total() | currency}}</h1>
           </div>
 
          </div>
@@ -153,7 +98,7 @@
               <button class="btn-desconto">aplicar</button>
           </div>
 
-          <button class="btn-voltar">
+          <button class="btn-voltar" (click)="goOn()">
               voltar
           </button>
 

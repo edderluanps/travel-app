@@ -17,6 +17,7 @@ section{
   padding: 0 50px 0 150px;
 }
 
+
 .navbar .logo-area{
   height: 100%;
   width: 120px;
@@ -49,7 +50,6 @@ section{
 }
 
 .navbar .menu-area a{
-  font-size: 16px;
   padding: 0 20px;
   color: #1a1a1a;
   transition: all 0.5s ease;
@@ -63,7 +63,7 @@ section{
 
 .navbar .btn-user-area{
   height: 100%;
-  width: 130px;
+  width: 110px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,7 +75,7 @@ section{
   color: #fff;
   border-radius: 5px;
   height: 30px;
-  width: 70px;
+  width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -164,6 +164,11 @@ section{
   align-items: center;
   padding: 10px;
   overflow-y: scroll;
+}
+
+.conteudo .box .row-1 .alerta{
+  padding-top: 100px;
+  font-size: 50px;
 }
 
 .conteudo .box .row-1 .card{
@@ -378,19 +383,19 @@ section{
 .conteudo .box .row-3 .btn-voltar{
   height: 50px;
   width: 200px;
-  background: #0059b3;
-  color: #fff;
+  background: none;
+  border: 1px solid #0059b3;
+  color: #0059b3;
   font-size: 20px;
   border-radius: 5px;
-  border: 0;
   transition: all 0.5s ease;
   cursor: pointer;
 }
 
 .conteudo .box .row-3 .btn-voltar:hover{
-  background: none;
-  color: #0059b3;
-  border: 1px solid #0059b3;
+  background: #0059b3;
+  color: #fff;
+  border: none;
 }
 
 .conteudo .box .row-3 .btn-comprar{

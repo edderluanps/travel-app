@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PacoteDTO } from 'src/app/model/pacote.dto';
 import { Pacotes } from 'src/app/model/pacotes';
+import { CarrinhoService } from 'src/app/service/carrinho.service';
 import { PacotesService } from 'src/app/service/pacotes.service';
 
 @Component({
@@ -12,7 +14,11 @@ export class PacotePageComponent implements OnInit {
 
   pacotes : Pacotes | any;
 
-  constructor(private pacoteService : PacotesService, private route : ActivatedRoute) { }
+  constructor(
+    private pacoteService : PacotesService,
+    private route : ActivatedRoute,
+    private router : Router,
+    private carrinhoService : CarrinhoService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => this.getPacoteById(params['id']))
@@ -22,6 +28,11 @@ export class PacotePageComponent implements OnInit {
     this.pacoteService.getPacoteById(id).subscribe(response => {
       this.pacotes = response;
     });
+  }
+
+  addItemCarrinho(pacotes: PacoteDTO){
+    this.carrinhoService.addPacote(pacotes);
+    this.router.navigate(['/carrinho']);
   }
 
 }
