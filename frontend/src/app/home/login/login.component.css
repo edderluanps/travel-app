@@ -39,6 +39,7 @@
   border: 0;
   outline: none;
   border-radius: 5px;
+  padding: 0 10px;
 }
 
 .box .btn-group{
@@ -81,7 +82,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .box .btn-group .row-2 .btn-cadastrar{

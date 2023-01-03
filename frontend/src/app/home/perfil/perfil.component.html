@@ -1,22 +1,22 @@
 <body>
 
-  <!--navbar-->
-  <nav class="navbar">
-    <div class="logo-area">
-      <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
-    </div>
-    <div class="menu-area">
+    <!--navbar-->
+    <nav class="navbar">
+      <div class="logo-area">
+        <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
+      </div>
+      <div class="menu-area">
         <a href="#banner">Inicio</a>
         <a href="#pacotes">Pacotes</a>
         <a href="#locais">Locais</a>
         <a href="#blog">Blog</a>
         <a href="#sobre">Sobre</a>
-    </div>
-    <div class="btn-user-area">
-        <a class="btn-logar" routerLink="/login">login</a>
+      </div>
+      <div class="btn-user-area">
+        <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
         <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
     </div>
-</nav>
+    </nav>
 
   <!--conteudo-->
   <div class="conteudo">
@@ -30,10 +30,24 @@
 
               <div class="menu">
                   <ul>
-                      <li><a href=""><i class="fa-solid fa-user"></i> Dados pessoais</a></li>
+                      <h4>Cliente</h4>
+                      <li><a href=""><i class="fa-solid fa-suitcase"></i> Pedidos</a></li>
                       <li><a href=""><i class="fa-solid fa-location-dot"></i> Endereços</a></li>
-                      <li><a href=""><i class="fa-solid fa-suitcase-rolling"></i> Compras</a></li>
-                      <li><a href=""><i class="fa-solid fa-gear"></i> Configurações</a></li>
+                  </ul>
+                  <ul>
+                    <h4>Admin</h4>
+                    <li><a href=""><i class="fa-solid fa-user"></i> Clientes</a></li>
+                    <li><a href=""><i class="fa-solid fa-location-dot"></i> Estados</a></li>
+                    <li><a href=""><i class="fa-solid fa-location-dot"></i> Cidades</a></li>
+                    <li><a href=""><i class="fa-solid fa-suitcase-rolling"></i> Pacotes</a></li>
+                    <li><a href=""><i class="fa-solid fa-plane"></i> Cias aereas</a></li>
+                    <li><a href=""><i class="fa-solid fa-plane"></i> Voos</a></li>
+                    <li><a href=""><i class="fa-solid fa-square-rss"></i> Postagens</a></li>
+                  </ul>
+                  <ul>
+                    <h4>Perfil</h4>
+                    <li><a href=""><i class="fa-solid fa-gear"></i> Configuração</a></li>
+                    <li><a href="" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Desconectar</a></li>
                   </ul>
               </div>
           </div>

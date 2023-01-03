@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClienteDTO } from 'src/app/model/cliente.dto';
+import { AuthService } from 'src/app/service/auth.service';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { StorageService } from 'src/app/service/storage.service';
 
@@ -16,7 +17,8 @@ export class PerfilComponent implements OnInit {
   constructor(
     public storage: StorageService,
     public clienteService: ClienteService,
-    public router: Router) { }
+    public router: Router,
+    private authService : AuthService) { }
 
   ngOnInit() {
     let localUser = this.storage.getLocalUser();
@@ -32,4 +34,9 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
+
+  logout(){
+    this.authService.logOut();
+  }
+
 }

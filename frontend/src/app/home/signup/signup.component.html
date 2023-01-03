@@ -1,20 +1,58 @@
+<!--navbar-->
+<nav class="navbar">
+  <div class="logo-area">
+    <a routerLink=""
+      ><img src="../../../assets/img/logo-nobg01.png" alt=""
+    /></a>
+  </div>
+  <div class="menu-area">
+    <a href="#banner">Inicio</a>
+    <a href="#pacotes">Pacotes</a>
+    <a href="#locais">Locais</a>
+    <a href="#blog">Blog</a>
+    <a href="#sobre">Sobre</a>
+  </div>
+  <div class="btn-user-area">
+    <a class="btn-logar" routerLink="/perfil"
+      ><i class="fa-solid fa-user"></i
+    ></a>
+    <a class="btn-cart" routerLink="/carrinho"
+      ><i class="fa-solid fa-suitcase-rolling"></i
+    ></a>
+  </div>
+</nav>
+
+<!--form-->
 <div class="content">
   <form [formGroup]="formGroup" action="">
     <h2>Cadastre - se</h2>
 
     <div class="item">
       <label for="nome">nome</label>
-      <input type="text" formControlName="nome" id="">
+      <input type="text" formControlName="nome" id="" />
     </div>
-    <p *ngIf="formGroup.controls['nome'].invalid && (formGroup.controls['nome'].dirty || formGroup.controls['nome'].touched)">
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido</p>
+    <p
+      *ngIf="
+        formGroup.controls['nome'].invalid &&
+        (formGroup.controls['nome'].dirty || formGroup.controls['nome'].touched)
+      "
+    >
+      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+    </p>
 
     <div class="item">
       <label for="">email</label>
-      <input type="email" formControlName="email" id="">
+      <input type="email" formControlName="email" id="" />
     </div>
-    <p *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty || formGroup.controls['email'].touched)">
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido</p>
+    <p
+      *ngIf="
+        formGroup.controls['email'].invalid &&
+        (formGroup.controls['email'].dirty ||
+          formGroup.controls['email'].touched)
+      "
+    >
+      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+    </p>
 
     <div class="item">
       <label for="">Tipo</label>
@@ -23,69 +61,95 @@
         <option value="2">Admin</option>
       </select>
     </div>
-    <p *ngIf="formGroup.controls['tipo'].invalid" >
-      <i class="fa-solid fa-circle-exclamation"></i> Obrigatório</p>
+    <p *ngIf="formGroup.controls['tipo'].invalid">
+      <i class="fa-solid fa-circle-exclamation"></i> Obrigatório
+    </p>
 
     <div class="item">
       <label for="cpfOucnpj">CPF/CNPJ</label>
-      <input type="text" formControlName="cpfOuCnpj" id="">
+      <input type="text" formControlName="cpfOuCnpj" id="" />
     </div>
-    <p *ngIf="formGroup.controls['cpfOuCnpj'].invalid && (formGroup.controls['cpfOuCnpj'].dirty || formGroup.controls['cpfOuCnpj'].touched)">
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido</p>
+    <p
+      *ngIf="
+        formGroup.controls['cpfOuCnpj'].invalid &&
+        (formGroup.controls['cpfOuCnpj'].dirty ||
+          formGroup.controls['cpfOuCnpj'].touched)
+      "
+    >
+      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+    </p>
 
     <div class="item">
       <label for="senha">senha</label>
-      <input type="password" formControlName="senha" id="">
+      <input type="password" formControlName="senha" id="" />
     </div>
-    <p *ngIf="formGroup.controls['senha'].invalid && (formGroup.controls['senha'].dirty || formGroup.controls['senha'].touched)">
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido</p>
+    <p
+      *ngIf="
+        formGroup.controls['senha'].invalid &&
+        (formGroup.controls['senha'].dirty ||
+          formGroup.controls['senha'].touched)
+      "
+    >
+      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+    </p>
 
     <div class="item">
       <label for="logradouro">logradouro</label>
-      <input type="text" formControlName="logradouro" id="">
+      <input type="text" formControlName="logradouro" id="" />
     </div>
 
     <div class="item">
       <label for="numero">Número</label>
-      <input type="text" formControlName="numero" id="">
+      <input type="text" formControlName="numero" id="" />
     </div>
 
     <div class="item">
       <label for="complemento">Complemento</label>
-      <input type="text" formControlName="complemento" id="">
+      <input type="text" formControlName="complemento" id="" />
     </div>
 
     <div class="item">
       <label for="bairro">Bairro</label>
-      <input type="text" formControlName="bairro" id="">
+      <input type="text" formControlName="bairro" id="" />
     </div>
 
     <div class="item">
       <label for="cep">CEP</label>
-      <input type="text" formControlName="cep" id="">
+      <input type="text" formControlName="cep" id="" />
     </div>
 
     <div class="item">
       <label for="telefone1">Telefone 1</label>
-      <input type="text" formControlName="telefone1" id="">
+      <input type="text" formControlName="telefone1" id="" />
     </div>
-    <p *ngIf="formGroup.controls['telefone1'].invalid && (formGroup.controls['telefone1'].dirty || formGroup.controls['telefone1'].touched)">
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido</p>
+    <p
+      *ngIf="
+        formGroup.controls['telefone1'].invalid &&
+        (formGroup.controls['telefone1'].dirty ||
+          formGroup.controls['telefone1'].touched)
+      "
+    >
+      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+    </p>
 
     <div class="item">
       <label for="telefone2">Telefone 2</label>
-      <input type="text" formControlName="telefone2" id="">
+      <input type="text" formControlName="telefone2" id="" />
     </div>
 
     <div class="item">
       <label for="telefone3">Telefone 3</label>
-      <input type="text" formControlName="telefone3" id="">
+      <input type="text" formControlName="telefone3" id="" />
     </div>
 
     <div class="item">
       <label for="estadoId">Estado</label>
       <select formControlName="estadoId" id="" (change)="updateCidades()">
-        <option *ngFor="let estado of estados; first as f" [value]="estado.id" selected="f">
+        <option
+          *ngFor="let estado of estados; first as f"
+          [value]="estado.id"
+          selected="f"
+        >
           {{ estado.nome }}
         </option>
       </select>
@@ -102,8 +166,13 @@
 
     <div class="btn-group">
       <button routerLink="/login" class="btn-voltar">Voltar</button>
-      <button (click)="onSubmit()" [disabled]="formGroup.invalid" class="btn-submit">Cadastrar</button>
+      <button
+        (click)="onSubmit()"
+        [disabled]="formGroup.invalid"
+        class="btn-submit"
+      >
+        Cadastrar
+      </button>
     </div>
   </form>
-
 </div>
