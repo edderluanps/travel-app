@@ -53,43 +53,17 @@
       </div>
       <div class="row-2">
 
-          <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <div class="col-1">
-                      <h4><a routerLink="/pacote-page">Nome</a></h4>
-                      <h2>RS 1.000,00</h2>
-                      <span><i class="fa-solid fa-plane"></i> voo</span>
-                      <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-                  </div>
-              </div>
-          </div>
-
-          <div class="card">
-            <img src="../../../assets/img/02.jpg" alt="">
+          <div class="card" *ngFor="let item of pacotes">
+            <img [src]="item.img" alt="">
             <div class="data">
                 <div class="col-1">
-                    <h4><a routerLink="/pacote-page">Nome</a></h4>
-                    <h2>RS 1.000,00</h2>
-                    <span><i class="fa-solid fa-plane"></i> voo</span>
-                    <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
+                    <h4><a [routerLink]="['/pacote-page', item.id]">{{ item.nome }}</a></h4>
+                    <h2> {{ item.preco  | currency  }}</h2>
+                    <span><i class="fa-solid fa-plane"></i> Embarque {{ item.voos.dataEmbarque }}</span>
+                    <span><i class="fa-solid fa-bell-concierge"></i> {{ item.hospedagem.nome }}</span>
                 </div>
             </div>
-        </div>
-
-        <div class="card">
-          <img src="../../../assets/img/02.jpg" alt="">
-          <div class="data">
-              <div class="col-1">
-                  <h4><a routerLink="/pacote-page">Nome</a></h4>
-                  <h2>RS 1.000,00</h2>
-                  <span><i class="fa-solid fa-plane"></i> voo</span>
-                  <span><i class="fa-solid fa-bell-concierge"></i> hospedagem</span>
-              </div>
           </div>
-      </div>
-
-
       </div>
    </section>
 
@@ -113,6 +87,7 @@
                   </a>
               </div>
           </div>
+
           <div class="card">
               <img src="../../../assets/img/02.jpg" alt="">
               <div class="data">
@@ -149,35 +124,17 @@
 
       <div class="row-2">
           <div class="col-1">
-              <div class="card">
-                  <img src="../../../assets/img/02.jpg" alt="">
+
+              <div class="card" *ngFor="let posts of posts">
+                  <img [src]="posts.img" alt="">
                   <div class="data">
-                      <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
-                      <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                      <span><i class="fa-solid fa-user"></i> por: autor</span>
+                      <h5><i class="fa-regular fa-calendar"></i> {{ posts.dataPostagem }}</h5>
+                      <h4><a routerLink="/blog-post">{{ posts.titulo }}</a></h4>
+                      <p>{{ posts.descricao }}</p>
+                      <span><i class="fa-solid fa-user"></i> por: {{ posts.cliente.nome }}</span>
                   </div>
               </div>
 
-              <div class="card">
-                <img src="../../../assets/img/02.jpg" alt="">
-                <div class="data">
-                    <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
-                    <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                    <span><i class="fa-solid fa-user"></i> por: autor</span>
-                </div>
-            </div>
-
-            <div class="card">
-              <img src="../../../assets/img/02.jpg" alt="">
-              <div class="data">
-                  <h5><i class="fa-regular fa-calendar"></i> 01/01/2023</h5>
-                  <h4><a routerLink="/blog-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est.</a></h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum expedita modi voluptatibus, atque nesciunt illum!</p>
-                  <span><i class="fa-solid fa-user"></i> por: autor</span>
-              </div>
-            </div>
           </div>
 
           <div class="col-2">

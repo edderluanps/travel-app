@@ -463,6 +463,10 @@ section{
 
 .blog .row-2 .col-1 .card .data p{
   font-size: 12px;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 0 5px 0;
 }
 
 .blog .row-2 .col-1 .card .data span{

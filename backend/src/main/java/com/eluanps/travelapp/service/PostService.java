@@ -7,6 +7,7 @@ import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,8 +20,8 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public List<Post> getByDate() {
-        return postRepository.findPost();
+    public List<Post> getLastThree() {        
+        return postRepository.findLastThree(PageRequest.of(0,3));
     }
 
     public List<Post> getByKeyword(String titulo) {

@@ -30,14 +30,14 @@ public class PostController {
         return postService.getAll();
     }
 
-    @GetMapping("/last-posts")
-    public List<Post> getByDate() {
-        return postService.getByDate();
-    }
-
     @GetMapping("/resultados-pesquisa")
     public List<Post> getByKeyword(@RequestParam(value = "titulo", defaultValue = "") String titulo) {
         return postService.getByKeyword(titulo);
+    }
+
+    @GetMapping("/ultimos-posts")
+    public List<Post> getLastThree() {
+        return postService.getLastThree();
     }
 
     @GetMapping("/{id}")

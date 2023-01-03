@@ -23,4 +23,8 @@ export class BlogService {
     return this.httpClient.get<any>(`${API_URL}api/posts/resultados-pesquisa?titulo=${titulo}`);
   }
 
+  getLastPosts() : Observable<Post>{
+    return this.httpClient.get<any>(`${API_URL}api/posts/ultimos-posts`);
+  }
+
 }

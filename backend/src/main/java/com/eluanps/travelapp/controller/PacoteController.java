@@ -1,11 +1,9 @@
 package com.eluanps.travelapp.controller;
 
-import com.eluanps.travelapp.controller.util.URL;
 import com.eluanps.travelapp.entity.Pacote;
 import com.eluanps.travelapp.service.PacoteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -30,6 +28,11 @@ public class PacoteController {
     @GetMapping
     public List<Pacote> getAll() {
         return pacoteService.getAll();
+    }
+
+    @GetMapping("/ultimos-pacotes")
+    public List<Pacote> getLastThree() {
+        return pacoteService.getLastThree();
     }
 
     @GetMapping("/{id}")
