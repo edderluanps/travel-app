@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BlogPostComponent } from "./home/blog/blog-post/blog-post.component";
 import { BlogComponent } from "./home/blog/blog.component";
 import { CarrinhoComponent } from "./home/carrinho/carrinho.component";
+import { CheckoutComponent } from "./home/checkout/checkout.component";
 import { DestinosComponent } from "./home/destinos/destinos.component";
 import { HomepageComponent } from "./home/homepage/homepage.component";
 import { LoginComponent } from "./home/login/login.component";
@@ -21,8 +22,8 @@ const routes: Routes = [
   { path: 'pacotes', component: PacotesComponent },
   { path: 'pacote-page/:id', component: PacotePageComponent },
   { path: 'destinos', component: DestinosComponent },
-  { path: 'carrinho', component: CarrinhoComponent }
-
+  { path: 'carrinho', component: CarrinhoComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ];
 
 @NgModule({

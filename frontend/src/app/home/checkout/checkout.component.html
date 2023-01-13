@@ -1,0 +1,17 @@
+<h2>Checkout</h2>
+<h2>Confirme o endereco</h2>
+
+<select name="" id="">
+  <option value="">
+    {{ items.endereco[0].logradouro }},
+    {{ items.endereco[0].numero }},
+    {{ items.endereco[0].bairro }},
+    {{ items.endereco[0].cep }},
+    {{ items.endereco[0].cidade.nome }},
+    {{ items.endereco[0].cidade.estado.nome }}
+  </option>
+</select>
+
+<button class="btn-selecionar-endereco">
+  selecionar
+</button>

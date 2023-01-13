@@ -22,6 +22,7 @@ import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
 import { SignupComponent } from './home/signup/signup.component';
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
+import { CheckoutComponent } from './home/checkout/checkout.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { MatCardModule } from '@angular/material/card';
     PerfilComponent,
     LoginComponent,
     SignupComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
