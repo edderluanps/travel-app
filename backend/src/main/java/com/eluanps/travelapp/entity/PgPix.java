@@ -14,7 +14,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @JsonTypeName("pgPix")
-
 public class PgPix extends Pagamento{
     
     private String chave;

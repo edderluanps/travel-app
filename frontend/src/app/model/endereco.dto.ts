@@ -7,5 +7,5 @@ export class EnderecoDTO {
   complemento: string;
   bairro: string;
   cep: string;
-  cidade: CidadeDTO;
+  cidade: CidadeDTO | any;
 }

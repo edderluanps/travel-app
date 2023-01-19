@@ -38,7 +38,7 @@ import { CheckoutComponent } from './home/checkout/checkout.component';
     PerfilComponent,
     LoginComponent,
     SignupComponent,
-    CheckoutComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

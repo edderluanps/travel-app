@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'pacote-page/:id', component: PacotePageComponent },
   { path: 'destinos', component: DestinosComponent },
   { path: 'carrinho', component: CarrinhoComponent },
-  { path: 'checkout', component: CheckoutComponent }
+  { path: 'checkout', component: CheckoutComponent },
 ];
 
 @NgModule({

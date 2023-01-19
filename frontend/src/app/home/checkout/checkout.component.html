@@ -1,17 +1,34 @@
 <h2>Checkout</h2>
-<h2>Confirme o endereco</h2>
+<h2>Confirme o endereco de cobrança</h2>
+<h5>Por quê exigimos o endereco? <a href="">ler mais...</a></h5>
+
 
 <select name="" id="">
-  <option value="">
-    {{ items.endereco[0].logradouro }},
-    {{ items.endereco[0].numero }},
-    {{ items.endereco[0].bairro }},
-    {{ items.endereco[0].cep }},
-    {{ items.endereco[0].cidade.nome }},
-    {{ items.endereco[0].cidade.estado.nome }}
+  <option value="" *ngFor="let item of items">
+    <h2>{{ item.logradouro }}, {{ item.numero }}</h2>
+    <p>{{ item.complemento }}, {{ item.bairro }} CEP {{ item.cep }}</p>
+    <p>{{ item.cidade.nome }}, {{ item.cidade.estado.nome }}</p>
   </option>
 </select>
 
-<button class="btn-selecionar-endereco">
-  selecionar
-</button>
+<div class="a"></div>
+
+<form [formGroup]="formGroup" (ngSubmit)="nextStep(); $event.preventDefault()">
+
+      <h4>Tipo de pagamento</h4>
+
+      <select name="" id="" formControlName="@type">
+        <option value="pgCartao">Cartao</option>
+        <option value="pgBoleto">Boleto</option>
+        <option value="pgPix">Pix</option>
+      </select>
+
+
+  <div *ngIf="formGroup.value['@type'] == 'pgCartao'">
+    <h4 stacked>Parcelas no boleto</h4>
+    <select formControlName="numParcelas">
+      <option *ngFor="let n of parcelas; first as f" [value]="n" [selected]="f">{{n}}</option>
+    </select>
+  </div>
+  <button ion-button block type="submit" [disabled]="formGroup.invalid">Próximo</button>
+</form>

@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonTypeName("pgBoleto")
+@JsonTypeName("pgCartao")
 public class PgCartao extends Pagamento{
     
     private int numParcelas;
