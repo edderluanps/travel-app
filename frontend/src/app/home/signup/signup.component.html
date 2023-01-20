@@ -80,6 +80,19 @@
     </p>
 
     <div class="item">
+      <label for="nome">Data nascimento</label>
+      <input type="text" formControlName="dataNascimento" id="" />
+    </div>
+    <p
+      *ngIf="
+        formGroup.controls['dataNascimento'].invalid &&
+        (formGroup.controls['dataNascimento'].dirty || formGroup.controls['dataNascimento'].touched)
+      "
+    >
+      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+    </p>
+
+    <div class="item">
       <label for="senha">senha</label>
       <input type="password" formControlName="senha" id="" />
     </div>

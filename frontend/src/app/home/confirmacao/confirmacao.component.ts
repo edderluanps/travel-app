@@ -8,6 +8,7 @@ import { CarrinhoService } from 'src/app/service/carrinho.service';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { PacotesService } from 'src/app/service/pacotes.service';
 import { PedidoService } from 'src/app/service/pedido.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-confirmacao',
@@ -39,6 +40,7 @@ export class ConfirmacaoComponent implements OnInit {
         this.cliente = response as ClienteDTO;
       },
         error => {
+          Swal.fire('Oops... Ocorreu um erro: ' + error.message);
           this.router.navigate(['/login']);
         });
 
@@ -48,7 +50,7 @@ export class ConfirmacaoComponent implements OnInit {
     return this.carrinhoService.total();
   }
 
-  voltar(){
+  voltar() {
     this.router.navigate(['/checkout']);
   }
 
@@ -60,18 +62,18 @@ export class ConfirmacaoComponent implements OnInit {
         this.carrinhoService.createOrClearCart();
         this.codpedido = this.extractId(response.headers.get('location') || '');
         this.router.navigate(['/']);
-        alert('Pedido confirmado');
+        Swal.fire('Pedido confirmado');
       },
         error => {
           if (error.status == 403) {
-            alert('erro: ' + error);
+            Swal.fire('Oops... Ocorreu um erro: ' + error.message);
             this.router.navigate(['/login']);
           }
         });
   }
 
   private extractId(location: string): string {
-    let position = location.lastIndexOf('/');
+    let position = location.lastIndexOf('');
     return location.substring(position + 1, location.length);
   }
 

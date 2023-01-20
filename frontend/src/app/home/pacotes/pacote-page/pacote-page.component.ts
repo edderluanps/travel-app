@@ -4,6 +4,7 @@ import { PacoteDTO } from 'src/app/model/pacote.dto';
 import { Pacotes } from 'src/app/model/pacotes';
 import { CarrinhoService } from 'src/app/service/carrinho.service';
 import { PacotesService } from 'src/app/service/pacotes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pacote-page',
@@ -25,9 +26,11 @@ export class PacotePageComponent implements OnInit {
   }
 
   getPacoteById(id: number){
-    this.pacoteService.getPacoteById(id).subscribe(response => {
-      this.pacotes = response;
-    });
+    this.pacoteService.getPacoteById(id).subscribe(response =>
+      this.pacotes = response, error => {
+        Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+      }
+    );
   }
 
   addItemCarrinho(pacotes: PacoteDTO){

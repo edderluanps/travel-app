@@ -4,6 +4,7 @@ import { Pacotes } from 'src/app/model/pacotes';
 import { AuthService } from 'src/app/service/auth.service';
 import { BlogService } from 'src/app/service/blog.service';
 import { PacotesService } from 'src/app/service/pacotes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-homepage',
@@ -31,11 +32,15 @@ export class HomepageComponent implements OnInit {
   }
 
   listLastThreePacotes(){
-    this.pacotesService.getLastPacotes().subscribe(response => this.pacotes = (response));
+    this.pacotesService.getLastPacotes().subscribe(response => this.pacotes = response, error =>{
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
   }
 
   listLastThreePosts(){
-    this.blogService.getLastPosts().subscribe(response => this.posts = (response));
+    this.blogService.getLastPosts().subscribe(response => this.posts = response, error => {
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
   }
 
 }

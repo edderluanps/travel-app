@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/model/post';
 import { BlogService } from 'src/app/service/blog.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-blog-post',
@@ -16,12 +17,13 @@ export class BlogPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => this.getPostById(params['id']));
-
   }
 
   getPostById(id: number){
     this.postService.getPostById(id).subscribe(response => {
-      this.post = response;
+      this.post = response, error => {
+        Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+      };
     });
   }
 

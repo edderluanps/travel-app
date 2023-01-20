@@ -60,7 +60,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     this.storageService.setLocalUser(user);
   }
 
-  handle404(errorMsg: any){
+  handle404(errorMsg: any) {
     let alertMsg = this.listErrors(errorMsg.errors);
     alert(alertMsg);
   }
@@ -69,13 +69,13 @@ export class ErrorInterceptor implements HttpInterceptor {
     alert('Erro: ' + errorMsg.status + errorMsg.log);
   }
 
-  private listErrors(messages : FieldMessage[]) : string {
-    let s : string = '';
-    for (var i=0; i<messages.length; i++) {
-        s = s + '<p><strong>' + messages[i].fieldName + "</strong>: " + messages[i].message + '</p>';
+  private listErrors(messages: FieldMessage[]): string {
+    let s: string = '';
+    for (var i = 0; i < messages.length; i++) {
+      s = s + '<p><strong>' + messages[i].fieldName + "</strong>: " + messages[i].message + '</p>';
     }
     return s;
-}
+  }
 
 }
 

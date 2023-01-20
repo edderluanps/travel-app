@@ -4,6 +4,7 @@ import { ClienteDTO } from 'src/app/model/cliente.dto';
 import { AuthService } from 'src/app/service/auth.service';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { StorageService } from 'src/app/service/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfil',
@@ -27,6 +28,7 @@ export class PerfilComponent implements OnInit {
         this.cliente = response as ClienteDTO
       }, error => {
         if (error.status == 403) {
+          Swal.fire('Oops... Ocorreu um erro: ' + error.message);
           this.router.navigate(['/login']);
         }
       });

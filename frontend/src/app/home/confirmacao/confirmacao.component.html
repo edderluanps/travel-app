@@ -16,18 +16,15 @@
 </div>
 
 <div>
-  <header>
-    Cliente
-  </header>
+  <header>Cliente</header>
   <div>
-    <h2>{{cliente.nome}}</h2>
-    <p>{{cliente.email}}</p>
+    <h2>{{ cliente.nome }}</h2>
+    <p>{{ cliente.email }}</p>
   </div>
 </div>
 
 <h2>Total</h2>
 <h5 item-end>{{ total() | currency }}</h5>
-
 
 <button (click)="voltar()">Voltar</button>
 <button (click)="confirmarPedido()">Confirmar pedido</button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PacotesService } from 'src/app/service/pacotes.service';
+import Swal from 'sweetalert2';
 import { Pacotes } from '../../model/pacotes';
 
 @Component({
@@ -19,15 +20,21 @@ export class PacotesComponent implements OnInit {
   }
 
   getPacotes() {
-    this.pacotesService.getPacotes().subscribe(response => this.pacotes = (response));
+    this.pacotesService.getPacotes().subscribe(response => this.pacotes = response, error => {
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
   }
 
   getPacoteById(id: number) {
-    this.pacotesService.getPacoteById(id).subscribe(response => this.pacotes = (response));
+    this.pacotesService.getPacoteById(id).subscribe(response => this.pacotes = response, error => {
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
   }
 
   getResultadoPesquisa(){
-    this.pacotesService.pesquisaPacotes(this.nome).subscribe(response => this.pacotes = (response));
+    this.pacotesService.pesquisaPacotes(this.nome).subscribe(response => this.pacotes = response, error => {
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
   }
 
 }

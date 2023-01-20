@@ -6,6 +6,7 @@ import { EstadoDTO } from 'src/app/model/estado.dto';
 import { CidadeService } from 'src/app/service/cidade.service';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { EstadoService } from 'src/app/service/estado.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -17,6 +18,7 @@ export class SignupComponent implements OnInit {
   formGroup: FormGroup;
   estados : EstadoDTO[];
   cidades: CidadeDTO[];
+  data : Date;
 
   constructor(public formBuilder: FormBuilder,
     public estadoService: EstadoService,
@@ -24,11 +26,15 @@ export class SignupComponent implements OnInit {
     public clienteService: ClienteService,
     public router : Router) {
 
+    this.data = new Date();
+
     this.formGroup = this.formBuilder.group({
       nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
       email: ['', [Validators.required, Validators.email]],
       tipo: ['', [Validators.required]],
       cpfOuCnpj: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
+      dataNascimento: ['dd/mm/aaaa', [Validators.required]],
+      dataCadastro: [this.data.toLocaleDateString(), [Validators.required]],
       senha: ['', [Validators.required]],
       logradouro: ['', [Validators.required]],
       numero: ['', [Validators.required]],
@@ -49,7 +55,7 @@ export class SignupComponent implements OnInit {
       this.formGroup.controls['estadoId'].setValue(this.estados[0].id);
       this.updateCidades();
     }, error => {
-
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
     })
   }
 
@@ -59,7 +65,7 @@ export class SignupComponent implements OnInit {
       this.cidades = response;
       this.formGroup.controls['cidadeId'].setValue(null);
     }, error => {
-
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
     });
   }
 
@@ -68,12 +74,12 @@ export class SignupComponent implements OnInit {
     this.clienteService.saveUser(this.formGroup.value).subscribe(response => {
       this.showInsertOK();
     }, error => {
-
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
     });
   }
 
   showInsertOK(){
-    alert('Cadastro realizado com sucesso');
+    Swal.fire('Cadastro concluido com sucesso');
     this.router.navigate(['/login']);
   }
 

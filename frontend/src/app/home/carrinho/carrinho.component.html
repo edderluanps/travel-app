@@ -102,7 +102,7 @@
               voltar
           </button>
 
-          <button class="btn-comprar" (click)="checkout()">
+          <button class="btn-comprar" *ngIf="total()>0" (click)="checkout()">
               finalizar
           </button>
          </div>

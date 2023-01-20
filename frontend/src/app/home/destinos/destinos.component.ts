@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinosService } from 'src/app/service/destinos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-destinos',
@@ -18,7 +19,9 @@ export class DestinosComponent implements OnInit {
   }
 
   getPacotes() {
-    this.destinoService.getCidade().subscribe(response => this.cidade = (response));
+    this.destinoService.getCidade().subscribe(response => this.cidade = response, error =>{
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
   }
 
 }
