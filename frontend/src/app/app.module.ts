@@ -23,6 +23,7 @@ import { SignupComponent } from './home/signup/signup.component';
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { CheckoutComponent } from './home/checkout/checkout.component';
+import { ConfirmacaoComponent } from './home/confirmacao/confirmacao.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CheckoutComponent } from './home/checkout/checkout.component';
     PerfilComponent,
     LoginComponent,
     SignupComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ConfirmacaoComponent
   ],
   imports: [
     BrowserModule,

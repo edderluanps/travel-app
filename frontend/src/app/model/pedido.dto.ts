@@ -5,5 +5,5 @@ import { RefDTO } from "./ref.dto";
 export class PedidoDTO{
   cliente: RefDTO;
   pagamento: PagamentoDTO;
-  items : ItemPedidoDTO[];
+  itens : ItemPedidoDTO[];
 }

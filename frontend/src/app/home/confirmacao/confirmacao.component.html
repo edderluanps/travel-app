@@ -1,0 +1,33 @@
+<h2>Confirmação do pedido</h2>
+
+<div class="box" *ngFor="let item of carrinhoItem">
+  <div class="card">
+    <div class="col-1">
+      <img [src]="item.pacote.img" alt="" />
+    </div>
+
+    <div class="col-2">
+      <h2>{{ item.pacote.nome }}</h2>
+      <p>{{ item.pacote.preco | currency }}</p>
+      <p class="nolinebreak">{{ item.quantidade }}</p>
+      <p item-end>{{ item.pacote.preco * item.quantidade | currency }}</p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <header>
+    Cliente
+  </header>
+  <div>
+    <h2>{{cliente.nome}}</h2>
+    <p>{{cliente.email}}</p>
+  </div>
+</div>
+
+<h2>Total</h2>
+<h5 item-end>{{ total() | currency }}</h5>
+
+
+<button (click)="voltar()">Voltar</button>
+<button (click)="confirmarPedido()">Confirmar pedido</button>

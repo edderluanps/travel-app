@@ -11,7 +11,7 @@ export class ClienteService {
 
   constructor(private httpClient: HttpClient, public storageService: StorageService) { }
 
-  findById(id: number) {
+  findById(id: string) {
     return this.httpClient.get(`${API_URL}api/cliente/${id}`);
   }
 

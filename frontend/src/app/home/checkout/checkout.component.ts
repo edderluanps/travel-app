@@ -49,7 +49,7 @@ export class CheckoutComponent implements OnInit {
               numParcelas: null,
               "@type": null
             },
-            items: carrinho.items.map(x => {
+            itens: carrinho.items.map(x => {
               return {
                 quantidade: x.quantidade, pacote: {
                   id: x.pacote.id
@@ -70,7 +70,7 @@ export class CheckoutComponent implements OnInit {
 
   nextStep(){
     this.pedido.pagamento = this.formGroup.value;
-    this.router.navigate(['/pagamento'], { state: { pedido : this.pedido }});
+    this.router.navigate(['/confirmacao'], { state: { pedido : this.pedido }});
     console.log(this.pedido)
   }
 
