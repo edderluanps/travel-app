@@ -21,7 +21,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Astah (Modelagem)
 * Java 17
 * Maven
-* Spring Boot
+* Spring Framework
 * Spring Web
 * Spring Data
 * Spring Security
@@ -29,6 +29,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * JUnit
 * Mockito
 * Swagger
+* iTextPDF
+* JWT
 
 ### Banco de dados
 
@@ -41,13 +43,20 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Angular
 * Material Design
 * Font Awesome
-* Ionic (Implementação Futura)
+
+### App
+
+* Ionic
+* IonIcons 5+
+
+
 
 ### Deploy
 
 * Backend: Railway (Implementação Futura)
 * DB: Railway (Implementação Futura)
 * Frotend: Netlify (Implementação Futura)
+* App: APK file (Implementação Futura)
 
 
 ## Funções principais
@@ -59,6 +68,26 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 ### Admins
 * Adicionar, editar e remover pacotes turísticos.
 * Adicionar, editar e remover postagens no blog.
+
+
+
+## Instalação Passo a passo
+
+### Java e Spring
+...
+
+
+### Banco de dados MySQL
+...
+
+
+### Angular
+...
+
+
+### Ionic
+...
+
 
 
 
