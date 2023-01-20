@@ -43,6 +43,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Angular
 * Material Design
 * Font Awesome
+* Pixabay (Banco de imagens)
+* Freepik (Banco de imagens)
 
 ### App
 
