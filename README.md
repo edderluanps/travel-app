@@ -87,20 +87,18 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### Banco de dados MySQL
 * O projeto cria automaticamente as tabelas do banco de dados MySQL assim que iniciado, mas é preciso ter o SGBD instalado na máquina;
-* Como sugestão, indico o Xampp, rápido e prático, mas não há problema em utilizar outro, desde que seja MySQL;
-* Link do Xampp: https://www.apachefriends.org/pt_br/download.html
-* Ao finalizar a instalação do Xampp, o Xampp Controll será aberto, precione 'start' nos serviços Apache e MySQL.
-* Pronto, agora vá até http://localhost/phpmyadmin/ e crie um novo banco com o nome da sua preferência.
+* Como sugestão, indico o <a href="https://www.apachefriends.org/pt_br/download.html" target="_blank" rel="noopener noreferrer"> Xampp </a>, rápido e prático, mas não há problema em utilizar outro, desde que seja MySQL;
+* Ao finalizar a instalação, o Xampp Controll será aberto, precione 'start' nos serviços Apache e MySQL.
+* Agora, clique em 'admin' ao lado do serviço 'MySQL', vá até apágina inicial do Xampp e crie um novo banco com o nome da sua preferência.
 * Perceba que esse banco deverá ter o mesmo nome apresentado na 1º linha do arquivo 'applications-dev.properties', no projeto.
-* Ex: Se o banco se chamar 'projetospringangularionic' sem aspas, a 1º linha do arquivo 'applications-dev.propperties' deve ser   'spring.datasource.url=jdbc:mysql://localhost:3306/projetospringangularionic' sem aspas.
-* Ao iniciar o projeto na IDE, o banco será preenchido com as tabelas mapeadas pelo JPA nas classes de entidade.
+* Ex: Se o banco se chama 'fullstack' sem aspas, a 1º linha do arquivo 'applications-dev.propperties' deve ser   'spring.datasource.url=jdbc:mysql://localhost:3306/fullstack' sem aspas.
+* Volte a sua IDE, inicie o projeto e o banco será preenchido com as tabelas mapeadas pelo JPA nas classes de entidade.
 
 
 ### Angular
-* Para instalar o Angular é necessário ter o Node.js instalado na máquina;
-* Link para o Node.js: https://nodejs.org/en/download/
-* Node instalado, hora de instalar o Angular;
-* Abra um terminal (CMD ou Git Bash), e digite o comando 'npm install -g @angular/cli' sem as aspas.
+* Para instalar o Angular é necessário ter o <a href="https://nodejs.org/en/download/">  Node.js </a> instalado na máquina;
+* Node instalado, hora de instalar o Angular:
+* Abra um terminal (CMD ou Git Bash), e digite o comando <code> 'npm install -g @angular/cli'</code> sem as aspas.
 * Se preferir, pode instalar uma versão específica ou a mesma em que o projeto foi construido:
 * Versão do projeto: 'npm install -g @angular/cli@14.1.0' sem as aspas.
 * Para verificar, abra um terminal (CMD ou Git Bash) e digite 'ng version' sem aspas.
