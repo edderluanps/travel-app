@@ -78,9 +78,9 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Obs: O processo descrito priorizará o MS Windows.
 
 ### Java e Spring
-* Baixe e instale o Java na versão 17 ou superior clicando <a href="https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows" target="_blank"> aqui </a>;
-* Agora, utilize uma IDE para abrir o projeto, sugiro a mesma que utilizei: Apache NetBeans IDE 15. Baixe clicando <a href="https://netbeans.apache.org/download/nb15/" target="_blank"> aqui </a>;
-* Caso queira optar por outra IDE, <a href="https://spring.io/tools"> Spring Tool Suite </a> e <a href="https://www.jetbrains.com/pt-br/idea/"> </a> são excelentes;
+* Baixe e instale o Java na versão 17 ou superior clicando <a href="https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows" target="_blank" rel="noopener noreferrer"> aqui </a>;
+* Agora, utilize uma IDE para abrir o projeto, sugiro a mesma que utilizei: Apache NetBeans IDE 15. Baixe clicando <a href="https://netbeans.apache.org/download/nb15/" target="_blank" rel="noopener noreferrer"> aqui </a>;
+* Caso queira optar por outra IDE, <a href="https://spring.io/tools" target="_blank" rel="noopener noreferrer"> Spring Tool Suite </a> e <a href="https://www.jetbrains.com/pt-br/idea/" target="_blank" rel="noopener noreferrer"> Intellij IDEA </a> são excelentes;
 * Em caso de dúvidas na configuração das IDEs, consulte a documentação dos mesmos ou Google/YouTube;
 * Com o ambiente pronto, baixe a pasta Backend como arquivo zip, entre em uma das IDEs selecionadas e importe o projeto;
 
