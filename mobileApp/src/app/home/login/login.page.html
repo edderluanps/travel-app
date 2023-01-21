@@ -1,0 +1,35 @@
+<div class="header">
+  <ion-header>
+    <ion-button color="none" routerLink="/" routerDirection="back">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
+  </ion-header>
+</div>
+
+<ion-content>
+  <div class="box">
+    <h1>Seja bem vindo</h1>
+    <p>Faça login para continuar</p>
+
+    <form action="">
+      <ion-list>
+        <ion-item color="dark">
+          <ion-label position="floating">e-mail</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">senha</ion-label>
+          <ion-input type="password" placeholder=""></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div class="btn-area">
+        <ion-button (click)="login()"> login </ion-button>
+        <ion-button fill="outline" routerLink="/" routerDirection="back"> voltar </ion-button>
+      </div>
+
+    </form>
+    <p>Não tem uma conta? <a routerLink="/signup">Registre-se</a></p>
+  </div>
+</ion-content>

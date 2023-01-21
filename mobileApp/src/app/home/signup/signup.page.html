@@ -1,0 +1,109 @@
+<div class="header">
+  <ion-header>
+    <ion-button color="none" routerLink="/" routerDirection="back">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
+  </ion-header>
+</div>
+
+<ion-content>
+  <div class="box">
+    <h1>Não possui conta?</h1>
+    <p>Cadastre-se para continuar</p>
+
+    <form action="">
+      <ion-list>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-select interface="action-sheet" placeholder="Tipo">
+            <ion-select-option value="pessoaFisica">Pessoa física</ion-select-option>
+            <ion-select-option value="pessoaJuridica">Pessoa jurídica</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">CPF/CNPJ</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Data nascimento</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Logradouro</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Número</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Bairro</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Cep</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Telefone 1</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Telefone 2 (opcional)</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Telefone 3 (opcional)</ion-label>
+          <ion-input placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-select interface="action-sheet" placeholder="Estado">
+            <ion-select-option value="rio">Rio de Janeiro</ion-select-option>
+            <ion-select-option value="saopaulo">São Paulo</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-select interface="action-sheet" placeholder="Cidade">
+            <ion-select-option value="rio">Rio de Janeiro</ion-select-option>
+            <ion-select-option value="saopaulo">São Paulo</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+
+    </form>
+
+    <div class="btn-area">
+      <ion-button> Cadastrar </ion-button>
+      <ion-button fill="outline" routerLink="/" routerDirection="back"> Voltar </ion-button>
+    </div>
+
+    <p>Já tem uma conta? <a routerLink="/login">Faça login</a></p>
+  </div>
+</ion-content>
