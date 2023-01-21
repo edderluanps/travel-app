@@ -104,7 +104,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Para verificar, abra um terminal (CMD ou Git Bash) e digite <code>ng version </code>.
 * Para codar, é necessário um editor de código, sugiro o <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">VS Code</a>, mas o <a href="https://www.sublimetext.com/3" target="_blank" rel="noopener noreferrer">Sublime Text</a> também é uma boa opção.
 * Com o editor instalado, baixe a pasta Frontend como arquivo zip, extraia a pasta para um diretório de sua preferência;
-* Para abrir o projeto Frontend no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite <code>code .</code> sem aspas.
+* Para abrir o projeto Frontend no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite <code>code .</code>.
 * Pronto, projeto Frontend aberto no editor de código.
 * Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220929190345/creatingfileusingterminalvscode2.png" style="height:500px; width: 1000px">
