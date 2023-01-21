@@ -91,7 +91,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Ao finalizar a instalação, o Xampp Controll será aberto, precione 'start' nos serviços Apache e MySQL.
 * Agora, clique em 'admin' ao lado do serviço 'MySQL', vá até apágina inicial do Xampp e crie um novo banco com o nome da sua preferência.
 * Perceba que esse banco deverá ter o mesmo nome apresentado na 1º linha do arquivo 'applications-dev.properties', no projeto.
-* Ex: Se o banco se chama 'fullstack' sem aspas, a 1º linha do arquivo 'applications-dev.propperties' deve ser   'spring.datasource.url=jdbc:mysql://localhost:3306/fullstack' sem aspas.
+* Ex: Se o banco se chama 'fullstack' sem aspas, a 1º linha do arquivo 'applications-dev.propperties' deve ser <code>spring.datasource.url=jdbc:mysql://localhost:3306/fullstack</code>.
 * Volte a sua IDE, inicie o projeto e o banco será preenchido com as tabelas mapeadas pelo JPA nas classes de entidade.
 
 
