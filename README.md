@@ -78,9 +78,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Obs: O processo descrito priorizará o MS Windows.
 
 ### Java e Spring
-* Baixe e instale o Java na versão 17 ou superior clicando <a href="https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows" target="_blank"> aqui </a>:
-* Agora, utilize uma IDE para abrir o projeto, sugiro a mesma que utilizei: Apache NetBeans IDE 15;
-* Link da IDE: https://netbeans.apache.org/download/nb15/
+* Baixe e instale o Java na versão 17 ou superior clicando <a href="https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows" target="_blank"> aqui </a>;
+* Agora, utilize uma IDE para abrir o projeto, sugiro a mesma que utilizei: Apache NetBeans IDE 15. baixe <a href="https://netbeans.apache.org/download/nb15/" target="_blank"> aqui </a>;
 * Caso queira optar por outra IDE, Spring Tool Suite e IntelliJ IDEA são excelentes;
 * Link do STS: https://spring.io/tools
 * Link do IntelliJ: https://www.jetbrains.com/pt-br/idea/
