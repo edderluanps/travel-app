@@ -76,21 +76,56 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 ## Instalação Passo a passo
 
 ### Java e Spring
-...
+* Baixe e instale o Java na versão 17 ou superior:
+* Link para o Java SE 17 : https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows;
+* Agora, utilize uma IDE para abrir o projeto, sugiro a mesma que utilizei: Apache NetBeans IDE 15;
+* Link da IDE: https://netbeans.apache.org/download/nb15/
+* Caso queira optar por outra IDE, Spring Tool Suite e IntelliJ IDEA são excelentes;
+* Link do STS: https://spring.io/tools
+* Link do IntelliJ: https://www.jetbrains.com/pt-br/idea/
+* Com o ambiente pronto, baixe a pasta Backend como arquivo zip, entre em uma das IDEs selecionadas e importe o projeto;
 
 
 ### Banco de dados MySQL
-...
+* O projeto cria automaticamente as tabelas do banco de dados MySQL, mas é preciso ter o SGBD instalado na máquina;
+* Como sugestão, indico o Xampp, rápido e prático, mas não há problema em utilizar outro, desde que seja MySQL;
+* Link do Xampp: https://www.apachefriends.org/pt_br/download.html
+* Ao finalizar a instalação do Xampp, o Xampp Controll será aberto, precione 'start' nos serviços Apache e MySQL.
+* Pronto, agora vá até http://localhost/phpmyadmin/ e crie um novo banco com o nome da sua preferência.
+* Perceba que esse banco deverá ter o mesmo nome apresentado na 1º linha do arquivo 'applications-dev.properties', no projeto.
+* Ao iniciar o projeto na IDE, o banco será preenchido com as tabelas mapeadas pelo JPA nas classes de entidade.
 
 
 ### Angular
-...
+* Para instalar o Angular é necessário ter o Node.js instalado na máquina;
+* Link para o Node.js: https://nodejs.org/en/download/
+* Node instalado, hora de instalar o Angular;
+* Abra um terminal (CMD ou Git Bash), e digite o comando 'npm install -g @angular/cli' sem as aspas.
+* Se preferir, pode instalar uma versão específica ou a mesma em que o projeto foi construido:
+* Versão do projeto: 'npm install -g @angular/cli@14.1.0' sem as aspas.
+* Para verificar, abra um terminal (CMD ou Git Bash) e digite 'ng version' sem aspas.
+* Para codar, é necessário um editor de código, sugiro o VS Code, mas o Sublime Text também é uma boa opção.
+* Link do VS Code: https://code.visualstudio.com/download
+* Link do Sublime Text: https://www.sublimetext.com/3
+* Com o editor instalado, baixe a pasta Frontend como arquivo zip, extraia a pasta para um diretório de sua preferência;
+* Para abrir o projeto Frontend no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
+* Pronto, projeto Frontend aberto no editor de código.
+* Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
+* Digite 'ng serve' ou 'ng s' sem as aspas no terminal, e tá pronto.
 
 
 ### Ionic
-...
-
-
+* A instalação do Ionic é semelhante a do Angular;
+* Lembrando, o Node DEVE estar instalado na máquina.
+* Na dúvida, verifique... abra um terminal (CMD ou Git Bash) e digite 'node -v' sem aspas. Irá retornar a versão do Node presente na sua máquina.
+* Ainda no terminal, digite o comando 'npm install -g @ionic/cli' sem as aspas.
+* Versão do projeto: 'npm install -g @ionic/cli@6.20.8' sem as aspas.
+* Para verificar, abra um terminal (CMD ou Git Bash) e digite 'ionic --v' sem aspas.
+* Se o passo a passo acima for seguido, presumo que ja tenha um editor de código, caso não tenha, recomendo voltar ao tópico acima.
+* Para abrir o projeto Mobile no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
+* Pronto, projeto Mobile aberto no editor de código.
+* Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
+* Digite 'ionic serve' sem as aspas no terminal, e tá pronto.
 
 
 ## Licença
