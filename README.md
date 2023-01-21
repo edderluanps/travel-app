@@ -18,7 +18,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### Backend
 
-* Astah (Modelagem)
+* Astah (Modelagem UML)
 * Java 17
 * Maven
 * Spring Framework
@@ -75,6 +75,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ## Instalação Passo a passo
 
+* Obs: O processo descrito priorizará o MS Windows.
+
 ### Java e Spring
 * Baixe e instale o Java na versão 17 ou superior:
 * Link para o Java SE 17 : https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows;
@@ -83,16 +85,18 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Caso queira optar por outra IDE, Spring Tool Suite e IntelliJ IDEA são excelentes;
 * Link do STS: https://spring.io/tools
 * Link do IntelliJ: https://www.jetbrains.com/pt-br/idea/
+* Em caso de dúvidas na configuração das IDEs, consulte a documentação dos mesmos ou Google/YouTube;
 * Com o ambiente pronto, baixe a pasta Backend como arquivo zip, entre em uma das IDEs selecionadas e importe o projeto;
 
 
 ### Banco de dados MySQL
-* O projeto cria automaticamente as tabelas do banco de dados MySQL, mas é preciso ter o SGBD instalado na máquina;
+* O projeto cria automaticamente as tabelas do banco de dados MySQL assim que iniciado, mas é preciso ter o SGBD instalado na máquina;
 * Como sugestão, indico o Xampp, rápido e prático, mas não há problema em utilizar outro, desde que seja MySQL;
 * Link do Xampp: https://www.apachefriends.org/pt_br/download.html
 * Ao finalizar a instalação do Xampp, o Xampp Controll será aberto, precione 'start' nos serviços Apache e MySQL.
 * Pronto, agora vá até http://localhost/phpmyadmin/ e crie um novo banco com o nome da sua preferência.
 * Perceba que esse banco deverá ter o mesmo nome apresentado na 1º linha do arquivo 'applications-dev.properties', no projeto.
+* Ex: Se o banco se chamar 'projetospringangularionic' sem aspas, a 1º linha do arquivo 'applications-dev.propperties' deve ser   'spring.datasource.url=jdbc:mysql://localhost:3306/projetospringangularionic' sem aspas.
 * Ao iniciar o projeto na IDE, o banco será preenchido com as tabelas mapeadas pelo JPA nas classes de entidade.
 
 
@@ -111,7 +115,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Para abrir o projeto Frontend no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
 * Pronto, projeto Frontend aberto no editor de código.
 * Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
-* Digite 'ng serve' ou 'ng s' sem as aspas no terminal, e tá pronto.
+* Digite 'ng serve' ou 'ng s' sem as aspas no terminal, e a aplicação irá abrir no seu navegador.
 
 
 ### Ionic
@@ -125,7 +129,13 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Para abrir o projeto Mobile no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
 * Pronto, projeto Mobile aberto no editor de código.
 * Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
-* Digite 'ionic serve' sem as aspas no terminal, e tá pronto.
+* Digite 'ionic serve' sem as aspas no terminal, e a aplicação irá abrir no seu navegador.
+
+
+### Deploy
+* De início, é oreciso ter o seu projeto em um repositório do Github.
+* Link para o processo de deploy do Backend e Banco de dados detalhado no Railway: https://www.youtube.com/watch?v=5sVxvF47dcU - Créditos ao autor.
+* Link para o processo de deploy do Frontend detalhado no Netlify: https://www.youtube.com/watch?v=HxeuNAXFGe8 - Créditos ao autor.
 
 
 ## Licença
