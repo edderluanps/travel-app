@@ -30,8 +30,7 @@ export class LoginPage implements OnInit {
 
   login() {
     this.presentAlert('Login','Login','Seja bem vindo(a)');
-    //this.router.navigate(['/']);
+    this.router.navigate(['/homepage']);
   }
-
 
 }
