@@ -3,15 +3,7 @@
 
 ## Objetivo
  
-O Travel App é um projeto pessoal de agencia de viagens. O projeto foi criado com o objetivo de praticar e fixar o que foi visto nesses ultimos anos de estudo em Java, MySQL, Angular e Ionic. 
- 
-
-
-## Detalhes
-
-O projeto contará com área de clientes e de admins, onde o cliente poderá selecionar passagens, voos, pacotes completos e avaliar os serviços obtidos, e os admins poderão ter acesso completo aos dados referente a voos, pacotes e afins, além de fazer publicações no Blog do site, com dicas e indicações aos leitores.
-
-<img src="https://github.com/edderluanps/travel-app/blob/b7a90bc65351851c513c0c63024d644b392e2090/documentos/Diagrama.jpg">
+O projeto Travel App é um projeto pessoal de caracterizado como uma plataforma de agencia de viagens. O projeto foi criado com o objetivo de praticar e fixar o que foi visto nesses ultimos anos de estudo em Java/Spring, MySQL, Angular e Ionic, bem como iniciar em novas tecnologias. (Lista de tecnologias utilizadas no projeto a seguir)
 
 
 
@@ -21,6 +13,14 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Como cliente, acesso ao blog do site com dicas de viagens, curiosidades e reviews postados pela equipe de admins.
 * Como Admin, é possível adicionar, listar, editar e remover pacotes turísticos e postagens no blog.
 * Como Admin, é possível definir outros usuários como Admins, bem como excluir o cadastro dos mesmos.
+
+
+
+## Detalhes
+
+O projeto contará com área de clientes e de admins, onde o cliente poderá selecionar passagens, voos, pacotes completos e avaliar os serviços obtidos, e os admins poderão ter acesso completo aos dados referente a voos, pacotes e afins, além de fazer publicações no Blog do site, com dicas e indicações aos leitores.
+
+<img src="https://github.com/edderluanps/travel-app/blob/b7a90bc65351851c513c0c63024d644b392e2090/documentos/Diagrama.jpg">
 
 
 
