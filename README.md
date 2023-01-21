@@ -14,6 +14,16 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 <img src="https://github.com/edderluanps/travel-app/blob/b7a90bc65351851c513c0c63024d644b392e2090/documentos/Diagrama.jpg">
 
 
+
+## Funções principais
+
+* Como cliente, compra de pacotes turísticos com voos e hospedagem inclusos.
+* Como cliente, acesso ao blog do site com dicas de viagens, curiosidades e reviews postados pela equipe de admins.
+* Como Admin, é possível adicionar, listar, editar e remover pacotes turísticos e postagens no blog.
+* Como Admin, é possível definir outros usuários como Admins, bem como excluir o cadastro dos mesmos.
+
+
+
 ## Tecnologias
 
 ### Backend
@@ -60,17 +70,6 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * DB: Railway (Implementação Futura)
 * Frotend: Netlify (Implementação Futura)
 * App: APK file (Implementação Futura)
-
-
-## Funções principais
-
-### Clientes
-* Compra de pacotes turísticos com voos e hospedagem.
-* Acesso ao blog do site com dicas, curiosidades e reviews.
-
-### Admins
-* Adicionar, editar e remover pacotes turísticos.
-* Adicionar, editar e remover postagens no blog.
 
 
 
