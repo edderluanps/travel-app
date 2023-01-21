@@ -96,15 +96,12 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 
 ### Angular
-* Para instalar o Angular é necessário ter o <a href="https://nodejs.org/en/download/">  Node.js </a> instalado na máquina;
+* Para instalar o Angular é necessário ter o <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">  Node.js </a> instalado na máquina;
 * Node instalado, hora de instalar o Angular:
-* Abra um terminal (CMD ou Git Bash), e digite o comando <code> 'npm install -g @angular/cli'</code> sem as aspas.
-* Se preferir, pode instalar uma versão específica ou a mesma em que o projeto foi construido:
-* Versão do projeto: 'npm install -g @angular/cli@14.1.0' sem as aspas.
-* Para verificar, abra um terminal (CMD ou Git Bash) e digite 'ng version' sem aspas.
-* Para codar, é necessário um editor de código, sugiro o VS Code, mas o Sublime Text também é uma boa opção.
-* Link do VS Code: https://code.visualstudio.com/download
-* Link do Sublime Text: https://www.sublimetext.com/3
+* Abra um terminal (CMD ou Git Bash), e digite o comando <code>npm install -g @angular/cli</code>.
+* Se preferir, pode instalar uma versão específica ou a mesma em que o projeto foi construido: <code>npm install -g @angular/cli@14.1.0</code>
+* Para verificar, abra um terminal (CMD ou Git Bash) e digite <code>ng version </code>.
+* Para codar, é necessário um editor de código, sugiro o <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">VS Code</a>, mas o <a href="https://www.sublimetext.com/3" target="_blank" rel="noopener noreferrer">Sublime Text</a> também é uma boa opção.
 * Com o editor instalado, baixe a pasta Frontend como arquivo zip, extraia a pasta para um diretório de sua preferência;
 * Para abrir o projeto Frontend no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
 * Pronto, projeto Frontend aberto no editor de código.
