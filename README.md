@@ -114,15 +114,15 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 ### Ionic
 * A instalação do Ionic é semelhante a do Angular;
 * Lembrando, o Node DEVE estar instalado na máquina.
-* Na dúvida, verifique... abra um terminal (CMD ou Git Bash) e digite 'node -v' sem aspas. Irá retornar a versão do Node presente na sua máquina.
-* Ainda no terminal, digite o comando 'npm install -g @ionic/cli' sem as aspas.
-* Versão do projeto: 'npm install -g @ionic/cli@6.20.8' sem as aspas.
-* Para verificar, abra um terminal (CMD ou Git Bash) e digite 'ionic --v' sem aspas.
+* Na dúvida, verifique... abra um terminal em qualquer pasta vazia (CMD ou Git Bash) e digite <code>node -v</code>. Irá retornar a versão do Node presente na sua máquina.
+* Ainda no terminal, digite o comando <code>npm install -g @ionic/cli</code>.
+* Versão do projeto: <code>npm install -g @ionic/cli@6.20.8</code>.
+* Para verificar, abra um terminal (CMD ou Git Bash) e digite <code>ionic --v</code>.
 * Se o passo a passo acima for seguido, presumo que ja tenha um editor de código, caso não tenha, recomendo voltar ao tópico acima.
-* Para abrir o projeto Mobile no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
+* Para abrir o projeto Mobile no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite <code>code .</code>.
 * Pronto, projeto Mobile aberto no editor de código.
-* Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
-* Digite 'ionic serve' sem as aspas no terminal, e a aplicação irá abrir no seu navegador.
+* Para iniciar o projeto, abra um novo terminal dentro do Editor (veja o passo a passo no tópico acima);
+* Digite <code>ionic serve</code> no terminal, e a aplicação irá abrir no seu navegador.
 
 
 ### Deploy
