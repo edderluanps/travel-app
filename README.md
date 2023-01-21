@@ -106,6 +106,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Para abrir o projeto Frontend no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite 'code .' sem aspas.
 * Pronto, projeto Frontend aberto no editor de código.
 * Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220929190345/creatingfileusingterminalvscode2.png" style="height:500px; width: 500px">
 * Digite 'ng serve' ou 'ng s' sem as aspas no terminal, e a aplicação irá abrir no seu navegador.
 
 
