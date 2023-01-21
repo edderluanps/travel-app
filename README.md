@@ -126,9 +126,10 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 
 ### Deploy
-* De início, é oreciso ter o seu projeto em um repositório do Github.
-* Link para o processo de deploy do Backend e Banco de dados detalhado no Railway: https://www.youtube.com/watch?v=5sVxvF47dcU - Créditos ao autor.
-* Link para o processo de deploy do Frontend detalhado no Netlify: https://www.youtube.com/watch?v=HxeuNAXFGe8 - Créditos ao autor.
+* De início, é preciso ter o seu projeto em um repositório do Github.
+* <a href="https://www.youtube.com/watch?v=aINs3ouaoJk">Link para tutorial de como subir um projeto para o github.</a> Créditos ao autor. 
+* <a href="https://www.youtube.com/watch?v=5sVxvF47dcU">Link para o processo de deploy do Backend e Banco de dados detalhado no Railway.</a> Créditos ao autor.
+* <a href="https://www.youtube.com/watch?v=HxeuNAXFGe8">Link para o processo de deploy do Frontend detalhado no Netlify.</a> Créditos ao autor.
 
 
 ## Licença
