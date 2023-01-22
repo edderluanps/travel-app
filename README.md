@@ -83,6 +83,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Caso queira optar por outra IDE, <a href="https://spring.io/tools" target="_blank" rel="noopener noreferrer"> Spring Tool Suite </a> e <a href="https://www.jetbrains.com/pt-br/idea/" target="_blank" rel="noopener noreferrer"> Intellij IDEA </a> são excelentes;
 * Em caso de dúvidas na configuração das IDEs, consulte a documentação dos mesmos ou Google/YouTube;
 * Com o ambiente pronto, baixe a pasta Backend como arquivo zip, entre em uma das IDEs selecionadas e importe o projeto;
+* Caso não saiba importar, clique <a href="https://itsnatrivera.wordpress.com/2017/04/28/how-to-import-a-project-in-netbeans/" target="_blank" rel="noopener noreferrer">aqui</a> para aprender o passo a passo;
 
 
 ### Banco de dados MySQL
