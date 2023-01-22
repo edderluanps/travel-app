@@ -90,8 +90,10 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * O projeto cria automaticamente as tabelas do banco de dados MySQL assim que iniciado, mas é preciso ter o SGBD instalado na máquina;
 * Como sugestão, indico o <a href="https://www.apachefriends.org/pt_br/download.html" target="_blank" rel="noopener noreferrer"> Xampp </a>, rápido e prático, mas não há problema em utilizar outro, desde que seja MySQL;
 * Ao finalizar a instalação, o Xampp Controll será aberto, precione 'start' nos serviços Apache e MySQL.
-<img src="https://devtuts.butlerccwebdev.net/testserver/xampp-control-panel.png" style="height:500px; width: 750p;">
-  * Créditos da imagem: DevTuts
+<img src="https://devtuts.butlerccwebdev.net/testserver/xampp-control-panel.png" style="height:500px; width: 750px;">
+* Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220929190345/creatingfileusingterminalvscode2.png" style="height:500px; width: 1000px">
+  * Créditos da imagem: Geekforgeeks
 * Agora, clique em 'admin' ao lado do serviço 'MySQL', vá até apágina inicial do Xampp e crie um novo banco com o nome da sua preferência.
 * Perceba que esse banco deverá ter o mesmo nome apresentado na 1º linha do arquivo 'applications-dev.properties', no projeto.
 * Ex: Se o banco se chama 'fullstack' sem aspas, a 1º linha do arquivo 'applications-dev.propperties' deve ser <code>spring.datasource.url=jdbc:mysql://localhost:3306/fullstack</code>.
