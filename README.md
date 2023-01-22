@@ -111,7 +111,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220929190345/creatingfileusingterminalvscode2.png" style="height:500px; width: 1000px">
   * Créditos da imagem: Geekforgeeks
-* Digite <code>ng serve</code> ou <code>ng s</code> no terminal, e a aplicação irá abrir no seu navegador.
+* Digite <code>ng serve</code> ou <code>ng s</code> no terminal, e a aplicação irá iniciar. Para abrir no seu navegador, vá até o endereço: http://localhost:4200.
 
 
 ### Ionic
