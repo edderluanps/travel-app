@@ -118,8 +118,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * A instalação do Ionic é semelhante a do Angular;
 * Lembrando, o Node DEVE estar instalado na máquina.
 * Na dúvida, verifique... abra um terminal em qualquer pasta vazia (CMD ou Git Bash) e digite <code>node -v</code>. Irá retornar a versão do Node presente na sua máquina.
-* Ainda no terminal, digite o comando <code>npm install -g @ionic/cli</code>.
-* Versão do projeto: <code>npm install -g @ionic/cli@6.20.8</code>.
+* Ainda no terminal, digite o comando <code>npm install -g @ionic/cli</code> para instalar a versão mais recente do Ionic na sua máquina.
+* Ou se preferir, instale a versão do Ionic utilizada no projeto: <code>npm install -g @ionic/cli@6.20.8</code>.
 * Para verificar, abra um terminal (CMD ou Git Bash) e digite <code>ionic --v</code>.
 * Se o passo a passo acima for seguido, presumo que ja tenha um editor de código, caso não tenha, recomendo voltar ao tópico acima.
 * Para abrir o projeto Mobile no editor, use a barra de opções ou entre na pasta do projeto, abra um terminal dentro da pasta, e digite <code>code .</code>.
