@@ -18,6 +18,18 @@ const routes: Routes = [
   {
     path: 'homepage',
     loadChildren: () => import('./homepage/homepage.module').then( m => m.HomepagePageModule)
+  },
+  {
+    path: 'pacotes',
+    loadChildren: () => import('./pacotes/pacotes.module').then( m => m.PacotesPageModule)
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./blog/blog.module').then( m => m.BlogPageModule)
+  },
+  {
+    path: 'locais',
+    loadChildren: () => import('./locais/locais.module').then( m => m.LocaisPageModule)
   }
 ];
 
