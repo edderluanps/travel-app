@@ -12,12 +12,21 @@
   <div class="box">
 
     <div class="search-box">
-      <ion-searchbar animated="true" placeholder="Pesquise por destino..."></ion-searchbar>
+      <ion-searchbar animated="true"
+      placeholder="Pesquise por destino..."
+      [(ngModel)]="titulo" (ionInput)="getResultadoPesquisa()">
+    </ion-searchbar>
     </div>
 
     <div class="content-box">
 
-
+      <div class="card" *ngFor="let item of post">
+        <img [src]="item.img" alt="" >
+        <p>{{ item.dataPostagem }}</p>
+        <h2>{{ item.titulo }}</h2>
+        <p>Por: {{ item.cliente.nome }}</p>
+        <ion-button>Ver mais</ion-button>
+      </div>
 
     </div>
 
