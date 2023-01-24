@@ -53,6 +53,8 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Angular
 * Material Design
 * Font Awesome
+* Google Fonts
+* SweetAlert2
 * Pixabay (Banco de imagens)
 * Freepik (Banco de imagens)
 * FreeLogoDesign
@@ -60,7 +62,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 ### App
 
 * Ionic
-* IonIcons 5+
+* IonIcons V5+
 
 
 
@@ -78,7 +80,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Obs: O processo descrito priorizará o MS Windows.
 
 ### Java e Spring
-* Baixe e instale o Java na versão 17 ou superior clicando <a href="https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows" target="_blank" rel="noopener noreferrer"> aqui </a>;
+* Baixe e instale o Java, recomendo a versão 17. Clique <a href="https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows" target="_blank" rel="noopener noreferrer"> aqui </a> para baixar;
 * Agora, utilize uma IDE para abrir o projeto, sugiro a mesma que utilizei: Apache NetBeans IDE 15. Baixe clicando <a href="https://netbeans.apache.org/download/nb15/" target="_blank" rel="noopener noreferrer"> aqui </a>;
 * Caso queira optar por outra IDE, <a href="https://spring.io/tools" target="_blank" rel="noopener noreferrer"> Spring Tool Suite </a> e <a href="https://www.jetbrains.com/pt-br/idea/" target="_blank" rel="noopener noreferrer"> Intellij IDEA </a> são excelentes;
 * Em caso de dúvidas na configuração das IDEs, consulte a documentação dos mesmos ou Google/YouTube;
@@ -110,7 +112,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Pronto, projeto Frontend aberto no editor de código.
 * Para iniciar o projeto, abra um novo terminal dentro do Editor (Procure na barra de ferramentas na parte de cima da tela);
   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220929190345/creatingfileusingterminalvscode2.png" style="height:500px; width: 1000px">
-  * Créditos da imagem: Geekforgeeks
+  * Créditos da imagem: Geeksforgeeks
 * Digite <code>ng serve</code> ou <code>ng s</code> no terminal, e a aplicação irá iniciar. Para abrir no seu navegador, vá até o endereço: http://localhost:4200.
 
 
@@ -129,7 +131,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 
 ### Deploy
-* De início, é preciso ter o seu projeto em um repositório do Github.
+* É preciso ter o seu projeto em um repositório do Github.
 * <a href="https://www.youtube.com/watch?v=aINs3ouaoJk">Link para tutorial de como subir um projeto para o github.</a> Créditos ao autor. 
 * <a href="https://www.youtube.com/watch?v=5sVxvF47dcU">Link para o processo de deploy do Backend e Banco de dados detalhado no Railway.</a> Créditos ao autor.
 * <a href="https://www.youtube.com/watch?v=HxeuNAXFGe8">Link para o processo de deploy do Frontend detalhado no Netlify.</a> Créditos ao autor.
