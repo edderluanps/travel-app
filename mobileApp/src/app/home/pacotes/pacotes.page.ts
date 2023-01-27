@@ -50,5 +50,4 @@ export class PacotesPage implements OnInit {
       this.presentAlert('Erro','Oops... Ocorreu um erro','Erro: '+ error.message);
     });
   }
-
 }

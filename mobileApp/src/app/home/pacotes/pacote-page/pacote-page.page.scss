@@ -1,0 +1,90 @@
+.header{
+  background: #3399ff;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+
+  ion-header{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    ion-button{
+      width: 50px;
+      height: 50px;
+
+      ion-icon{
+        height: 100%;
+        width: 100%;
+        color: #fff;
+      }
+    }
+
+    h2{
+      text-align: center;
+      padding-right: 50px;
+    }
+  }
+}
+
+ion-content{
+  height: 770px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .box{
+    min-height: 770px;
+    width: 100%;
+    background: #3399ff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+
+    .content-box{
+      height: 700px;
+      width: 100%;
+      background: #fff;
+      border-radius: 50px 50px 0 0;
+      display: flex;
+      flex-direction: column;
+      padding-top: 30px;
+
+      .card{
+        height: 100%;
+        width: 100%;
+        background: none;
+        padding: 0 15px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        img{
+          height: 300px;
+          width: 100%;
+          border-radius: 30px;
+        }
+
+        p{
+          text-align: center;
+        }
+
+        ion-button{
+          width: 80%;
+        }
+      }
+    }
+  }
+}

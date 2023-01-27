@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Pacotes } from 'src/app/model/pacotes';
-import { PacotesService } from 'src/app/service/pacotes.service';
+import { BlogService } from 'src/app/service/blog.service';
 
 @Component({
-  selector: 'app-pacote-page',
-  templateUrl: './pacote-page.page.html',
-  styleUrls: ['./pacote-page.page.scss'],
+  selector: 'app-blog-post',
+  templateUrl: './blog-post.page.html',
+  styleUrls: ['./blog-post.page.scss'],
 })
-export class PacotePagePage implements OnInit {
+export class BlogPostPage implements OnInit {
 
-  pacotes: any;
+  post: any;
 
   constructor(
-    private pacoteService: PacotesService,
+    private blogService: BlogService,
     private route: ActivatedRoute,
     private alertController: AlertController) { }
 
@@ -29,15 +28,17 @@ export class PacotePagePage implements OnInit {
     await alert.present();
   }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params => this.getPacoteById(params['id']));
+  ngOnInit() {
+    this.route.params.subscribe(params => this.getPostById(params['id']));
+
   }
 
-  getPacoteById(id: number) {
-    this.pacoteService.getPacoteById(id).subscribe(response =>
-      this.pacotes = response, error => {
+  getPostById(id: number) {
+    this.blogService.getPostById(id).subscribe(response =>
+      this.post = response, error => {
         this.presentAlert('Erro', 'Oops... Ocorreu um erro', 'Erro: ' + error.message);
       }
     );
   }
+
 }

@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pacote-page</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="header">
+  <ion-header>
+    <ion-button color="none" routerLink="/pacotes" routerDirection="back">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
+    <h2>Pacotes</h2>
+  </ion-header>
+</div>
 
 <ion-content>
+  <div class="box">
 
+    <div class="content-box">
+
+      <div class="card">
+        <img [src]="pacotes?.img" alt="">
+
+        <h3>{{ pacotes?.nome }}</h3>
+        <p>Voo por: {{ pacotes?.voos.empresa.nome }}</p>
+        <p>Hospedagem: {{ pacotes?.hospedagem.nome }}</p>
+        <p>Valor da Hospedagem: {{ pacotes?.hospedagem.preco | currency }}</p>
+        <h1>{{ pacotes?.preco | currency }}</h1>
+
+        <ion-button>Adicionar ao carrinho</ion-button>
+        <ion-button [routerLink]="['/pacotes']" routerDirection="back" fill="outline">Voltar</ion-button>
+
+      </div>
+
+
+    </div>
+
+  </div>
 </ion-content>

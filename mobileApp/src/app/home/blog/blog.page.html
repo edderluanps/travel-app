@@ -25,7 +25,7 @@
         <p>{{ item.dataPostagem }}</p>
         <h2>{{ item.titulo }}</h2>
         <p>Por: {{ item.cliente.nome }}</p>
-        <ion-button>Ver mais</ion-button>
+        <ion-button [routerLink]="['/blog-post', item.id]" routerDirection="forward">Ver mais</ion-button>
       </div>
 
     </div>

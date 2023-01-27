@@ -24,7 +24,7 @@
         <img [src]="item.img" alt="" />
         <h2>{{ item.nome }}</h2>
         <h1>{{ item.preco | currency }}</h1>
-        <ion-button>Ver mais</ion-button>
+        <ion-button [routerLink]="['/pacote/', item.id]" routerDirection="forward">Ver mais</ion-button>
       </div>
     </div>
   </div>

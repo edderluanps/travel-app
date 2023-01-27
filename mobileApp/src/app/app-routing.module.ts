@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { BlogPostPage } from './home/blog/blog-post/blog-post.page';
 import { BlogPage } from './home/blog/blog.page';
 import { HomepagePage } from './home/homepage/homepage.page';
 import { LocaisPage } from './home/locais/locais.page';
@@ -15,12 +16,10 @@ const routes: Routes = [
   { path: 'signup', component: SignupPage },
   { path: 'homepage', component: HomepagePage },
   { path: 'pacotes', component: PacotesPage },
-  { path: 'pacote-page', component: PacotePagePage },
+  { path: 'pacote/:id',component: PacotePagePage },
   { path: 'blog', component: BlogPage },
-  { path: 'blog-post-page', component: BlogPage },
+  { path: 'blog-post/:id', component: BlogPostPage },
   { path: 'locais', component: LocaisPage }
-
-
 ];
 
 @NgModule({
