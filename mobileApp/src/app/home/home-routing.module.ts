@@ -29,7 +29,11 @@ const routes: Routes = [
   },
   {
     path: 'locais',
-    loadChildren: () => import('./locais/locais.module').then( m => m.LocaisPageModule)
+    loadChildren: () => import('./destinos/destinos.module').then( m => m.LocaisPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 ];
 
