@@ -34,20 +34,20 @@
                       <li><a href=""><i class="fa-solid fa-suitcase"></i> Pedidos</a></li>
                       <li><a href=""><i class="fa-solid fa-location-dot"></i> Endereços</a></li>
                   </ul>
-                  <ul>
+                  <ul  *ngIf="cli.perfis == 'ADMIN' ">
                     <h4>Admin</h4>
-                    <li><a href=""><i class="fa-solid fa-user"></i> Clientes</a></li>
-                    <li><a href=""><i class="fa-solid fa-location-dot"></i> Estados</a></li>
-                    <li><a href=""><i class="fa-solid fa-location-dot"></i> Cidades</a></li>
-                    <li><a href=""><i class="fa-solid fa-suitcase-rolling"></i> Pacotes</a></li>
-                    <li><a href=""><i class="fa-solid fa-plane"></i> Cias aereas</a></li>
-                    <li><a href=""><i class="fa-solid fa-plane"></i> Voos</a></li>
-                    <li><a href=""><i class="fa-solid fa-square-rss"></i> Postagens</a></li>
+                    <li><a><i class="fa-solid fa-user"></i> Clientes</a></li>
+                    <li><a><i class="fa-solid fa-location-dot"></i> Estados</a></li>
+                    <li><a><i class="fa-solid fa-location-dot"></i> Cidades</a></li>
+                    <li><a><i class="fa-solid fa-suitcase-rolling"></i> Pacotes</a></li>
+                    <li><a><i class="fa-solid fa-plane"></i> Cias aereas</a></li>
+                    <li><a><i class="fa-solid fa-plane"></i> Voos</a></li>
+                    <li><a><i class="fa-solid fa-square-rss"></i> Postagens</a></li>
                   </ul>
                   <ul>
                     <h4>Perfil</h4>
-                    <li><a href=""><i class="fa-solid fa-gear"></i> Configuração</a></li>
-                    <li><a href="" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Desconectar</a></li>
+                    <li><a><i class="fa-solid fa-gear"></i> Configuração</a></li>
+                    <li><a (click)="desconectar()"><i class="fa-solid fa-right-from-bracket"></i> Desconectar</a></li>
                   </ul>
               </div>
           </div>
@@ -55,9 +55,32 @@
               <div class="row-1">
                   <h2>Dados pessoais</h2>
                   <h4>Informações pessoais do usuario</h4>
+                  <p>{{ cli.perfis }}</p>
               </div>
               <div class="row-2">
-
+                <h4>Nome do usuário</h4>
+                <p>{{ cli.nome }}</p>
+                <br>
+                <h4>CPF</h4>
+                <p>{{ cli.cpfOuCnpj }}</p>
+                <br>
+                <h4>Nome do usuário</h4>
+                <p>{{ cli.email }}</p>
+                <br>
+                <h4>Data de nascimento</h4>
+                <p>{{ cli.dataNascimento || 'sem registro' }}</p>
+                <br>
+                <h4>Data de cadastro</h4>
+                <p>{{ cli.dataCadastro || 'sem registro' }}</p>
+                <br>
+                <h4>Enderecos</h4>
+                <div class="enderecos" *ngFor="let item of items">
+                  <p>{{ item.logradouro }}, {{ item.numero }}, {{ item.complemento }}, {{ item.bairro }}, {{ item.cidade.nome }} - {{ item.cidade.estado.nome }}</p>
+                </div>
+                <br>
+                <h4>Telefones</h4>
+                <p>{{ cli.telefone || 'sem registro' }}</p>
+                <br>
               </div>
           </div>
       </div>
