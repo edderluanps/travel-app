@@ -50,7 +50,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 ### Frontend
 
 * TypeScript
-* Angular
+* Angular 14.1.0
 * Material Design
 * Font Awesome
 * Google Fonts
@@ -61,7 +61,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### App
 
-* Ionic
+* Ionic 6.20.8
 * IonIcons V5+
 * Date FNS
 
