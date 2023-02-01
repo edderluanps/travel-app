@@ -61,6 +61,7 @@ ion-content{
     }
 
     form{
+      margin-top: 50px;
       padding: 10px 0;
       height: 1100px;
       width: 100%;
@@ -71,6 +72,13 @@ ion-content{
 
       ion-select{
         height: 70px;
+      }
+
+      .validator{
+        height: 20px;
+        width: 100%;
+        background: #f2f2ff;
+        color: #dc143c;
       }
     }
 

@@ -11,87 +11,127 @@
     <h1>Não possui conta?</h1>
     <p>Cadastre-se para continuar</p>
 
-    <form action="">
+    <form [formGroup]="formGroup">
       <ion-list>
 
         <ion-item color="dark">
           <ion-label position="floating">Nome</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="nome" id="" ></ion-input>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['nome'].invalid &&
+        (formGroup.controls['nome'].dirty || formGroup.controls['nome'].touched)">Valor invalido
+        </p>
 
         <ion-item color="dark">
           <ion-label position="floating">E-mail</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="email" id="" ></ion-input>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['email'].invalid &&
+        (formGroup.controls['email'].dirty || formGroup.controls['email'].touched)"> Valor invalido
+        </p>
 
         <ion-item color="dark">
-          <ion-select interface="action-sheet" placeholder="Tipo">
-            <ion-select-option value="pessoaFisica">Pessoa física</ion-select-option>
-            <ion-select-option value="pessoaJuridica">Pessoa jurídica</ion-select-option>
+          <ion-select interface="action-sheet" placeholder="Tipo"  formControlName="tipo">
+            <ion-select-option value="1">Pessoa física</ion-select-option>
+            <ion-select-option value="2">Pessoa jurídica</ion-select-option>
           </ion-select>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['tipo'].invalid">
+          <i class="fa-solid fa-circle-exclamation"></i> Obrigatório
+        </p>
 
         <ion-item color="dark">
           <ion-label position="floating">CPF/CNPJ</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="cpfOuCnpj"></ion-input>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['cpfOuCnpj'].invalid &&
+        (formGroup.controls['cpfOuCnpj'].dirty || formGroup.controls['cpfOuCnpj'].touched)"> Valor invalido
+        </p>
 
         <ion-item color="dark">
           <ion-label position="floating">Data nascimento</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="dataNascimento"></ion-input>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['dataNascimento'].invalid &&
+        (formGroup.controls['dataNascimento'].dirty || formGroup.controls['dataNascimento'].touched)"> Valor invalido
+        </p>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Data cadastro</ion-label>
+          <ion-input placeholder="" formControlName="dataCadastro"></ion-input>
+        </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['dataCadastro'].invalid &&
+        (formGroup.controls['dataCadastro'].dirty || formGroup.controls['dataCadastro'].touched)"> Valor invalido
+        </p>
 
         <ion-item color="dark">
           <ion-label position="floating">Senha</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="senha"></ion-input>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['senha'].invalid &&
+        (formGroup.controls['senha'].dirty || formGroup.controls['senha'].touched)"> Valor invalido
+        </p>
 
         <ion-item color="dark">
           <ion-label position="floating">Logradouro</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="logradouro"></ion-input>
         </ion-item>
 
         <ion-item color="dark">
           <ion-label position="floating">Número</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="numero"></ion-input>
+        </ion-item>
+
+        <ion-item color="dark">
+          <ion-label position="floating">Complemeno</ion-label>
+          <ion-input placeholder="" formControlName="complemento"></ion-input>
         </ion-item>
 
         <ion-item color="dark">
           <ion-label position="floating">Bairro</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="bairro"></ion-input>
         </ion-item>
 
         <ion-item color="dark">
           <ion-label position="floating">Cep</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="cep"></ion-input>
         </ion-item>
 
         <ion-item color="dark">
           <ion-label position="floating">Telefone 1</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="telefone1"></ion-input>
         </ion-item>
+        <p class="validator" *ngIf="formGroup.controls['telefone1'].invalid &&
+        (formGroup.controls['telefone1'].dirty || formGroup.controls['telefone1'].touched)"> Valor invalido
+        </p>
 
         <ion-item color="dark">
           <ion-label position="floating">Telefone 2 (opcional)</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="telefone2"></ion-input>
         </ion-item>
 
         <ion-item color="dark">
           <ion-label position="floating">Telefone 3 (opcional)</ion-label>
-          <ion-input placeholder=""></ion-input>
+          <ion-input placeholder="" formControlName="telefone3"></ion-input>
         </ion-item>
 
         <ion-item color="dark">
-          <ion-select interface="action-sheet" placeholder="Estado">
-            <ion-select-option value="rio">Rio de Janeiro</ion-select-option>
-            <ion-select-option value="saopaulo">São Paulo</ion-select-option>
+          <ion-select interface="action-sheet" placeholder="Estado"
+          formControlName="estadoId"
+          (ionChange)="updateCidades()">
+            <ion-select-option *ngFor="let estado of estados; first as f"
+            [value]="estado.id"
+            selected="f">
+            {{ estado.nome }}
+            </ion-select-option>
           </ion-select>
         </ion-item>
 
         <ion-item color="dark">
-          <ion-select interface="action-sheet" placeholder="Cidade">
-            <ion-select-option value="rio">Rio de Janeiro</ion-select-option>
-            <ion-select-option value="saopaulo">São Paulo</ion-select-option>
+          <ion-select interface="action-sheet" placeholder="Cidade" formControlName="cidadeId">
+            <ion-select-option *ngFor="let cidade of cidades" [value]="cidade.id">
+              {{ cidade.nome }}
+            </ion-select-option>
           </ion-select>
         </ion-item>
 
@@ -100,7 +140,7 @@
     </form>
 
     <div class="btn-area">
-      <ion-button (click)="cadastrar()"> Cadastrar </ion-button>
+      <ion-button (click)="cadastrar()" *ngIf="formGroup.valid"> Cadastrar </ion-button>
       <ion-button fill="outline" routerLink="/" routerDirection="back"> Voltar </ion-button>
     </div>
 
