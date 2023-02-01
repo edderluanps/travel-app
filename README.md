@@ -63,6 +63,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 * Ionic
 * IonIcons V5+
+* Date FNS
 
 
 
