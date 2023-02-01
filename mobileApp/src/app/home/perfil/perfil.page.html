@@ -1,16 +1,18 @@
+<ion-header class="label">
+  <ion-button color="none" routerLink="/homepage" routerDirection="back">
+    <ion-icon name="caret-back-outline"></ion-icon>
+  </ion-button>
+</ion-header>
 <div class="header">
   <ion-header>
-
     <div class="header-1">
       <img src="../../../assets/icon/person-circle.svg" alt="">
     </div>
     <div class="header-2">
-      <h4>Lorem ipsum dolor sit.</h4>
-      <p>Lorem 2222</p>
+      <h4>{{ cliente?.nome }}</h4>
+      <p>{{ cliente?.email }}</p>
     </div>
   </ion-header>
-
-
 </div>
 
 <ion-content>
@@ -71,7 +73,7 @@
         <ion-icon name="cog-outline"></ion-icon><p>Ajustes</p>
       </div>
 
-      <div class="item" id="sair" (click)="logOut()" routerDirection="back">
+      <div class="item" id="sair" (click)="presentAlert()" routerDirection="back">
         <ion-icon name="exit-outline"></ion-icon><p>Desconectar</p>
       </div>
 

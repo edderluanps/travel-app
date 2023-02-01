@@ -15,12 +15,16 @@ import { ClienteService } from './service/cliente.service';
 import { EstadoService } from './service/estado.service';
 import { StorageService } from './service/storage.service';
 import { AuthService } from './service/auth.service';
+import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
+import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AuthInterceptorProvider,
+    ErrorInterceptorProvider,
     BlogService,
     PacotesService,
     DestinosService,

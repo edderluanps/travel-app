@@ -13,7 +13,19 @@ import { AlertController } from '@ionic/angular';
 export class ErrorInterceptor implements HttpInterceptor {
 
   constructor(
-    private storageService: StorageService) { }
+    private storageService: StorageService,
+    private alertController : AlertController) { }
+
+  async presentAlert(header: string, subHeader: string, message: string) {
+    const alert = await this.alertController.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
@@ -51,7 +63,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 
   handle401() {
-    alert('Login e senha incorretos');
+    this.presentAlert('Erro', 'Oops. Ocorreu um erro', 'Login ou senha inválidos');
   }
 
   handle403() {
@@ -60,11 +72,12 @@ export class ErrorInterceptor implements HttpInterceptor {
       email: ''
     }
     this.storageService.setLocalUser(user);
+    this.presentAlert('Erro', 'Oops. Ocorreu um erro', 'Não permitido.');
   }
 
   handle404(errorMsg: any) {
     let alertMsg = this.listErrors(errorMsg.errors);
-    alert(alertMsg);
+    this.presentAlert('Erro', 'Oops. Ocorreu um erro', 'Não permitido. cód:' + alertMsg);
   }
 
   handleDefaultError(errorMsg: any) {
