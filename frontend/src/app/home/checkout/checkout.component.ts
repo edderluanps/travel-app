@@ -71,7 +71,6 @@ export class CheckoutComponent implements OnInit {
   nextStep(){
     this.pedido.pagamento = this.formGroup.value;
     this.router.navigate(['/confirmacao'], { state: { pedido : this.pedido }});
-    console.log(this.pedido)
   }
 
 }

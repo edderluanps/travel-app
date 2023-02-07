@@ -1,111 +1,115 @@
-.navbar{
-  height: 50px;
-  width: 100%;
-  background: #f2f2f2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px 0 150px;
-  border: 1px solid #ccc;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+/*nav*/
+.header {
+    height: 70px;
+    width: 100%;
+    background: #008080;
 }
 
-.navbar .logo-area{
-  height: 100%;
-  width: 120px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-right: 300px;
+/*navbar*/
+.header .navbar {
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px 0 200px;
 }
 
-.navbar .logo-area a{
-  font-size: 16px;
-  height: 100%;
-  width: 120px;
-  display: flex;
+.header .navbar h2 {
+    color: #000;
+    font-size: 35px;
 }
 
-.navbar .logo-area img{
-  height: 95%;
-  width: 150px;
+.header .navbar h2 i {
+    display: none;
 }
 
-.navbar .menu-area{
-  height: 100%;
-  width: 550px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.header .navbar .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.navbar .menu-area a{
-  padding: 0 20px;
-  color: #1a1a1a;
-  transition: all 0.5s ease;
+.header .navbar .menu a {
+    font-size: 18px;
+    padding: 0 20px;
+    color: #000;
+    transition: all 0.5s ease;
 }
 
-.navbar .menu-area a:hover{
-  padding: 5px 20px 5px;
-  border-bottom: 4px solid #1a1a1a;
-  border-radius: 5px;
+.header .navbar .menu a:hover {
+    color: #1a1a1a;
+    transform: scale(1.1);
 }
 
-.navbar .btn-user-area{
-  height: 100%;
-  width: 110px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+.header .navbar .menu .btn-perfil {
+    height: 30px;
+    width: 80px;
+    background: #1a1a1a;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.5s ease;
 }
 
-.navbar .btn-user-area .btn-logar{
-  background: #DC143C;
-  color: #fff;
-  border-radius: 5px;
-  height: 30px;
-  width: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  transition: all 0.5s ease;
+.header .navbar .menu .btn-perfil i {
+    padding: 0 5px;
 }
 
-.navbar .btn-user-area .btn-logar:hover{
-  font-size: 15px;
-  background: none;
-  border: 1px solid #DC143C;
-  color: #DC143C;
+.header .navbar .menu .btn-perfil:hover {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
 }
 
-.navbar .btn-user-area .btn-cart{
-  background: #0059b3;
-  color: #fff;
-  border-radius: 5px;
-  height: 30px;
-  width: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  transition: all 0.5s ease;
+.header .navbar .menu .btn-carrinho {
+    height: 30px;
+    width: 80px;
+    background: #1a1a1a;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.5s ease;
 }
 
-.navbar .btn-user-area .btn-cart:hover{
-  font-size: 15px;
-  background: none;
-  border: 1px solid #0059b3;
-  color: #0059b3;
+.header .navbar .menu .btn-carrinho i {
+    padding: 0 5px;
 }
+
+.header .navbar .menu .btn-carrinho:hover {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+}
+
+/*navbar*/
 
 /*form*/
 .content{
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,17 +122,17 @@
   padding: 50px 0 0 0;
 }
 
-.item{
+.content .item{
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.item label{
-  padding-right: 400px;
-  padding-top: 15px;
+.content .item label{
+  text-align: flex-start;
 }
 
-.item input{
+.content .item input{
   height: 30px;
   width: 100%;
   padding: 0 20px;
@@ -137,13 +141,13 @@
   outline: none;
 }
 
-.item select{
+.content .item select{
   height: 30px;
-  width: 100%;
+  width: 500px;
   padding: 0 20px;
 }
 
-p{
+.content p{
   margin-top: 5px;
   height: 25px;
   width: 100%;
@@ -156,11 +160,11 @@ p{
   padding: 0 0 0 5px;
 }
 
-p i{
+.content p i{
   padding: 0 5px;
 }
 
-.btn-group{
+.content .btn-group{
   height: 100px;
   width: 100%;
   display: flex;
@@ -169,29 +173,28 @@ p i{
   align-items: center;
 }
 
-.btn-group .btn-voltar{
+.content .btn-group .btn-voltar{
   height: 40px;
   width: 250px;
-  border: 0;
-  background: #DC143C;
-  color: #fff;
+  border: 1px solid #1a1a1a;
+  background: none;
+  color: #1a1a1a;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.5s ease;
 }
 
-.btn-group .btn-voltar:hover{
-  background: none;
-  color: #DC143C;
-  border: 1px solid #DC143C;
+.content .btn-group .btn-voltar:hover{
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .btn-group .btn-submit{
   height: 40px;
   width: 240px;
   border: 0;
-  background: #0059b3;
+  background: #1a1a1a;
   color: #fff;
   border-radius: 5px;
   font-size: 16px;
@@ -201,6 +204,292 @@ p i{
 
 .btn-group .btn-submit:hover{
   background: none;
-  color: #0059b3;
-  border: 1px solid #0059b3;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+}
+
+
+/*Responsividade*/
+
+
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header .navbar {
+        height: 70px;
+        padding: 0 50px 0 100px;
+    }
+
+    .content .item select{
+      height: 30px;
+      width: 500px;
+      padding: 0 20px;
+    }
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+  */
+@media (min-width: 868px) and (max-width: 1024px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header .navbar {
+        height: 70px;
+        padding: 0 50px 0 70px;
+    }
+
+    .header .navbar .menu a {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .content input, select{
+      width: auto;
+    }
+
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+  */
+@media (min-width: 767px) and (max-width: 867px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header .navbar {
+        height: 70px;
+        padding: 0 50px 0 50px;
+    }
+
+    .header .navbar h2 i {
+        display: inline;
+    }
+
+    .header .navbar .menu a {
+        display: none;
+    }
+
+    .content input, select{
+      width: auto;
+    }
+
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles
+  ##Screen = B/w 481px to 767px
+  */
+@media (min-width: 612px) and (max-width: 767px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .header .navbar h2 i {
+        display: inline;
+    }
+
+    .header .navbar .menu a {
+        display: none;
+    }
+
+    .header .navbar .menu .btn-perfil {
+        display: none;
+    }
+
+    .header .navbar .menu .btn-carrinho {
+        display: none;
+    }
+
+    .header .banner {
+        padding: 100px 100px 0;
+    }
+
+    .header .banner .msg h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .header .banner .pesquisa {
+        height: 100px;
+        width: 500px;
+    }
+
+    .header .banner .pesquisa .item {
+        padding-left: 20px;
+    }
+
+    .header .banner .pesquisa .item input {
+        height: 30px;
+        width: 120px;
+        margin-bottom: 19px;
+    }
+
+    .header .banner .pesquisa label {
+        font-size: 12px;
+    }
+
+    .header .banner .pesquisa .item .btn-pesquisar {
+        height: 30px;
+        width: 120px;
+    }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+  */
+@media (min-width: 480px) and (max-width: 611px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .header .navbar h2 i {
+        display: inline;
+    }
+
+    .header .navbar .menu a {
+        display: none;
+    }
+
+    .header .navbar .menu .btn-perfil {
+        display: none;
+    }
+
+    .header .navbar .menu .btn-carrinho {
+        display: none;
+    }
+
+    .header .banner {
+        padding: 100px 50px 0;
+    }
+
+    .header .banner .msg h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .header .banner .pesquisa {
+        height: 100px;
+        width: 450px;
+    }
+
+    .header .banner .pesquisa .item {
+        padding-left: 20px;
+    }
+
+    .header .banner .pesquisa .item input {
+        height: 30px;
+        width: 120px;
+        margin-bottom: 19px;
+    }
+
+    .header .banner .pesquisa label {
+        font-size: 10px;
+    }
+
+    .header .banner .pesquisa .item .btn-pesquisar {
+        height: 30px;
+        width: 120px;
+    }
+
+    .content .item select{
+      height: 30px;
+      width: 400px;
+      padding: 0 20px;
+    }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+  */
+@media (min-width: 320px) and (max-width: 479px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .header .navbar h2 i {
+        display: inline;
+    }
+
+    .header .navbar .menu a {
+        display: none;
+    }
+
+    .header .navbar .menu .btn-perfil {
+        display: none;
+    }
+
+    .header .navbar .menu .btn-carrinho {
+        display: none;
+    }
+
+    .content .item select{
+      height: 30px;
+      width: 300px;
+      padding: 0 20px;
+    }
+
+    .content .btn-group{
+      height: 100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
 }

@@ -1,105 +1,139 @@
-<body>
-  <!--navbar-->
-  <nav class="navbar">
-    <div class="logo-area">
-       <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
-    </div>
+<html>
+  <body>
 
-    <div class="btn-user-area">
-      <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
-      <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
-  </div>
-  </nav>
+    <header class="header">
+        <nav class="navbar">
 
-  <!--barra de pesquisa-->
-  <section class="search-box">
-    <div class="pesquisa">
-      <input
-        type="text" id="" placeholder="ex: curiosidades sobre o Japão" [(ngModel)]="titulo"/>
-      <button class="btn-pesquisa" (click)="getResultadoPesquisa()">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-  </section>
+            <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
+            <div class="menu">
+                <a routerLink="/">home</a>
+                <a routerLink="/pacotes">pacotes</a>
+                <a routerLink="/blog">blog</a>
+                <a href="#servicos">servicos</a>
+                <a href="#sobre">sobre</a>
 
-  <!--conteudo-->
-  <section class="conteudo">
-    <div class="col-1">
-      <div class="card" *ngFor="let item of post">
-        <img [src]="item.img" alt="" />
-        <div class="data">
-          <h5><i class="fa-regular fa-calendar"></i> {{ item.dataPostagem }} </h5>
-          <h4>
-            <a [routerLink]="['/blog-post', item.id]">{{ item.titulo }}</a
-            >
-          </h4>
-          <p> {{ item.descricao }} </p>
-          <span><i class="fa-solid fa-user"></i> por: {{ item.cliente.nome }}</span>
-        </div>
-      </div>
-    </div>
+                <button class="btn-perfil" routerLink="/perfil">
+                    <i class="fa-solid fa-user"></i>
+                    user
+                </button>
 
-    <div class="col-2">
+                <button class="btn-carrinho" routerLink="/carrinho">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    cart
+                </button>
+            </div>
 
-      <article class="article-2">
-        <header><h2>Principais tópicos</h2></header>
-        <div class="options">
-          <a href=""
-            ><i class="fa-solid fa-angle-right"></i> Destinos nacionais</a
-          >
-          <a href=""
-            ><i class="fa-solid fa-angle-right"></i> Destinos internacionais</a
-          >
-          <a href=""><i class="fa-solid fa-angle-right"></i> Inverno</a>
-          <a href=""><i class="fa-solid fa-angle-right"></i> Verão</a>
-          <a href=""
-            ><i class="fa-solid fa-angle-right"></i> Dicas e curuisudades</a
-          >
-        </div>
-      </article>
-    </div>
-  </section>
+        </nav>
 
-  <!--Footer-->
-  <footer class="footer">
-    <div class="col-1">
-      <div class="row-1">
-        <img src="../../../assets/img/logo-nobg01.png" alt="" />
-      </div>
-      <div class="row-2">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quae
-          esse magni doloremque commodi explicabo ea aspernatur nihil dolorem
-          necessitatibus.
+        <section class="banner" id="home">
+
+            <div class="msg">
+                <h1>A melhor experiência da sua vida</h1>
+                <p>Dê início ao próximo capítulo da sua históia.</p>
+            </div>
+
+            <div class="pesquisa">
+
+                <div class="item-1">
+                    <label for="">Pesquise</label>
+                    <input type="text" name="" id="" [(ngModel)]="titulo" placeholder="ex: Curiosidades sobre o Chile">
+                </div>
+                <div class="item-2">
+                    <button class="btn-pesquisar" (click)="getResultadoPesquisa()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Pesquisar
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+    </header>
+
+    <section class="blog" id="blog">
+
+        <h2>Ultimas postagens</h2>
+
+        <p class="subtitle">Nosso site dispõe dos melhores pacotes turísicos com o melhor preço
+            do mercado, sempre com passagens e hospedagens inclusos.
         </p>
-      </div>
-      <div class="row-3">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-twitter"></i></a>
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
-        <a href=""><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
 
-    <div class="col-2">
-      <ul>
-        <li><h4>Serviços</h4></li>
-        <li>Viagens</li>
-        <li>Pacotes</li>
-      </ul>
-      <ul>
-        <li><h4>Parceiros</h4></li>
-        <li>Dev's Airlines</li>
-        <li>Dev's Hotel</li>
-        <li>Dev's Hisorts</li>
-      </ul>
-      <ul>
-        <li><h4>Contato</h4></li>
-        <li>Instagram</li>
-        <li>Twitter</li>
-        <li>+55 555.555.5555</li>
-        <li>contato@travelio.com</li>
-      </ul>
-    </div>
-  </footer>
+        <h1 *ngIf="post < 1">Nenhum post foi encontrado... refaça a pesquisa</h1>
+
+        <div class="cards">
+
+          <div class="card" *ngFor="let posts of post">
+            <img [src]="posts.img" alt=""/>
+            <div class="dados">
+              <p><i class="fa-solid fa-calendar-days"></i>{{ posts.dataPostagem }}</p>
+              <h3>{{ posts.titulo }}</h3>
+              <p><i class="fa-solid fa-user"></i> por: {{ posts.cliente.nome }}</p>
+              <p class="texto">
+                {{ posts.descricao }}
+              </p>
+              <a [routerLink]="['/blog-post', posts.id]">ler mais</a>
+            </div>
+          </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer" id="sobre">
+        <div class="row-1">
+            <div class="col-1">
+                <h2>Travel.io</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, odit!
+                </p>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <h3>Sobre</h3>
+                    <li>Quem somos</li>
+                    <li>Propósito</li>
+                    <li>Missão, visão, valores</li>
+                    <li>Mais</li>
+                </ul>
+
+                <ul>
+                    <h3>Contato</h3>
+                    <li>email@travel.io</li>
+                    <li>+55 9876 54321</li>
+                    <li>@travel.io</li>
+                    <li>Contate-nos</li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h2>Nos siga</h2>
+                <span>
+                    <a href="">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div class="row-2">
+            2023 - travel.io - all rights reserved
+        </div>
+    </footer>
 </body>
+</html>

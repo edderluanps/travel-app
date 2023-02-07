@@ -1,417 +1,1140 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-/*Padrões fixos*/
-section{
-    height: 700px;
+
+/*nav*/
+.header{
+    height: 70px;
     width: 100%;
+    background: #008080;
 }
 
-.navbar{
-  height: 50px;
-  width: 100%;
-  background: #f2f2f2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px 0 150px;
+/*navbar*/
+.header .navbar{
+    background-color: rgba(255,255,255,0.3);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px 0 200px;
 }
 
-
-.navbar .logo-area{
-  height: 100%;
-  width: 120px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-right: 300px;
+.header .navbar h2{
+    color: #000;
+    font-size: 35px;
 }
 
-.navbar .logo-area a{
-  font-size: 16px;
-  height: 100%;
-  width: 120px;
-  display: flex;
+.header .navbar h2 i{
+    display: none;
 }
 
-.navbar .logo-area img{
-  height: 95%;
-  width: 150px;
+.header .navbar .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.navbar .menu-area{
-  height: 100%;
-  width: 550px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.header .navbar .menu a{
+    font-size: 18px;
+    padding: 0 20px;
+    color: #000;
+    transition: all 0.5s ease;
 }
 
-.navbar .menu-area a{
-  padding: 0 20px;
-  color: #1a1a1a;
-  transition: all 0.5s ease;
+.header .navbar .menu a:hover{
+    color: #1a1a1a;
+    transform: scale(1.1);
 }
 
-.navbar .menu-area a:hover{
-  padding: 5px 20px 5px;
-  border-bottom: 4px solid #1a1a1a;
-  border-radius: 5px;
+.header .navbar .menu .btn-perfil{
+    height: 30px;
+    width: 80px;
+    background: #1a1a1a;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.5s ease;
 }
 
-.navbar .btn-user-area{
-  height: 100%;
-  width: 110px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+.header .navbar .menu .btn-perfil i{
+    padding: 0 5px;
 }
 
-.navbar .btn-user-area .btn-logar{
-  background: #DC143C;
-  color: #fff;
-  border-radius: 5px;
-  height: 30px;
-  width: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  transition: all 0.5s ease;
+.header .navbar .menu .btn-perfil:hover{
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
 }
 
-.navbar .btn-user-area .btn-logar:hover{
-  font-size: 15px;
-  background: none;
-  border: 1px solid #DC143C;
-  color: #DC143C;
+.header .navbar .menu .btn-carrinho{
+    height: 30px;
+    width: 80px;
+    background: #1a1a1a;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.5s ease;
 }
 
-.navbar .btn-user-area .btn-cart{
-  background: #0059b3;
-  color: #fff;
-  border-radius: 5px;
-  height: 30px;
-  width: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  transition: all 0.5s ease;
+.header .navbar .menu .btn-carrinho i{
+    padding: 0 5px;
 }
 
-.navbar .btn-user-area .btn-cart:hover{
-  font-size: 15px;
-  background: none;
-  border: 1px solid #0059b3;
-  color: #0059b3;
+.header .navbar .menu .btn-carrinho:hover{
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+}
+/*navbar*/
+
+.header .banner{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 0 0 0;
+}
+
+.header .banner .msg{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Itim', cursive;
+}
+
+.header .banner .msg h1{
+    font-size: 50px;
+    color: #000;
+    text-shadow: 1px 1px #f2f2f2;
+}
+
+.header .banner .msg p{
+    font-size: 20px;
+    color: #000;
+}
+
+.header .banner .pesquisa .item .btn-pesquisar i{
+    padding: 0 10px;
+}
+
+.header .banner .pesquisa .item .btn-pesquisar:hover{
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
 }
 
 /*conteudo*/
-.conteudo{
-  background: #fff;
-  height: 95%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.conteudo {
+    background: #fff;
+    height: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.conteudo h2{
-  padding: 0 0 50px;
+.conteudo h2 {
+    padding: 50px 0 10px;
 }
 
-.conteudo .box{
-  height: 80%;
-  width: 80%;
-  border-radius: 10px;
-  background: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 40px;
+.conteudo .box {
+    min-height: 80%;
+    height: auto;
+    width: 80%;
+    border-radius: 10px;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+    margin: 50px 0;
 }
 
-.conteudo .box .label{
-  height: 40px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 110px 0 100px;
+.conteudo .box .label {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 110px 0 100px;
 }
 
-.conteudo .box .label .descricao{
-  padding: 0 170px 0 50px;
+.conteudo .box .label .descricao {
+    padding: 0 170px 0 50px;
 }
 
-.conteudo .box .row-1{
-  background: #f0f0f0;
-  border-top: 3px solid #ccc;
-  height: 400px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px;
-  overflow-y: scroll;
+.conteudo .box .row-1 {
+    background: #ddd;
+    border-top: 3px solid #ccc;
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    overflow-y: scroll;
 }
 
-.conteudo .box .row-1 .alerta{
-  padding-top: 100px;
-  font-size: 50px;
+.conteudo .box .row-1 .alerta {
+    padding-top: 100px;
+    font-size: 50px;
 }
 
-.conteudo .box .row-1 .card{
-  min-height: 180px;
-  max-height: 180px;
-  width: 100%;
-  border-radius: 5px;
-  margin: 10px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
+.conteudo .box .row-1 .card {
+    min-height: 180px;
+    max-height: 180px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
 }
 
-.conteudo .box .row-1 .card .col-1{
-  height: 100%;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
+.conteudo .box .row-1 .card .col-1 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
 }
 
-.conteudo .box .row-1 .card .col-1 img{
-  height: 150px;
-  width: 100%;
+.conteudo .box .row-1 .card .col-1 img {
+    height: 150px;
+    width: 100%;
 }
 
-.conteudo .box .row-1 .card .col-2{
-  height: 100%;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
+.conteudo .box .row-1 .card .col-2 {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
 }
 
-.conteudo .box .row-1 .card .col-3{
-  height: 100%;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
+.conteudo .box .row-1 .card .col-3 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
 }
 
-.conteudo .box .row-1 .card .col-3 .seletor{
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+.conteudo .box .row-1 .card .col-3 .seletor {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.conteudo .box .row-1 .card .col-3 .seletor .btn-add{
-  height: 100%;
-  width: 33%;
-  background: #0059b3;
-  border: 0;
-  border-radius: 5px 0 0 5px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.5s ease;
+.conteudo .box .row-1 .card .col-3 .seletor .btn-add {
+    height: 100%;
+    width: 33%;
+    background: #1a1a1a;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
-.conteudo .box .row-1 .card .col-3 .seletor .btn-add:hover{
-  border: 1px solid #0059b3;
-  background: none;
-  color: #0059b3;
+.conteudo .box .row-1 .card .col-3 .seletor .btn-add:hover {
+    border: 1px solid #1a1a1a;
+    background: none;
+    color: #1a1a1a;
 }
 
-.conteudo .box .row-1 .card .col-3 .seletor .btn-remover{
-  height: 100%;
-  width: 33%;
-  background: #0059b3;
-  border: 0;
-  border-radius: 0 5px 5px 0;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.5s ease;
+.conteudo .box .row-1 .card .col-3 .seletor .btn-remover {
+    height: 100%;
+    width: 33%;
+    background: #1a1a1a;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
-.conteudo .box .row-1 .card .col-3 .seletor .btn-remover:hover{
-  border: 1px solid #0059b3;
-  background: none;
-  color: #0059b3;
+.conteudo .box .row-1 .card .col-3 .seletor .btn-remover:hover {
+    border: 1px solid #1a1a1a;
+    background: none;
+    color: #1a1a1a;
 }
 
-.conteudo .box .row-1 .card .col-3 .seletor select{
-  height: 100%;
-  width: 34%;
-  text-align: center;
+.conteudo .box .row-1 .card .col-3 .seletor select {
+    height: 100%;
+    width: 34%;
+    text-align: center;
 }
 
-.conteudo .box .row-1 .card .col-4{
-  height: 100%;
-  width: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
+.conteudo .box .row-1 .card .col-4 {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
 }
 
-.conteudo .box .row-1 .card .col-4 .btn-excluir{
-  height: 50px;
-  width: 90%;
-  background: #DC143C;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.5s ease;
+.conteudo .box .row-1 .card .col-4 .btn-excluir {
+    height: 50px;
+    width: 90%;
+    background: #f2f2f2;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
-.conteudo .box .row-1 .card .col-4 .btn-excluir:hover{
-  border: 1px solid #DC143C;
-  background: none;
-  color: #DC143C;
+.conteudo .box .row-1 .card .col-4 .btn-excluir:hover {
+    border: 1px solid #1a1a1a;
+    background: #1a1a1a;
+    color: #ccc;
 }
 
-.conteudo .box .row-1 .card .col-5{
-  height: 100%;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
+.conteudo .box .row-1 .card .col-5 {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
 }
 
-.conteudo .box .row-2{
-  border-top: 1px solid #ccc;
-  height: 140px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+.conteudo .box .row-2 {
+    border-top: 1px solid #ccc;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
-.conteudo .box .row-2 .mini-card{
-  height: 100%;
-  width: 240px;
-  border: 1px solid #ccc;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 5px;
+.conteudo .box .row-2 .mini-card {
+    height: 100px;
+    width: 240px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
 }
 
-.conteudo .box .row-2 .mini-card h4{
-  font-size: 14px;
+.conteudo .box .row-2 .mini-card h4 {
+    font-size: 14px;
 }
 
-.conteudo .box .row-2 .mini-card h1{
-  font-size: 18px;
+.conteudo .box .row-2 .mini-card h1 {
+    font-size: 18px;
 }
 
-.conteudo .box .row-3{
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+.conteudo .box .row-3 {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.conteudo .box .row-3 .desconto-box{
-  height: 50px;
-  width: 500px;
-  display: flex;
-  flex-direction: row;
-  border-radius: 5px;
+.conteudo .box .row-3 .desconto-box {
+    height: 50px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
 }
 
-.conteudo .box .row-3 .desconto-box input{
-  height: 100%;
-  width: 80%;
-  border: 0;
-  outline: 0;
-  border-radius: 5px 0 0 5px;
-  padding: 0 10px;
+.conteudo .box .row-3 .desconto-box input {
+    height: 100%;
+    width: 80%;
+    border: 0;
+    outline: 0;
+    border-radius: 5px 0 0 5px;
+    padding: 0 10px;
 }
 
-.conteudo .box .row-3 .desconto-box .btn-desconto{
-  background: #0059b3;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 0 5px 5px 0;
-  height: 100%;
-  width: 20%;
-  border: 0;
-  transition: all 0.5s ease;
-  cursor: pointer;
+.conteudo .box .row-3 .desconto-box .btn-desconto {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 0 5px 5px 0;
+    height: 100%;
+    width: 20%;
+    border: 0;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
-.conteudo .box .row-3 .desconto-box .btn-desconto:hover{
-  background: none;
-  color: #0059b3;
-  border: 1px solid #0059b3;
+.conteudo .box .row-3 .desconto-box .btn-desconto:hover {
+    background: none;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
 }
 
-.conteudo .box .row-3 .btn-voltar{
-  height: 50px;
-  width: 200px;
-  background: none;
-  border: 1px solid #0059b3;
-  color: #0059b3;
-  font-size: 20px;
-  border-radius: 5px;
-  transition: all 0.5s ease;
-  cursor: pointer;
+.conteudo .box .row-3 .btn-voltar {
+    height: 50px;
+    width: 200px;
+    background: none;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
-.conteudo .box .row-3 .btn-voltar:hover{
-  background: #0059b3;
-  color: #fff;
-  border: none;
+.conteudo .box .row-3 .btn-voltar:hover {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
 }
 
-.conteudo .box .row-3 .btn-comprar{
-  height: 50px;
-  width: 200px;
-  background: #0059b3;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 5px;
-  border: 0;
-  transition: all 0.5s ease;
-  cursor: pointer;
+.conteudo .box .row-3 .btn-comprar {
+    height: 50px;
+    width: 200px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
-.conteudo .box .row-3 .btn-comprar:hover{
-  background: none;
-  color: #0059b3;
-  border: 1px solid #0059b3;
+.conteudo .box .row-3 .btn-comprar:hover {
+    background: none;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+}
+
+/*Responsividade*/
+
+
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .header{
+        height: 70px;
+    }
+
+    .header .navbar{
+        height: 70px;
+        padding: 0 50px 0 100px;
+    }
+
+    .conteudo {
+      height: 1200px;
+      width: 100%;
+    }
+
+    .conteudo h2 {
+        padding: 50px 0;
+    }
+
+    .conteudo .box {
+        min-height: 80%;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+}
+
+
+
+/*
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 868px) and (max-width: 1024px) {
+
+    .header{
+        height: 70px;
+    }
+
+    .header .navbar{
+        height: 70px;
+        padding: 0 50px 0 70px;
+    }
+
+    .header .navbar .menu a{
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .header .banner{
+        padding: 150px 150px 0;
+    }
+
+    .header .banner .msg h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .conteudo {
+      height: 1200px;
+      width: 100%;
+    }
+
+    .conteudo .box {
+        min-height: 80%;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin: 50px 0;
+    }
+
+    .conteudo .box .row-2 {
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .conteudo .box .row-2 .mini-card {
+        height: 100px;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .conteudo .box .row-3 .desconto-box .btn-desconto {
+        height: 100%;
+        width: 25%;
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-3 .btn-voltar {
+        height: 50px;
+        width: 200px;
+    }
+
+    .conteudo .box .row-3 .btn-comprar {
+        height: 50px;
+        width: 200px;
+    }
+
+}
+
+
+/*
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 767px) and (max-width: 867px) {
+
+    .header{
+        height: 70px;
+    }
+
+    .header .navbar{
+        height: 70px;
+        padding: 0 50px 0 50px;
+    }
+
+    .header .navbar h2 i{
+        display: inline;
+    }
+
+    .header .navbar .menu a{
+        display: none;
+    }
+
+    .header .banner{
+        padding: 100px 150px 0;
+    }
+
+    .header .banner .msg h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .conteudo {
+      height: 1200px;
+      width: 100%;
+    }
+
+    .conteudo .box .label {
+        height: 40px;
+        width: 100%;
+        padding: 0 80px 0 50px;
+    }
+
+    .conteudo .box {
+        min-height: 80%;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin: 50px 0;
+    }
+
+    .conteudo .box .row-2 {
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .conteudo .box .row-2 .mini-card {
+        height: 100px;
+        width: 180px;
+        border-radius: 5px;
+    }
+
+    .conteudo .box .row-3 .desconto-box {
+        height: 50px;
+        width: 300px;
+    }
+
+    .conteudo .box .row-3 .desconto-box .btn-desconto {
+        height: 100%;
+        width: 30%;
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-3 .desconto-box .btn-desconto {
+        height: 100%;
+        width: 30%;
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-3 .btn-voltar {
+        height: 50px;
+        width: 180px;
+    }
+
+    .conteudo .box .row-3 .btn-comprar {
+        height: 50px;
+        width: 180px;
+    }
+
+}
+
+
+/*
+##Device = Low Resolution Tablets, Mobiles
+##Screen = B/w 481px to 767px
+*/
+@media (min-width: 612px) and (max-width: 767px) {
+
+    .header{
+        height: 70px;
+    }
+
+    .header .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .header .navbar h2 i{
+        display: inline;
+    }
+
+    .header .navbar .menu a{
+        display: none;
+    }
+
+    .header .navbar .menu .btn-perfil{
+        display: none;
+    }
+
+    .header .navbar .menu .btn-carrinho{
+        display: none;
+    }
+
+    .header .banner{
+        padding: 100px 100px 0;
+    }
+
+    .header .banner .msg h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .header .banner .pesquisa{
+        height: 100px;
+        width: 500px;
+    }
+
+    .header .banner .pesquisa .item{
+        padding-left: 20px;
+    }
+
+    .header .banner .pesquisa .item input{
+        height: 30px;
+        width: 120px;
+        margin-bottom: 19px;
+    }
+
+    .header .banner .pesquisa label{
+        font-size: 12px;
+    }
+
+    .header .banner .pesquisa .item .btn-pesquisar{
+        height: 30px;
+        width: 120px;
+    }
+
+    .conteudo {
+      height: 1200px;
+      width: 100%;
+    }
+
+    .conteudo .box .label {
+        height: 40px;
+        width: 100%;
+        padding: 0 30px 0 15px;
+        font-size: 15px;
+    }
+
+    .conteudo .box {
+        min-height: 80%;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin: 50px 0;
+    }
+
+    .conteudo .box .row-1 .alerta{
+        font-size: 35px;
+    }
+
+    .conteudo .box .row-2 {
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .conteudo .box .row-2 .mini-card {
+        height: 100px;
+        width: 140px;
+        border-radius: 5px;
+    }
+
+    .conteudo .box .row-2 .mini-card h1{
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-2 .mini-card h4{
+        font-size: 12px;
+    }
+
+    .conteudo .box .row-3 .desconto-box {
+        height: 50px;
+        width: 200px;
+    }
+
+    .conteudo .box .row-3 .desconto-box .btn-desconto {
+        height: 100%;
+        width: 30%;
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-3 .btn-voltar {
+        height: 50px;
+        width: 150px;
+    }
+
+    .conteudo .box .row-3 .btn-comprar {
+        height: 50px;
+        width: 150px;
+    }
+
+}
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+@media (min-width: 480px) and (max-width: 611px) {
+
+    .header{
+        height: 70px;
+    }
+
+    .header .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .header .navbar h2 i{
+        display: inline;
+    }
+
+    .header .navbar .menu a{
+        display: none;
+    }
+
+    .header .navbar .menu .btn-perfil{
+        display: none;
+    }
+
+    .header .navbar .menu .btn-carrinho{
+        display: none;
+    }
+
+    .header .banner{
+        padding: 100px 50px 0;
+    }
+
+    .header .banner .msg h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .header .banner .pesquisa{
+        height: 100px;
+        width: 450px;
+    }
+
+    .header .banner .pesquisa .item{
+        padding-left: 20px;
+    }
+
+    .header .banner .pesquisa .item input{
+        height: 30px;
+        width: 120px;
+        margin-bottom: 19px;
+    }
+
+    .header .banner .pesquisa label{
+        font-size: 10px;
+    }
+
+    .header .banner .pesquisa .item .btn-pesquisar{
+        height: 30px;
+        width: 120px;
+    }
+
+    .conteudo {
+      height: 1200px;
+      width: 100%;
+    }
+
+    .conteudo .box .label {
+        display: none;
+    }
+
+    .conteudo .box {
+        min-height: 80%;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .conteudo .box .row-1 .alerta{
+        font-size: 20px;
+    }
+
+    .conteudo .box .row-2 {
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .conteudo .box .row-1 .card .col-1 {
+        height: 100%;
+        width: 40%;
+        padding: 10px;
+    }
+
+    .conteudo .box .row-1 .card .col-1 img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .conteudo .box .row-1 .card .col-3{
+        padding: 70px 0;
+    }
+
+    .conteudo .box .row-1 .card .col-4{
+        padding: 70px 0;
+    }
+
+    .conteudo .box .row-1 .card .col-5 h1{
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-1 .card .col-5 p{
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-2 .mini-card {
+        height: 100px;
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+    }
+
+    .conteudo .box .row-2 .mini-card h1{
+        font-size: 12px;
+    }
+
+    .conteudo .box .row-2 .mini-card h4{
+        font-size: 10px;
+    }
+
+    .conteudo .box .row-3 .desconto-box {
+        height: 50px;
+        width: 150px;
+    }
+
+    .conteudo .box .row-3 .desconto-box .btn-desconto {
+        height: 100%;
+        width: 30%;
+        font-size: 12px;
+    }
+
+    .conteudo .box .row-3 .btn-voltar {
+        height: 50px;
+        width: 120px;
+    }
+
+    .conteudo .box .row-3 .btn-comprar {
+        height: 50px;
+        width: 120px;
+    }
+
+}
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 479px){
+
+    .header{
+        height: 70px;
+    }
+
+    .header .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .header .navbar h2 i{
+        display: inline;
+    }
+
+    .header .navbar .menu a{
+        display: none;
+    }
+
+    .header .navbar .menu .btn-perfil{
+        display: none;
+    }
+
+    .header .navbar .menu .btn-carrinho{
+        display: none;
+    }
+
+    .header .banner{
+        padding: 50px 20px 0;
+    }
+
+    .header .banner .msg h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header .banner .msg p{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .header .banner .pesquisa{
+        height: 100px;
+        width: 380px;
+    }
+
+    .header .banner .pesquisa .item{
+        padding-left: 20px;
+    }
+
+    .header .banner .pesquisa .item input{
+        height: 30px;
+        width: 100px;
+        margin-top: 25px;
+    }
+
+    .header .banner .pesquisa label{
+        display: none;
+    }
+
+    .header .banner .pesquisa .item .btn-pesquisar{
+        height: 30px;
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .conteudo {
+        height: 1200px;
+        width: 100%;
+    }
+
+    .conteudo .box .label {
+        display: none;
+    }
+
+    .conteudo .box {
+        min-height: 80%;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .conteudo .box .row-1 .alerta{
+        font-size: 20px;
+    }
+
+    .conteudo .box .row-2 {
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .conteudo .box .row-1 .card .col-1 {
+        height: 100%;
+        width: 40%;
+        padding: 10px;
+    }
+
+    .conteudo .box .row-1 .card .col-1 img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .conteudo .box .row-1 .card .col-3{
+        padding: 70px 0;
+    }
+
+    .conteudo .box .row-1 .card .col-4{
+        padding: 70px 0;
+    }
+
+    .conteudo .box .row-1 .card .col-5 h1{
+        font-size: 14px;
+    }
+
+    .conteudo .box .row-1 .card .col-5 p{
+        display: none;
+    }
+
+    .conteudo .box .row-2 .mini-card {
+        height: 100px;
+        width: 85px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+    }
+
+    .conteudo .box .row-2 .mini-card h1{
+        font-size: 12px;
+    }
+
+    .conteudo .box .row-2 .mini-card h4{
+        font-size: 10px;
+    }
+
+    .conteudo .box .row-3 .desconto-box {
+        height: 50px;
+        width: 150px;
+    }
+
+    .conteudo .box .row-3 .desconto-box .btn-desconto {
+        height: 100%;
+        width: 30%;
+        font-size: 12px;
+    }
+
+    .conteudo .box .row-3 .btn-voltar {
+        height: 50px;
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .conteudo .box .row-3 .btn-comprar {
+        height: 50px;
+        width: 100px;
+        font-size: 12px;
+    }
+
 }

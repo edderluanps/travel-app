@@ -21,6 +21,7 @@ export class ConfirmacaoComponent implements OnInit {
   carrinhoItem: CarrinhoItem[];
   cliente: ClienteDTO;
   codpedido: string;
+  pgType: any;
 
   constructor(
     public clienteService: ClienteService,
@@ -32,8 +33,8 @@ export class ConfirmacaoComponent implements OnInit {
   ngOnInit(): void {
     this.carrinhoItem = this.carrinhoService.getCart().items;
     this.total();
-
     let param = window.history.state;
+    this.pgType = param.pedido.pagamento;
 
     this.clienteService.findById(param.pedido.cliente.id)
       .subscribe(response => {

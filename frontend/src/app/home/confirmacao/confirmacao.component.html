@@ -1,30 +1,69 @@
-<h2>Confirmação do pedido</h2>
+<html>
+  <body>
+    <!--navbar-->
+    <header class="header">
+      <nav class="navbar">
+        <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
 
-<div class="box" *ngFor="let item of carrinhoItem">
-  <div class="card">
-    <div class="col-1">
-      <img [src]="item.pacote.img" alt="" />
-    </div>
+        <div class="menu">
+          <a routerLink="/">home</a>
+          <a routerLink="/pacotes">pacotes</a>
+          <a routerLink="/blog">blog</a>
+          <a href="#servicos">servicos</a>
+          <a href="#sobre">sobre</a>
 
-    <div class="col-2">
-      <h2>{{ item.pacote.nome }}</h2>
-      <p>{{ item.pacote.preco | currency }}</p>
-      <p class="nolinebreak">{{ item.quantidade }}</p>
-      <p item-end>{{ item.pacote.preco * item.quantidade | currency }}</p>
-    </div>
-  </div>
-</div>
+          <button class="btn-perfil" routerLink="/perfil">
+            <i class="fa-solid fa-user"></i>
+            user
+          </button>
 
-<div>
-  <header>Cliente</header>
-  <div>
-    <h2>{{ cliente.nome }}</h2>
-    <p>{{ cliente.email }}</p>
-  </div>
-</div>
+          <button class="btn-carrinho" routerLink="/carrinho">
+            <i class="fa-solid fa-cart-shopping"></i>
+            cart
+          </button>
+        </div>
+      </nav>
+    </header>
 
-<h2>Total</h2>
-<h5 item-end>{{ total() | currency }}</h5>
+    <section class="conteudo">
+      <h2>Confirmação do pedido</h2>
 
-<button (click)="voltar()">Voltar</button>
-<button (click)="confirmarPedido()">Confirmar pedido</button>
+      <div class="box" *ngFor="let item of carrinhoItem">
+        <div class="card">
+          <div class="col-1">
+            <img [src]="item.pacote.img" alt="" />
+          </div>
+
+          <div class="col-2">
+            <h2>{{ item.pacote.nome }}</h2>
+            <p>Valor uni.: {{ item.pacote.preco | currency }}</p>
+            <p>Qtd.: {{ item.quantidade }}</p>
+            <p>Subtotal: {{ item.pacote.preco * item.quantidade | currency }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h4>Cliente</h4>
+        <div>
+          <h2>{{ cliente.nome }}</h2>
+          <p>{{ cliente.email }}</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <h4>Total</h4>
+        <h1>{{ total() | currency }}</h1>
+        <p *ngIf="pgType['@type'] === 'pgCartao'">Cartão de crédito</p>
+        <p *ngIf="pgType['@type'] === 'pgCartao'">Parcelas: {{ pgType.numParcelas }}</p>
+        <p *ngIf="pgType['@type'] === 'pgBoleto'">Boleto bancário</p>
+        <p *ngIf="pgType['@type'] === 'pgPix'">PIX</p>
+      </div>
+
+      <div class="btn-area">
+          <button class="btn-voltar" (click)="voltar()">Voltar</button>
+          <button class="btn-confirmar" (click)="confirmarPedido()">Confirmar pedido</button>
+      </div>
+    </section>
+  </body>
+</html>

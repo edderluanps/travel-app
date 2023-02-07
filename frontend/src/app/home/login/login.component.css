@@ -64,7 +64,7 @@
   border: 0;
   outline: none;
   border-radius: 5px;
-  background: #0059b3;
+  background: #1a1a1a;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
@@ -73,8 +73,8 @@
 
 .box .btn-group .row-1 .btn-submit:hover{
   background: none;
-  border: 1px solid #0059b3;
-  color: #0059b3;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
 }
 
 .box .btn-group .row-2{
@@ -88,20 +88,19 @@
 .box .btn-group .row-2 .btn-cadastrar{
   width: 120px;
   height: 35px;
-  border: 0;
   outline: none;
   border-radius: 5px;
-  background: #DC143C;
-  color: #fff;
+  background: #ddd;
+  color: #000;
+  border: 1px solid #1a1a1a;
   cursor: pointer;
   font-size: 18px;
   transition: all 0.5s ease;
 }
 
 .box .btn-group .row-2 .btn-cadastrar:hover{
-  background: none;
-  border: 1px solid #DC143C;
-  color: #DC143C;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .box .btn-group .row-2 .btn-voltar{
@@ -109,17 +108,16 @@
   height: 35px;
   outline: none;
   border-radius: 5px;
-  background: none;
-  border: 1px solid #DC143C;
-  color: #DC143C;
+  background: #ddd;
+  color: #000;
+  border: 1px solid #1a1a1a;
   cursor: pointer;
   font-size: 18px;
   transition: all 0.5s ease;
 }
 
 .box .btn-group .row-2 .btn-voltar:hover{
-  background: #DC143C;
-  border: 0;
+  background: #1a1a1a;
   color: #fff;
 }
 

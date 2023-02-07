@@ -1,113 +1,123 @@
 <body>
-
   <!--navbar-->
-  <nav class="navbar">
-    <div class="logo-area">
-      <a routerLink=""><img src="../../../assets/img/logo-nobg01.png" alt="" /></a>
-    </div>
-    <div class="menu-area">
-      <a href="#banner">Inicio</a>
-      <a href="#pacotes">Pacotes</a>
-      <a href="#locais">Locais</a>
-      <a href="#blog">Blog</a>
-      <a href="#sobre">Sobre</a>
-    </div>
-    <div class="btn-user-area">
-      <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
-      <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
-  </div>
-  </nav>
+  <header class="header">
+    <nav class="navbar">
+      <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
+
+      <div class="menu">
+        <a routerLink="/">home</a>
+        <a routerLink="/pacotes">pacotes</a>
+        <a routerLink="/blog">blog</a>
+        <a href="#servicos">servicos</a>
+        <a href="#sobre">sobre</a>
+
+        <button class="btn-perfil" routerLink="/perfil">
+          <i class="fa-solid fa-user"></i>
+          user
+        </button>
+
+        <button class="btn-carrinho" routerLink="/carrinho">
+          <i class="fa-solid fa-cart-shopping"></i>
+          cart
+        </button>
+      </div>
+    </nav>
+  </header>
 
   <section class="conteudo">
-      <h2>Sua bagagem</h2>
-      <div class="box">
-
-          <div class="label">
-              <span class="descricao">descrição do item</span>
-              <span class="qtd">quatidade</span>
-              <span>remover</span>
-              <span>preço</span>
-          </div>
-
-         <div class="row-1">
-
-          <p class="alerta" *ngIf="total()<=0">Sua bagagem está vazia</p>
-
-          <!--card-->
-          <div class="card" *ngFor="let item of items">
-
-              <div class="col-1">
-                  <img [src]="item.pacote.img" alt="">
-              </div>
-
-              <div class="col-2">
-                  <h4>{{ item.pacote.nome }}</h4>
-                  <p>Descrição </p>
-              </div>
-
-              <div class="col-3">
-                  <div class="seletor">
-                      <button class="btn-add" (click)="increaseQuantity(item.pacote)"><i class="fa-solid fa-plus"></i></button>
-                      <select name="" id="" [disabled]="true">
-                          <option value="">{{ item.quantidade }}</option>
-                      </select>
-                      <button class="btn-remover" (click)="decreaseQuantity(item.pacote)"><i class="fa-solid fa-minus"></i></button>
-                  </div>
-              </div>
-
-              <div class="col-4">
-                  <button class="btn-excluir" (click)="removeItem(item.pacote)"><i class="fa-solid fa-x"></i></button>
-              </div>
-
-              <div class="col-5">
-                  <h1>{{ item.pacote.preco | currency }}</h1>
-                  <p>valor do item</p>
-              </div>
-          </div>
-          <!--card-->
-
-
-         </div>
-
-         <div class="row-2">
-          <div class="mini-card">
-              <h4>Descontos</h4>
-              <h1>RS 10,00</h1>
-          </div>
-
-          <div class="mini-card">
-              <h4>Vale presente</h4>
-              <h1>RS 10,00</h1>
-          </div>
-
-          <div class="mini-card">
-              <h4>Acrescimos</h4>
-              <h1>RS 10,00</h1>
-          </div>
-
-          <div class="mini-card">
-              <h4>Total</h4>
-              <h1>{{total() | currency}}</h1>
-          </div>
-
-         </div>
-
-         <div class="row-3">
-          <div class="desconto-box">
-              <input type="text" name="" id="" placeholder="insira aqui seu cupom ou vale presente">
-              <button class="btn-desconto">aplicar</button>
-          </div>
-
-          <button class="btn-voltar" (click)="goOn()">
-              voltar
-          </button>
-
-          <button class="btn-comprar" *ngIf="total()>0" (click)="checkout()">
-              finalizar
-          </button>
-         </div>
-
+    <h2>Sua bagagem</h2>
+    <div class="box">
+      <div class="label">
+        <span class="descricao">descrição do item</span>
+        <span class="qtd">quatidade</span>
+        <span>remover</span>
+        <span>preço</span>
       </div>
-  </section>
 
+      <div class="row-1">
+        <p class="alerta" *ngIf="total() <= 0">Sua bagagem está vazia</p>
+
+        <!--card-->
+        <div class="card" *ngFor="let item of items">
+          <div class="col-1">
+            <img [src]="item.pacote.img" alt="" />
+          </div>
+
+          <div class="col-2">
+            <h4>{{ item.pacote.nome }}</h4>
+            <p>Descrição</p>
+          </div>
+
+          <div class="col-3">
+            <div class="seletor">
+              <button class="btn-add" (click)="increaseQuantity(item.pacote)">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <select name="" id="" [disabled]="true">
+                <option value="">{{ item.quantidade }}</option>
+              </select>
+              <button
+                class="btn-remover"
+                (click)="decreaseQuantity(item.pacote)"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <button class="btn-excluir" (click)="removeItem(item.pacote)">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+
+          <div class="col-5">
+            <h1>{{ item.pacote.preco | currency }}</h1>
+            <p>valor do item</p>
+          </div>
+        </div>
+        <!--card-->
+      </div>
+
+      <div class="row-2">
+        <div class="mini-card">
+          <h4>Descontos</h4>
+          <h1>RS 10,00</h1>
+        </div>
+
+        <div class="mini-card">
+          <h4>Vale presente</h4>
+          <h1>RS 10,00</h1>
+        </div>
+
+        <div class="mini-card">
+          <h4>Acrescimos</h4>
+          <h1>RS 10,00</h1>
+        </div>
+
+        <div class="mini-card">
+          <h4>Total</h4>
+          <h1>{{ total() | currency }}</h1>
+        </div>
+      </div>
+
+      <div class="row-3">
+        <div class="desconto-box">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="insira aqui seu cupom ou vale presente"
+          />
+          <button class="btn-desconto">aplicar</button>
+        </div>
+
+        <button class="btn-voltar" (click)="goOn()">voltar</button>
+
+        <button class="btn-comprar" *ngIf="total() > 0" (click)="checkout()">
+          finalizar
+        </button>
+      </div>
+    </div>
+  </section>
 </body>

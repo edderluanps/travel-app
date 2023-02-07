@@ -1,191 +1,198 @@
-<!--navbar-->
-<nav class="navbar">
-  <div class="logo-area">
-    <a routerLink=""
-      ><img src="../../../assets/img/logo-nobg01.png" alt=""
-    /></a>
-  </div>
-  <div class="menu-area">
-    <a href="#banner">Inicio</a>
-    <a href="#pacotes">Pacotes</a>
-    <a href="#locais">Locais</a>
-    <a href="#blog">Blog</a>
-    <a href="#sobre">Sobre</a>
-  </div>
-  <div class="btn-user-area">
-    <a class="btn-logar" routerLink="/perfil"
-      ><i class="fa-solid fa-user"></i
-    ></a>
-    <a class="btn-cart" routerLink="/carrinho"
-      ><i class="fa-solid fa-suitcase-rolling"></i
-    ></a>
-  </div>
-</nav>
+<html>
+  <body>
+    <!--navbar-->
+    <header class="header">
+      <nav class="navbar">
+        <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
 
-<!--form-->
-<div class="content">
-  <form [formGroup]="formGroup" action="">
-    <h2>Cadastre - se</h2>
+        <div class="menu">
+          <a routerLink="/">home</a>
+          <a routerLink="/pacotes">pacotes</a>
+          <a routerLink="/blog">blog</a>
+          <a href="#servicos">servicos</a>
+          <a href="#sobre">sobre</a>
 
-    <div class="item">
-      <label for="nome">nome</label>
-      <input type="text" formControlName="nome" id="" />
-    </div>
-    <p
-      *ngIf="
-        formGroup.controls['nome'].invalid &&
-        (formGroup.controls['nome'].dirty || formGroup.controls['nome'].touched)
-      "
-    >
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
-    </p>
+          <button class="btn-perfil" routerLink="/perfil">
+            <i class="fa-solid fa-user"></i>
+            user
+          </button>
 
-    <div class="item">
-      <label for="">email</label>
-      <input type="email" formControlName="email" id="" />
-    </div>
-    <p
-      *ngIf="
-        formGroup.controls['email'].invalid &&
-        (formGroup.controls['email'].dirty ||
-          formGroup.controls['email'].touched)
-      "
-    >
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
-    </p>
+          <button class="btn-carrinho" routerLink="/carrinho">
+            <i class="fa-solid fa-cart-shopping"></i>
+            cart
+          </button>
+        </div>
+      </nav>
+    </header>
 
-    <div class="item">
-      <label for="">Tipo</label>
-      <select formControlName="tipo" id="" required="">
-        <option value="1">Cliente</option>
-        <option value="2">Admin</option>
-      </select>
-    </div>
-    <p *ngIf="formGroup.controls['tipo'].invalid">
-      <i class="fa-solid fa-circle-exclamation"></i> Obrigatório
-    </p>
+    <!--form-->
+    <div class="content">
+      <form [formGroup]="formGroup" action="">
+        <h2>Cadastre - se</h2>
 
-    <div class="item">
-      <label for="cpfOucnpj">CPF/CNPJ</label>
-      <input type="text" formControlName="cpfOuCnpj" id="" />
-    </div>
-    <p
-      *ngIf="
-        formGroup.controls['cpfOuCnpj'].invalid &&
-        (formGroup.controls['cpfOuCnpj'].dirty ||
-          formGroup.controls['cpfOuCnpj'].touched)
-      "
-    >
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
-    </p>
-
-    <div class="item">
-      <label for="nome">Data nascimento</label>
-      <input type="text" formControlName="dataNascimento" id="" />
-    </div>
-    <p
-      *ngIf="
-        formGroup.controls['dataNascimento'].invalid &&
-        (formGroup.controls['dataNascimento'].dirty || formGroup.controls['dataNascimento'].touched)
-      "
-    >
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
-    </p>
-
-    <div class="item">
-      <label for="senha">senha</label>
-      <input type="password" formControlName="senha" id="" />
-    </div>
-    <p
-      *ngIf="
-        formGroup.controls['senha'].invalid &&
-        (formGroup.controls['senha'].dirty ||
-          formGroup.controls['senha'].touched)
-      "
-    >
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
-    </p>
-
-    <div class="item">
-      <label for="logradouro">logradouro</label>
-      <input type="text" formControlName="logradouro" id="" />
-    </div>
-
-    <div class="item">
-      <label for="numero">Número</label>
-      <input type="text" formControlName="numero" id="" />
-    </div>
-
-    <div class="item">
-      <label for="complemento">Complemento</label>
-      <input type="text" formControlName="complemento" id="" />
-    </div>
-
-    <div class="item">
-      <label for="bairro">Bairro</label>
-      <input type="text" formControlName="bairro" id="" />
-    </div>
-
-    <div class="item">
-      <label for="cep">CEP</label>
-      <input type="text" formControlName="cep" id="" />
-    </div>
-
-    <div class="item">
-      <label for="telefone1">Telefone 1</label>
-      <input type="text" formControlName="telefone1" id="" />
-    </div>
-    <p
-      *ngIf="
-        formGroup.controls['telefone1'].invalid &&
-        (formGroup.controls['telefone1'].dirty ||
-          formGroup.controls['telefone1'].touched)
-      "
-    >
-      <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
-    </p>
-
-    <div class="item">
-      <label for="telefone2">Telefone 2</label>
-      <input type="text" formControlName="telefone2" id="" />
-    </div>
-
-    <div class="item">
-      <label for="telefone3">Telefone 3</label>
-      <input type="text" formControlName="telefone3" id="" />
-    </div>
-
-    <div class="item">
-      <label for="estadoId">Estado</label>
-      <select formControlName="estadoId" id="" (change)="updateCidades()">
-        <option
-          *ngFor="let estado of estados; first as f"
-          [value]="estado.id"
-          selected="f"
+        <div class="item">
+          <label for="nome">nome</label>
+          <input type="text" formControlName="nome" id="" />
+        </div>
+        <p
+          *ngIf="
+            formGroup.controls['nome'].invalid &&
+            (formGroup.controls['nome'].dirty ||
+              formGroup.controls['nome'].touched)
+          "
         >
-          {{ estado.nome }}
-        </option>
-      </select>
-    </div>
+          <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+        </p>
 
-    <div class="item">
-      <label for="cidadeId">Cidade</label>
-      <select formControlName="cidadeId" id="">
-        <option *ngFor="let cidade of cidades" [value]="cidade.id">
-          {{ cidade.nome }}
-        </option>
-      </select>
-    </div>
+        <div class="item">
+          <label for="">email</label>
+          <input type="email" formControlName="email" id="" />
+        </div>
+        <p
+          *ngIf="
+            formGroup.controls['email'].invalid &&
+            (formGroup.controls['email'].dirty ||
+              formGroup.controls['email'].touched)
+          "
+        >
+          <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+        </p>
 
-    <div class="btn-group">
-      <button routerLink="/login" class="btn-voltar">Voltar</button>
-      <button
-        (click)="onSubmit()"
-        [disabled]="formGroup.invalid"
-        class="btn-submit"
-      >
-        Cadastrar
-      </button>
+        <div class="item">
+          <label for="">Tipo</label>
+          <select formControlName="tipo" id="" required="">
+            <option value="1">Pessoa Física</option>
+            <option value="2">Pessoa Jurídica</option>
+          </select>
+        </div>
+        <p *ngIf="formGroup.controls['tipo'].invalid">
+          <i class="fa-solid fa-circle-exclamation"></i> Obrigatório
+        </p>
+
+        <div class="item">
+          <label for="cpfOucnpj">CPF/CNPJ</label>
+          <input type="text" formControlName="cpfOuCnpj" id="" />
+        </div>
+        <p
+          *ngIf="
+            formGroup.controls['cpfOuCnpj'].invalid &&
+            (formGroup.controls['cpfOuCnpj'].dirty ||
+              formGroup.controls['cpfOuCnpj'].touched)
+          "
+        >
+          <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+        </p>
+
+        <div class="item">
+          <label for="nome">Data nascimento</label>
+          <input type="text" formControlName="dataNascimento" id="" />
+        </div>
+        <p
+          *ngIf="
+            formGroup.controls['dataNascimento'].invalid &&
+            (formGroup.controls['dataNascimento'].dirty ||
+              formGroup.controls['dataNascimento'].touched)
+          "
+        >
+          <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+        </p>
+
+        <div class="item">
+          <label for="senha">senha</label>
+          <input type="password" formControlName="senha" id="" />
+        </div>
+        <p
+          *ngIf="
+            formGroup.controls['senha'].invalid &&
+            (formGroup.controls['senha'].dirty ||
+              formGroup.controls['senha'].touched)
+          "
+        >
+          <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+        </p>
+
+        <div class="item">
+          <label for="logradouro">logradouro</label>
+          <input type="text" formControlName="logradouro" id="" />
+        </div>
+
+        <div class="item">
+          <label for="numero">Número</label>
+          <input type="text" formControlName="numero" id="" />
+        </div>
+
+        <div class="item">
+          <label for="complemento">Complemento</label>
+          <input type="text" formControlName="complemento" id="" />
+        </div>
+
+        <div class="item">
+          <label for="bairro">Bairro</label>
+          <input type="text" formControlName="bairro" id="" />
+        </div>
+
+        <div class="item">
+          <label for="cep">CEP</label>
+          <input type="text" formControlName="cep" id="" />
+        </div>
+
+        <div class="item">
+          <label for="telefone1">Telefone 1</label>
+          <input type="text" formControlName="telefone1" id="" />
+        </div>
+        <p
+          *ngIf="
+            formGroup.controls['telefone1'].invalid &&
+            (formGroup.controls['telefone1'].dirty ||
+              formGroup.controls['telefone1'].touched)
+          "
+        >
+          <i class="fa-solid fa-circle-exclamation"></i> Valor invalido
+        </p>
+
+        <div class="item">
+          <label for="telefone2">Telefone 2</label>
+          <input type="text" formControlName="telefone2" id="" />
+        </div>
+
+        <div class="item">
+          <label for="telefone3">Telefone 3</label>
+          <input type="text" formControlName="telefone3" id="" />
+        </div>
+
+        <div class="item">
+          <label for="estadoId">Estado</label>
+          <select formControlName="estadoId" id="" (change)="updateCidades()">
+            <option
+              *ngFor="let estado of estados; first as f"
+              [value]="estado.id"
+              selected="f"
+            >
+              {{ estado.nome }}
+            </option>
+          </select>
+        </div>
+
+        <div class="item">
+          <label for="cidadeId">Cidade</label>
+          <select formControlName="cidadeId" id="">
+            <option *ngFor="let cidade of cidades" [value]="cidade.id">
+              {{ cidade.nome }}
+            </option>
+          </select>
+        </div>
+
+        <div class="btn-group">
+          <button routerLink="/login" class="btn-voltar">Voltar</button>
+          <button
+            (click)="onSubmit()"
+            *ngIf="formGroup.valid"
+            class="btn-submit"
+          >
+            Cadastrar
+          </button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
+  </body>
+</html>

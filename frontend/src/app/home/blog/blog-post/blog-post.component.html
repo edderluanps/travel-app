@@ -1,106 +1,107 @@
-<body>
-  <!--navbar-->
-  <nav class="navbar">
-    <div class="logo-area">
-      <img src="../../../assets/img/logo-nobg01.png" alt="" />
-    </div>
+<html>
+  <body>
 
-    <div class="btn-user-area">
-      <a class="btn-logar" routerLink="/perfil"><i class="fa-solid fa-user"></i></a>
-      <a class="btn-cart" routerLink="/carrinho"><i class="fa-solid fa-suitcase-rolling"></i></a>
-  </div>
-  </nav>
+    <header class="header">
+      <nav class="navbar">
 
-  <!--barra de pesquisa-->
-  <section class="search-box">
-    <div class="pesquisa">
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="ex: Curiosidades sobre o Japão"
-      />
-      <button class="btn-pesquisa">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-  </section>
+        <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
+        <div class="menu">
+            <a routerLink="/">home</a>
+            <a routerLink="/pacotes">pacotes</a>
+            <a routerLink="/blog">blog</a>
+            <a href="#servicos">servicos</a>
+            <a href="#sobre">sobre</a>
 
-  <!--conteudo-->
-  <section class="conteudo">
-    <div class="col-1">
-      <span class="breadcrumb"><a routerLink="/blog">posts</a>/post</span>
+            <button class="btn-perfil" routerLink="/perfil">
+                <i class="fa-solid fa-user"></i>
+                user
+            </button>
 
-      <div class="card">
-        <img [src]="post.img" alt="" />
-        <h4><i class="fa-regular fa-calendar"></i> {{ post.dataPostagem }}</h4>
-        <h1>{{ post.titulo }}</h1>
-        <h2><i class="fa-solid fa-user"></i> Por: {{ post.cliente.nome }}</h2>
-        <p>{{ post.descricao }}</p>
-      </div>
-    </div>
-
-    <div class="col-2">
-
-      <article class="article-2">
-        <header><h2>Principais tópicos</h2></header>
-        <div class="options">
-          <a href=""
-            ><i class="fa-solid fa-angle-right"></i> Destinos nacionais</a
-          >
-          <a href=""
-            ><i class="fa-solid fa-angle-right"></i> Destinos internacionais</a
-          >
-          <a href=""><i class="fa-solid fa-angle-right"></i> Inverno</a>
-          <a href=""><i class="fa-solid fa-angle-right"></i> Verão</a>
-          <a href=""
-            ><i class="fa-solid fa-angle-right"></i> Dicas e curuisudades</a
-          >
+            <button class="btn-carrinho" routerLink="/carrinho">
+                <i class="fa-solid fa-cart-shopping"></i>
+                cart
+            </button>
         </div>
-      </article>
-    </div>
-  </section>
 
-  <!--Footer-->
-  <footer class="footer">
-    <div class="col-1">
-      <div class="row-1">
-        <img src="../../../assets/img/logo-nobg01.png" alt="" />
-      </div>
-      <div class="row-2">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quae
-          esse magni doloremque commodi explicabo ea aspernatur nihil dolorem
-          necessitatibus.
-        </p>
-      </div>
-      <div class="row-3">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-twitter"></i></a>
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
-        <a href=""><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
+    </nav>
 
-    <div class="col-2">
-      <ul>
-        <li><h4>Serviços</h4></li>
-        <li>Viagens</li>
-        <li>Pacotes</li>
-      </ul>
-      <ul>
-        <li><h4>Parceiros</h4></li>
-        <li>Dev's Airlines</li>
-        <li>Dev's Hotel</li>
-        <li>Dev's Hisorts</li>
-      </ul>
-      <ul>
-        <li><h4>Contato</h4></li>
-        <li>Instagram</li>
-        <li>Twitter</li>
-        <li>+55 555.555.5555</li>
-        <li>contato@travelio.com</li>
-      </ul>
-    </div>
-  </footer>
+    </header>
+
+    <section class="blog" id="blog">
+
+        <p class="breadcrumb"><a routerLink="/">home / </a><a routerLink="/blog"> blog /</a> {{ post.titulo }}</p>
+
+        <div class="box">
+            <div class="col-1">
+                <img [src]="post.img" alt="">
+            </div>
+
+            <div class="col-2">
+                <h1>{{ post.titulo }}</h1>
+                <p><i class="fa-regular fa-calendar"></i> {{ post.dataPostagem }}, por {{ post.cliente.nome }}</p>
+                <p>{{ post.descricao }}</p>
+                <button class="btn-voltar" routerLink="/blog">Voltar</button>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer class="footer" id="sobre">
+        <div class="row-1">
+            <div class="col-1">
+                <h2>Travel.io</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, odit!
+                </p>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <h3>Sobre</h3>
+                    <li>Quem somos</li>
+                    <li>Propósito</li>
+                    <li>Missão, visão, valores</li>
+                    <li>Mais</li>
+                </ul>
+
+                <ul>
+                    <h3>Contato</h3>
+                    <li>email@travel.io</li>
+                    <li>+55 9876 54321</li>
+                    <li>@travel.io</li>
+                    <li>Contate-nos</li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h2>Nos siga</h2>
+                <span>
+                    <a href="">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div class="row-2">
+            2023 - travel.io - all rights reserved
+        </div>
+    </footer>
 </body>
+</html>

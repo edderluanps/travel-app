@@ -1,34 +1,83 @@
-<h2>Checkout</h2>
-<h2>Confirme o endereco de cobrança</h2>
-<h5>Por quê exigimos o endereco? <a href="">ler mais...</a></h5>
+<html>
+  <body>
+    <!--navbar-->
+    <header class="header">
+      <nav class="navbar">
+        <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
 
+        <div class="menu">
+          <a routerLink="/">home</a>
+          <a routerLink="/pacotes">pacotes</a>
+          <a routerLink="/blog">blog</a>
+          <a href="#servicos">servicos</a>
+          <a href="#sobre">sobre</a>
 
-<select name="" id="">
-  <option value="" *ngFor="let item of items">
-    <h2>{{ item.logradouro }}, {{ item.numero }}</h2>
-    <p>{{ item.complemento }}, {{ item.bairro }} CEP {{ item.cep }}</p>
-    <p>{{ item.cidade.nome }}, {{ item.cidade.estado.nome }}</p>
-  </option>
-</select>
+          <button class="btn-perfil" routerLink="/perfil">
+            <i class="fa-solid fa-user"></i>
+            user
+          </button>
 
-<div class="a"></div>
+          <button class="btn-carrinho" routerLink="/carrinho">
+            <i class="fa-solid fa-cart-shopping"></i>
+            cart
+          </button>
+        </div>
+      </nav>
+    </header>
 
-<form [formGroup]="formGroup" (ngSubmit)="nextStep(); $event.preventDefault()">
+    <section class="box">
 
-      <h4>Tipo de pagamento</h4>
+      <h2>Checkout</h2>
+      <h2>Confirme o endereco de cobrança</h2>
+      <h5>Por quê exigimos o endereco? <a href="">ler mais...</a></h5>
 
-      <select name="" id="" formControlName="@type">
-        <option value="pgCartao">Cartao</option>
-        <option value="pgBoleto">Boleto</option>
-        <option value="pgPix">Pix</option>
+      <div class="conteudo">
+
+      <h4>Endereco de cobrança</h4>
+      <select name="" id="">
+        <option value="" *ngFor="let item of items">
+          <h2>{{ item.logradouro }}, {{ item.numero }}</h2>
+          <p>{{ item.complemento }}, {{ item.bairro }} CEP {{ item.cep }}</p>
+          <p>{{ item.cidade.nome }}, {{ item.cidade.estado.nome }}</p>
+        </option>
       </select>
 
+      <form
+        [formGroup]="formGroup">
+        <h4>Tipo de pagamento</h4>
 
-  <div *ngIf="formGroup.value['@type'] == 'pgCartao'">
-    <h4 stacked>Parcelas no boleto</h4>
-    <select formControlName="numParcelas">
-      <option *ngFor="let n of parcelas; first as f" [value]="n" [selected]="f">{{n}}</option>
-    </select>
-  </div>
-  <button ion-button block type="submit" [disabled]="formGroup.invalid">Próximo</button>
-</form>
+        <select name="" id="" formControlName="@type">
+          <option value="pgCartao">Cartao</option>
+          <option value="pgBoleto">Boleto</option>
+          <option value="pgPix">Pix</option>
+        </select>
+
+        <div *ngIf="formGroup.value['@type'] == 'pgCartao'">
+          <h4 stacked>Parcelas no boleto</h4>
+          <select formControlName="numParcelas">
+            <option
+              *ngFor="let n of parcelas; first as f"
+              [value]="n"
+              [selected]="f"
+            >
+              {{ n }}
+            </option>
+          </select>
+        </div>
+
+
+      </form>
+      </div>
+
+      <div class="btn-area">
+        <button class="btn-voltar" routerLink="/carrinho">Voltar</button>
+        <button
+          class="btn-avancar"
+          (click)="nextStep(); $event.preventDefault()"
+          [disabled]="formGroup.invalid">Próximo
+        </button>
+      </div>
+
+    </section>
+  </body>
+</html>
