@@ -1,0 +1,76 @@
+<div class="header">
+  <ion-header>
+    <ion-button color="none" routerLink="/homepage" routerDirection="back">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
+    <h2>Checkout</h2>
+  </ion-header>
+</div>
+
+<ion-content>
+  <div class="box">
+    <div class="content-box">
+
+      <h2>Confirme o endereco de cobrança</h2>
+      <h5>Por quê exigimos o endereco? <a href="">ler mais...</a></h5>
+
+      <div class="conteudo">
+
+
+        <form [formGroup]="formGroup">
+
+          <h4>Endereco de cobrança</h4>
+
+          <ion-select name="" id="" placeholder="selecione">
+            <ion-select-option *ngFor="let item of items">
+              <h2>{{ item.logradouro }}, {{ item.numero }}</h2>
+              <p>{{ item.complemento }}, {{ item.bairro }} CEP {{ item.cep }}</p>
+              <p>{{ item.cidade.nome }}, {{ item.cidade.estado.nome }}</p>
+            </ion-select-option>
+          </ion-select>
+
+
+          <h4>Tipo de pagamento</h4>
+
+          <ion-select name="" id="" formControlName="@type">
+            <ion-select-option value="pgCartao">Cartao</ion-select-option>
+            <ion-select-option value="pgBoleto">Boleto</ion-select-option>
+            <ion-select-option value="pgPix">Pix</ion-select-option>
+          </ion-select>
+
+          <div *ngIf="formGroup.value['@type'] === 'pgCartao'">
+            <h4 stacked>Parcelas no cartão</h4>
+            <ion-select formControlName="numParcelas">
+              <ion-select-option
+                *ngFor="let n of parcelas; first as f"
+                [value]="n"
+                selected="f"
+              >
+                {{ n }}
+              </ion-select-option>
+            </ion-select>
+          </div>
+        </form>
+        <div class="btn-area">
+          <ion-button fill="outline" routerLink="/carrinho" routerDirection="back">Voltar</ion-button>
+          <ion-button (click)="checkoutOk()">Confirmar</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="none" routerLink="/homepage" routerDirection="back">
+    <ion-icon name="home-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/pacotes" routerDirection="back">
+    <ion-icon name="airplane-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/blog" routerDirection="back">
+    <ion-icon name="chatbubbles-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/perfil" routerDirection="back">
+    <ion-icon name="person-outline"></ion-icon>
+  </ion-button>
+</ion-footer>

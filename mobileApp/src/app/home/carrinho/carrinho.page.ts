@@ -46,8 +46,4 @@ export class CarrinhoPage implements OnInit {
     this.router.navigate(['/checkout']);
   }
 
-  testeCarrinho(){
-    alert('OK');
-  }
-
 }

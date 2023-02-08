@@ -53,7 +53,7 @@
         </select>
 
         <div *ngIf="formGroup.value['@type'] == 'pgCartao'">
-          <h4 stacked>Parcelas no boleto</h4>
+          <h4 stacked>Parcelas no cartão</h4>
           <select formControlName="numParcelas">
             <option
               *ngFor="let n of parcelas; first as f"
