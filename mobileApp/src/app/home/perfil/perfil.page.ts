@@ -51,6 +51,17 @@ export class PerfilPage implements OnInit {
       await alert.present();
     }
 
+    async presentAlert2(header: string, subHeader: string, message: string) {
+      const alert = await this.alertController.create({
+        header: header,
+        subHeader: subHeader,
+        message: message,
+        buttons: ['OK'],
+      });
+
+      await alert.present();
+    }
+
   ngOnInit() {
     let localUser = this.storageService.getLocalUser();
     if (localUser && localUser.email) {
@@ -58,7 +69,7 @@ export class PerfilPage implements OnInit {
         this.cliente = response as ClienteDTO
       }, error => {
         if (error.status == 403) {
-          alert('Oops... Ocorreu um erro: ' + error.message);
+          this.presentAlert2('Erro', 'Oops... Ocorreu um erro: ' + error.message, 'Erro');
           this.router.navigate(['/login']);
         }
       });

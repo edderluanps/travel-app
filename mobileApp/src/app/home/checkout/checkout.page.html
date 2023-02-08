@@ -1,6 +1,6 @@
 <div class="header">
   <ion-header>
-    <ion-button color="none" routerLink="/homepage" routerDirection="back">
+    <ion-button color="none" routerLink="/carrinho" routerDirection="back">
       <ion-icon name="caret-back-outline"></ion-icon>
     </ion-button>
     <h2>Checkout</h2>
@@ -53,7 +53,7 @@
         </form>
         <div class="btn-area">
           <ion-button fill="outline" routerLink="/carrinho" routerDirection="back">Voltar</ion-button>
-          <ion-button (click)="checkoutOk()">Confirmar</ion-button>
+          <ion-button (click)=" nextStep()">Confirmar</ion-button>
         </div>
       </div>
     </div>

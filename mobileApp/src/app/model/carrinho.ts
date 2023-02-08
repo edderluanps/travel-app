@@ -1,5 +1,6 @@
 import { CarrinhoItem } from "./carrinho-item";
 
-export class Carrinho {
+export interface Carrinho {
+
   items: CarrinhoItem[]
 }

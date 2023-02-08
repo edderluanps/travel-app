@@ -1,0 +1,65 @@
+<div class="header">
+  <ion-header>
+    <ion-button color="none" routerLink="/checkout" routerDirection="back">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
+    <h2>Confirmação</h2>
+  </ion-header>
+</div>
+
+<ion-content>
+  <div class="box">
+    <div class="content-box">
+
+      <div class="item-1">
+        <h4>Cliente</h4>
+        <div>
+          <h2>{{ cliente?.nome }}</h2>
+          <p>{{ cliente?.email }}</p>
+        </div>
+      </div>
+
+      <div class="item-2">
+        <h4>Total</h4>
+        <h1>{{ total() | currency }}</h1>
+        <p *ngIf="pgType['@type'] === 'pgCartao'">Cartão de crédito</p>
+        <p *ngIf="pgType['@type'] === 'pgCartao'">Parcelas: {{ pgType.numParcelas }}</p>
+        <p *ngIf="pgType['@type'] === 'pgBoleto'">Boleto bancário</p>
+        <p *ngIf="pgType['@type'] === 'pgPix'">PIX</p>
+      </div>
+
+      <div class="item-3">
+        <div class="card" *ngFor="let item of carrinhoItem">
+          <img [src]="item.pacote.img" alt="">
+          <div class="data">
+            <h2>{{ item.pacote.nome }}</h2>
+            <p>Valor uni.: {{ item.pacote.preco | currency }}</p>
+            <p>Qtd.: {{ item.quantidade }}</p>
+            <p>Subtotal: {{ item.pacote.preco * item.quantidade | currency }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-area">
+      <ion-button fill="outline" routerLink="/checkout" routerDirection="back">Voltar</ion-button>
+      <ion-button (click)="confirmarPedido()">Confirmar</ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="none" routerLink="/homepage" routerDirection="back">
+    <ion-icon name="home-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/pacotes" routerDirection="back">
+    <ion-icon name="airplane-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/blog" routerDirection="back">
+    <ion-icon name="chatbubbles-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/perfil" routerDirection="back">
+    <ion-icon name="person-outline"></ion-icon>
+  </ion-button>
+</ion-footer>

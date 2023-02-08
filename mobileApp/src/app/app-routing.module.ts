@@ -11,6 +11,7 @@ import { SignupPage } from './home/signup/signup.page';
 import { PerfilPage } from './home/perfil/perfil.page';
 import { CarrinhoPage } from './home/carrinho/carrinho.page';
 import { CheckoutPage } from './home/checkout/checkout.page';
+import { ConfirmacaoPage } from './home/confirmacao/confirmacao.page';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule) },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'locais', component: LocaisPage },
   { path: 'perfil', component: PerfilPage },
   { path: 'carrinho', component: CarrinhoPage },
-  { path: 'checkout', component: CheckoutPage }
+  { path: 'checkout', component: CheckoutPage },
+  { path: 'confirmacao', component: ConfirmacaoPage }
 ];
 
 @NgModule({

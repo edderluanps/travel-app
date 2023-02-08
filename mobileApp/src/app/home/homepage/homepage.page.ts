@@ -32,14 +32,27 @@ export class HomepagePage implements OnInit {
     public router: Router,
     private destinoService: DestinosService) { }
 
-  ngOnInit() {
+
+    async presentAlert(header: string, subHeader: string, message: string) {
+      const alert = await this.alertController.create({
+        header: header,
+        subHeader: subHeader,
+        message: message,
+        buttons: ['OK'],
+      });
+
+      await alert.present();
+    }
+
+
+    ngOnInit() {
     let localUser = this.storageService.getLocalUser();
     if (localUser && localUser.email) {
       this.clienteService.findByEmail(localUser.email).subscribe(response => {
         this.cliente = response as ClienteDTO
       }, error => {
         if (error.status == 403) {
-          alert('Oops... Ocorreu um erro: ' + error.message);
+          this.presentAlert('Erro', 'Oops... Ocorreu um erro: ' + error.message, 'Erro');
           this.router.navigate(['/login']);
         }
       });
@@ -52,7 +65,7 @@ export class HomepagePage implements OnInit {
 
   getPacotes() {
     this.destinoService.getCidade().subscribe(response => this.cidade = response, error =>{
-      alert('Oops... Ocorreu um erro: ' + error.message);
+      this.presentAlert('Erro', 'Oops... Ocorreu um erro: ' + error.message, 'Erro');
     });
   }
 

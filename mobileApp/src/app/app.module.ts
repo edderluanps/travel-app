@@ -19,6 +19,7 @@ import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarrinhoService } from './service/carrinho.service';
+import { PedidoService } from './service/pedido.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { CarrinhoService } from './service/carrinho.service';
     EstadoService,
     StorageService,
     AuthService,
-    CarrinhoService
+    CarrinhoService,
+    PedidoService
   ],
   bootstrap: [AppComponent],
 })

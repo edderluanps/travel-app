@@ -73,8 +73,4 @@ export class CheckoutPage implements OnInit {
     this.router.navigate(['/confirmacao'], { state: { pedido : this.pedido }});
   }
 
-  checkoutOk(){
-    alert('OK');
-  }
-
 }

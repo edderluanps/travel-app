@@ -69,7 +69,7 @@ ion-content{
         flex-direction: column;
 
         form{
-          height: 70%;
+          height: 75%;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -83,7 +83,7 @@ ion-content{
         }
 
         .btn-area{
-          height: 30%;
+          height: 25%;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -94,35 +94,6 @@ ion-content{
           }
         }
 
-      }
-
-
-    }
-
-    .result-box{
-      height: 90px;
-      width: 100%;
-      background: #ccc;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-
-      .total{
-        height: 100%;
-        width: 50%;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-      }
-
-      .confirmar{
-        height: 100%;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 10px 0 0;
       }
     }
   }

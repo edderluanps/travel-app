@@ -13,24 +13,11 @@ export class HomePage {
     private alertController: AlertController,
     public router : Router) {}
 
-  async presentAlert(header: string, subHeader: string, message: string) {
-    const alert = await this.alertController.create({
-      header: header,
-      subHeader: subHeader,
-      message: message,
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-  }
-
   loginForm(){
-    //this.presentAlert('Header here','Subheader here','message here');
     this.router.navigate(['/login']);
   }
 
   signupForm(){
-    //this.presentAlert('Header here','Subheader here','message here');
     this.router.navigate(['/signup']);
   }
 
