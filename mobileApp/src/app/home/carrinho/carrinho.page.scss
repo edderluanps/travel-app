@@ -1,0 +1,160 @@
+.header{
+  background: #3399ff;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+
+  ion-header{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    ion-button{
+      width: 50px;
+      height: 50px;
+
+      ion-icon{
+        height: 100%;
+        width: 100%;
+        color: #fff;
+      }
+    }
+
+    h2{
+      text-align: center;
+      padding-right: 50px;
+    }
+  }
+}
+
+ion-content{
+  height: 710px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .box{
+    height: 100%;
+    width: 100%;
+    background: #3399ff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+
+    .content-box{
+      height: auto;
+      width: 100%;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow-y: scroll;
+
+      .cards{
+        min-height: 600px;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0 0;
+
+        .card{
+          height: 150px;
+          width: 100%;
+          background: #ddd;
+          border: 1px solid #ccc;
+          display: flex;
+          flex-direction: row;
+          padding: 10px;
+
+          img{
+            height: 100%;
+            width: 40%;
+            border-radius: 10px;
+          }
+
+          .data{
+            height: 100%;
+            width: 60%;
+
+            .selector{
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              height: 30px;
+              width: 100%;
+
+              ion-button{
+                height: 100%;
+                width: 50px;
+              }
+
+              select{
+                height: 100%;
+                width: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .result-box{
+      height: 90px;
+      width: 100%;
+      background: #ccc;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .total{
+        height: 100%;
+        width: 50%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .confirmar{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px 0 0;
+      }
+    }
+  }
+}
+
+ion-footer{
+  height: 60px;
+  width: 100%;
+  background: #3399ff;
+
+  ion-button{
+    height: 100%;
+    width: 25%;
+    background: transparent;
+
+    ion-icon{
+      height: 50%;
+      width: 50%;
+      background: transparent;
+      color: #fff;
+    }
+  }
+}

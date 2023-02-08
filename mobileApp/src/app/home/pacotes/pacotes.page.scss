@@ -93,3 +93,22 @@ ion-content{
     }
   }
 }
+
+ion-footer{
+  height: 60px;
+  width: 100%;
+  background: #3399ff;
+
+  ion-button{
+    height: 100%;
+    width: 25%;
+    background: transparent;
+
+    ion-icon{
+      height: 50%;
+      width: 50%;
+      background: transparent;
+      color: #fff;
+    }
+  }
+}

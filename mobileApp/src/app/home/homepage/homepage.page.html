@@ -4,9 +4,6 @@
       <ion-label>bem vindo</ion-label>
       <h2>{{ cliente?.nome }}</h2>
     </div>
-    <ion-button color="none" routerLink="/perfil" routerDirection="forward">
-      <ion-icon name="person-circle"></ion-icon>
-    </ion-button>
   </ion-header>
 </div>
 
@@ -16,23 +13,51 @@
 
     <div class="content-box">
 
-      <a class="item" routerLink="/pacotes">
-        <img src="../../../assets/img-1.jpg" alt="">
+      <div class="banner">
+        <ion-slides pager="true" #mySlider [options]="slideOptsOne">
+          <ion-slide *ngFor="let item of cidade">
+            <div class="box">
+              <img [src]="item.img" alt="">
+              <h2>{{ item.nome }}</h2>
+              <h4>{{ item.estado?.nome }}</h4>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+      <div class="pacotes-area" routerLink="/pacotes" routerDirection="forward">
         <h2>Pacotes</h2>
-      </a>
+        <img src="../../../assets/img-1.jpg" alt="">
+      </div>
 
-      <a class="item" routerLink="/locais">
-        <img src="../../../assets/img-2.jpg" alt="">
-        <h2>Locais</h2>
-      </a>
-
-      <a class="item" routerLink="/blog">
-        <img src="../../../assets/img-3.jpg" alt="">
+      <div class="blog-area" routerLink="/blog" routerDirection="forward">
         <h2>Blog</h2>
-      </a>
+        <img src="../../../assets/img-3.jpg" alt="">
+      </div>
 
     </div>
 
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-button color="none" routerLink="/homepage" routerDirection="back">
+    <ion-icon name="home-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/pacotes" routerDirection="forward">
+    <ion-icon name="airplane-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/blog" routerDirection="forward">
+    <ion-icon name="chatbubbles-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/perfil" routerDirection="forward">
+    <ion-icon name="person-outline"></ion-icon>
+  </ion-button>
+</ion-footer>
+
+<ion-fab>
+  <ion-fab-button routerLink="/carrinho" routerDirection="forward">
+    <ion-icon name="cart-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

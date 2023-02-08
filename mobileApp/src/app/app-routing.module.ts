@@ -9,6 +9,7 @@ import { PacotePagePage } from './home/pacotes/pacote-page/pacote-page.page';
 import { PacotesPage } from './home/pacotes/pacotes.page';
 import { SignupPage } from './home/signup/signup.page';
 import { PerfilPage } from './home/perfil/perfil.page';
+import { CarrinhoPage } from './home/carrinho/carrinho.page';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule) },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'blog', component: BlogPage },
   { path: 'blog-post/:id', component: BlogPostPage },
   { path: 'locais', component: LocaisPage },
-  { path: 'perfil', component: PerfilPage }
+  { path: 'perfil', component: PerfilPage },
+  { path: 'carrinho', component: CarrinhoPage }
 ];
 
 @NgModule({

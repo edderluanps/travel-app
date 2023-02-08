@@ -21,7 +21,7 @@
         <p>Valor da Hospedagem: {{ pacotes?.hospedagem.preco | currency }}</p>
         <h1>{{ pacotes?.preco | currency }}</h1>
 
-        <ion-button>Adicionar ao carrinho</ion-button>
+        <ion-button (click)="addItemCarrinho(pacotes)">Adicionar ao carrinho</ion-button>
         <ion-button [routerLink]="['/pacotes']" routerDirection="back" fill="outline">Voltar</ion-button>
 
       </div>
