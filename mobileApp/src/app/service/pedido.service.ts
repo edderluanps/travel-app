@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { API_URL } from "src/environments/environment";
+import { Pedido } from "../model/pedido";
 import { PedidoDTO } from "../model/pedido.dto";
 
 @Injectable()
@@ -15,5 +17,9 @@ export class PedidoService {
       responseType: 'text'
     }
     );
+  }
+
+  getPedidos() : Observable<Pedido[]>{
+    return this.httpClient.get<Pedido[]>(`${API_URL}api/pedido/`);
   }
 }

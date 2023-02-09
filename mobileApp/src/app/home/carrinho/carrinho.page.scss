@@ -53,6 +53,7 @@ ion-content{
     justify-content: start;
 
     .content-box{
+      min-height: 620px;
       height: auto;
       width: 100%;
       background: #f2f2f2;
@@ -67,7 +68,7 @@ ion-content{
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 20px 0 0;
+        padding: 10px 0 0;
 
         .card{
           height: 150px;
@@ -101,7 +102,7 @@ ion-content{
                 width: 50px;
               }
 
-              select{
+              p{
                 height: 100%;
                 width: 70px;
               }
@@ -123,9 +124,19 @@ ion-content{
       .total{
         height: 100%;
         width: 50%;
+        display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+
+        p{
+          position: relative;
+          top: 20px;
+        }
+
+        h1{
+          margin-bottom: 20px;
+        }
       }
 
       .confirmar{

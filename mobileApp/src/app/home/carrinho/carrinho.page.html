@@ -25,9 +25,7 @@
               <ion-button (click)="increaseQuantity(item.pacote)">
                 <ion-icon name="add-outline"></ion-icon>
               </ion-button>
-              <select name="" id="" disabled>
-                <option value="">{{ item.quantidade }}</option>
-              </select>
+              <p>{{ item.quantidade }}</p>
               <ion-button (click)="decreaseQuantity(item.pacote)">
                 <ion-icon name="remove-outline"></ion-icon>
               </ion-button>
@@ -44,7 +42,7 @@
       </div>
 
       <div class="confirmar">
-        <ion-button (click)="checkout()">
+        <ion-button (click)="checkout()" *ngIf="total() > 0">
           confirmar
         </ion-button>
       </div>

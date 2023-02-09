@@ -69,6 +69,10 @@ export class HomepagePage implements OnInit {
     });
   }
 
+  getDestinos(){
+    this.router.navigate(['/locais']);
+  }
+
   swipeNext(){
     this.slides.slideNext();
   }

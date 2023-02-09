@@ -15,7 +15,7 @@
       <div class="card">
         <img [src]="post?.img" alt="">
 
-        <p>Publicado em: {{ post?.dataPostagem }}, por {{ post?.cliente.nome }}</p>
+        <p>Publicado em: {{ post?.dataPostagem }} <br> por: {{ post?.cliente.nome }}</p>
         <h2>{{ post?.titulo }}</h2>
         <p>{{ post?.descricao }}</p>
 
@@ -28,3 +28,18 @@
 
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-button color="none" routerLink="/homepage" routerDirection="back">
+    <ion-icon name="home-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/pacotes" routerDirection="back">
+    <ion-icon name="airplane-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/blog" routerDirection="back">
+    <ion-icon name="chatbubbles-outline"></ion-icon>
+  </ion-button>
+  <ion-button color="none" routerLink="/perfil" routerDirection="forward">
+    <ion-icon name="person-outline"></ion-icon>
+  </ion-button>
+</ion-footer>

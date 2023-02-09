@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonSlides } from '@ionic/angular';
 import { Cliente } from 'src/app/model/cliente';
 import { ClienteDTO } from 'src/app/model/cliente.dto';
+import { EnderecoDTO } from 'src/app/model/endereco.dto';
+import { Pedido } from 'src/app/model/pedido';
 import { AuthService } from 'src/app/service/auth.service';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { StorageService } from 'src/app/service/storage.service';
@@ -13,9 +15,12 @@ import { StorageService } from 'src/app/service/storage.service';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+  @ViewChild(IonSlides) slides: IonSlides;
 
   cliente: ClienteDTO;
   cli: Cliente;
+  items: EnderecoDTO[];
+  pedidos: Pedido[];
 
   handlerMessage = '';
 
@@ -76,10 +81,47 @@ export class PerfilPage implements OnInit {
     } else {
       this.router.navigate(['/login']);
     }
+    this.getUserAllData();
+    this.getEnderecos();
+  }
+
+  getUserAllData(){
+    let localUser = this.storageService.getLocalUser();
+    this.clienteService.findByEmail(localUser.email).subscribe(response => {
+      this.cli = response as Cliente;
+    });
+  }
+
+  getEnderecos(){
+    let localUser = this.storageService.getLocalUser();
+    if (localUser && localUser.email) {
+      this.clienteService.findByEmail(localUser.email)
+        .subscribe(response => {
+          this.items = response['endereco'];});
+    } else {
+
+    }
+  }
+
+  getPedidos(){
+
   }
 
   logOut() {
     this.authService.logOut();
     this.router.navigate(['/']);
   }
+
+  public slideMenu(): void {
+    this.slides.slideTo(0, 0);
+  }
+
+  public slideDadosUsuario(): void {
+    this.slides.slideTo(1, 0);
+  }
+
+  public slidePedidos(): void {
+    this.slides.slideTo(2, 0);
+  }
+
 }

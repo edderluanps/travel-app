@@ -1,86 +1,123 @@
-<ion-header class="label">
-  <ion-button color="none" routerLink="/homepage" routerDirection="back">
-    <ion-icon name="caret-back-outline"></ion-icon>
-  </ion-button>
-</ion-header>
-<ion-header class="header">
-  <ion-header>
-    <div class="header-1">
-      <img src="../../../assets/icon/person-circle.svg" alt="">
-    </div>
-    <div class="header-2">
-      <h4>{{ cliente?.nome }}</h4>
-      <p>{{ cliente?.email }}</p>
-    </div>
-  </ion-header>
+<ion-header>
+    <ion-button color="none" routerLink="/homepage" routerDirection="back">
+      <ion-icon name="caret-back-outline"></ion-icon>
+    </ion-button>
 </ion-header>
 
 <ion-content>
-
   <div class="box">
-
     <div class="content-box">
-
-      <div class="sub-menu">
-        Cliente
+      <div class="perfil">
+        <img src="../../../assets/icon/person-circle-outline.svg" alt="" />
+        <h3>{{ cliente?.nome }}</h3>
+        <p>{{ cliente?.email }}</p>
+        <p>{{ cli?.perfis }}</p>
       </div>
 
-      <div class="item">
-        <ion-icon name="bag-outline"></ion-icon><p>Pedidos</p>
-      </div>
+      <div class="conteudo">
 
-      <div class="item">
-        <ion-icon name="navigate-circle-outline"></ion-icon><p>Enderecos</p>
-      </div>
+        <ion-slides>
 
-      <div class="sub-menu">
-        Admin
-      </div>
+          <ion-slide class="slide-1">
+            <div class="label">
+              <p>Pedidos</p>
+              <ion-button color="none" (click)="slideDadosUsuario()" routerDirection="back">
+                <ion-icon name="caret-forward-outline"></ion-icon>
+              </ion-button>
+            </div>
+            <div class="itens">
+              <ul>
+                <li (click)="slideDadosUsuario()">Dados do usuário</li>
+                <li (click)="slidePedidos()">Pedidos</li>
+                <li (click)="presentAlert()">Desconectar</li>
+              </ul>
+            </div>
+          </ion-slide>
 
-      <div class="item">
-        <ion-icon name="person-outline"></ion-icon><p>Clientes</p>
-      </div>
 
-      <div class="item">
-        <ion-icon name="navigate-circle-outline"></ion-icon><p>Estados</p>
-      </div>
+          <ion-slide class="slide-2">
+            <div class="label">
+              <ion-button color="none" (click)="slideMenu()" routerDirection="back">
+                <ion-icon name="caret-back-outline"></ion-icon>
+              </ion-button>
+              <p>Dados</p>
+              <ion-button color="none" (click)="slidePedidos()" routerDirection="back">
+                <ion-icon name="caret-forward-outline"></ion-icon>
+              </ion-button>
+            </div>
+            <div class="itens">
+              <ul>
+                <li>
+                  <h5>Nome:</h5>
+                  <p>{{ cliente?.nome }}</p>
+                </li>
+                <li>
+                  <h5>e-mail:</h5>
+                  <p>{{ cliente?.email }}</p>
+                </li>
+                <li>
+                  <h5>CPF/CNPJ:</h5>
+                  <p>{{ cli?.cpfOuCnpj }}</p>
+                </li>
+                <li>
+                  <h5>Data de nascimento:</h5>
+                  <p>{{ cli?.dataNascimento || 'sem registro' }}</p>
+                </li>
+                <li>
+                  <h5>Data de cadastro:</h5>
+                  <p>{{ cli?.dataCadastro || 'sem registro' }}</p>
+                </li>
+                <li>
+                  <h5>Telefones:</h5>
+                  <p>{{ cli?.telefone || 'sem registro' }}</p>
+                </li>
+                <li>
+                  <h5>Endereços:</h5>
+                  <p  *ngFor="let item of items">
+                    {{ item.logradouro }}, {{ item.numero }}, {{ item.complemento
+                    }}, {{ item.bairro }}, {{ item.cidade.nome }} - {{
+                    item.cidade.estado.nome }}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </ion-slide>
 
-      <div class="item">
-        <ion-icon name="navigate-circle-outline"></ion-icon><p>Cidades</p>
-      </div>
+          <ion-slide class="slide-3">
+            <div class="label">
+              <ion-button color="none" (click)="slideDadosUsuario()" routerDirection="back">
+                <ion-icon name="caret-back-outline"></ion-icon>
+              </ion-button>
+              <p>Pedidos</p>
+            </div>
+            <div class="itens">
 
-      <div class="item">
-        <ion-icon name="bag-outline"></ion-icon><p>Pacotes</p>
-      </div>
+              <div class="card">
+                <p>data</p>
+                <h2>titulo 1</h2>
+                <ion-button color="danger">
+                  <ion-icon name="print-outline"></ion-icon>
+                  Imprimir comprovante
+                </ion-button>
+              </div>
 
-      <div class="item">
-        <ion-icon name="airplane-outline"></ion-icon><p>Cia. Aéreas</p>
-      </div>
+              <div class="card">
+                <p>data</p>
+                <h2>titulo 1</h2>
+                <ion-button color="danger">
+                  <ion-icon name="print-outline"></ion-icon>
+                  Imprimir comprovante
+                </ion-button>
+              </div>
 
-      <div class="item">
-        <ion-icon name="airplane-outline"></ion-icon><p>Voos</p>
-      </div>
+            </div>
+          </ion-slide>
 
-      <div class="item">
-        <ion-icon name="images-outline"></ion-icon><p>Blog</p>
-      </div>
+        </ion-slides>
 
-      <div class="sub-menu">
-        Perfil
       </div>
-
-      <div class="item">
-        <ion-icon name="cog-outline"></ion-icon><p>Ajustes</p>
-      </div>
-
-      <div class="item" id="sair" (click)="presentAlert()" routerDirection="back">
-        <ion-icon name="exit-outline"></ion-icon><p>Desconectar</p>
-      </div>
-
     </div>
-
   </div>
-
 </ion-content>
 
 <ion-footer>

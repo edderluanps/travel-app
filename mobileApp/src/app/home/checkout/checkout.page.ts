@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { EnderecoDTO } from 'src/app/model/endereco.dto';
 import { PedidoDTO } from 'src/app/model/pedido.dto';
 import { CarrinhoService } from 'src/app/service/carrinho.service';
@@ -24,13 +25,26 @@ export class CheckoutPage implements OnInit {
     public router: Router,
     public route: ActivatedRoute,
     private carrinhoService: CarrinhoService,
-    public formBuilder: FormBuilder) {
+    public formBuilder: FormBuilder,
+    private alertController: AlertController) {
 
       this.formGroup = this.formBuilder.group({
+        endereco: ['', Validators.required],
         numParcelas: [1, Validators.required],
         "@type": ["pgCartao", Validators.required]
       });
      }
+
+    async presentAlert(header: string, subHeader: string, message: string) {
+    const alert = await this.alertController.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
 
   ngOnInit() : any{
     let localUser = this.storage.getLocalUser();
@@ -71,6 +85,12 @@ export class CheckoutPage implements OnInit {
   nextStep(){
     this.pedido.pagamento = this.formGroup.value;
     this.router.navigate(['/confirmacao'], { state: { pedido : this.pedido }});
+  }
+
+  showAlertMsg(){
+    this.presentAlert('Endereço',
+    'Por motivos de segurança, exigimos seu endereço como forma de garantia. Mas não se preocupe, ',
+    'seus dados estão seguros!');
   }
 
 }

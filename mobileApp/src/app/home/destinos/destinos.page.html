@@ -21,8 +21,8 @@
     <div class="content-box">
       <div class="card" *ngFor="let item of cidade">
         <img [src]="item.img" alt="" />
-        <h2> {{ item?.nome }} </h2>
-        <h1> {{ item?.estado?.nome || ''  }} </h1>
+        <h4> {{ item?.nome }} </h4>
+        <h2> {{ item?.estado?.nome || ''  }} </h2>
       </div>
     </div>
   </div>

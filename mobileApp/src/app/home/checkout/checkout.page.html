@@ -12,17 +12,16 @@
     <div class="content-box">
 
       <h2>Confirme o endereco de cobrança</h2>
-      <h5>Por quê exigimos o endereco? <a href="">ler mais...</a></h5>
+      <h5>Por quê exigimos o endereco? <a (click)="showAlertMsg()">ler mais...</a></h5>
 
       <div class="conteudo">
-
 
         <form [formGroup]="formGroup">
 
           <h4>Endereco de cobrança</h4>
 
-          <ion-select name="" id="" placeholder="selecione">
-            <ion-select-option *ngFor="let item of items">
+          <ion-select name="" id="" placeholder="selecione" formControlName="endereco">
+            <ion-select-option *ngFor="let item of items" value="1">
               <h2>{{ item.logradouro }}, {{ item.numero }}</h2>
               <p>{{ item.complemento }}, {{ item.bairro }} CEP {{ item.cep }}</p>
               <p>{{ item.cidade.nome }}, {{ item.cidade.estado.nome }}</p>
@@ -41,19 +40,16 @@
           <div *ngIf="formGroup.value['@type'] === 'pgCartao'">
             <h4 stacked>Parcelas no cartão</h4>
             <ion-select formControlName="numParcelas">
-              <ion-select-option
-                *ngFor="let n of parcelas; first as f"
-                [value]="n"
-                selected="f"
-              >
+              <ion-select-option *ngFor="let n of parcelas; first as f" [value]="n" selected="f">
                 {{ n }}
               </ion-select-option>
             </ion-select>
           </div>
         </form>
         <div class="btn-area">
+          <p *ngIf="formGroup.invalid">Preencha todos os campos para prosseguir</p>
           <ion-button fill="outline" routerLink="/carrinho" routerDirection="back">Voltar</ion-button>
-          <ion-button (click)=" nextStep()">Confirmar</ion-button>
+          <ion-button (click)="nextStep()" *ngIf="formGroup.valid">Confirmar</ion-button>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <div class="header">
   <ion-header>
     <div class="user-data">
-      <ion-label>bem vindo</ion-label>
+      <ion-label>Olá,</ion-label>
       <h2>{{ cliente?.nome }}</h2>
     </div>
   </ion-header>
@@ -15,7 +15,7 @@
 
       <div class="banner">
         <ion-slides pager="true" #mySlider [options]="slideOptsOne">
-          <ion-slide *ngFor="let item of cidade">
+          <ion-slide *ngFor="let item of cidade" (click)="getDestinos()">
             <div class="box">
               <img [src]="item.img" alt="">
               <h2>{{ item.nome }}</h2>
@@ -46,7 +46,7 @@
     <ion-icon name="home-outline"></ion-icon>
   </ion-button>
   <ion-button color="none" routerLink="/pacotes" routerDirection="forward">
-    <ion-icon name="location-outline"></ion-icon>
+    <ion-icon name="airplane-outline"></ion-icon>
   </ion-button>
   <ion-button color="none" routerLink="/blog" routerDirection="forward">
     <ion-icon name="chatbubbles-outline"></ion-icon>

@@ -74,7 +74,7 @@ export class ConfirmacaoPage implements OnInit {
         this.carrinhoService.createOrClearCart();
         this.codpedido = this.extractId(response.headers.get('location') || '');
         this.router.navigate(['/homepage']);
-        this.presentAlert('Confirmado', 'Seu pedido foi confirmado', 'Confirmação');
+        this.presentAlert('Confirmção', 'Seu pedido foi confirmado!', 'Agradecemos a preferência!');
       },
         error => {
           if (error.status == 403) {
