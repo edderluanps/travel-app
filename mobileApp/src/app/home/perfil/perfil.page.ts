@@ -4,9 +4,10 @@ import { AlertController, IonSlides } from '@ionic/angular';
 import { Cliente } from 'src/app/model/cliente';
 import { ClienteDTO } from 'src/app/model/cliente.dto';
 import { EnderecoDTO } from 'src/app/model/endereco.dto';
-import { Pedido } from 'src/app/model/pedido';
+import { PedidoDTO } from 'src/app/model/pedido.dto';
 import { AuthService } from 'src/app/service/auth.service';
 import { ClienteService } from 'src/app/service/cliente.service';
+import { PedidoService } from 'src/app/service/pedido.service';
 import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
@@ -20,8 +21,7 @@ export class PerfilPage implements OnInit {
   cliente: ClienteDTO;
   cli: Cliente;
   items: EnderecoDTO[];
-  pedidos: Pedido[];
-
+  pedido: PedidoDTO | any;
   handlerMessage = '';
 
   constructor(
@@ -29,7 +29,8 @@ export class PerfilPage implements OnInit {
     public storageService: StorageService,
     public clienteService: ClienteService,
     public router: Router,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private pedidoService: PedidoService) { }
 
     async presentAlert() {
       const alert = await this.alertController.create({
@@ -83,6 +84,7 @@ export class PerfilPage implements OnInit {
     }
     this.getUserAllData();
     this.getEnderecos();
+    this.getPedidos();
   }
 
   getUserAllData(){
@@ -104,6 +106,16 @@ export class PerfilPage implements OnInit {
   }
 
   getPedidos(){
+
+    let localUser = this.storageService.getLocalUser();
+    this.clienteService.findByEmail(localUser.email).subscribe(response => {
+      this.cli = response as Cliente;
+      this.pedidoService.getPedidoByUserId(this.cli.id).subscribe(response => {
+        this.pedido = response, error => {
+          this.presentAlert2('Erro', 'Oops... Ocorreu um erro: ' + error.message, 'Erro');
+        }
+      });
+    });
 
   }
 

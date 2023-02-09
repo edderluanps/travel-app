@@ -8,7 +8,7 @@
   <div class="box">
     <div class="content-box">
       <div class="perfil">
-        <img src="../../../assets/icon/person-circle-outline.svg" alt="" />
+        <img src="../../../assets/icon/profile-pic.png" alt="" />
         <h3>{{ cliente?.nome }}</h3>
         <p>{{ cliente?.email }}</p>
         <p>{{ cli?.perfis }}</p>
@@ -92,18 +92,11 @@
             </div>
             <div class="itens">
 
-              <div class="card">
-                <p>data</p>
-                <h2>titulo 1</h2>
-                <ion-button color="danger">
-                  <ion-icon name="print-outline"></ion-icon>
-                  Imprimir comprovante
-                </ion-button>
-              </div>
-
-              <div class="card">
-                <p>data</p>
-                <h2>titulo 1</h2>
+              <div class="card" *ngFor="let item of pedido">
+                <p>{{ item.dataPedido }}</p>
+                <h2 *ngIf="item.pagamento['@type'] === 'pgCartao' " >Cartão</h2>
+                <h2 *ngIf="item.pagamento['@type'] === 'pgBoleto' " >Boleto</h2>
+                <h2 *ngIf="item.pagamento['@type'] === 'pgPix' " >Pix</h2>
                 <ion-button color="danger">
                   <ion-icon name="print-outline"></ion-icon>
                   Imprimir comprovante

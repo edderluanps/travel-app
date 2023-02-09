@@ -72,7 +72,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       email: ''
     }
     this.storageService.setLocalUser(user);
-    this.presentAlert('Erro', 'Oops. Ocorreu um erro', 'Não permitido.');
+    this.presentAlert('Desconectado', 'Sua sessão expirou', 'Faça login para continuar.');
   }
 
   handle404(errorMsg: any) {
@@ -81,7 +81,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 
   handleDefaultError(errorMsg: any) {
-    alert('Erro: ' + errorMsg.status + errorMsg.log);
+    this.presentAlert('Erro', 'Oops. Ocorreu um erro', 'Erro: ' + errorMsg.status + errorMsg.log);
   }
 
   private listErrors(messages: FieldMessage[]): string {

@@ -49,6 +49,7 @@ ion-content{
         height: 150px;
         width: 100%;
         background: #3399ff;
+        color: #f2f2f2;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -130,12 +131,11 @@ ion-content{
           }
 
           .slide-2{
-            min-height: 100%;
+            min-height: 750px;
             height: auto;
             width: 100%;
             display: flex;
             flex-direction: column;
-            background: yellowgreen;
 
             .label{
               min-height: 50px;
@@ -154,12 +154,15 @@ ion-content{
             }
 
             .itens{
-              min-height: 550px;
+              min-height: 700px;
               height: auto;
               width: 100%;
               background: #f2f2f2;
 
               ul{
+                min-height: 650px;
+                height: auto;
+
                 span{
                   background: #ddd;
                   height: 50px;
@@ -172,7 +175,7 @@ ion-content{
                 }
 
                 li{
-                  min-height: 80px;
+                  min-height: 50px;
                   height: auto;
                   width: 100%;
                   border: 1px solid #ccc;
@@ -203,7 +206,6 @@ ion-content{
             width: 100%;
             display: flex;
             flex-direction: column;
-            background: yellowgreen;
 
             .label{
               min-height: 50px;
@@ -228,7 +230,7 @@ ion-content{
               min-height: 550px;
               height: auto;
               width: 100%;
-              background: #f2f2f2;
+              background: #ddd;
               display: flex;
               flex-direction: column;
               justify-content: start;
@@ -239,7 +241,7 @@ ion-content{
               .card{
                 height: 150px;
                 width: 100%;
-                background: #ddd;
+                background: #ccc;
                 border-radius: 5px;
                 margin-top: 10px;
                 padding: 10px 20px;

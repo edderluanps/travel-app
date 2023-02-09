@@ -66,5 +66,10 @@ public class PedidoController {
         Page<Pedido> list = pedidoService.findPage(page, linesPerPage, orderBy, direction);
         return list;
     }
+    
+    @GetMapping("/userPedidos")
+    public List<Pedido> getByClienteId(@RequestParam(value = "id", defaultValue = "0") Long id) {
+        return pedidoService.findByClienteId(id);
+    }
 
 }

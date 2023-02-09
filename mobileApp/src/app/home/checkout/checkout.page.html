@@ -20,7 +20,7 @@
 
           <h4>Endereco de cobrança</h4>
 
-          <ion-select name="" id="" placeholder="selecione" formControlName="endereco">
+          <ion-select interface="action-sheet" name="" id="" placeholder="selecione" formControlName="endereco">
             <ion-select-option *ngFor="let item of items" value="1">
               <h2>{{ item.logradouro }}, {{ item.numero }}</h2>
               <p>{{ item.complemento }}, {{ item.bairro }} CEP {{ item.cep }}</p>
@@ -31,7 +31,7 @@
 
           <h4>Tipo de pagamento</h4>
 
-          <ion-select name="" id="" formControlName="@type">
+          <ion-select interface="action-sheet" name="" id="" formControlName="@type">
             <ion-select-option value="pgCartao">Cartao</ion-select-option>
             <ion-select-option value="pgBoleto">Boleto</ion-select-option>
             <ion-select-option value="pgPix">Pix</ion-select-option>
@@ -39,7 +39,7 @@
 
           <div *ngIf="formGroup.value['@type'] === 'pgCartao'">
             <h4 stacked>Parcelas no cartão</h4>
-            <ion-select formControlName="numParcelas">
+            <ion-select interface="action-sheet" formControlName="numParcelas">
               <ion-select-option *ngFor="let n of parcelas; first as f" [value]="n" selected="f">
                 {{ n }}
               </ion-select-option>

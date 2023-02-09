@@ -21,6 +21,7 @@ export class ConfirmacaoPage implements OnInit {
   cliente: ClienteDTO;
   codpedido: string;
   pgType: any;
+  handlerMessage = '';
 
   constructor(
     public clienteService: ClienteService,
@@ -30,7 +31,32 @@ export class ConfirmacaoPage implements OnInit {
     private pedidoService: PedidoService,
     private alertController : AlertController) { }
 
-    async presentAlert(header: string, subHeader: string, message: string) {
+    async presentAlert() {
+      const alert = await this.alertController.create({
+        header: 'Deseja confirmar a compra?',
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            handler: () => {
+              this.handlerMessage = 'Alert canceled';
+            },
+          },
+          {
+            text: 'OK',
+            role: 'confirm',
+            handler: () => {
+              this.handlerMessage = 'Alert confirmed';
+              this.confirmarPedido();
+            },
+          },
+        ],
+      });
+
+      await alert.present();
+    }
+
+    async presentAlert2(header: string, subHeader: string, message: string) {
       const alert = await this.alertController.create({
         header: header,
         subHeader: subHeader,
@@ -52,7 +78,7 @@ export class ConfirmacaoPage implements OnInit {
         this.cliente = response as ClienteDTO;
       },
         error => {
-          this.presentAlert('Erro', 'Oops... Ocorreu um erro: ', error.message);
+          this.presentAlert2('Erro', 'Oops... Ocorreu um erro: ', error.message);
           this.router.navigate(['/login']);
         });
 
@@ -74,11 +100,11 @@ export class ConfirmacaoPage implements OnInit {
         this.carrinhoService.createOrClearCart();
         this.codpedido = this.extractId(response.headers.get('location') || '');
         this.router.navigate(['/homepage']);
-        this.presentAlert('Confirmção', 'Seu pedido foi confirmado!', 'Agradecemos a preferência!');
+        this.presentAlert2('Confirmção', 'Seu pedido foi confirmado!', 'Agradecemos a preferência!');
       },
         error => {
           if (error.status == 403) {
-            this.presentAlert('Erro', 'Oops... Ocorreu um erro: ', error.message);
+            this.presentAlert2('Erro', 'Oops... Ocorreu um erro: ', error.message);
             this.router.navigate(['/login']);
           }
         });

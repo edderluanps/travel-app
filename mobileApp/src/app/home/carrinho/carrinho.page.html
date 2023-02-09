@@ -14,7 +14,7 @@
     <div class="content-box">
       <div class="cards">
 
-        <p class="alerta" *ngIf="total() <= 0">Sua bagagem está vazia</p>
+        <p class="alerta" *ngIf="total() <= 0">Seu carrinho está vazio</p>
 
         <div class="card" *ngFor="let item of items">
           <img [src]="item.pacote.img" alt="">

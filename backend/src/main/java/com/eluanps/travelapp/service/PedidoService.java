@@ -103,5 +103,9 @@ public class PedidoService {
         Cliente cliente = clienteService.findById(user.getId());
         return pedidoRepository.findAll(pageRequest);
     }
+    
+        public List<Pedido> findByClienteId(Long id) {
+        return pedidoRepository.findByClienteId(id);
+    }
 
 }

@@ -58,7 +58,7 @@
 
         <ion-item color="dark">
           <ion-label position="floating">Data cadastro</ion-label>
-          <ion-input placeholder="" formControlName="dataCadastro"></ion-input>
+          <ion-input placeholder="" formControlName="dataCadastro" enabled="false"></ion-input>
         </ion-item>
         <p class="validator" *ngIf="formGroup.controls['dataCadastro'].invalid &&
         (formGroup.controls['dataCadastro'].dirty || formGroup.controls['dataCadastro'].touched)"> Valor invalido

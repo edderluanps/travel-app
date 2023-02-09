@@ -73,7 +73,7 @@ export class SignupPage implements OnInit {
   }
 
   updateCidades(){
-    let estadoId = this.formGroup.value.estadoId;
+    let estadoId = this.formGroup.value.estadoId || 0;
     this.cidadeService.findCidade(estadoId).subscribe(response => {
       this.cidades = response;
       this.formGroup.controls['cidadeId'].setValue(null);
@@ -95,6 +95,5 @@ export class SignupPage implements OnInit {
   confirmacaoCadastro() {
     this.presentAlert('Cadastro', 'cadastro', 'Cadastro realizado com sucesso');
     this.router.navigate(['/login']);
-    console.log(this.formGroup.value);
   }
 }
