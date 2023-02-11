@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PacotesService } from 'src/app/service/pacotes.service';
 import Swal from 'sweetalert2';
@@ -12,11 +13,13 @@ export class PacotesComponent implements OnInit {
 
   pacotes: any;
   nome: string;
+  data: Date;
+  dataF: string;
 
   constructor(private pacotesService: PacotesService) { }
 
   ngOnInit(): void {
-    this.getPacotes();
+    this.getPesquisa();
   }
 
   getPacotes() {
@@ -35,6 +38,43 @@ export class PacotesComponent implements OnInit {
     this.pacotesService.pesquisaPacotes(this.nome).subscribe(response => this.pacotes = response, error => {
       Swal.fire('Oops... Ocorreu um erro: ' + error.message);
     });
+  }
+
+  getPacotesByNomeAndDate(){
+    let format = 'dd/MM/yyyy';
+    let myDate = this.data;
+    let formattedDate = formatDate(myDate, format, 'pt-BR');
+
+    this.pacotesService.getPacotesByNomeAndDate(this.nome, formattedDate).subscribe(response => this.pacotes = response, error => {
+      Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+    });
+  }
+
+  getPacotesByHomepageState(){
+    let nomeParam = window.history.state.nome;
+    let dataParam = window.history.state.data;
+
+    this.dataF = dataParam
+      let format = 'dd/MM/yyyy';
+      let myDate = this.dataF;
+      let formattedDate = formatDate(myDate, format, 'pt-BR');
+
+      this.pacotesService.getPacotesByNomeAndDate(nomeParam, formattedDate).subscribe(response => this.pacotes = response, error => {
+        Swal.fire('Oops... Ocorreu um erro: ' + error.message);
+      });
+  }
+
+  getPesquisa(){
+    let nomeParam = window.history.state.nome;
+    let dataParam = window.history.state.data;
+
+    if(nomeParam == undefined || dataParam == undefined){
+      this.getPacotes();
+    }else{
+    this.getPacotesByHomepageState();
+
+    }
+
   }
 
 }

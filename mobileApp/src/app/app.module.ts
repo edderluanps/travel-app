@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import localePt from '@angular/common/locales/pt';
+import {registerLocaleData} from '@angular/common';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -17,9 +19,10 @@ import { StorageService } from './service/storage.service';
 import { AuthService } from './service/auth.service';
 import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarrinhoService } from './service/carrinho.service';
 import { PedidoService } from './service/pedido.service';
+
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,7 +40,15 @@ import { PedidoService } from './service/pedido.service';
     StorageService,
     AuthService,
     CarrinhoService,
-    PedidoService
+    PedidoService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    },
+    {
+      provide:  DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    }
   ],
   bootstrap: [AppComponent],
 })

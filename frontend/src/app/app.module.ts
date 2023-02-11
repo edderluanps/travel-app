@@ -1,5 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
@@ -25,6 +28,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CheckoutComponent } from './home/checkout/checkout.component';
 import { ConfirmacaoComponent } from './home/confirmacao/confirmacao.component';
 
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
@@ -52,7 +56,15 @@ import { ConfirmacaoComponent } from './home/confirmacao/confirmacao.component';
     MatButtonModule,
     MatCardModule
   ],
-  providers: [AuthInterceptorProvider, ErrorInterceptorProvider],
+  providers: [AuthInterceptorProvider, ErrorInterceptorProvider,
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    },
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

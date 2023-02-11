@@ -4,6 +4,7 @@ import com.eluanps.travelapp.entity.Pacote;
 import com.eluanps.travelapp.repository.PacoteRepository;
 import com.eluanps.travelapp.service.exceptions.DataIntegrityException;
 import com.eluanps.travelapp.service.exceptions.ObjectNotFoundException;
+import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -57,6 +58,10 @@ public class PacoteService {
 
     public List<Pacote> findByNome(String nome) {
         return pacoteRepository.findByNome(nome);
+    }
+    
+    public List<Pacote> findByNomeAndDate(String nome, LocalDate data) {
+        return pacoteRepository.findByNomeAndDate(nome, data);
     }
 
 }

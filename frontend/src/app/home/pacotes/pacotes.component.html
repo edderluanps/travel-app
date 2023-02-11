@@ -13,13 +13,13 @@
                 <a href="#sobre">sobre</a>
 
                 <button class="btn-perfil" routerLink="/perfil">
-                    <i class="fa-solid fa-user"></i>
-                    user
+                  <i class="fa-solid fa-user"></i>
+                  <h5>Perfil</h5>
                 </button>
 
-                <button class="btn-carrinho"  routerLink="/carrinho">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    cart
+                <button class="btn-carrinho" routerLink="/carrinho">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <h5>Carrinho</h5>
                 </button>
             </div>
 
@@ -40,10 +40,10 @@
                 </div>
                 <div class="item">
                     <label for="">Data de partida</label>
-                    <input type="date" name="" id="">
+                    <input type="date" name="" id="" [(ngModel)]="data">
                 </div>
                 <div class="item">
-                    <button class="btn-pesquisar" (click)="getResultadoPesquisa()">
+                    <button class="btn-pesquisar" (click)="getPacotesByNomeAndDate()">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         Pesquisar
                     </button>
@@ -61,6 +61,8 @@
         <p>Nosso site dispõe dos melhores pacotes turísicos com o melhor preço
             do mercado, sempre com passagens e hospedagens inclusos.
         </p>
+
+        <h1 *ngIf="pacotes < 1">Nenhum pacote foi encontrado... refaça a pesquisa</h1>
 
         <div class="cards">
             <div class="card" *ngFor="let item of pacotes">

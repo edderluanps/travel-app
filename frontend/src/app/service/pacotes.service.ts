@@ -23,6 +23,10 @@ export class PacotesService {
     return this.httpClient.get<any>(`${API_URL}api/pacote/resultados-pesquisa?nome=${nome}`);
   }
 
+  getPacotesByNomeAndDate(nome: string, data : string) : Observable<Pacotes>{
+    return this.httpClient.get<any>(`${API_URL}api/pacote/resultados-pesquisa-data?nome=${nome}&data=${data}`);
+  }
+
   getLastPacotes() : Observable<Pacotes>{
     return this.httpClient.get<any>(`${API_URL}api/pacote/ultimos-pacotes`);
   }

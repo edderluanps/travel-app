@@ -55,7 +55,7 @@
 
 .header .navbar .menu .btn-perfil{
     height: 30px;
-    width: 80px;
+    width: 85px;
     background: #1a1a1a;
     border: 0;
     color: #fff;
@@ -82,7 +82,7 @@
 
 .header .navbar .menu .btn-carrinho{
     height: 30px;
-    width: 80px;
+    width: 85px;
     background: #1a1a1a;
     border: 0;
     color: #fff;
@@ -203,6 +203,10 @@
     width: 100%;
     background: #f0f0f0;
     padding: 100px 200px 0;
+}
+
+.pacotes h1 {
+  padding: 20px 0;
 }
 
 .pacotes h2{

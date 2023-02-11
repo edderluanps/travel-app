@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 
+.sidenav{
+  height: 0;
+  width: 0;
+  background: #1a1a1a;
+  display: block;
+}
+
+.sidenav.active{
+  height: 100%;
+  width: 100%;
+}
+
+
 .header{
     height: 600px;
     width: 100%;
@@ -54,7 +67,7 @@
 
 .header .navbar .menu .btn-perfil{
     height: 30px;
-    width: 80px;
+    width: 85px;
     background: #1a1a1a;
     border: 0;
     color: #fff;
@@ -81,7 +94,7 @@
 
 .header .navbar .menu .btn-carrinho{
     height: 30px;
-    width: 80px;
+    width: 85px;
     background: #1a1a1a;
     border: 0;
     color: #fff;

@@ -20,6 +20,9 @@
     </div>
 
     <div class="content-box">
+
+      <h4 *ngIf="pacotes < 1">Nenhum pacote foi encontrado... refaça a pesquisa</h4>
+
       <div class="card" *ngFor="let item of pacotes">
         <img [src]="item.img" alt="" />
         <h2>{{ item.nome }}</h2>

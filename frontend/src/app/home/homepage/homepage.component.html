@@ -1,5 +1,10 @@
 <html>
   <body>
+
+    <nav class="sidenav">
+
+    </nav>
+
     <header class="header">
       <nav class="navbar">
         <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
@@ -12,12 +17,12 @@
 
           <button class="btn-perfil" routerLink="/perfil">
             <i class="fa-solid fa-user"></i>
-            user
+            <h5>Perfil</h5>
           </button>
 
           <button class="btn-carrinho" routerLink="/carrinho">
             <i class="fa-solid fa-cart-shopping"></i>
-            cart
+            <h5>Carrinho</h5>
           </button>
         </div>
       </nav>
@@ -34,14 +39,14 @@
         <div class="pesquisa">
           <div class="item">
             <label for="">Pesquise por um local</label>
-            <input type="text" name="" id="" />
+            <input type="text" name="" id="" [(ngModel)]="nome"/>
           </div>
           <div class="item">
             <label for="">Data de partida</label>
-            <input type="date" name="" id="" />
+            <input type="date" name="" id="" [(ngModel)]="data"/>
           </div>
           <div class="item">
-            <button class="btn-pesquisar">
+            <button class="btn-pesquisar" (click)="buscarPacotes()">
               <i class="fa-solid fa-magnifying-glass"></i>
               Pesquisar
             </button>

@@ -20,6 +20,8 @@
 
     <div class="content-box">
 
+      <h4 *ngIf="post < 1">Nenhum pacote foi encontrado... refaça a pesquisa</h4>
+
       <div class="card" *ngFor="let item of post">
         <img [src]="item.img" alt="" >
         <p>{{ item.dataPostagem }}</p>

@@ -15,6 +15,8 @@ export class HomepageComponent implements OnInit {
 
   pacotes: any;
   posts: any
+  nome: string;
+  data: Date;
 
   constructor(private authService: AuthService,
     private router : Router,
@@ -41,6 +43,10 @@ export class HomepageComponent implements OnInit {
     this.blogService.getLastPosts().subscribe(response => this.posts = response, error => {
       Swal.fire('Oops... Ocorreu um erro: ' + error.message);
     });
+  }
+
+  buscarPacotes(){
+    this.router.navigate(['/pacotes'], { state: { nome : this.nome, data : this.data }});
   }
 
 }

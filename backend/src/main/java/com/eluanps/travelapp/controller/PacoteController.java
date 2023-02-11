@@ -2,6 +2,7 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Pacote;
 import com.eluanps.travelapp.service.PacoteService;
+import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -64,6 +65,13 @@ public class PacoteController {
     @GetMapping("/resultados-pesquisa")
     public List<Pacote> getByKeyword(@RequestParam(value = "nome", defaultValue = "") String nome) {
         return pacoteService.findByNome(nome);
+    }
+    
+    @GetMapping("/resultados-pesquisa-data")
+    public List<Pacote> getByNomeAndDate(
+            @RequestParam(value = "nome", defaultValue = "") String nome,
+            @RequestParam(value = "data", defaultValue = "01/01/2000") LocalDate data) {
+        return pacoteService.findByNomeAndDate(nome, data);
     }
 
 }

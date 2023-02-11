@@ -13,19 +13,19 @@
 
         <button class="btn-perfil" routerLink="/perfil">
           <i class="fa-solid fa-user"></i>
-          user
-        </button>
+          <h5>Perfil</h5>
+      </button>
 
-        <button class="btn-carrinho" routerLink="/carrinho">
+      <button class="btn-carrinho" routerLink="/carrinho">
           <i class="fa-solid fa-cart-shopping"></i>
-          cart
-        </button>
+          <h5>Carrinho</h5>
+      </button>
       </div>
     </nav>
   </header>
 
   <section class="conteudo">
-    <h2>Sua bagagem</h2>
+    <h2>Seu carrinho</h2>
     <div class="box">
       <div class="label">
         <span class="descricao">descrição do item</span>
@@ -35,7 +35,7 @@
       </div>
 
       <div class="row-1">
-        <p class="alerta" *ngIf="total() <= 0">Sua bagagem está vazia</p>
+        <p class="alerta" *ngIf="total() <= 0">Seu carrinho está vazio</p>
 
         <!--card-->
         <div class="card" *ngFor="let item of items">
