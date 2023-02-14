@@ -2,7 +2,12 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Pedido;
 import com.eluanps.travelapp.service.PedidoService;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -70,6 +75,19 @@ public class PedidoController {
     @GetMapping("/userPedidos")
     public List<Pedido> getByClienteId(@RequestParam(value = "id", defaultValue = "0") Long id) {
         return pedidoService.findByClienteId(id);
+    }
+    
+    @GetMapping("/comprovante/{id}")
+    public void generatePdf(@PathVariable Long id, HttpServletResponse response) throws IOException {
+        response.setContentType("application/pdf");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+        String currentDateTime = dateFormatter.format(new Date());
+
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=pdf_" + currentDateTime + ".pdf";
+        response.setHeader(headerKey, headerValue);
+
+        this.pedidoService.generatePdf(response, id);
     }
 
 }

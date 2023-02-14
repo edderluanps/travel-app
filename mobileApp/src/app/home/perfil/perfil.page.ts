@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, IonSlides } from '@ionic/angular';
+import { type } from 'os';
 import { Cliente } from 'src/app/model/cliente';
 import { ClienteDTO } from 'src/app/model/cliente.dto';
 import { EnderecoDTO } from 'src/app/model/endereco.dto';
@@ -106,7 +107,6 @@ export class PerfilPage implements OnInit {
   }
 
   getPedidos(){
-
     let localUser = this.storageService.getLocalUser();
     this.clienteService.findByEmail(localUser.email).subscribe(response => {
       this.cli = response as Cliente;
@@ -116,7 +116,27 @@ export class PerfilPage implements OnInit {
         }
       });
     });
+  }
 
+  getPdf(id: number) {
+    this.pedidoService.getPdfReport(id).subscribe(response => {
+      const blob = new Blob([response], {type: 'application/pdf'});
+
+      const data = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = data;
+      link.download = 'report.pdf';
+      link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
+
+      setTimeout(function(){
+        window.URL.revokeObjectURL(data);
+        link.remove();
+      }, 100);
+      this.presentAlert2('Arquivo', 'Download concluído', 'Concluído');
+
+    }, error => {
+      this.presentAlert2('Erro', 'Oops... Ocorreu um erro: ' + error.message, 'Erro');
+    })
   }
 
   logOut() {

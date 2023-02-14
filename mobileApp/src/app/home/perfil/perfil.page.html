@@ -20,7 +20,7 @@
 
           <ion-slide class="slide-1">
             <div class="label">
-              <p>Pedidos</p>
+              <p>Opções</p>
               <ion-button color="none" (click)="slideDadosUsuario()" routerDirection="back">
                 <ion-icon name="caret-forward-outline"></ion-icon>
               </ion-button>
@@ -97,7 +97,7 @@
                 <h2 *ngIf="item.pagamento['@type'] === 'pgCartao' " >Cartão</h2>
                 <h2 *ngIf="item.pagamento['@type'] === 'pgBoleto' " >Boleto</h2>
                 <h2 *ngIf="item.pagamento['@type'] === 'pgPix' " >Pix</h2>
-                <ion-button color="danger">
+                <ion-button color="danger" (click)="getPdf(item.id)">
                   <ion-icon name="print-outline"></ion-icon>
                   Imprimir comprovante
                 </ion-button>

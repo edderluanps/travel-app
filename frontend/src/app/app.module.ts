@@ -23,8 +23,7 @@ import { LoginComponent } from './home/login/login.component';
 import { AuthInterceptorProvider } from './interceptor/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptor/error-interceptor';
 import { SignupComponent } from './home/signup/signup.component';
-import { MatButtonModule } from '@angular/material';
-import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatIconModule, MatTabsModule } from '@angular/material';
 import { CheckoutComponent } from './home/checkout/checkout.component';
 import { ConfirmacaoComponent } from './home/confirmacao/confirmacao.component';
 
@@ -54,7 +53,10 @@ registerLocaleData(localePt, 'pt');
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [AuthInterceptorProvider, ErrorInterceptorProvider,
     {
