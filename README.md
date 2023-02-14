@@ -38,8 +38,7 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * Lombok
 * JUnit
 * Mockito
-* Swagger
-* iTextPDF
+* OpenPDF
 * JWT
 
 ### Banco de dados
