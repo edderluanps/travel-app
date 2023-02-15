@@ -253,6 +253,13 @@ ion-content{
                   display: flex;
                   flex-direction: row;
                   padding: 0 20px;
+                  justify-content: center;
+                  align-items: center;
+
+                  h5{
+                    padding-right: 10px;
+                    padding-bottom: 5px;
+                  }
                 }
               }
             }

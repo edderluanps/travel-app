@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
 
 /*nav*/
 .header{
@@ -105,8 +103,8 @@
     border: 1px solid #1a1a1a;
     color: #1a1a1a;
 }
-/*navbar*/
 
+/*navbar*/
 .header .banner{
     height: 100%;
     width: 100%;
@@ -453,14 +451,8 @@
 }
 
 /*Responsividade*/
-
-
-/*
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
+/* Device = Laptops, Desktops - 1025px to 1280px */
 @media (min-width: 1025px) and (max-width: 1280px) {
-
     .header{
         height: 70px;
     }
@@ -485,15 +477,9 @@
         width: 100%;
         padding: 10px;
     }
-
 }
 
-
-
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
+/* Tablets, Ipads (portrait) - 768px to 1024px */
 @media (min-width: 868px) and (max-width: 1024px) {
 
     .header{
@@ -564,14 +550,9 @@
         height: 50px;
         width: 200px;
     }
-
 }
 
-
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
+/* Tablets, Ipads (portrait) - 768px to 867px */
 @media (min-width: 767px) and (max-width: 867px) {
 
     .header{
@@ -662,14 +643,9 @@
         height: 50px;
         width: 180px;
     }
-
 }
 
-
-/*
-##Device = Low Resolution Tablets, Mobiles
-##Screen = B/w 481px to 767px
-*/
+/* Low Resolution Tablets, Mobiles - 481px to 767px */
 @media (min-width: 612px) and (max-width: 767px) {
 
     .header{
@@ -801,15 +777,10 @@
         height: 50px;
         width: 150px;
     }
-
 }
 
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
-@media (min-width: 480px) and (max-width: 611px) {
-
+/* Most of the Smartphones Mobiles (Portrait) - 320px to 479px */
+@media (min-width: 480px) and (max-width: 611px) {s
     .header{
         height: 70px;
     }
@@ -967,13 +938,9 @@
         height: 50px;
         width: 120px;
     }
-
 }
 
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
+/* Most of the Smartphones Mobiles (Portrait) - 320px to 479px */
 @media (min-width: 320px) and (max-width: 479px){
 
     .header{
@@ -1136,5 +1103,4 @@
         width: 100px;
         font-size: 12px;
     }
-
 }

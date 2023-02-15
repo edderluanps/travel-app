@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
 
 .sidenav{
   height: 0;
@@ -13,7 +11,6 @@
   height: 100%;
   width: 100%;
 }
-
 
 .header{
     height: 600px;
@@ -42,6 +39,7 @@
 }
 
 .header .navbar h2 i{
+  color: #000;
     display: none;
 }
 
@@ -118,8 +116,8 @@
     border: 1px solid #1a1a1a;
     color: #1a1a1a;
 }
-/*navbar*/
 
+/*navbar*/
 .header .banner{
     height: 100%;
     width: 100%;
@@ -135,7 +133,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Itim', cursive;
   padding: 50px 0 0 0;
 }
 
@@ -218,11 +215,12 @@
 
 .pacotes h2{
     font-size: 18px;
+    color: #000;
 }
 
 .pacotes p{
     font-size: 16px;
-    padding: 10px 200px 0 0;
+    padding: 10px 100px 0 0;
 }
 
 .pacotes .btn-ver-todos-pacotes{
@@ -243,6 +241,7 @@
 }
 
 .pacotes .btn-ver-todos-pacotes i{
+    color: #000;
     padding: 0 10px;
 }
 
@@ -280,12 +279,17 @@
     background: #f0f0f0;
     border-radius: 4px;
     height: 30px;
-    width: 100px;
+    width: 150px;
     position: absolute;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.pacotes .cards .card .avaliacao i{
+  color: #1a1a1a;
+  padding: 0 5px;
 }
 
 .pacotes .cards .card .dados{
@@ -300,7 +304,12 @@
 }
 
 .pacotes .cards .card .dados p{
+    color: #000;
     padding: 0;
+}
+
+.pacotes .cards .card .dados p i{
+  color: #000;
 }
 
 .pacotes .cards .card .dados .btn-ver-pacote{
@@ -334,12 +343,17 @@
 }
 
 .blog h2{
+    color: #000;
     font-size: 18px;
 }
 
 .blog p{
     font-size: 16px;
-    padding: 10px 200px 0 0;
+    padding: 10px 100px 0 0;
+}
+
+.blog p i, a{
+  color: #000;
 }
 
 .blog .btn-ver-blog{
@@ -360,6 +374,7 @@
 }
 
 .blog .btn-ver-blog i{
+    color: #000;
     padding: 0 10px;
 }
 
@@ -415,12 +430,14 @@
 }
 
 .blog .cards .card .dados p{
+  color: #000;
     font-size: 14px;
     padding: 10px 0 0;
 }
 
 .blog .cards .card .dados a{
-    margin-left: 220px;
+  color: #000;
+    margin-left: 200px;
 }
 
 /*Servicos*/
@@ -432,6 +449,7 @@
 }
 
 .servicos h2{
+    color: #000;
     font-size: 18px;
 }
 
@@ -526,89 +544,45 @@
 }
 
 /*footer*/
-.footer{
-    height: 350px;
-    width: 100%;
-    background: #1a1a1a;
-    display: flex;
-    flex-direction: column;
+.footer {
+  height: 350px;
+  width: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer .row-1{
-    height: 80%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 50px 200px;
+.footer .row-1 {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 300px;
 }
 
-.footer .row-1 .col-1{
-    color: #fff;
-    height: 100%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 30px 0;
+.footer .row-1 ul, li, h2, a, i{
+  color: #fff;
+  list-style: none;
+  text-align: center;
+  padding: 0 10px;
 }
 
-.footer .row-1 .col-1 p{
-    font-size: 14px;
-}
-
-.footer .row-1 .col-2{
-    height: 100%;
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.footer .row-1 .col-2 ul{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    color: #fff;
-}
-
-.footer .row-1 .col-3{
-    height: 100%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    padding: 30px 0;
-}
-
-.footer .row-1 .col-3 a{
-    padding: 10px;
-    color: #fff;
-}
-
-.footer .row-2{
-    height: 20%;
-    width: 100%;
-    border-top: 1px solid #ccc;
-    color: #ccc;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.footer .row-2 {
+  height: 20%;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  color: #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /*Responsividade*/
-
-
-/*
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
+/* Device = Laptops, Desktops - 1280px to 1580 */
 @media (min-width: 1280px) and (max-width: 1580px){
-
     .pacotes .btn-ver-todos-pacotes{
         margin-left: 900px;
     }
@@ -619,21 +593,19 @@
 
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
-      padding: 50px 100px;
+      padding: 50px 300px;
     }
 
 }
 
 
-/*
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
+/*Responsividade*/
+/* Device = Laptops, Desktops - 1025px to 1280px */
 @media (min-width: 1025px) and (max-width: 1280px) {
-
     .header{
         height: 500px;
     }
@@ -648,17 +620,27 @@
         padding: 100px 100px 0;
     }
 
+    .pacotes p{
+      font-size: 16px;
+      padding: 10px 100px 0 0;
+    }
+
     .pacotes .btn-ver-todos-pacotes{
         margin-left: 800px;
     }
 
     .blog{
-        height: 700px;
-        padding: 100px 100px 0;
+      height: 700px;
+      padding: 100px 100px 0;
+    }
+
+    .blog p{
+      font-size: 16px;
+      padding: 10px 150px 0 0;
     }
 
     .blog .btn-ver-blog{
-        margin-left: 800px;
+      margin-left: 800px;
     }
 
     .servicos{
@@ -673,38 +655,15 @@
 
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
-      padding: 50px 5px;
-      font-size: 12px;
+      padding: 50px 200px;
     }
-
-    .footer .row-1 .col-1 {
-      padding: 40px 0;
-    }
-
-    .footer .row-1 .col-1 p {
-      font-size: 12px;
-    }
-
-    .footer .row-1 p,
-    li {
-      font-size: 12px;
-    }
-
-    .footer .row-1 .col-3 {
-      padding: 40px 0;
-    }
-
 }
 
-
-
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
+/* Tablets, Ipads (portrait) - 768px to 1024px */
 @media (min-width: 868px) and (max-width: 1024px) {
 
     .header{
@@ -722,7 +681,7 @@
     }
 
     .header .banner{
-        padding: 150px 150px 0;
+        padding: 70px 150px 0;
     }
 
     .header .banner .msg h1{
@@ -740,6 +699,11 @@
         padding: 100px 70px 0;
     }
 
+    .pacotes p{
+      font-size: 16px;
+      padding: 10px 200px 0 0;
+    }
+
     .pacotes .btn-ver-todos-pacotes{
         margin-left: 650px;
     }
@@ -747,6 +711,11 @@
     .blog{
         height: 700px;
         padding: 100px 70px 0;
+    }
+
+    .blog p{
+      font-size: 16px;
+      padding: 10px 200px 0 0;
     }
 
     .blog .btn-ver-blog{
@@ -785,40 +754,16 @@
 
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
-      padding: 50px 5px;
-      font-size: 12px;
+      padding: 50px 100px;
     }
-
-    .footer .row-1 .col-1 {
-      padding: 40px 0;
-    }
-
-    .footer .row-1 .col-1 p {
-      font-size: 12px;
-    }
-
-    .footer .row-1 p,
-    li {
-      font-size: 12px;
-    }
-
-    .footer .row-1 .col-3 {
-      padding: 40px 0;
-    }
-
 }
 
-
-
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
+/* Tablets, Ipads (portrait) - 768px to 867px */
 @media (min-width: 767px) and (max-width: 867px) {
-
     .header{
         height: 450px;
     }
@@ -855,6 +800,11 @@
         padding: 100px 50px 0;
     }
 
+    .pacotes p{
+      font-size: 16px;
+      padding: 10px 200px 0 0;
+    }
+
     .pacotes .btn-ver-todos-pacotes{
         margin-left: 570px;
     }
@@ -864,10 +814,14 @@
         padding: 100px 50px 0;
     }
 
+    .blog p{
+      font-size: 16px;
+      padding: 10px 200px 0 0;
+    }
+
     .blog .btn-ver-blog{
         margin-left: 570px;
     }
-
 
     .blog .cards .card .dados .texto{
         width: 150px;
@@ -897,40 +851,16 @@
 
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
-      padding: 50px 5px;
-      font-size: 12px;
+      padding: 50px 100px;
     }
-
-    .footer .row-1 .col-1 {
-      padding: 40px 0;
-    }
-
-    .footer .row-1 .col-1 p {
-      font-size: 12px;
-    }
-
-    .footer .row-1 p,
-    li {
-      font-size: 12px;
-    }
-
-    .footer .row-1 .col-3 {
-      padding: 40px 0;
-    }
-
 }
 
-
-
-/*
-##Device = Low Resolution Tablets, Mobiles
-##Screen = B/w 481px to 767px
-*/
+/* Low Resolution Tablets, Mobiles - 612px to 767px */
 @media (min-width: 612px) and (max-width: 767px) {
-
     .header{
         height: 450px;
     }
@@ -1001,8 +931,13 @@
         padding: 100px 20px 0;
     }
 
+    .pacotes p{
+      font-size: 16px;
+      padding: 10px 200px 0 0;
+    }
+
     .pacotes .btn-ver-todos-pacotes{
-        margin-left: 450px;
+        margin-left: 500px;
     }
 
     .pacotes .cards{
@@ -1030,8 +965,14 @@
         padding: 100px 20px 0;
     }
 
+    .blog p{
+      font-size: 16px;
+      padding: 10px 250px 0 0;
+    }
+
     .blog .btn-ver-blog{
-        margin-left: 450px;
+      margin-top: 10px;
+        margin-left: 500px;
     }
 
     .blog .cards{
@@ -1079,42 +1020,18 @@
     .destinos .box p{
         font-size: 16px;
     }
-
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
-      padding: 50px 5px;
-      font-size: 12px;
-    }
-
-    .footer .row-1 .col-1 {
-      padding: 40px 0;
-    }
-
-    .footer .row-1 .col-1 p {
-      font-size: 12px;
-    }
-
-    .footer .row-1 p,
-    li {
-      font-size: 12px;
-    }
-
-    .footer .row-1 .col-3 {
-      padding: 40px 0;
+      padding: 50px 100px;
     }
 }
 
-
-
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
+/* Most of the Smartphones Mobiles (Portrait) - 480px to 611px */
 @media (min-width: 480px) and (max-width: 611px) {
-
     .header{
         height: 400px;
     }
@@ -1143,7 +1060,7 @@
     }
 
     .header .banner{
-        padding: 100px 50px 0;
+        padding: 10px 50px 0;
     }
 
     .header .banner .msg h1{
@@ -1187,6 +1104,7 @@
 
     .pacotes p{
         font-size: 13px;
+        padding: 10px 200px 0 0;
     }
 
     .pacotes .btn-ver-todos-pacotes{
@@ -1223,10 +1141,12 @@
     }
 
     .blog p{
-        font-size: 13px;
+      font-size: 13px;
+      padding: 10px 200px 0 0;
     }
 
     .blog .btn-ver-blog{
+      margin-top: 10px;
         margin-left: 300px;
     }
 
@@ -1286,37 +1206,16 @@
 
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
-      padding: 50px 5px;
-      font-size: 12px;
-    }
-
-    .footer .row-1 .col-1 {
-      padding: 40px 0;
-    }
-
-    .footer .row-1 .col-1 p {
-      font-size: 10px;
-    }
-
-    .footer .row-1 p,
-    li {
-      font-size: 10px;
-    }
-
-    .footer .row-1 .col-3 {
-      padding: 40px 0;
+      padding: 50px 50px;
     }
 }
 
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
+/* Most of the Smartphones Mobiles (Portrait) - 320px to 479px */
 @media (min-width: 320px) and (max-width: 479px){
-
     .header{
         height: 400px;
     }
@@ -1389,11 +1288,13 @@
     }
 
     .pacotes p{
-        font-size: 13px;
+      font-size: 13px;
+      padding: 60px 0 0;
     }
 
     .pacotes .btn-ver-todos-pacotes{
-        margin-left: 200px;
+      margin-top: 10px;
+        margin-left: 210px;
     }
 
     .pacotes .cards{
@@ -1426,11 +1327,13 @@
     }
 
     .blog p{
-        font-size: 13px;
+      font-size: 13px;
+      padding: 60px 0 0;
     }
 
     .blog .btn-ver-blog{
-        margin-left: 200px;
+      margin-top: 10px;
+        margin-left: 210px;
     }
 
     .blog .cards{
@@ -1504,24 +1407,11 @@
 
     .footer {
       height: 350px;
+      width: 100%;
     }
 
     .footer .row-1 {
       padding: 50px 5px;
-      font-size: 12px;
+      font-size: 14px;
     }
-
-    .footer .row-1 .col-1 {
-      padding: 20px 0;
-    }
-
-    .footer .row-1 .col-1 p {
-      font-size: 10px;
-    }
-
-    .footer .row-1 p,
-    li {
-      font-size: 10px;
-    }
-
 }

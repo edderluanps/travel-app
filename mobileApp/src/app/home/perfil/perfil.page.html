@@ -93,13 +93,13 @@
             <div class="itens">
 
               <div class="card" *ngFor="let item of pedido">
-                <p>{{ item.dataPedido }}</p>
-                <h2 *ngIf="item.pagamento['@type'] === 'pgCartao' " >Cartão</h2>
-                <h2 *ngIf="item.pagamento['@type'] === 'pgBoleto' " >Boleto</h2>
-                <h2 *ngIf="item.pagamento['@type'] === 'pgPix' " >Pix</h2>
+                <p>Pedido nº {{ item.id }}, {{ item.dataPedido }}</p>
+                <h5 *ngIf="item.pagamento['@type'] === 'pgCartao' " >Pg. via Cartão</h5>
+                <h5 *ngIf="item.pagamento['@type'] === 'pgBoleto' " >Pg. via Boleto</h5>
+                <h5 *ngIf="item.pagamento['@type'] === 'pgPix' " >Pg. via Pix</h5>
                 <ion-button color="danger" (click)="getPdf(item.id)">
                   <ion-icon name="print-outline"></ion-icon>
-                  Imprimir comprovante
+                  <h5>Imprimir comprovante</h5>
                 </ion-button>
               </div>
 
