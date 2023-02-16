@@ -3,7 +3,7 @@
     <!--navbar-->
     <header class="header">
       <nav class="navbar">
-        <h2><i class="fa-solid fa-bars"></i> travel.io</h2>
+        <h2>travel.io</h2>
 
         <div class="menu">
           <a routerLink="/">home</a>
@@ -115,6 +115,7 @@
             <p>{{ cli.telefone || 'sem registro' }}</p>
             <br />
             <h4>Pedidos</h4>
+            <p *ngIf="pedido <= 0">Nenhum pedido registrado</p>
             <div class="pedidos-card" *ngFor="let item of pedido">
               <p>Pedido nº {{ item.id }}, {{ item.dataPedido }}</p>
                 <h5 *ngIf="item.pagamento['@type'] === 'pgCartao' " >Pg. via Cartão</h5>

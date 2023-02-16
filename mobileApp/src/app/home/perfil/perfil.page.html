@@ -91,7 +91,7 @@
               <p>Pedidos</p>
             </div>
             <div class="itens">
-
+              <h3 *ngIf="pedido <= 0">Nenhum pedido registrado.</h3>
               <div class="card" *ngFor="let item of pedido">
                 <p>Pedido nº {{ item.id }}, {{ item.dataPedido }}</p>
                 <h5 *ngIf="item.pagamento['@type'] === 'pgCartao' " >Pg. via Cartão</h5>

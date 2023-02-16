@@ -3,7 +3,7 @@
     <ion-button color="none" routerLink="/blog" routerDirection="back">
       <ion-icon name="caret-back-outline"></ion-icon>
     </ion-button>
-    <h2>Postagens</h2>
+    <h2>Publicação</h2>
   </ion-header>
 </div>
 
@@ -15,7 +15,7 @@
       <div class="card">
         <img [src]="post?.img" alt="">
 
-        <p>Publicado em: {{ post?.dataPostagem }} <br> por: {{ post?.cliente.nome }}</p>
+        <h5>Publicado em: {{ post?.dataPostagem }} por: {{ post?.cliente.nome }}</h5>
         <h2>{{ post?.titulo }}</h2>
         <p>{{ post?.descricao }}</p>
 

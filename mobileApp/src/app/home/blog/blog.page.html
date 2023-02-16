@@ -24,10 +24,9 @@
 
       <div class="card" *ngFor="let item of post">
         <img [src]="item.img" alt="" >
-        <p>{{ item.dataPostagem }}</p>
         <h2>{{ item.titulo }}</h2>
-        <p>Por: {{ item.cliente.nome }}</p>
         <ion-button [routerLink]="['/blog-post', item.id]" routerDirection="forward">Ver mais</ion-button>
+        <h5>Publicado em: {{ item.dataPostagem }}, por {{ item.cliente.nome }}</h5>
       </div>
 
     </div>

@@ -1,12 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
-
 /*nav*/
 .header {
   height: 70px;
   width: 100%;
-  background: #008080;
+  background: #1a66ff;
 }
 
 /*navbar*/
@@ -107,8 +103,6 @@
 }
 
 /*navbar*/
-
-/**/
 .conteudo {
   height: auto;
   width: 100%;
@@ -219,7 +213,7 @@
   border-bottom: 10px solid #008080;
 }
 
-.conteudo .box .col-2 .row-2 .pedidos-card{
+.conteudo .box .col-2 .row-2 .pedidos-card {
   margin-top: 10px;
   height: 120px;
   width: 50%;
@@ -232,7 +226,7 @@
   padding: 10px;
 }
 
-.conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir{
+.conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir {
   height: 50px;
   width: 220px;
   background: #DC143C;
@@ -249,21 +243,15 @@
   transition: all 0.5s ease;
 }
 
-.conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir:hover{
+.conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir:hover {
   background: transparent;
   border: 1px solid #000;
   color: #000;
 }
 
 /*Responsividade*/
-
-
-/*
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
+/* Laptops, Desktops - B/w 1025px to 1280px */
 @media (min-width: 1025px) and (max-width: 1280px) {
-
   .header {
     height: 70px;
   }
@@ -282,38 +270,34 @@
     width: 95%;
   }
 
-  .conteudo .box .col-1 .menu h4{
+  .conteudo .box .col-1 .menu h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 .menu ul li a{
+  .conteudo .box .col-1 .menu ul li a {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-1 h2{
+  .conteudo .box .col-2 .row-1 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-1 p{
+  .conteudo .box .col-2 .row-1 p {
     font-size: 15px;
   }
 
-  .conteudo .box .col-2 .row-2 h2{
+  .conteudo .box .col-2 .row-2 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-2 p{
+  .conteudo .box .col-2 .row-2 p {
     font-size: 15px;
   }
 
 }
 
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
+/* Tablets, Ipads (portrait) - B/w 768px to 1024px */
 @media (min-width: 868px) and (max-width: 1024px) {
-
   .header {
     height: 70px;
   }
@@ -337,39 +321,34 @@
     width: 95%;
   }
 
-  .conteudo .box .col-1 .menu h4{
+  .conteudo .box .col-1 .menu h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 .menu ul li a{
+  .conteudo .box .col-1 .menu ul li a {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-1 h2{
+  .conteudo .box .col-2 .row-1 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-1 p{
+  .conteudo .box .col-2 .row-1 p {
     font-size: 15px;
   }
 
-  .conteudo .box .col-2 .row-2 h2{
+  .conteudo .box .col-2 .row-2 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-2 p{
+  .conteudo .box .col-2 .row-2 p {
     font-size: 15px;
   }
 
 }
 
-
-/*
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
+/* Tablets, Ipads (portrait) - B/w 768px to 1024px */
 @media (min-width: 767px) and (max-width: 867px) {
-
   .header {
     height: 70px;
   }
@@ -396,43 +375,37 @@
     width: 95%;
   }
 
-  .conteudo .box .col-1{
+  .conteudo .box .col-1 {
     width: 25%;
   }
 
-  .conteudo .box .col-1 .menu h4{
+  .conteudo .box .col-1 .menu h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 .menu ul li a{
+  .conteudo .box .col-1 .menu ul li a {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-1 h2{
+  .conteudo .box .col-2 .row-1 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-1 p{
+  .conteudo .box .col-2 .row-1 p {
     font-size: 15px;
   }
 
-  .conteudo .box .col-2 .row-2 h2{
+  .conteudo .box .col-2 .row-2 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-2 p{
+  .conteudo .box .col-2 .row-2 p {
     font-size: 15px;
   }
-
 }
 
-
-/*
-##Device = Low Resolution Tablets, Mobiles
-##Screen = B/w 481px to 767px
-*/
+/* Low Resolution Tablets, Mobiles - 481px to 767px */
 @media (min-width: 612px) and (max-width: 767px) {
-
   .header {
     height: 70px;
   }
@@ -448,54 +421,12 @@
     display: inline;
   }
 
+  .header .navbar .menu {
+    margin-left: 130px;
+  }
+
   .header .navbar .menu a {
     display: none;
-  }
-
-  .header .navbar .menu .btn-perfil {
-    display: none;
-  }
-
-  .header .navbar .menu .btn-carrinho {
-    display: none;
-  }
-
-  .header .banner {
-    padding: 100px 100px 0;
-  }
-
-  .header .banner .msg h1 {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .header .banner .msg p {
-    font-size: 17px;
-    text-align: center;
-  }
-
-  .header .banner .pesquisa {
-    height: 100px;
-    width: 500px;
-  }
-
-  .header .banner .pesquisa .item {
-    padding-left: 20px;
-  }
-
-  .header .banner .pesquisa .item input {
-    height: 30px;
-    width: 120px;
-    margin-bottom: 19px;
-  }
-
-  .header .banner .pesquisa label {
-    font-size: 12px;
-  }
-
-  .header .banner .pesquisa .item .btn-pesquisar {
-    height: 30px;
-    width: 120px;
   }
 
   .conteudo span {
@@ -507,54 +438,62 @@
     width: 95%;
   }
 
-  .conteudo .box .col-1{
+  .conteudo .box .col-1 {
     width: 30%;
   }
 
-  .conteudo .box .col-1 h2{
+  .conteudo .box .col-1 h2 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 h4{
+  .conteudo .box .col-1 h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 p{
+  .conteudo .box .col-1 p {
     font-size: 13px;
   }
 
-  .conteudo .box .col-1 .menu h4{
+  .conteudo .box .col-1 .menu h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 .menu ul li a{
+  .conteudo .box .col-1 .menu ul li a {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-1 h2{
+  .conteudo .box .col-2 .row-1 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-1 p{
+  .conteudo .box .col-2 .row-1 p {
     font-size: 15px;
   }
 
-  .conteudo .box .col-2 .row-2 h2{
+  .conteudo .box .col-2 .row-2 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-2 p{
+  .conteudo .box .col-2 .row-2 p {
     font-size: 15px;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card {
+    width: 300px;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir {
+    width: 80%;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir h3 {
+    display: none;
   }
 
 }
 
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
+/* Most of the Smartphones Mobiles (Portrait) - B/w 320px to 479px */
 @media (min-width: 480px) and (max-width: 611px) {
-
   .header {
     height: 70px;
   }
@@ -566,58 +505,23 @@
     padding: 0 20px;
   }
 
+  .header .navbar h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   .header .navbar h2 i {
     display: inline;
   }
 
+  .header .navbar .menu {
+    margin-left: 50px;
+  }
+
   .header .navbar .menu a {
     display: none;
-  }
-
-  .header .navbar .menu .btn-perfil {
-    display: none;
-  }
-
-  .header .navbar .menu .btn-carrinho {
-    display: none;
-  }
-
-  .header .banner {
-    padding: 100px 50px 0;
-  }
-
-  .header .banner .msg h1 {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .header .banner .msg p {
-    font-size: 17px;
-    text-align: center;
-  }
-
-  .header .banner .pesquisa {
-    height: 100px;
-    width: 450px;
-  }
-
-  .header .banner .pesquisa .item {
-    padding-left: 20px;
-  }
-
-  .header .banner .pesquisa .item input {
-    height: 30px;
-    width: 120px;
-    margin-bottom: 19px;
-  }
-
-  .header .banner .pesquisa label {
-    font-size: 10px;
-  }
-
-  .header .banner .pesquisa .item .btn-pesquisar {
-    height: 30px;
-    width: 120px;
   }
 
   .conteudo span {
@@ -629,54 +533,62 @@
     width: 95%;
   }
 
-  .conteudo .box .col-1{
+  .conteudo .box .col-1 {
     width: 35%;
   }
 
-  .conteudo .box .col-1 h2{
+  .conteudo .box .col-1 h2 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 h4{
+  .conteudo .box .col-1 h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 p{
+  .conteudo .box .col-1 p {
     font-size: 13px;
   }
 
-  .conteudo .box .col-1 .menu h4{
+  .conteudo .box .col-1 .menu h4 {
     font-size: 15px;
   }
 
-  .conteudo .box .col-1 .menu ul li a{
+  .conteudo .box .col-1 .menu ul li a {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-1 h2{
+  .conteudo .box .col-2 .row-1 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-1 p{
+  .conteudo .box .col-2 .row-1 p {
     font-size: 15px;
   }
 
-  .conteudo .box .col-2 .row-2 h2{
+  .conteudo .box .col-2 .row-2 h2 {
     font-size: 16px;
   }
 
-  .conteudo .box .col-2 .row-2 p{
+  .conteudo .box .col-2 .row-2 p {
     font-size: 15px;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card {
+    width: 250px;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir {
+    width: 80%;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir h3 {
+    display: none;
   }
 
 }
 
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
+/* Most of the Smartphones Mobiles (Portrait) - 320px to 479px */
 @media (min-width: 320px) and (max-width: 479px) {
-
   .header {
     height: 70px;
   }
@@ -688,8 +600,19 @@
     padding: 0 20px;
   }
 
+  .header .navbar h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   .header .navbar h2 i {
     display: inline;
+  }
+
+  .header .navbar .menu {
+    margin-left: 70px;
   }
 
   .header .navbar .menu a {
@@ -697,10 +620,18 @@
   }
 
   .header .navbar .menu .btn-perfil {
+    width: 50px;
+  }
+
+  .header .navbar .menu .btn-perfil h5 {
     display: none;
   }
 
   .header .navbar .menu .btn-carrinho {
+    width: 50px;
+  }
+
+  .header .navbar .menu .btn-carrinho h5 {
     display: none;
   }
 
@@ -713,44 +644,56 @@
     width: 95%;
   }
 
-  .conteudo .box .col-1{
+  .conteudo .box .col-1 {
     width: 40%;
   }
 
-  .conteudo .box .col-1 h2{
+  .conteudo .box .col-1 h2 {
     font-size: 14px;
   }
 
-  .conteudo .box .col-1 h4{
+  .conteudo .box .col-1 h4 {
     font-size: 14px;
   }
 
-  .conteudo .box .col-1 p{
+  .conteudo .box .col-1 p {
     font-size: 13px;
   }
 
-  .conteudo .box .col-1 .menu h4{
+  .conteudo .box .col-1 .menu h4 {
     font-size: 14px;
   }
 
-  .conteudo .box .col-1 .menu ul li a{
+  .conteudo .box .col-1 .menu ul li a {
     font-size: 13px;
   }
 
-  .conteudo .box .col-2 .row-1 h2{
+  .conteudo .box .col-2 .row-1 h2 {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-1 p{
+  .conteudo .box .col-2 .row-1 p {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-2 h2{
+  .conteudo .box .col-2 .row-2 h2 {
     font-size: 14px;
   }
 
-  .conteudo .box .col-2 .row-2 p{
+  .conteudo .box .col-2 .row-2 p {
     font-size: 12px;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card {
+    width: 200px;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir {
+    width: 80%;
+  }
+
+  .conteudo .box .col-2 .row-2 .pedidos-card .btn-imprimir h3 {
+    display: none;
   }
 
 }

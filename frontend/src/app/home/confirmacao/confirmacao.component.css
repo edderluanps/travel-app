@@ -1,452 +1,390 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
-
 /*nav*/
 .header {
-    height: 70px;
-    width: 100%;
-    background: #008080;
+  height: 70px;
+  width: 100%;
+  background: #1a66ff;
 }
 
 /*navbar*/
 .header .navbar {
-    background-color: rgba(255, 255, 255, 0.3);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-    height: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 100px 0 200px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px 0 200px;
 }
 
 .header .navbar h2 {
-    color: #000;
-    font-size: 35px;
+  color: #000;
+  font-size: 35px;
 }
 
 .header .navbar h2 i {
-    display: none;
+  display: none;
 }
 
 .header .navbar .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .header .navbar .menu a {
-    font-size: 18px;
-    padding: 0 20px;
-    color: #000;
-    transition: all 0.5s ease;
+  font-size: 18px;
+  padding: 0 20px;
+  color: #000;
+  transition: all 0.5s ease;
 }
 
 .header .navbar .menu a:hover {
-    color: #1a1a1a;
-    transform: scale(1.1);
+  color: #1a1a1a;
+  transform: scale(1.1);
 }
 
 .header .navbar .menu .btn-perfil {
-    height: 30px;
-    width: 85px;
-    background: #1a1a1a;
-    border: 0;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: all 0.5s ease;
+  height: 30px;
+  width: 85px;
+  background: #1a1a1a;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.5s ease;
 }
 
 .header .navbar .menu .btn-perfil i {
-    padding: 0 5px;
+  padding: 0 5px;
 }
 
 .header .navbar .menu .btn-perfil:hover {
-    background: transparent;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
+  background: transparent;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
 }
 
 .header .navbar .menu .btn-carrinho {
-    height: 30px;
-    width: 85px;
-    background: #1a1a1a;
-    border: 0;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: all 0.5s ease;
+  height: 30px;
+  width: 85px;
+  background: #1a1a1a;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.5s ease;
 }
 
 .header .navbar .menu .btn-carrinho i {
-    padding: 0 5px;
+  padding: 0 5px;
 }
 
 .header .navbar .menu .btn-carrinho:hover {
-    background: transparent;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
+  background: transparent;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
 }
 
 /*navbar*/
 
 .conteudo {
-    height: 600px;
-    width: 100%;
-    padding: 20px;
+  height: 600px;
+  width: 100%;
+  padding: 20px;
 }
 
-.conteudo .box{
-    background: #f0f0f0;
-    border-radius: 10px;
-    height: auto;
-    width: auto;
-    padding: 20px;
-    margin: 20px 0;
+.conteudo .box {
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  margin: 20px 0;
 }
 
-.conteudo .box .card{
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
+.conteudo .box .card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
 }
 
-.conteudo .box .card img{
-    height: 100%;
-    width: 150px;
+.conteudo .box .card img {
+  height: 100%;
+  width: 150px;
 }
 
-.conteudo .box .card .col-2{
+.conteudo .box .card .col-2 {
   padding: 0 0 0 20px;
 }
 
-.conteudo .btn-area{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.conteudo .btn-area {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.conteudo .btn-area .btn-voltar{
-    height: 50px;
-    width: 200px;
-    background: none;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
-    font-size: 14px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: all 0.5s ease;
+.conteudo .btn-area .btn-voltar {
+  height: 50px;
+  width: 200px;
+  background: none;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.5s ease;
 }
 
-.conteudo .btn-area .btn-voltar:hover{
-    background: #1a1a1a;
-    border: 0;
-    color: #fff;
+.conteudo .btn-area .btn-voltar:hover {
+  background: #1a1a1a;
+  border: 0;
+  color: #fff;
 }
 
-.conteudo .btn-area .btn-confirmar{
-    height: 50px;
-    width: 200px;
-    background: #1a1a1a;
-    border: 0;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: all 0.5s ease;
+.conteudo .btn-area .btn-confirmar {
+  height: 50px;
+  width: 200px;
+  background: #1a1a1a;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.5s ease;
 }
 
-.conteudo .btn-area .btn-confirmar:hover{
-    background: none;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
+.conteudo .btn-area .btn-confirmar:hover {
+  background: none;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
 }
 
 /*Responsividade*/
 /* Device = Laptops, Desktops - 1025px to 1280px */
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .header {
-        height: 70px;
-    }
+  .header {
+    height: 70px;
+  }
 
-    .header .navbar {
-        height: 70px;
-        padding: 0 50px 0 100px;
-    }
+  .header .navbar {
+    height: 70px;
+    padding: 0 50px 0 100px;
+  }
 
 }
 
 /* Tablets, Ipads (portrait) - 768px to 1024px */
 @media (min-width: 868px) and (max-width: 1024px) {
-    .header {
-        height: 70px;
-    }
+  .header {
+    height: 70px;
+  }
 
-    .header .navbar {
-        height: 70px;
-        padding: 0 50px 0 70px;
-    }
+  .header .navbar {
+    height: 70px;
+    padding: 0 50px 0 70px;
+  }
 
-    .header .navbar .menu a {
-        font-size: 16px;
-        padding: 0 15px;
-    }
+  .header .navbar .menu a {
+    font-size: 16px;
+    padding: 0 15px;
+  }
 
 }
 
 /* Tablets, Ipads (portrait) - 768px to 867px */
 @media (min-width: 767px) and (max-width: 867px) {
-    .header {
-        height: 70px;
-    }
+  .header {
+    height: 70px;
+  }
 
-    .header .navbar {
-        height: 70px;
-        padding: 0 50px 0 50px;
-    }
+  .header .navbar {
+    height: 70px;
+    padding: 0 50px 0 50px;
+  }
 
-    .header .navbar h2 i {
-        display: inline;
-    }
+  .header .navbar h2 i {
+    display: inline;
+  }
 
-    .header .navbar .menu a {
-        display: none;
-    }
+  .header .navbar .menu a {
+    display: none;
+  }
 
 }
 
 /* Low Resolution Tablets, Mobiles - 481px to 767px */
 @media (min-width: 612px) and (max-width: 767px) {
-    .header {
-        height: 70px;
-    }
+  .header {
+    height: 70px;
+  }
 
-    .header .navbar {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0 20px;
-    }
+  .header .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
 
-    .header .navbar h2 i {
-        display: inline;
-    }
+  .header .navbar h2 i {
+    display: inline;
+  }
 
-    .header .navbar .menu a {
-        display: none;
-    }
+  .header .navbar .menu {
+    margin-left: 70px;
+  }
 
-    .header .navbar .menu .btn-perfil {
-        display: none;
-    }
-
-    .header .navbar .menu .btn-carrinho {
-        display: none;
-    }
-
-    .header .banner {
-        padding: 100px 100px 0;
-    }
-
-    .header .banner .msg h1 {
-        font-size: 40px;
-        text-align: center;
-    }
-
-    .header .banner .msg p {
-        font-size: 17px;
-        text-align: center;
-    }
-
-    .header .banner .pesquisa {
-        height: 100px;
-        width: 500px;
-    }
-
-    .header .banner .pesquisa .item {
-        padding-left: 20px;
-    }
-
-    .header .banner .pesquisa .item input {
-        height: 30px;
-        width: 120px;
-        margin-bottom: 19px;
-    }
-
-    .header .banner .pesquisa label {
-        font-size: 12px;
-    }
-
-    .header .banner .pesquisa .item .btn-pesquisar {
-        height: 30px;
-        width: 120px;
-    }
+  .header .navbar .menu a {
+    display: none;
+  }
 
 }
 
 /* Most of the Smartphones Mobiles (Portrait) - 320px to 479px */
 @media (min-width: 480px) and (max-width: 611px) {
-    .header {
-        height: 70px;
-    }
+  .header {
+    height: 70px;
+  }
 
-    .header .navbar {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0 20px;
-    }
+  .header .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
 
-    .header .navbar h2 i {
-        display: inline;
-    }
+  .header .navbar h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .header .navbar .menu a {
-        display: none;
-    }
+  .header .navbar h2 i {
+    display: inline;
+  }
 
-    .header .navbar .menu .btn-perfil {
-        display: none;
-    }
+  .header .navbar .menu {
+    margin-left: 50px;
+  }
 
-    .header .navbar .menu .btn-carrinho {
-        display: none;
-    }
+  .header .navbar .menu a {
+    display: none;
+  }
 
-    .header .banner {
-        padding: 100px 50px 0;
-    }
+  .conteudo .box p {
+    font-size: 14px;
+  }
 
-    .header .banner .msg h1 {
-        font-size: 40px;
-        text-align: center;
-    }
+  .conteudo .box h2 {
+    font-size: 16px;
+  }
 
-    .header .banner .msg p {
-        font-size: 17px;
-        text-align: center;
-    }
+  .conteudo .box h5 {
+    font-size: 14px;
+  }
 
-    .header .banner .pesquisa {
-        height: 100px;
-        width: 450px;
-    }
-
-    .header .banner .pesquisa .item {
-        padding-left: 20px;
-    }
-
-    .header .banner .pesquisa .item input {
-        height: 30px;
-        width: 120px;
-        margin-bottom: 19px;
-    }
-
-    .header .banner .pesquisa label {
-        font-size: 10px;
-    }
-
-    .header .banner .pesquisa .item .btn-pesquisar {
-        height: 30px;
-        width: 120px;
-    }
-
-    .conteudo .box p{
-        font-size: 14px;
-    }
-
-    .conteudo .box h2{
-        font-size: 16px;
-    }
-
-    .conteudo .box h5{
-        font-size: 14px;
-    }
-
-    .conteudo .box .card img{
-        height: 100%;
-        width: 150px;
-    }
+  .conteudo .box .card img {
+    height: 100%;
+    width: 150px;
+  }
 
 }
 
 /* Most of the Smartphones Mobiles (Portrait) - 320px to 479px */
 @media (min-width: 320px) and (max-width: 479px) {
-    .header {
-        height: 70px;
-    }
+  .header {
+    height: 70px;
+  }
 
-    .header .navbar {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0 20px;
-    }
+  .header .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
 
-    .header .navbar h2 i {
-        display: inline;
-    }
+  .header .navbar h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .header .navbar .menu a {
-        display: none;
-    }
+  .header .navbar h2 i {
+    display: inline;
+  }
 
-    .header .navbar .menu .btn-perfil {
-        display: none;
-    }
+  .header .navbar .menu {
+    margin-left: 70px;
+  }
 
-    .header .navbar .menu .btn-carrinho {
-        display: none;
-    }
+  .header .navbar .menu a {
+    display: none;
+  }
 
-    .conteudo .box p{
-        font-size: 14px;
-    }
+  .header .navbar .menu .btn-perfil {
+    width: 50px;
+  }
 
-    .conteudo .box h2{
-        font-size: 16px;
-    }
+  .header .navbar .menu .btn-perfil h5 {
+    display: none;
+  }
 
-    .conteudo .box h5{
-        font-size: 14px;
-    }
+  .header .navbar .menu .btn-carrinho {
+    width: 50px;
+  }
 
-    .conteudo .box .card img{
-        height: 80%;
-        width: 100px;
-        padding-top: 20px;
-    }
+  .header .navbar .menu .btn-carrinho h5 {
+    display: none;
+  }
+
+  .conteudo .box p {
+    font-size: 14px;
+  }
+
+  .conteudo .box h2 {
+    font-size: 16px;
+  }
+
+  .conteudo .box h5 {
+    font-size: 14px;
+  }
+
+  .conteudo .box .card img {
+    height: 80%;
+    width: 100px;
+    padding-top: 20px;
+  }
 
 }

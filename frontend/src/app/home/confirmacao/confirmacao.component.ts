@@ -78,4 +78,24 @@ export class ConfirmacaoComponent implements OnInit {
     return location.substring(position + 1, location.length);
   }
 
+  confirmar(){
+    Swal.fire({
+      title: 'Deseja confirmar seu pedido?',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: 'Confirmar',
+      denyButtonText: `cancelar`,
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+        Swal.fire('Pedido confirmado!', '', 'success')
+        this.confirmarPedido();
+        this.router.navigate(['/homepage']);
+
+      } else if (result.isDenied) {
+
+      }
+    })
+  }
+
 }

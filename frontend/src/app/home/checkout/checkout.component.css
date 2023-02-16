@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 /*nav*/
 .header {
   height: 70px;
   width: 100%;
-  background: #008080;
+  background: #1a66ff;
 }
 
 /*navbar*/
@@ -111,7 +109,7 @@
   padding: 20px;
 }
 
-.box .conteudo{
+.box .conteudo {
   border-radius: 10px;
   height: auto;
   width: 100%;
@@ -194,7 +192,6 @@
     height: 70px;
     padding: 0 50px 0 100px;
   }
-
 }
 
 /* Tablets, Ipads (portrait) - 768px to 1024px */
@@ -265,54 +262,12 @@
     display: inline;
   }
 
+  .header .navbar .menu {
+    margin-left: 70px;
+  }
+
   .header .navbar .menu a {
     display: none;
-  }
-
-  .header .navbar .menu .btn-perfil {
-    display: none;
-  }
-
-  .header .navbar .menu .btn-carrinho {
-    display: none;
-  }
-
-  .header .banner {
-    padding: 100px 100px 0;
-  }
-
-  .header .banner .msg h1 {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .header .banner .msg p {
-    font-size: 17px;
-    text-align: center;
-  }
-
-  .header .banner .pesquisa {
-    height: 100px;
-    width: 500px;
-  }
-
-  .header .banner .pesquisa .item {
-    padding-left: 20px;
-  }
-
-  .header .banner .pesquisa .item input {
-    height: 30px;
-    width: 120px;
-    margin-bottom: 19px;
-  }
-
-  .header .banner .pesquisa label {
-    font-size: 12px;
-  }
-
-  .header .banner .pesquisa .item .btn-pesquisar {
-    height: 30px;
-    width: 120px;
   }
 
   .box select {
@@ -336,58 +291,23 @@
     padding: 0 20px;
   }
 
+  .header .navbar h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   .header .navbar h2 i {
     display: inline;
   }
 
+  .header .navbar .menu {
+    margin-left: 50px;
+  }
+
   .header .navbar .menu a {
     display: none;
-  }
-
-  .header .navbar .menu .btn-perfil {
-    display: none;
-  }
-
-  .header .navbar .menu .btn-carrinho {
-    display: none;
-  }
-
-  .header .banner {
-    padding: 100px 50px 0;
-  }
-
-  .header .banner .msg h1 {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .header .banner .msg p {
-    font-size: 17px;
-    text-align: center;
-  }
-
-  .header .banner .pesquisa {
-    height: 100px;
-    width: 450px;
-  }
-
-  .header .banner .pesquisa .item {
-    padding-left: 20px;
-  }
-
-  .header .banner .pesquisa .item input {
-    height: 30px;
-    width: 120px;
-    margin-bottom: 19px;
-  }
-
-  .header .banner .pesquisa label {
-    font-size: 10px;
-  }
-
-  .header .banner .pesquisa .item .btn-pesquisar {
-    height: 30px;
-    width: 120px;
   }
 
   .box select {
@@ -411,8 +331,19 @@
     padding: 0 20px;
   }
 
+  .header .navbar h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   .header .navbar h2 i {
     display: inline;
+  }
+
+  .header .navbar .menu {
+    margin-left: 70px;
   }
 
   .header .navbar .menu a {
@@ -420,10 +351,18 @@
   }
 
   .header .navbar .menu .btn-perfil {
+    width: 50px;
+  }
+
+  .header .navbar .menu .btn-perfil h5 {
     display: none;
   }
 
   .header .navbar .menu .btn-carrinho {
+    width: 50px;
+  }
+
+  .header .navbar .menu .btn-carrinho h5 {
     display: none;
   }
 

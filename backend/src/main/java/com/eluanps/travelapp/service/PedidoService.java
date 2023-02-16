@@ -54,8 +54,8 @@ public class PedidoService {
     @Autowired
     private ClienteService clienteService;
 
-    @Autowired
-    private EmailService emailService;
+    //@Autowired
+    //private EmailService emailService;
 
     public List<Pedido> getAll() {
         return pedidoRepository.findAll();
