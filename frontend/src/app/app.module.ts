@@ -11,7 +11,7 @@ import { BlogComponent } from './home/blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './AppRoutingModule';
+import { AppRoutingModule } from './app-routing-module';
 import { PacotesComponent } from './home/pacotes/pacotes.component';
 import { DestinosComponent } from './home/destinos/destinos.component';
 import { BlogPostComponent } from './home/blog/blog-post/blog-post.component';
