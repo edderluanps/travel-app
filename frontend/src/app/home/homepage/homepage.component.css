@@ -412,7 +412,7 @@ a {
 .blog .cards .card .dados .texto {
   width: 300px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   -webkit-box-orient: vertical;
 }
@@ -623,7 +623,7 @@ a {
 
   .destinos .box {
     padding: 0;
-    text-align: end;
+    text-align: center;
   }
 
 }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { API_URL } from 'src/environments/environment';
+import { API_URL } from 'src/environments/environment.prod';
 import { ClienteDTO } from '../model/cliente.dto';
 import { StorageService } from './storage.service';
 
