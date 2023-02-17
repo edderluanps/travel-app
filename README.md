@@ -68,9 +68,9 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### Deploy
 
-* Backend: Railway (Implementação Futura)
-* DB: Railway (Implementação Futura)
-* Frotend: Netlify (Implementação Futura)
+* Backend: Railway
+* DB: Railway
+* Frotend: Netlify
 * App: APK file (Implementação Futura)
 
 
@@ -135,6 +135,15 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 * <a href="https://www.youtube.com/watch?v=aINs3ouaoJk">Link para tutorial de como subir um projeto para o github.</a> Créditos ao autor. 
 * <a href="https://www.youtube.com/watch?v=5sVxvF47dcU">Link para o processo de deploy do Backend e Banco de dados detalhado no Railway.</a> Créditos ao autor.
 * <a href="https://www.youtube.com/watch?v=HxeuNAXFGe8">Link para o processo de deploy do Frontend detalhado no Netlify.</a> Créditos ao autor.
+
+
+### Atenção
+
+* Ao criar o banco no Railway e adicionar as variáveis do banco ao projeto, as tabelas serão preenchidas automaticamente no banco assim que o projeto for iniciado. Mas se prefereir, é possível fazer manualmente adicionando as querys.
+* O projeto é monorepo, ou seja, backend e frontend no mesmo repositório. Sendo assim, atenção ao indicar o diretório raiz na hora do deploy caso opte pelo mesmo modelo.
+
+<img src="https://global.discourse-cdn.com/netlify/optimized/3X/c/2/c2adb7f2d63f8f7531e70d0fb89b491f5eb7d98b_2_690x364.png" style="height:500px; width: 1000px">
+  * Créditos da imagem: Suporte Netlify
 
 
 ## Licença
