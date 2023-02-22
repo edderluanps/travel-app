@@ -139,9 +139,10 @@ O projeto contará com área de clientes e de admins, onde o cliente poderá sel
 
 ### Atenção
 
-* Ao criar o banco no Railway e adicionar as variáveis do banco ao projeto, as tabelas serão preenchidas automaticamente no banco assim que o projeto for iniciado. Mas se prefereir, é possível fazer manualmente adicionando as querys.
-* O projeto é monorepo, ou seja, backend e frontend no mesmo repositório. Sendo assim, atenção ao indicar o diretório raiz na hora do deploy.
+* Ao criar o banco no Railway e adicionar as variáveis do banco no aqruivo <code>application-prod.properties</code> do projeto, as tabelas serão preenchidas automaticamente na plataforma quando o projeto for iniciado. Mas se prefereir, é possível fazer manualmente adicionando as queries e rodando uma por vêz.
+* O projeto é monorepo, ou seja, backend e frontend no mesmo repositório. Sendo assim, preste atenção ao indicar o diretório raiz de cada parte do projeto na hora do deploy.
 * Caso opte por manter o projeto como monorepo, indique o backend como <code>/backend</code> no Railway ou outra ferramenta, e o frontend como <code>/frontend</code> no Netlify ou outra ferramenta.
+* Se utilizar repositórios separados, desconsidere a etapa acima.
 
 <img src="https://global.discourse-cdn.com/netlify/optimized/3X/c/2/c2adb7f2d63f8f7531e70d0fb89b491f5eb7d98b_2_690x364.png" style="height:500px; width: 1000px">
   * Créditos da imagem: Suporte Netlify
