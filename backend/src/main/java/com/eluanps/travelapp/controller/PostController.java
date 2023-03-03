@@ -2,6 +2,9 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Post;
 import com.eluanps.travelapp.service.PostService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,26 +28,31 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @ApiOperation(value = "Busca Posts")
     @GetMapping
     public List<Post> getAll() {
         return postService.getAll();
     }
 
+    @ApiOperation(value = "Pesquisa Post")
     @GetMapping("/resultados-pesquisa")
     public List<Post> getByKeyword(@RequestParam(value = "titulo", defaultValue = "") String titulo) {
         return postService.getByKeyword(titulo);
     }
 
+    @ApiOperation(value = "Busca os ultimos três Posts")
     @GetMapping("/ultimos-posts")
     public List<Post> getLastThree() {
         return postService.getLastThree();
     }
 
+    @ApiOperation(value = "Busca Post por ID")
     @GetMapping("/{id}")
     public Post findById(@PathVariable Long id) {
         return postService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Post")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -52,6 +60,7 @@ public class PostController {
         return postService.salvar(post);
     }
 
+    @ApiOperation(value = "Edita Post")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -59,6 +68,10 @@ public class PostController {
         postService.atualizar(id, post);
     }
 
+    @ApiResponses(value = {
+        @ApiResponse(code = 400, message = "Não é possível excluir o Post"),
+        @ApiResponse(code = 400, message = "Post inexistente.")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
