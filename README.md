@@ -1,7 +1,7 @@
 # Trvael App
 
 
-Link do projeto em produção <a href="travel-io.netlify.app">aqui</a>.
+Link do projeto em produção <a href="http://travel-io.netlify.app">aqui</a>.
 
 
 ## Objetivo
