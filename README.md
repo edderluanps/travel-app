@@ -1,5 +1,12 @@
 # Trvael App
 
+## Projeto Versão Web
+Link do projeto em produção <a href="http://travel-io.netlify.app">aqui</a>.
+
+
+## Projeto Versão App Mobile
+...
+
 
 ## Objetivo
  
@@ -9,10 +16,15 @@ O projeto Travel App é um projeto pessoal de caracterizado como uma plataforma 
 
 ## Funções principais
 
-* Como cliente, compra de pacotes turísticos com voos e hospedagem inclusos.
-* Como cliente, acesso ao blog do site com dicas de viagens, curiosidades e reviews postados pela equipe de admins.
-* Como Admin, é possível adicionar, listar, editar e remover pacotes turísticos e postagens no blog.
-* Como Admin, é possível definir outros usuários como Admins, bem como excluir o cadastro dos mesmos.
+### Cliente
+
+* Compra de pacotes turísticos com voos e hospedagem inclusos.
+* Acesso ao blog do site com dicas de viagens, curiosidades e reviews postados pela equipe de admins.
+
+### Admin
+
+* Adicionar, listar, editar e remover pacotes turísticos e postagens no blog.
+* Aefinir outros usuários como Admins, bem como excluir o cadastro dos mesmos.
 
 
 
