@@ -2,6 +2,9 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Endereco;
 import com.eluanps.travelapp.service.EnderecoService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,18 +27,21 @@ public class EnderecoController {
     @Autowired
     private EnderecoService enderecoService;
 
+    @ApiOperation(value = "Listagem de Endereços")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<Endereco> getAll() {
         return enderecoService.getAll();
     }
 
+    @ApiOperation(value = "Busca Endereço por ID")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public Endereco findById(@PathVariable Long id) {
         return enderecoService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Endereço")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -43,6 +49,7 @@ public class EnderecoController {
         return enderecoService.salvar(endereco);
     }
 
+    @ApiOperation(value = "Edita Endereço")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -50,6 +57,9 @@ public class EnderecoController {
         enderecoService.atualizar(id, endereco);
     }
 
+    @ApiResponses(value = {
+        @ApiResponse(code = 400, message = "Endereço inexistente.")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

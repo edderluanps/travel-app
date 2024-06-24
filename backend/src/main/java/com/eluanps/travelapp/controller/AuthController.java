@@ -5,6 +5,7 @@ import com.eluanps.travelapp.security.JWTUtil;
 import com.eluanps.travelapp.security.UserSS;
 import com.eluanps.travelapp.service.AuthService;
 import com.eluanps.travelapp.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @ApiOperation(value = "Refresh Token")
     @GetMapping(value = "/refresh_token")
     public void refreshToken(HttpServletResponse httpServletResponse) {
         UserSS user = UserService.authenticated();
@@ -31,6 +33,7 @@ public class AuthController {
         httpServletResponse.addHeader("access-control-expose-headers", "Authorization");
     }
 
+    @ApiOperation(value = "Restaura senha")
     @GetMapping(value = "/forgot")
     public void forgot(@Valid @RequestBody EmailDTO emailDto) {
         authService.sendNewPassword(emailDto.getEmail());

@@ -2,6 +2,9 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Pacote;
 import com.eluanps.travelapp.service.PacoteService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,21 +29,25 @@ public class PacoteController {
     @Autowired
     private PacoteService pacoteService;
 
+    @ApiOperation(value = "Listagem de Pacotes")
     @GetMapping
     public List<Pacote> getAll() {
         return pacoteService.getAll();
     }
 
+    @ApiOperation(value = "Busca os ultimos 3 Pacotes")
     @GetMapping("/ultimos-pacotes")
     public List<Pacote> getLastThree() {
         return pacoteService.getLastThree();
     }
 
+    @ApiOperation(value = "Busca Pacote por ID")
     @GetMapping("/{id}")
     public Pacote findById(@PathVariable Long id) {
         return pacoteService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Pacote")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -48,6 +55,7 @@ public class PacoteController {
         return pacoteService.salvar(pacote);
     }
 
+    @ApiOperation(value = "Edita Pacote")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -55,6 +63,10 @@ public class PacoteController {
         pacoteService.atualizar(id, pacote);
     }
 
+    @ApiResponses(value = {
+        @ApiResponse(code = 400, message = "Não é possível excluir o Pacote"),
+        @ApiResponse(code = 400, message = "Pacote inexistente.")  
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -62,11 +74,13 @@ public class PacoteController {
         pacoteService.delete(id);
     }
 
+    @ApiOperation(value = "Pesquisa Pacote")
     @GetMapping("/resultados-pesquisa")
     public List<Pacote> getByKeyword(@RequestParam(value = "nome", defaultValue = "") String nome) {
         return pacoteService.findByNome(nome);
     }
     
+    @ApiOperation(value = "Pesquisa Pacote por Nome e Data")
     @GetMapping("/resultados-pesquisa-data")
     public List<Pacote> getByNomeAndDate(
             @RequestParam(value = "nome", defaultValue = "") String nome,

@@ -2,6 +2,9 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Empresa;
 import com.eluanps.travelapp.service.EmpresaService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,17 +27,20 @@ public class EmpresaController {
     @Autowired
     private EmpresaService empresaService;
 
+    @ApiOperation(value = "Listagem de Usuarios")
     @GetMapping
     public List<Empresa> getAll() {
         return empresaService.getAll();
     }
 
+    @ApiOperation(value = "Busca Empresa por ID") 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public Empresa findById(@PathVariable Long id) {
         return empresaService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Empresa")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -42,6 +48,7 @@ public class EmpresaController {
         return empresaService.salvar(empresa);
     }
 
+    @ApiOperation(value = "Edita Empresa")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -49,6 +56,10 @@ public class EmpresaController {
         empresaService.atualizar(id, empresa);
     }
 
+    @ApiResponses(value = {
+        @ApiResponse(code = 400, message = "Não é possível excluir uma Empresa vinculada a um serviço ativo"),
+        @ApiResponse(code = 400, message = "Empresa inexistente.")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

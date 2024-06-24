@@ -2,6 +2,7 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Pedido;
 import com.eluanps.travelapp.service.PedidoService;
+import io.swagger.annotations.ApiOperation;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -31,30 +32,35 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
 
+    @ApiOperation(value = "Busca Pedido")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<Pedido> getAll() {
         return pedidoService.getAll();
     }
 
+    @ApiOperation(value = "Busca Pedido por ID")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
     public Pedido findById(@PathVariable Long id) {
         return pedidoService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Pedido")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Pedido salvar(@RequestBody @Validated Pedido pedido) {
         return pedidoService.salvar(pedido);
     }
 
+    @ApiOperation(value = "Edita Pedido")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizar(@PathVariable Long id, @RequestBody Pedido pedido) {
         pedidoService.atualizar(id, pedido);
     }
 
+    @ApiOperation(value = "Deleta Pedido")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -62,6 +68,7 @@ public class PedidoController {
         pedidoService.delete(id);
     }
 
+    @ApiOperation(value = "Busca Pedido com paginação")
     @GetMapping("/page")
     public Page<Pedido> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -72,11 +79,13 @@ public class PedidoController {
         return list;
     }
     
+    @ApiOperation(value = "Busca Pedidos por ID de Usuário")
     @GetMapping("/userPedidos")
     public List<Pedido> getByClienteId(@RequestParam(value = "id", defaultValue = "0") Long id) {
         return pedidoService.findByClienteId(id);
     }
     
+    @ApiOperation(value = "Busca comprovantes de Pedido por ID de Usuário")
     @GetMapping("/comprovante/{id}")
     public void generatePdf(@PathVariable Long id, HttpServletResponse response) throws IOException {
         response.setContentType("application/pdf");

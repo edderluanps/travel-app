@@ -4,6 +4,9 @@ import com.eluanps.travelapp.entity.Cliente;
 import com.eluanps.travelapp.entity.dto.ClienteDTO;
 import com.eluanps.travelapp.entity.dto.ClienteNewDTO;
 import com.eluanps.travelapp.service.ClienteService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +34,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    @ApiOperation(value = "Listagem de Usuarios")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<ClienteDTO> getAll() {
@@ -39,11 +43,13 @@ public class ClienteController {
         return listaDto;
     }
 
+    @ApiOperation(value = "Busca Usuario por ID")    
     @GetMapping("/{id}")
     public Cliente findById(@PathVariable Long id) {
         return clienteService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Usuario")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente salvar(@Valid @RequestBody ClienteNewDTO clienteDto) {
@@ -53,6 +59,7 @@ public class ClienteController {
         return cliente;
     }
 
+    @ApiOperation(value = "Edita Usuario")    
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizar(@Valid @RequestBody ClienteDTO clienteDto, @PathVariable Long id) {
@@ -61,6 +68,10 @@ public class ClienteController {
         cliente = clienteService.atualizar(cliente);
     }
 
+    @ApiResponses(value = {
+        @ApiResponse(code = 400, message = "Não é possível excluir um Usuário sem possuir previlégios de ADMIN"),
+        @ApiResponse(code = 400, message = "Usuário inexistente.")  
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -68,12 +79,14 @@ public class ClienteController {
         clienteService.delete(id);
     }
 
+    @ApiOperation(value = "Busca Usuario por e-mail")    
     @GetMapping("/email")
     public Cliente find(@RequestParam(value = "value") String email) {
         Cliente cliente = clienteService.findByEmail(email);
         return cliente;
     }
 
+    @ApiOperation(value = "Busca Usuarios com paginação")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/page")
     public Page<ClienteDTO> getPage(

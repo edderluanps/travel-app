@@ -5,6 +5,7 @@ import com.eluanps.travelapp.entity.Estado;
 import com.eluanps.travelapp.entity.dto.CidadeDTO;
 import com.eluanps.travelapp.service.CidadeService;
 import com.eluanps.travelapp.service.EstadoService;
+import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +30,13 @@ public class EstadoController {
     @Autowired
     private CidadeService cidadeService;
 
+    @ApiOperation(value = "Busca Estados")    
     @GetMapping
     public List<Estado> getAll() {
         return estadoService.getAll();
     }
 
+    @ApiOperation(value = "Busca Cidades por ID do Estado")
     @GetMapping("/{estadoId}/cidades")
     public List<CidadeDTO> findCidades(@PathVariable Long estadoId) {
         List<Cidade> list = cidadeService.findByEstado(estadoId);
@@ -41,6 +44,7 @@ public class EstadoController {
         return listDto;
     }
 
+    @ApiOperation(value = "Cadastra Estado")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

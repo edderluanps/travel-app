@@ -2,6 +2,7 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Cidade;
 import com.eluanps.travelapp.service.CidadeService;
+import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,11 +22,13 @@ public class CidadeController {
     @Autowired
     private CidadeService cidadeService;
 
+    @ApiOperation(value = "Listagem de cidades")
     @GetMapping
     public List<Cidade> getAll() {
         return cidadeService.getAll();
     }
-    
+  
+    @ApiOperation(value = "Cadastra cidade")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

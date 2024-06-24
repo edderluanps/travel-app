@@ -2,6 +2,9 @@ package com.eluanps.travelapp.controller;
 
 import com.eluanps.travelapp.entity.Voos;
 import com.eluanps.travelapp.service.VoosService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,16 +27,19 @@ public class VoosController {
     @Autowired
     private VoosService voosService;
 
+    @ApiOperation(value = "Busca de Voos")
     @GetMapping
     public List<Voos> getAll() {
         return voosService.getAll();
     }
 
+    @ApiOperation(value = "Busca de Voo por ID")
     @GetMapping("/{id}")
     public Voos findById(@PathVariable Long id) {
         return voosService.findById(id);
     }
 
+    @ApiOperation(value = "Cadastra Voo")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -41,6 +47,7 @@ public class VoosController {
         return voosService.salvar(voos);
     }
 
+    @ApiOperation(value = "Edita Voo")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -48,6 +55,10 @@ public class VoosController {
         voosService.atualizar(id, voos);
     }
 
+    @ApiResponses(value = {
+        @ApiResponse(code = 400, message = "Não é possível excluir uma Voo vinculado a um Pacote"),
+        @ApiResponse(code = 400, message = "Hospedagem inexistente.")
+    })
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
